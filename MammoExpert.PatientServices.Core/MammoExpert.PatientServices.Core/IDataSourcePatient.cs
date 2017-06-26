@@ -9,10 +9,10 @@ namespace MammoExpert.PatientServices.Core
     public interface IDataSourcePatient
     {
         //Получить список всех пациентов
-        public List<Patient> GetAllPatients();
+        List<Patient> GetAllPatients();
         //Найти пациентов по строке поиска
-        public List<Patient> FindPatientsOnTheSearchBar(string searchString);
+        List<Patient> FindPatientsOnTheSearchBar(string searchString);
         //Получить все данные пациента по идентификатору
-        public Patient GetPatientData(string patientId);
+        Patient GetPatientData(string patientId);
     }
 }

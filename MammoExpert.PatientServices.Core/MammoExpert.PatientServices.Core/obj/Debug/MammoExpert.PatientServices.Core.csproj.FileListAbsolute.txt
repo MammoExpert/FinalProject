@@ -1,0 +1,5 @@
+E:\FinalProject\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core\obj\Debug\MammoExpert.PatientServices.Core.csprojResolveAssemblyReference.cache
+E:\FinalProject\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core\bin\Debug\MammoExpert.PatientServices.Core.dll
+E:\FinalProject\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core\bin\Debug\MammoExpert.PatientServices.Core.pdb
+E:\FinalProject\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core\obj\Debug\MammoExpert.PatientServices.Core.dll
+E:\FinalProject\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core\obj\Debug\MammoExpert.PatientServices.Core.pdb
