@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.Core
 {
-    public enum Sex {Male, Female};
+    public enum Sex { Male, Female };
     public class Patient
     {
         //Фамилия
         [Required]
-        [StringLength(64)] 
+        [StringLength(64)]
         public string LastName { get; set; }
         //Имя
         [Required]
-        [StringLength(64)] 
+        [StringLength(64)]
         public string FirstName { get; set; }
         //Отчество
         [Required]
@@ -78,6 +78,5 @@ namespace MammoExpert.PatientServices.Core
         [Required]
         [StringLength(64)]
         public string Telephone { get; set; }
- 
     }
 }

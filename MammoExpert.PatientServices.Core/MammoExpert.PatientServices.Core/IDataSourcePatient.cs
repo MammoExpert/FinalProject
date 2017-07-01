@@ -14,5 +14,7 @@ namespace MammoExpert.PatientServices.Core
         List<Patient> FindPatientsOnTheSearchBar(string searchString);
         //Получить все данные пациента по идентификатору
         Patient GetPatientData(string patientId);
+        //Добавить нового пациента
+        void AddNewPatient(Patient patient);
     }
 }
