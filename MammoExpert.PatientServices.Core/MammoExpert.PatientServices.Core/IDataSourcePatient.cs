@@ -8,6 +8,8 @@ namespace MammoExpert.PatientServices.Core
 {
     public interface IDataSourcePatient
     {
+        //Проверка подключения
+        string CheckConnection();
         //Получить список всех пациентов
         List<Patient> GetAllPatients();
         //Найти пациентов по строке поиска

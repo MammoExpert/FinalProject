@@ -18,13 +18,13 @@ namespace MammoExpert.PatientServices.DB
         }
 
         //Проверка подключения
-        public string OpenSqlConnection()
+        public string CheckConnection()
         {
             string state;
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-                state = connection.State.ToString() + "\n" 
+                state = connection.State.ToString() + "\n"
                         + connection.ConnectionTimeout.ToString();
                 return state;
             }
