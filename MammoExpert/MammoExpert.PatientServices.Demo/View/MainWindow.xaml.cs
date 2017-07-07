@@ -23,8 +23,8 @@ namespace MammoExpert.PatientServices.Demo.View
         public MainWindow()
         {
             InitializeComponent();
-            grManualInput.Children.Add(new UCManualInput());
-            grPatientSearch.Children.Add(new UCPatientSearch());
+            grManualInput.Children.Add(new UcManualInput());
+            grPatientSearch.Children.Add(new UcPatientSearch());
         }
     }
 }

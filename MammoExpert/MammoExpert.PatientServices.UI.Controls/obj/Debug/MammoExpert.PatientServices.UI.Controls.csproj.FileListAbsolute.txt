@@ -1,1 +1,17 @@
 C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcManualInput.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcPatientSearch.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\App.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.lref
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcManualInput.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcPatientSearch.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.g.resources
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.Properties.Resources.resources
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb

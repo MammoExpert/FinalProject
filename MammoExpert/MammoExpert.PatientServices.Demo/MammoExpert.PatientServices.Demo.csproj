@@ -119,8 +119,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj">
-      <Project>{5B69F605-34B4-4997-A19C-C24656103FD5}</Project>
+    <ProjectReference Include="..\MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj">
+      <Project>{53AC4068-69BD-44D4-AC0A-132B991C189B}</Project>
       <Name>MammoExpert.PatientServices.UI.Controls</Name>
     </ProjectReference>
   </ItemGroup>
