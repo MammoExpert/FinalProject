@@ -1,0 +1,1 @@
+C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
