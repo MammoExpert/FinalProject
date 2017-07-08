@@ -1,12 +1,7 @@
 ﻿using MammoExpert.PatientServices.Core;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MammoExpert.PatientServices.DB
+namespace MammoExpert.Infrastructure
 {
     public class PatientContext : DbContext
     {

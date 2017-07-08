@@ -1,10 +1,8 @@
-﻿using MammoExpert.PatientServices.Core;
-using System;
+﻿using MammoExpert.Infrastructure;
+using MammoExpert.PatientServices.Core;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.DB
 {
