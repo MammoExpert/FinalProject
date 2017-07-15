@@ -59,10 +59,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UcManualInput.xaml.cs">
+    <Compile Include="ViewModel\ManualInputViewModel.cs" />
+    <Compile Include="ViewModel\PatientSearchViewModel.cs" />
+    <Compile Include="View\UcManualInput.xaml.cs">
       <DependentUpon>UcManualInput.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UcPatientSearch.xaml.cs">
+    <Compile Include="View\UcPatientSearch.xaml.cs">
       <DependentUpon>UcPatientSearch.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -94,15 +96,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UcManualInput.xaml">
+    <Page Include="View\UcManualInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UcPatientSearch.xaml">
+    <Page Include="View\UcPatientSearch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

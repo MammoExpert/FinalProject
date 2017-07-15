@@ -1,4 +1,5 @@
-﻿using MammoExpert.Infrastructure;
+﻿using Infrastructure;
+using MammoExpert.Infrastructure;
 using MammoExpert.PatientServices.Core;
 using System.Collections.Generic;
 using System.Data.SqlClient;

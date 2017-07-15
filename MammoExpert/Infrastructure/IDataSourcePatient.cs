@@ -1,7 +1,7 @@
 ﻿using MammoExpert.PatientServices.Core;
 using System.Collections.Generic;
 
-namespace MammoExpert.Infrastructure
+namespace Infrastructure
 {
     public interface IDataSourcePatient
     {

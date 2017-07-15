@@ -32,38 +32,10 @@
             <MenuItem Command="{Binding OpenAboutProgrammWindow}" Header="О программе" />
         </Menu>
 
-        <TabControl Grid.Row="1" Grid.Column="0">
-            <TabItem>
-                <TabItem.Header>
-                    <TextBlock Text="Ручной ввод" />
-                </TabItem.Header>
-                <TabItem.Content>
-                    <Grid x:Name="grManualInput">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                    </Grid>
-                </TabItem.Content>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <TextBlock Text="Поиск" />
-                </TabItem.Header>
-                <TabItem.Content>
-                    <Grid x:Name="grPatientSearch">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                    </Grid>
-                </TabItem.Content>
-            </TabItem>
-        </TabControl>
+        <TabControl
+            Grid.Row="1"
+            Grid.Column="0"
+            ItemsSource="{Binding Path=Tabs, Mode=TwoWay}" />
 
     </Grid>
 </Window>

@@ -3,13 +3,9 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Ma
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcManualInput.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcPatientSearch.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\App.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.lref
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcManualInput.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\UcPatientSearch.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.g.resources
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.Properties.Resources.resources
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
@@ -30,3 +26,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\Ma
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.exe
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.baml

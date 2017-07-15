@@ -45,3 +45,4 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\Infrastruct
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\Infrastructure.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
