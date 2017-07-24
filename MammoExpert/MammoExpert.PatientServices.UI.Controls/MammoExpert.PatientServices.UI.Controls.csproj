@@ -62,6 +62,7 @@
     <Compile Include="ViewModel\DBConnectionConfigurationModel.cs" />
     <Compile Include="ViewModel\ManualInputViewModel.cs" />
     <Compile Include="ViewModel\PatientSearchViewModel.cs" />
+    <Compile Include="ViewModel\WorklistConnectionConfigurationModel.cs" />
     <Compile Include="View\UcDBConnectionConfiguration.xaml.cs">
       <DependentUpon>UcDBConnectionConfiguration.xaml</DependentUpon>
     </Compile>
@@ -70,6 +71,9 @@
     </Compile>
     <Compile Include="View\UcPatientSearch.xaml.cs">
       <DependentUpon>UcPatientSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UcWorklistConnectionConfiguration.xaml.cs">
+      <DependentUpon>UcWorklistConnectionConfiguration.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UcPatientSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UcWorklistConnectionConfiguration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

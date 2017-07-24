@@ -33,3 +33,5 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\Vi
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.baml
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.baml
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.baml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml

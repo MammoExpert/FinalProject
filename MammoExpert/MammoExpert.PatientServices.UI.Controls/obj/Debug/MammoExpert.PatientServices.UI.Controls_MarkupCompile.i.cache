@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\App.xaml
-3-807483405
+4-1123463978
 
-14-420055336
+16885074541
 131569487696
-View\UcDBConnectionConfiguration.xaml;View\UcManualInput.xaml;View\UcPatientSearch.xaml;
+View\UcDBConnectionConfiguration.xaml;View\UcManualInput.xaml;View\UcPatientSearch.xaml;View\UcWorklistConnectionConfiguration.xaml;
 
-False
+True
 
