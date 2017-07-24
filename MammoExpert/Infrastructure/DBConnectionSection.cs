@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace Infrastructure
 {
@@ -11,11 +6,11 @@ namespace Infrastructure
     {
         //Создание атрибута «Только удаленный доступ»
         [ConfigurationProperty("remoteOnly", DefaultValue = "false", IsRequired = false)]
-        public Boolean RemoteOmly
+        public bool RemoteOmly
         {
             get
             {
-                return (Boolean)this["remoteOnly"];
+                return (bool)this["remoteOnly"];
             }
             set
             {
@@ -29,7 +24,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["connectionString"];
+                return (string)this["connectionString"];
             }
             set
             {
@@ -43,7 +38,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["providerName"];
+                return (string)this["providerName"];
             }
             set
             {
@@ -61,7 +56,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["name"];
+                return (string)this["name"];
             }
             set
             {
@@ -75,7 +70,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["dataSource"];
+                return (string)this["dataSource"];
             }
             set
             {
@@ -89,7 +84,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["initialCatalog"];
+                return (string)this["initialCatalog"];
             }
             set
             {
@@ -103,7 +98,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["userID"];
+                return (string)this["userID"];
             }
             set
             {
@@ -117,7 +112,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["password"];
+                return (string)this["password"];
             }
             set
             {
@@ -140,11 +135,11 @@ namespace Infrastructure
         }
 
         [ConfigurationProperty("integratedSecurity", DefaultValue = "true", IsRequired = false)]
-        public Boolean IntegratedSecurity
+        public bool IntegratedSecurity
         {
             get
             {
-                return (Boolean)this["integratedSecurity"];
+                return (bool)this["integratedSecurity"];
             }
             set
             {
@@ -162,7 +157,7 @@ namespace Infrastructure
         {
             get
             {
-                return (String)this["name"];
+                return (string)this["name"];
             }
             set
             {

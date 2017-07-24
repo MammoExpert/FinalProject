@@ -59,8 +59,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\DBConnectionConfigurationModel.cs" />
     <Compile Include="ViewModel\ManualInputViewModel.cs" />
     <Compile Include="ViewModel\PatientSearchViewModel.cs" />
+    <Compile Include="View\UcDBConnectionConfiguration.xaml.cs">
+      <DependentUpon>UcDBConnectionConfiguration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UcManualInput.xaml.cs">
       <DependentUpon>UcManualInput.xaml</DependentUpon>
     </Compile>
@@ -96,6 +100,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\UcDBConnectionConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UcManualInput.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
