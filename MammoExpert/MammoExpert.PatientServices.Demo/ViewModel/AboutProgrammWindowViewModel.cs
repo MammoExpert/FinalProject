@@ -15,5 +15,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public string ApplicationName => Assembly.GetExecutingAssembly().GetName().Name;
 
+        public List<string> Moduls => new List<string>() {"Фейковый модуль 1", "Фейковый модуль 2"};
+
     }
 }

@@ -5,8 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="341"
-    Height="260"
     mc:Ignorable="d">
     <GroupBox
         Margin="5"
@@ -24,6 +22,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
             <Label
@@ -79,7 +78,7 @@
                     Content="Проверить" />
             </StackPanel>
             <StackPanel
-                Grid.Row="6"
+                Grid.Row="7"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="2,25,2,2"

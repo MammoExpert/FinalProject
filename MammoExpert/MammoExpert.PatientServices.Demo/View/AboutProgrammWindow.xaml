@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel"
     Title="О программе"
-    Width="300"
+    Width="360"
     Height="300"
     ResizeMode="NoResize"
     Topmost="True"
@@ -62,10 +62,10 @@
             Margin="2"
             Header="Модули">
 
-            <ListView Margin="5" Padding="3">
-                <ListItem />
-                <ListItem />
-            </ListView>
+            <ListView
+                Margin="5"
+                Padding="3"
+                ItemsSource="{Binding Path=Moduls}" />
         </GroupBox>
 
     </Grid>

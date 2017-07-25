@@ -6,7 +6,7 @@ namespace Infrastructure
     {
         //Создание атрибута «Только удаленный доступ»
         [ConfigurationProperty("remoteOnly", DefaultValue = "false", IsRequired = false)]
-        public bool RemoteOmly
+        public bool RemoteOnly
         {
             get
             {
@@ -120,8 +120,8 @@ namespace Infrastructure
             }
         }
 
-        [ConfigurationProperty("connectTimeout", DefaultValue = "1000", IsRequired = false)]
-        [IntegerValidator(ExcludeRange = false, MaxValue = 24, MinValue = 6)]
+        [ConfigurationProperty("connectTimeout", DefaultValue = "2000", IsRequired = false)]
+        [IntegerValidator(ExcludeRange = false, MaxValue = 3000, MinValue = 1000)]
         public int ConnectTimeout
         {
             get

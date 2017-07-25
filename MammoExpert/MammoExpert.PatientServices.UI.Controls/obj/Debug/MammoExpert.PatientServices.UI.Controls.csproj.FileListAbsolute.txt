@@ -2,7 +2,6 @@ C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.C
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\App.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.lref
@@ -55,3 +54,7 @@ D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.exe
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml

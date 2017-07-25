@@ -118,3 +118,5 @@ D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.De
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.g.resources
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml

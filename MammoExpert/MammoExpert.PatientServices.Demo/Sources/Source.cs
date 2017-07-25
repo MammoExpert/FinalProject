@@ -20,17 +20,21 @@ namespace MammoExpert.PatientServices.Demo.Sources
 
         public string Description { get; set; }
 
+        public Parameters Parameters {get; set;}
+
         public Source(string name, Types typeName, string description)
         {
             Name = name;
             Type = typeName;
             Description = description;
+            Parameters = new Parameters();
         }
         public Source(string name, Types typeName)
         {
             Name = name;
             Type = typeName;
             Description = string.Empty;
+            Parameters = new Parameters();
         }
 
     }

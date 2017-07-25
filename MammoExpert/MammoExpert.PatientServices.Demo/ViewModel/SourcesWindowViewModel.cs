@@ -18,8 +18,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public List<string> SourceTypes => Enum.GetNames(typeof(Source.Types)).ToList();
 
         // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        private object _selectedType;
-        public object SelectedType
+        private Source.Types _selectedType;
+        public Source.Types SelectedType
         {
             get { return _selectedType; }
             set
@@ -64,17 +64,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand SourceTypeChanging => new ActionCommand(() =>
         {
-            if (SelectedType != null)
-            {
                 // создаем список источников согласно выбранному типу
-            }
         });
 
         public ICommand AddSource => new ActionCommand(() =>
         {
-            // добавляем в список
-
-            // и добавляем новую вкладку
+            var win = new ConfigurationWindow(SelectedType);
+            win.Show();
         });
 
         public ICommand EditSource => new ActionCommand(() =>

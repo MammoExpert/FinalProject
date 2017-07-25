@@ -61,13 +61,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Helpers\WindowCloser.cs" />
+    <Compile Include="Sources\Parameters.cs" />
     <Compile Include="Sources\Source.cs" />
     <Compile Include="Sources\SourceRepository.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
+    <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SourcesWindowViewModel.cs" />
     <Compile Include="View\AboutProgrammWindow.xaml.cs">
       <DependentUpon>AboutProgrammWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfigurationWindow.xaml.cs">
+      <DependentUpon>ConfigurationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -110,6 +115,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\AboutProgrammWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ConfigurationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
