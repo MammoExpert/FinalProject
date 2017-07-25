@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="Helpers\WindowCloser.cs" />
     <Compile Include="Sources\Source.cs" />
-    <Compile Include="Sources\SourceHandler.cs" />
+    <Compile Include="Sources\SourceRepository.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SourcesWindowViewModel.cs" />

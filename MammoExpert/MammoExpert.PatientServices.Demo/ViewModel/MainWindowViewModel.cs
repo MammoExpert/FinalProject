@@ -10,8 +10,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        // список открытых вкладок
         private static List<TabItem> _tabs = new List<TabItem>();
-
         public List<TabItem> Tabs
         {
             get { return _tabs; }
@@ -27,32 +27,21 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public MainWindowViewModel()
         {
+            // добавляем вкладку по умолчанию
             AddTab("Ручной ввод", new UcManualInput());
         }
 
-        public ICommand OpenAboutProgrammWindow
+        public ICommand OpenAboutProgrammWindow => new ActionCommand(() =>
         {
-            get
-            {
-                return new ActionCommand(() =>
-                {
-                    AboutProgrammWindow win = new AboutProgrammWindow();
-                    win.Show();
-                });
-            }
-        }
+            var win = new AboutProgrammWindow();
+            win.Show();
+        });
 
-        public ICommand OpenSourcesWindow
+        public ICommand OpenSourcesWindow => new ActionCommand(() =>
         {
-            get
-            {
-                return new ActionCommand(() =>
-                {
-                    SourcesWindow win = new SourcesWindow();
-                    win.Show();
-                });
-            }
-        }
+            var win = new SourcesWindow();
+            win.Show();
+        });
 
         // метод создания вкладок
         public static void AddTab(string header, UIElement element)

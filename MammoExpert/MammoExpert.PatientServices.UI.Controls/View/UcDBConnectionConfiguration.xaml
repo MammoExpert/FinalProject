@@ -1,51 +1,114 @@
-﻿<UserControl x:Class="MammoExpert.PatientServices.UI.Controls.View.UcDBConnectionConfiguration"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <GroupBox Header="База данных" Margin="5" Padding="5">
+﻿<UserControl
+    x:Class="MammoExpert.PatientServices.UI.Controls.View.UcDBConnectionConfiguration"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <GroupBox
+        Margin="5"
+        Padding="5"
+        Header="База данных">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Content="Поставщик (драйвер)"/>
-            <ComboBox  Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Background="DarkGray"
-                       ItemsSource="{Binding ListProviders}"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Имя хоста (IP адрес)"/>
-            <TextBox Grid.Column="1" Grid.Row="2" Margin="2"/>
-            <Label Grid.Column="0" Grid.Row="3" Content="Порт"/>
-            <TextBox Grid.Column="1" Grid.Row="3" Margin="2"/>
-            <Label Grid.Column="0" Grid.Row="4" Content="База данных"/>
-            <TextBox Grid.Column="1" Grid.Row="4" Margin="2"/>
-            <Label Grid.Column="0" Grid.Row="5" Content="Имя пользователя"/>
-            <TextBox Grid.Column="1" Grid.Row="5" Margin="2"/>
-            <Label Grid.Column="0" Grid.Row="6" Content="Пароль"/>
-            <TextBox Grid.Column="1" Grid.Row="6" Margin="2"/>
-            <StackPanel Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                <Button Background="DarkGray" Content="Проверить" Margin="3" Padding="15,3"
-                        Command="{Binding CheckConnectionDb}"/>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Content="Поставщик (драйвер)" />
+            <ComboBox
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Background="DarkGray"
+                ItemsSource="{Binding ListProviders}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Content="Имя хоста (IP адрес)" />
+            <TextBox
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="2" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Content="Порт" />
+            <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="2" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Content="База данных" />
+            <TextBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Margin="2" />
+            <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Content="Имя пользователя" />
+            <TextBox
+                Grid.Row="5"
+                Grid.Column="1"
+                Margin="2" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                Content="Пароль" />
+            <TextBox
+                Grid.Row="6"
+                Grid.Column="1"
+                Margin="2" />
+            <StackPanel
+                Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Right">
+                <Button
+                    Margin="3"
+                    Padding="15,3"
+                    Background="DarkGray"
+                    Command="{Binding CheckConnectionDb}"
+                    Content="Проверить" />
             </StackPanel>
-            <StackPanel Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Right" 
-                        Orientation="Horizontal" Margin="2,25,2,2">
-                <Button Background="DarkGray" Content="Создать" Margin="5,0" Padding="25,3"
-                        Command="{Binding CreateConnectionDb}"/>
-                <Button Background="DarkGray" Content="Отмена" Padding="25,3"
-                        Command="{Binding CancelCreateConnectionDb}"/>
+            <StackPanel
+                Grid.Row="8"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="2,25,2,2"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    Margin="5,0"
+                    Padding="25,3"
+                    Background="DarkGray"
+                    Command="{Binding CreateConnectionDb}"
+                    Content="Создать" />
+                <Button
+                    Padding="25,3"
+                    Background="DarkGray"
+                    Command="{Binding CancelCreateConnectionDb}"
+                    Content="Отмена" />
             </StackPanel>
         </Grid>
     </GroupBox>

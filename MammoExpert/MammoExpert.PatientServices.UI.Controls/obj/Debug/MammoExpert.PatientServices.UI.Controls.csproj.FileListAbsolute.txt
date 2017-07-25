@@ -35,3 +35,23 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\Vi
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.baml
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.g.cs
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.g.cs
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.g.cs
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\App.g.cs
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.cache
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.lref
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.baml
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.baml
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.baml
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.g.resources
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.Properties.Resources.resources
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb
