@@ -9,12 +9,12 @@ namespace MammoExpert.PatientServices.Demo.Helpers
 {
     public class ActionCommand : ICommand
     {
-        private Action action;
+        private readonly Action _action;
         public event EventHandler CanExecuteChanged;
 
         public ActionCommand(Action action)
         {
-            this.action = action;
+            _action = action;
         }
 
         public bool CanExecute(object parameter)
@@ -24,7 +24,7 @@ namespace MammoExpert.PatientServices.Demo.Helpers
 
         public void Execute(object parameter)
         {
-            action();
+            _action();
         }
     }
 }

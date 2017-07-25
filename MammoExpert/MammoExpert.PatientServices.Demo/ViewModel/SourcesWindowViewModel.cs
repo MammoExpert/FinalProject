@@ -12,8 +12,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class SourcesWindowViewModel : ViewModelBase
     {
+        public SourcesWindowViewModel() { }
+
+        // здесь храним все типы источников для отображения в ComboBox
         public List<string> SourceTypes => Enum.GetNames(typeof(Source.Types)).ToList();
 
+        // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
         private object _selectedType;
         public object SelectedType
         {
@@ -28,7 +32,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        private List<Source> _sources = SourceHandler.SourceList;
+        // отображаемый список источников
+        private List<Source> _sources;
         public List<Source> Sources
         {
             get { return _sources; }
@@ -42,8 +47,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        // выбранный пользователем источник
         private object _selectedSource;
-
         public object SelectedSource
         {
             get { return _selectedSource; }
@@ -57,38 +62,31 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        public SourcesWindowViewModel() { }
-
         public ICommand SourceTypeChanging => new ActionCommand(() =>
         {
-            Sources = SelectedType != null ? SourceHandler.SourceList.Where(t => t.Type.ToString() == SelectedType.ToString()).ToList() : SourceHandler.SourceList;
+            if (SelectedType != null)
+            {
+                // создаем список источников согласно выбранному типу
+            }
         });
 
         public ICommand AddSource => new ActionCommand(() =>
         {
-            //MainWindowViewModel.AddTab("Поиск", new UcPatientSearch());
+            // добавляем в список
+
+            // и добавляем новую вкладку
         });
 
-        public ICommand EditSource
+        public ICommand EditSource => new ActionCommand(() =>
         {
-            get
-            {
-                return new ActionCommand(() =>
-                {
+            // редактируем выбранный источник
+        });
 
-                });
-            }
-        }
-
-        public ICommand DeleteSource
+        public ICommand DeleteSourcenew => new ActionCommand(() =>
         {
-            get
-            {
-                return new ActionCommand(() =>
-                {
+            // удаляем из списка
 
-                });
-            }
-        }
+            // и удаляем вкладку, если открыта
+        });
     }
 }

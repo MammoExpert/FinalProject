@@ -251,6 +251,7 @@
             <StackPanel
                 Grid.Row="18"
                 Grid.Column="1"
+                HorizontalAlignment="Right"
                 Orientation="Horizontal">
                 <Button
                     Width="100"

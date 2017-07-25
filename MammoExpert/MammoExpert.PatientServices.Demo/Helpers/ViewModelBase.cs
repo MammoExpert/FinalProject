@@ -13,12 +13,12 @@ namespace MammoExpert.PatientServices.Demo.Helpers
 
         #region INotifyPropertyChanged Members
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected void RaisePropertyChanged(string p)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
     }
