@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MammoExpert.PatientServices.Demo.Helpers
+namespace MammoExpert.PatientServices.PresenterCore
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

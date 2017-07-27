@@ -1,7 +1,7 @@
 ﻿using MammoExpert.PatientServices.Core;
 using System.Data.Entity;
 
-namespace MammoExpert.Infrastructure
+namespace MammoExpert.PatientServices.DB
 {
     public class PatientContext : DbContext
     {

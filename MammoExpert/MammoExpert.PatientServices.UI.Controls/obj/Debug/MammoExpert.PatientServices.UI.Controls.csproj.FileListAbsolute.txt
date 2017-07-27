@@ -58,3 +58,8 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\Vi
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.xml

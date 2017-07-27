@@ -5,20 +5,14 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel"
     Title="Выбор пациента"
     Width="600"
     Height="400"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
-    <Window.Resources>
-        <ResourceDictionary>
-            <vm:MainWindowViewModel x:Key="ViewModelSource" />
-        </ResourceDictionary>
-    </Window.Resources>
 
-    <Grid DataContext="{Binding Source={StaticResource ViewModelSource}}">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>

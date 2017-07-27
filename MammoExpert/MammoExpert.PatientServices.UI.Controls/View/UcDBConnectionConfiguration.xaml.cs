@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.UI.Controls.ViewModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MammoExpert.PatientServices.UI.Controls.View
 {
     /// <summary>
     /// Логика взаимодействия для UcDBConnectionConfiguration.xaml
     /// </summary>
-    public partial class UcDBConnectionConfiguration : UserControl
+    public partial class UcDBConnectionConfigurationViewmodel : UserControl
     {
-        public UcDBConnectionConfiguration()
+        public UcDBConnectionConfigurationViewmodel()
         {
             InitializeComponent();
+        }
+
+        public UcDBConnectionConfigurationViewmodel(Source source)
+        {
+            InitializeComponent();
+            DataContext = new DBConnectionConfigurationModel(source);
         }
     }
 }

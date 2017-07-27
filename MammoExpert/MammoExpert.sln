@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.UI.Controls", "MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj", "{53AC4068-69BD-44D4-AC0A-132B991C189B}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Demo", "MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo.csproj", "{872AB75A-37FA-40D3-A906-A2D6A84C9602}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{92E3F1C0-06DC-4F94-80AE-465CE3E16819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.PresenterCore", "MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj", "{C5604D0A-20EC-4E75-871C-14508A8C37E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Sources", "MammoExpert.PatientServices.Sources\MammoExpert.PatientServices.Sources.csproj", "{80DADA21-E29F-434A-ADF0-A6659B631BF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{92E3F1C0-06DC-4F94-80AE-465CE3E16819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92E3F1C0-06DC-4F94-80AE-465CE3E16819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92E3F1C0-06DC-4F94-80AE-465CE3E16819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5604D0A-20EC-4E75-871C-14508A8C37E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5604D0A-20EC-4E75-871C-14508A8C37E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5604D0A-20EC-4E75-871C-14508A8C37E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5604D0A-20EC-4E75-871C-14508A8C37E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80DADA21-E29F-434A-ADF0-A6659B631BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80DADA21-E29F-434A-ADF0-A6659B631BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80DADA21-E29F-434A-ADF0-A6659B631BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80DADA21-E29F-434A-ADF0-A6659B631BF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,9 @@
-﻿using MammoExpert.PatientServices.Demo.Helpers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
 using MammoExpert.PatientServices.Demo.View;
 using System.Windows.Controls;
+using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.View;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel

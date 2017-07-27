@@ -1,25 +1,30 @@
-﻿using MammoExpert.PatientServices.Demo.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using MammoExpert.PatientServices.Demo.Sources;
+using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Demo.View;
+using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.View;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class SourcesWindowViewModel : ViewModelBase
     {
-        public SourcesWindowViewModel() { }
+        private readonly SourceRepository _sourceRepository = new SourceRepository();
+
+        public SourcesWindowViewModel()
+        {
+            Sources = _sourceRepository.GetSourcesByType(SelectedType);
+        }
 
         // здесь храним все типы источников для отображения в ComboBox
-        public List<string> SourceTypes => Enum.GetNames(typeof(Source.Types)).ToList();
+        public List<string> SourceTypes => Enum.GetNames(typeof(SourceType)).ToList();
 
         // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        private Source.Types _selectedType;
-        public Source.Types SelectedType
+        private SourceType _selectedType;
+        public SourceType SelectedType
         {
             get { return _selectedType; }
             set
@@ -48,8 +53,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // выбранный пользователем источник
-        private object _selectedSource;
-        public object SelectedSource
+        private Source _selectedSource;
+        public Source SelectedSource
         {
             get { return _selectedSource; }
             set
@@ -64,7 +69,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand SourceTypeChanging => new ActionCommand(() =>
         {
-                // создаем список источников согласно выбранному типу
+            Sources = _sourceRepository.GetSourcesByType(SelectedType);
         });
 
         public ICommand AddSource => new ActionCommand(() =>
@@ -75,7 +80,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand EditSource => new ActionCommand(() =>
         {
-            // редактируем выбранный источник
+            var win = new ConfigurationWindow(SelectedSource);
+            win.Show();
         });
 
         public ICommand DeleteSourcenew => new ActionCommand(() =>

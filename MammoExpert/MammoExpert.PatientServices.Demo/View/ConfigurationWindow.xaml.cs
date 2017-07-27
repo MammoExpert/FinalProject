@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using MammoExpert.PatientServices.Demo.Sources;
+using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Demo.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.View
@@ -9,10 +9,17 @@ namespace MammoExpert.PatientServices.Demo.View
     /// </summary>
     public partial class ConfigurationWindow : Window
     {
-        public ConfigurationWindow(Source.Types type)
+        public ConfigurationWindow(SourceType type)
         {
             InitializeComponent();
             var vm = new ConfigurationWindowViewModel(type);
+            DataContext = vm;
+            grid.Children.Add(vm.Content);
+        }
+        public ConfigurationWindow(Source source)
+        {
+            InitializeComponent();
+            var vm = new ConfigurationWindowViewModel(source);
             DataContext = vm;
             grid.Children.Add(vm.Content);
         }

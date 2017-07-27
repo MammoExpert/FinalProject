@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MammoExpert.PatientServices.Core
 {
-    public enum Sex { Male, Female };
     public class Patient
     {
         //Фамилия

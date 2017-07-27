@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using MammoExpert.PatientServices.Demo.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.View
 {
@@ -10,6 +11,7 @@ namespace MammoExpert.PatientServices.Demo.View
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

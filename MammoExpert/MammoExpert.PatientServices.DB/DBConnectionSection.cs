@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Infrastructure
+namespace MammoExpert.PatientServices.DB
 {
     public class DBConnectionSection : ConfigurationSection
     {

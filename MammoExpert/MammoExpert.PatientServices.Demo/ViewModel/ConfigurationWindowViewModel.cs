@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using MammoExpert.PatientServices.Demo.Sources;
+using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.View;
-using MammoExpert.PatientServices.Demo.Helpers;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -25,13 +25,27 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 }
             }
         }
-        public ConfigurationWindowViewModel(Source.Types type)
+        public ConfigurationWindowViewModel(SourceType type)
         {
             switch (type)
             {
-                case Source.Types.DataBase: _content = new UcDBConnectionConfiguration();
+                case SourceType.DataBase: _content = new UcDBConnectionConfigurationViewmodel();
                     break;
-                case Source.Types.WorkList: _content = new UcWorklistConnectionConfiguration();
+                case SourceType.WorkList: _content = new UcWorklistConnectionConfiguration();
+                    break;
+                default:
+                    break;
+            }
+        }
+        public ConfigurationWindowViewModel(Source source)
+        {
+            switch (source.Type)
+            {
+                case SourceType.DataBase:
+                    _content = new UcDBConnectionConfigurationViewmodel(source);
+                    break;
+                case SourceType.WorkList:
+                    _content = new UcWorklistConnectionConfiguration(source);
                     break;
                 default:
                     break;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MammoExpert.PatientServices.Demo.Helpers
+namespace MammoExpert.PatientServices.PresenterCore
 {
     public class ActionCommand : ICommand
     {

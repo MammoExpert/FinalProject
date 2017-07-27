@@ -27,7 +27,6 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\Abou
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.lref
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.exe
@@ -120,3 +119,9 @@ D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.De
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml

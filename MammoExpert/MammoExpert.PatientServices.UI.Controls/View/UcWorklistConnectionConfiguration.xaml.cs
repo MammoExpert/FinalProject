@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MammoExpert.PatientServices.Sources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.UI.Controls.View
 {
@@ -23,6 +25,13 @@ namespace MammoExpert.PatientServices.UI.Controls.View
         public UcWorklistConnectionConfiguration()
         {
             InitializeComponent();
+            DataContext = new WorklistConnectionConfigurationModel();
+        }
+
+        public UcWorklistConnectionConfiguration(Source source)
+        {
+            InitializeComponent();
+            DataContext = new WorklistConnectionConfigurationModel(source);
         }
     }
 }
