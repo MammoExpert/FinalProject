@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("Infrastructure")]
+[assembly: AssemblyTitle("MammoExpert.PatientServices.Infrastructure")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Infrastructure")]
+[assembly: AssemblyProduct("MammoExpert.PatientServices.Infrastructure")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("92e3f1c0-06dc-4f94-80ae-465ce3e16819")]
+[assembly: Guid("54467928-cbed-49b0-a45f-6ad96d67b156")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

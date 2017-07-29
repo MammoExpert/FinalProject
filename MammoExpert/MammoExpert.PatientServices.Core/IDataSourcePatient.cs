@@ -1,7 +1,6 @@
-﻿using MammoExpert.PatientServices.Core;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Infrastructure
+namespace MammoExpert.PatientServices.Core
 {
     public interface IDataSourcePatient
     {

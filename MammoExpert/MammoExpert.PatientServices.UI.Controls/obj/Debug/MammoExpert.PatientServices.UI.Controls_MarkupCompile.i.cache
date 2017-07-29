@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\
 MammoExpert.PatientServices.UI.Controls
 none
 false
 DEBUG;TRACE
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\App.xaml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\App.xaml
 4-1123463978
 
-161325320812
-141879806852
+16885074541
+17128599735
 View\UcDBConnectionConfiguration.xaml;View\UcManualInput.xaml;View\UcPatientSearch.xaml;View\UcWorklistConnectionConfiguration.xaml;
 
-False
+True
 

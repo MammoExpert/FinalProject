@@ -35,6 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MammoExpert.PatientServices.Core">
+      <HintPath>..\MammoExpert.PatientServices.Core\bin\Debug\MammoExpert.PatientServices.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MammoExpert.PatientServices.DB">
+      <HintPath>..\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll</HintPath>
+    </Reference>
+    <Reference Include="MammoExpert.PatientServices.PresenterCore">
+      <HintPath>..\MammoExpert.PatientServices.PresenterCore\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />

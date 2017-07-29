@@ -63,3 +63,15 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Ma
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.xml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.xml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.xml

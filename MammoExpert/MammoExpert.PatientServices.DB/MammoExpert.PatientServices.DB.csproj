@@ -54,19 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnectionSection.cs" />
-    <Compile Include="PacientRepositoryDB.cs" />
+    <Compile Include="PacientRepositoryEf.cs" />
     <Compile Include="PatientContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
-      <Project>{92e3f1c0-06dc-4f94-80ae-465ce3e16819}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

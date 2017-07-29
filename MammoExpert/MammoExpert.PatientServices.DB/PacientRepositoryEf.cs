@@ -1,16 +1,15 @@
-﻿using Infrastructure;
-using MammoExpert.PatientServices.Core;
+﻿using MammoExpert.PatientServices.Core;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 
 namespace MammoExpert.PatientServices.DB
 {
-    public class PacientRepositoryDB : IDataSourcePatient
+    public class PacientRepositoryEf : IDataSourcePatient
     {
         private PatientContext _patientContext;
         private string _connectionString;
-        public PacientRepositoryDB(string dbNameOrConnection)
+        public PacientRepositoryEf(string dbNameOrConnection)
         {
             _connectionString = dbNameOrConnection;
         }

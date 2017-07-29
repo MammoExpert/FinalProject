@@ -41,9 +41,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFrame
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\Infrastructure.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\Infrastructure.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
