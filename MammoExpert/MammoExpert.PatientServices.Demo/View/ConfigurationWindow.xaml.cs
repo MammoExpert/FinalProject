@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Demo.ViewModel;
 
@@ -14,14 +15,16 @@ namespace MammoExpert.PatientServices.Demo.View
             InitializeComponent();
             var vm = new ConfigurationWindowViewModel(type);
             DataContext = vm;
-            grid.Children.Add(vm.Content);
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(() => this.Close());
         }
         public ConfigurationWindow(Source source)
         {
             InitializeComponent();
             var vm = new ConfigurationWindowViewModel(source);
             DataContext = vm;
-            grid.Children.Add(vm.Content);
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }

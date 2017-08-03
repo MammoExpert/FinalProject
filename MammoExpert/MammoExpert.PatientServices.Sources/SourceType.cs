@@ -3,6 +3,6 @@
     public enum SourceType
     {
         DataBase,
-        WorkList
-    };
+        Worklist
+    }
 }

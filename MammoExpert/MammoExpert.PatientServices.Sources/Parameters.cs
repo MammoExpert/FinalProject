@@ -2,7 +2,6 @@
 {
     public class Parameters
     {
-        public string DisplayedName { get; set; }
         public string Header { get; set; }
         public string Ip { get; set; }
         public string Port { get; set; }
@@ -13,7 +12,6 @@
 
         public Parameters()
         {
-            DisplayedName = string.Empty;
             Header = string.Empty;
             Ip = string.Empty;
             Port = string.Empty;

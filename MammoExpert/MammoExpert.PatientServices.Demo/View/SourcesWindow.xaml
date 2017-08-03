@@ -6,7 +6,7 @@
     xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Источники данных"
+    Title="{Binding Path=DisplayName}"
     Width="500"
     Height="300"
     WindowStartupLocation="CenterScreen"
@@ -26,34 +26,39 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock
+        <Label
             Grid.Row="0"
             Grid.Column="0"
             Margin="2"
-            Text="Тип источника данных:" />
+            Content="Тип источника данных:"
+            Target="{Binding ElementName=CmbSourceType}" />
 
         <ComboBox
-            x:Name="cbSourceType"
+            x:Name="CmbSourceType"
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding SourceTypes}"
-            SelectedIndex="0"
-            SelectedItem="{Binding SelectedType}">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding SourceTypeChanging}" CommandParameter="{Binding ElementName=cbSourceType, Path=SelectedValue}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </ComboBox>
+            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
+            SelectedItem="{Binding Path=SourceType}" />
 
         <ListView
+            x:Name="LvSources"
             Grid.Row="2"
             Grid.RowSpan="3"
             Grid.Column="0"
             Margin="2"
             ItemsSource="{Binding Path=Sources}"
             SelectedItem="{Binding SelectedSource}">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ListViewItem>
+                        <ListViewItem.InputBindings>
+                            <MouseBinding Command="{Binding AddWorkspaceCommand}" MouseAction="LeftDoubleClick" />
+                        </ListViewItem.InputBindings>
+                    </ListViewItem>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
             <ListView.View>
                 <GridView>
@@ -69,7 +74,7 @@
             Grid.Column="1"
             Width="100"
             Margin="2"
-            Command="{Binding AddSource}"
+            Command="{Binding AddSourceCommand}"
             CommandParameter="{Binding SelectedSource}"
             Content="Добавить..." />
         <Button
@@ -77,14 +82,14 @@
             Grid.Column="1"
             Width="100"
             Margin="2"
-            Command="{Binding EditSource}"
+            Command="{Binding EditSourceCommand}"
             Content="Редактировать..." />
         <Button
             Grid.Row="3"
             Grid.Column="1"
             Width="100"
             Margin="2"
-            Command="{Binding DeleteSource}"
+            Command="{Binding DeleteSourceCommand}"
             Content="Удалить" />
 
     </Grid>

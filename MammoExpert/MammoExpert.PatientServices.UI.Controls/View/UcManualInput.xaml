@@ -36,131 +36,63 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock
+            <Label
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Фамилия" />
-            <TextBlock
+                Content="Фамилия"
+                Target="{Binding ElementName=TxtLastName}" />
+            <TextBox
+                x:Name="TxtLastName"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="2"
+                MaxLength="64"
+                Text="{Binding Path=LastName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Имя" />
-            <TextBlock
+                Content="Имя"
+                Target="{Binding ElementName=TxtFirstName}" />
+            <TextBox
+                x:Name="TxtFirstName"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="2"
+                MaxLength="64"
+                Text="{Binding Path=FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Отчество" />
-            <TextBlock
+                Content="Отчество"
+                Target="{Binding ElementName=TxtMiddleName}" />
+            <TextBox
+                x:Name="TxtMiddleName"
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="2"
+                MaxLength="64"
+                Text="{Binding Path=MiddleName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Пол" />
-            <TextBlock
-                Grid.Row="4"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Дата рождения" />
-            <TextBlock
-                Grid.Row="5"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Адрес" />
-            <TextBlock
-                Grid.Row="6"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Дополнительная информация" />
-            <TextBlock
-                Grid.Row="7"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Инвентарный номер" />
-            <TextBlock
-                Grid.Row="8"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Идентификатор пациента" />
-            <TextBlock
-                Grid.Row="9"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Данные направления на исследование" />
-            <TextBlock
-                Grid.Row="10"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Контингенты" />
-            <TextBlock
-                Grid.Row="11"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Группы риска" />
-            <TextBlock
-                Grid.Row="12"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Номер паспорта" />
-            <TextBlock
-                Grid.Row="13"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Место работы" />
-            <TextBlock
-                Grid.Row="14"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Профессия" />
-            <TextBlock
-                Grid.Row="15"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Номер мед. страховки" />
-            <TextBlock
-                Grid.Row="16"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Страховая компания" />
-            <TextBlock
-                Grid.Row="17"
-                Grid.Column="0"
-                Margin="10,0"
-                VerticalAlignment="Center"
-                Text="Телефон" />
-
-            <TextBox
-                Grid.Row="0"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64" />
-            <TextBox
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64" />
-            <TextBox
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64" />
+                Content="Пол"
+                Target="{Binding ElementName=PnlSex}" />
             <StackPanel
+                x:Name="PnlSex"
                 Grid.Row="3"
                 Grid.Column="1"
                 Orientation="Horizontal">
@@ -173,16 +105,45 @@
                     Content="Женский"
                     GroupName="Sex" />
             </StackPanel>
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Дата рождения"
+                Target="{Binding ElementName=DatePickerBirthday}" />
             <DatePicker
+                x:Name="DatePickerBirthday"
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="2" />
+
+            <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Адрес"
+                Target="{Binding ElementName=TxtPatientAddress}" />
             <TextBox
+                x:Name="TxtPatientAddress"
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="255" />
+                MaxLength="255"
+                Text="{Binding Path=PatientAddress, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Дополнительная информация"
+                Target="{Binding ElementName=TxtPatientComments}" />
             <TextBox
+                x:Name="TxtPatientComments"
                 Grid.Row="6"
                 Grid.Column="1"
                 Margin="2"
@@ -190,64 +151,187 @@
                 MaxLength="2000"
                 MaxLines="3"
                 MinLines="3"
+                Text="{Binding Path=PatientComments, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                 TextWrapping="Wrap"
+                Validation.ErrorTemplate="{x:Null}"
                 VerticalScrollBarVisibility="Auto" />
+
+
+            <Label
+                Grid.Row="7"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Инвентарный номер"
+                Target="{Binding ElementName=TxtAccessionNumber}" />
             <TextBox
+                x:Name="TxtAccessionNumber"
                 Grid.Row="7"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=AccessionNumber, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="8"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Идентификатор пациента"
+                Target="{Binding ElementName=TxtPatientId}" />
             <TextBox
+                x:Name="TxtPatientId"
                 Grid.Row="8"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=PatientId, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="9"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Данные направления на исследование"
+                Target="{Binding ElementName=TxtMedicalRecordLocator}" />
             <TextBox
+                x:Name="TxtMedicalRecordLocator"
                 Grid.Row="9"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=MedicalRecordLocator, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="10"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Контингенты"
+                Target="{Binding ElementName=TxtContingent}" />
             <TextBox
+                x:Name="TxtContingent"
                 Grid.Row="10"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=Contingent, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="11"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Группы риска"
+                Target="{Binding ElementName=TxtPatientCategory}" />
             <TextBox
+                x:Name="TxtPatientCategory"
                 Grid.Row="11"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=PatientCategory, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="12"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Номер паспорта"
+                Target="{Binding ElementName=TxtNumberOfPassport}" />
             <TextBox
+                x:Name="TxtNumberOfPassport"
                 Grid.Row="12"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=NumberOfPassport, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="13"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Место работы"
+                Target="{Binding ElementName=TxtPatientWorkAddres}" />
             <TextBox
+                x:Name="TxtPatientWorkAddres"
                 Grid.Row="13"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="255" />
+                MaxLength="255"
+                Text="{Binding Path=PatientWorkAddres, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="14"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Профессия"
+                Target="{Binding ElementName=TxtJob}" />
             <TextBox
+                x:Name="TxtJob"
                 Grid.Row="14"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=Job, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="15"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Номер мед. страховки"
+                Target="{Binding ElementName=TxtNumberPolicy}" />
             <TextBox
+                x:Name="TxtNumberPolicy"
                 Grid.Row="15"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
+                MaxLength="64"
+                Text="{Binding Path=NumberPolicy, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="16"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Страховая компания"
+                Target="{Binding ElementName=TxtInsuranceCompany}" />
             <TextBox
+                x:Name="TxtInsuranceCompany"
                 Grid.Row="16"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="255" />
+                MaxLength="255"
+                Text="{Binding Path=InsuranceCompany, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
+
+            <Label
+                Grid.Row="17"
+                Grid.Column="0"
+                Margin="10,0"
+                VerticalAlignment="Center"
+                Content="Телефон"
+                Target="{Binding ElementName=TxtTelephone}" />
             <TextBox
+                x:Name="TxtTelephone"
                 Grid.Row="17"
                 Grid.Column="1"
                 Margin="2"
-                MaxLength="64" />
-
+                MaxLength="64"
+                Text="{Binding Path=Telephone, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Validation.ErrorTemplate="{x:Null}" />
 
             <StackPanel
                 Grid.Row="19"

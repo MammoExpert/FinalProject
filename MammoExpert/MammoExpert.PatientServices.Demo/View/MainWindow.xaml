@@ -5,12 +5,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Выбор пациента"
+    Title="{Binding Path=DisplayName}"
     Width="600"
     Height="400"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary Source="../Templates.xaml" />
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -22,14 +25,16 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Grid.Column="0">
-            <MenuItem Command="{Binding OpenSourcesWindow}" Header="Источник данных" />
-            <MenuItem Command="{Binding OpenAboutProgrammWindow}" Header="О программе" />
+            <MenuItem Command="{Binding OpenSourcesWindowCommand}" Header="Источник данных" />
+            <MenuItem Command="{Binding OpenAboutProgrammWindowCommand}" Header="О программе" />
         </Menu>
 
-        <TabControl
+        <ContentControl
             Grid.Row="1"
             Grid.Column="0"
-            ItemsSource="{Binding Path=Tabs, Mode=TwoWay}" />
+            Content="{Binding Path=Workspaces}"
+            ContentTemplate="{StaticResource WorkspacesTemplate}"
+            Style="{StaticResource WorkspaceStyle}" />
 
     </Grid>
 </Window>

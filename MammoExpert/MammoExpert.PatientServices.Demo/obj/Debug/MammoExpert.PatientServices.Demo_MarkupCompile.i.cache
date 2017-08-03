@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\
 MammoExpert.PatientServices.Demo
 none
 false
 DEBUG;TRACE
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\App.xaml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\App.xaml
 4-592920037
 
-162012536228
-19-774257799
+16-1842184797
+191842065028
 View\AboutProgrammWindow.xaml;View\ConfigurationWindow.xaml;View\MainWindow.xaml;View\SourcesWindow.xaml;
 
 True

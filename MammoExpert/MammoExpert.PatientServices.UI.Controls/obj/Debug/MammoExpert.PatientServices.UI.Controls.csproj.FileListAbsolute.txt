@@ -75,3 +75,11 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\En
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.xml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.xml

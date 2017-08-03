@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using MammoExpert.PatientServices.Demo.ViewModel;
+using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo.View
 {
@@ -20,10 +10,13 @@ namespace MammoExpert.PatientServices.Demo.View
     /// </summary>
     public partial class SourcesWindow : Window
     {
-        public SourcesWindow()
+        public SourcesWindow(SourceRepository rep)
         {
             InitializeComponent();
-            DataContext = new SourcesWindowViewModel();
+            var vm = new SourcesWindowViewModel(rep);
+            DataContext = vm;
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }

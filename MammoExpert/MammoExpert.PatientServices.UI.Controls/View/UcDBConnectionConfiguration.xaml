@@ -9,8 +9,9 @@
     <GroupBox
         Margin="5"
         Padding="5"
-        Header="База данных">
-        <Grid>
+        Header="{Binding Path=DisplayName}">
+        <Grid
+            DataContext="{Binding Path=Source}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
@@ -36,7 +37,8 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Background="DarkGray"
-                ItemsSource="{Binding ListProviders}" />
+                ItemsSource="{Binding Path=ListProviders, Mode=OneTime}" 
+                SelectedItem="{Binding Path=Parameters.Driver, UpdateSourceTrigger=PropertyChanged}"/>
             <Label
                 Grid.Row="2"
                 Grid.Column="0"
@@ -44,7 +46,8 @@
             <TextBox
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="2" />
+                Margin="2" 
+                Text="{Binding Path=Parameters.Ip, UpdateSourceTrigger=PropertyChanged}"/>
             <Label
                 Grid.Row="3"
                 Grid.Column="0"
@@ -52,7 +55,8 @@
             <TextBox
                 Grid.Row="3"
                 Grid.Column="1"
-                Margin="2" />
+                Margin="2" 
+                Text="{Binding Path=Parameters.Port, UpdateSourceTrigger=PropertyChanged}"/>
             <Label
                 Grid.Row="4"
                 Grid.Column="0"
@@ -60,7 +64,8 @@
             <TextBox
                 Grid.Row="4"
                 Grid.Column="1"
-                Margin="2" />
+                Margin="2" 
+                Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
             <Label
                 Grid.Row="5"
                 Grid.Column="0"
@@ -68,7 +73,8 @@
             <TextBox
                 Grid.Row="5"
                 Grid.Column="1"
-                Margin="2" />
+                Margin="2" 
+                Text="{Binding Path=Parameters.UserName, UpdateSourceTrigger=PropertyChanged}"/>
             <Label
                 Grid.Row="6"
                 Grid.Column="0"
@@ -76,7 +82,8 @@
             <TextBox
                 Grid.Row="6"
                 Grid.Column="1"
-                Margin="2" />
+                Margin="2" 
+                Text="{Binding Path=Parameters.Password, UpdateSourceTrigger=PropertyChanged}"/>
             <StackPanel
                 Grid.Row="7"
                 Grid.Column="0"
@@ -86,7 +93,7 @@
                     Margin="3"
                     Padding="15,3"
                     Background="DarkGray"
-                    Command="{Binding CheckConnectionDb}"
+                    Command="{Binding CheckConnectionDbCommand}"
                     Content="Проверить" />
             </StackPanel>
             <StackPanel
@@ -100,12 +107,12 @@
                     Margin="5,0"
                     Padding="25,3"
                     Background="DarkGray"
-                    Command="{Binding CreateConnectionDb}"
+                    Command="{Binding CreateConnectionDbCommand}"
                     Content="Создать" />
                 <Button
                     Padding="25,3"
                     Background="DarkGray"
-                    Command="{Binding CancelCreateConnectionDb}"
+                    Command="{Binding CancelCreateConnectionDbCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>
