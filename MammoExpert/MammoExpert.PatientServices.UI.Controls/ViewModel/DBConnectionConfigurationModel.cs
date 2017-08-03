@@ -12,22 +12,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
     public class DBConnectionConfigurationModel: ViewModelBase, ISearchViewModel
     {
-        private IPatientRepository _service;
-        private List<string> _listProviders;
         private Source _source;
-
-        public List<string> ListProviders
-        {
-            get { return _listProviders; }
-            set
-            {
-                if (_listProviders != value)
-                {
-                    _listProviders = new List<string>() { "SqlClient Data Provider", "Oracle Data Provider" };
-                    RaisePropertyChanged("ListProviders");
-                }
-            }
-        }
 
         public Source Source
         {
@@ -55,12 +40,6 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 
         }
 
-        public ICommand CheckConnectionDb => new ActionCommand(() =>
-        {
-            _service = new PacientRepositoryEf("Data Source=(localdb)\v11.0;AttachDbFilename=../Data/PatientServices.mdf;Integrated Security=True");
-            MessageBox.Show(string.Format("{0}", _service.CheckConnection()), "Проверка соединения",
-                MessageBoxButton.OK);
-        });
 
         public void Search()
         {

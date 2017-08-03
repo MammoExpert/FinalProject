@@ -145,3 +145,4 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Templates.baml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe.config
