@@ -1,4 +1,6 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
+using MammoExpert.PatientServices.Sources.Types;
 
 namespace MammoExpert.PatientServices.Sources
 {
@@ -25,18 +27,9 @@ namespace MammoExpert.PatientServices.Sources
             Parameters = new Parameters();
         }
 
-        public Source(string name, SourceType typeName)
-        {
-            Name = name;
-            Type = typeName;
-            Description = string.Empty;
-            Parameters = new Parameters();
-        }
-
         public Source()
         {
             Name = string.Empty;
-            Type = SourceType.DataBase;
             Description = string.Empty;
             Parameters = new Parameters();
         }

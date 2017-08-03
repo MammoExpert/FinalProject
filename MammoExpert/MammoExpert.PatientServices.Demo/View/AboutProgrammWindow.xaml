@@ -5,10 +5,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="О программе"
-    Width="360"
+    Title="{Binding Path=DisplayName}"
     Height="300"
     ResizeMode="NoResize"
+    SizeToContent="Width"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">

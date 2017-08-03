@@ -4,51 +4,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using MammoExpert.PatientServices.Sources;
+using System.Windows.Input;
+using MammoExpert.PatientServices.Demo.Properties;
+using MammoExpert.PatientServices.Sources.Types;
 using MammoExpert.PatientServices.PresenterCore;
+using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.UI.Controls.View;
+using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class ConfigurationWindowViewModel : ViewModelBase
     {
-        private UIElement _content;
-        public UIElement Content
+        private ISearchViewModel _currentSearchViewModel;
+
+        public ISearchViewModel CurrentSearchViewModel
         {
-            get { return _content; }
+            get { return _currentSearchViewModel; }
             set
             {
-                if (_content != value)
-                {
-                    _content = value;
-                    RaisePropertyChanged("Content");
-                }
+                _currentSearchViewModel = value;
+                RaisePropertyChanged("CurrentSearchViewModel");
             }
         }
+
+        // конструктор при загрузке окна для создания нового источника
         public ConfigurationWindowViewModel(SourceType type)
+        {
+            base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
+            SetCurrentSearchViewModel(type);
+        }
+
+        // конструктор при загрузке окна для редактирования выбранного источника
+        public ConfigurationWindowViewModel(Source source)
+        {
+            base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
+            SetCurrentSearchViewModel(source);
+        }
+
+        private void SetCurrentSearchViewModel(SourceType type)
         {
             switch (type)
             {
-                case SourceType.DataBase: _content = new UcDBConnectionConfigurationViewmodel();
+                case SourceType.DataBase:
+                    _currentSearchViewModel = new DBConnectionConfigurationModel();
                     break;
-                case SourceType.WorkList: _content = new UcWorklistConnectionConfiguration();
+                case SourceType.Worklist:
+                    _currentSearchViewModel = new WorklistConnectionConfigurationModel();
                     break;
-                default:
-                    break;
+                default: throw new ArgumentNullException("type");
             }
         }
-        public ConfigurationWindowViewModel(Source source)
+
+        private void SetCurrentSearchViewModel(Source source)
         {
             switch (source.Type)
             {
                 case SourceType.DataBase:
-                    _content = new UcDBConnectionConfigurationViewmodel(source);
+                    _currentSearchViewModel = new DBConnectionConfigurationModel(source);
                     break;
-                case SourceType.WorkList:
-                    _content = new UcWorklistConnectionConfiguration(source);
+                case SourceType.Worklist:
+                    _currentSearchViewModel = new WorklistConnectionConfigurationModel(source);
                     break;
-                default:
-                    break;
+                default: throw new ArgumentNullException("source");
             }
         }
     }

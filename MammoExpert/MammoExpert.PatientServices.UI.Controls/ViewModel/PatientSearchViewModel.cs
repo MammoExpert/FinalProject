@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MammoExpert.PatientServices.PresenterCore;
+using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
-    public class PatientSearchViewModel
+    public class PatientSearchViewModel : WorkspaceViewModel
     {
-        public PatientSearchViewModel() { }
+        public PatientSearchViewModel(Source source)
+        {
+            //base.DisplayName = source.Name;
+        }
     }
 }

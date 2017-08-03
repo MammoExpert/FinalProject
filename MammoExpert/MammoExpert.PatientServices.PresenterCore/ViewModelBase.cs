@@ -9,7 +9,8 @@ namespace MammoExpert.PatientServices.PresenterCore
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        public string DisplayName { get; set; }
+        public virtual string DisplayName { get; protected set; }
+        public Action CloseAction { get; set; }
 
         #region INotifyPropertyChanged Members
 
@@ -17,9 +18,14 @@ namespace MammoExpert.PatientServices.PresenterCore
 
         protected void RaisePropertyChanged(string p)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(p));
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                var e = new PropertyChangedEventArgs(p);
+                handler(this, e);
+            }
         }
 
-        #endregion
+        #endregion // INotifyPropertyChanged Members
     }
 }

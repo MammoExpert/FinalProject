@@ -1,59 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.View;
+using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
-    public class SourcesWindowViewModel : ViewModelBase
+    public class SourcesWindowViewModel : MainWindowViewModel
     {
-        private readonly SourceRepository _sourceRepository = new SourceRepository();
+        private readonly SourceRepository _sourceRepository;
+        private string _sourceType;
+        private string[] _sourceTypeOptions;
+        private Source _selectedSource;
 
-        public SourcesWindowViewModel()
+        public SourcesWindowViewModel(SourceRepository sourceRepository)
         {
-            Sources = _sourceRepository.GetSourcesByType(SelectedType);
+            if (sourceRepository == null)
+                throw new ArgumentNullException("sourceRepository");
+
+            base.DisplayName = Resources.SourcesWindowViewModel_DisplayName;
+
+            _sourceRepository = sourceRepository;
+            _sourceType = Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified;
+
+            LoadAllSources();
         }
 
-        // здесь храним все типы источников для отображения в ComboBox
-        public List<string> SourceTypes => Enum.GetNames(typeof(SourceType)).ToList();
+        // список отображаемых источников
+        public List<Source> Sources { get; private set; }
 
         // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        private SourceType _selectedType;
-        public SourceType SelectedType
+        public string SourceType
         {
-            get { return _selectedType; }
+            get { return _sourceType; }
             set
             {
-                if (_selectedType != value)
-                {
-                    _selectedType = value;
-                    RaisePropertyChanged("SelectedType");
-                }
+                if (value == _sourceType || string.IsNullOrEmpty(value))
+                    return;
+
+                _sourceType = value;
+
+                ChangeSourceListByType();
+
+                base.RaisePropertyChanged("SourceType");
             }
         }
 
-        // отображаемый список источников
-        private List<Source> _sources;
-        public List<Source> Sources
+        // здесь храним все типы источников для отображения в ComboBox
+        public string[] SourceTypeOptions
         {
-            get { return _sources; }
-            set
+            get
             {
-                if (_sources != value)
+                if (_sourceTypeOptions == null)
                 {
-                    _sources = value;
-                    RaisePropertyChanged("Sources");
+                    _sourceTypeOptions = new string[]
+                    {
+                        Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified,
+                        Resources.SourcesWindowViewModel_SourceTypeOption_DataBase,
+                        Resources.SourcesWindowViewModel_SourceTypeOption_Worklist
+                    };
                 }
+                return _sourceTypeOptions;
             }
         }
 
         // выбранный пользователем источник
-        private Source _selectedSource;
         public Source SelectedSource
         {
             get { return _selectedSource; }
@@ -66,29 +86,58 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 }
             }
         }
-
-        public ICommand SourceTypeChanging => new ActionCommand(() =>
+        
+        public ICommand AddWorkspaceCommand => new ActionCommand(() =>
         {
-            Sources = _sourceRepository.GetSourcesByType(SelectedType);
+            base.AddWorkspace(new PatientSearchViewModel(SelectedSource));
+            CloseAction();
         });
 
-        public ICommand AddSource => new ActionCommand(() =>
+        public ICommand AddSourceCommand => new ActionCommand(() =>
         {
-            var win = new ConfigurationWindow(SelectedType);
-            win.Show();
+            if (_sourceType != string.Empty)
+            {
+                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
+                    new ConfigurationWindow(PatientServices.Sources.SourceType.DataBase).Show();
+                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
+                    new ConfigurationWindow(PatientServices.Sources.SourceType.Worklist).Show();
+            }
         });
 
-        public ICommand EditSource => new ActionCommand(() =>
+        public ICommand EditSourceCommand => new ActionCommand(() =>
         {
             var win = new ConfigurationWindow(SelectedSource);
             win.Show();
         });
 
-        public ICommand DeleteSourcenew => new ActionCommand(() =>
+        public ICommand DeleteSourcenewCommand => new ActionCommand(() =>
         {
-            // удаляем из списка
+            if (_selectedSource != null)
+            {
 
-            // и удаляем вкладку, если открыта
+            }
         });
+
+        // метод, загружающий источники всех типов
+        private void LoadAllSources()
+        {
+            var all = _sourceRepository.GetAllSources();
+            Sources = new List<Source>(all);
+            base.RaisePropertyChanged("Sources");
+        }
+
+        // метод, обновляющий список источников согласно выбранному типу источника
+        private void ChangeSourceListByType()
+        {
+            if (_sourceType != string.Empty)
+            {
+                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
+                    Sources = _sourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.DataBase);
+                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
+                    Sources = _sourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.Worklist);
+
+                base.RaisePropertyChanged("Sources");
+            }
+        }
     }
 }

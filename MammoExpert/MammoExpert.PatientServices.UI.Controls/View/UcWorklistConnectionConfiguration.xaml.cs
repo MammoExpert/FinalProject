@@ -25,7 +25,6 @@ namespace MammoExpert.PatientServices.UI.Controls.View
         public UcWorklistConnectionConfiguration()
         {
             InitializeComponent();
-            DataContext = new WorklistConnectionConfigurationModel();
         }
 
         public UcWorklistConnectionConfiguration(Source source)
