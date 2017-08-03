@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnectionSection.cs" />
     <Compile Include="PacientRepositoryEf.cs" />
     <Compile Include="PatientContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

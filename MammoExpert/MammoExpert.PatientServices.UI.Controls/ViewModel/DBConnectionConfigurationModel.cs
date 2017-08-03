@@ -10,7 +10,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
     public class DBConnectionConfigurationModel: ViewModelBase
     {
-        private IDataSourcePatient _service;
+        private IPatientRepository _service;
         private List<string> _listProviders;
         public List<string> ListProviders
         {

@@ -5,41 +5,77 @@ namespace MammoExpert.PatientServices.Core
 {
     public class Patient
     {
-        //Фамилия
+        /// <summary>
+        /// Получает или задает значение фамилии пациента
+        /// </summary>
         public string LastName { get; set; }
-        //Имя
+        /// <summary>
+        /// Получает или задает значение имени пациента
+        /// </summary>
         public string FirstName { get; set; }
-        //Отчество
+        /// <summary>
+        /// Получает или задает значение отчества пациента
+        /// </summary>
         public string MiddleName { get; set; }
-        //Пол
+        /// <summary>
+        /// Получает или задает значение пола пациента
+        /// </summary>
         public Enum Sex { get; set; }
-        //Дата рождения
+        /// <summary>
+        /// Получает или задает значение даты рождения пациента
+        /// </summary>
         public DateTime BirthDate { get; set; }
-        //Адрес
+        /// <summary>
+        /// Получает или задает значение адреса проживания пациента
+        /// </summary>
         public string PatientAddress { get; set; }
-        //Дополнительная информация
+        /// <summary>
+        /// Получает или задает значение дополнительной информации о пациенте
+        /// </summary>
         public string PatientComments { get; set; }
-        //Инвертарный номер
+        /// <summary>
+        /// Получает или задает значение инвертарного номера
+        /// </summary>
         public string AccessionNumber { get; set; }
-        //Идентификатор пациента
+        /// <summary>
+        /// Получает или задает значение идентификатора пациента
+        /// </summary>
         public string PatientId { get; set; }
-        //Данные направления на исследование
+        /// <summary>
+        /// Получает или задает значение данных направления на исследование
+        /// </summary>
         public string MedicalRecordLocator { get; set; }
-        //Контингенты
+        /// <summary>
+        /// Получает или задает значение контингентам
+        /// </summary>
         public string Contingent { get; set; }
-        //Группа риска
+        /// <summary>
+        /// Получает или задает значение группе риска пациента
+        /// </summary>
         public string PatientCategory { get; set; }
-        //Номер паспорта
+        /// <summary>
+        /// Получает или задает значение номеру паспорта пациента
+        /// </summary>
         public string NumberOfPassport { get; set; }
-        //Место работы
+        /// <summary>
+        /// Получает или задает значение месту работы пациента
+        /// </summary>
         public string PatientWorkAddres { get; set; }
-        //Профессия
+        /// <summary>
+        /// Получает или задает значение профессии пациента
+        /// </summary>
         public string Job { get; set; }
-        //Номер мед. страховки
+        /// <summary>
+        /// Получает или задает значение номеру медицинской страховки пациента
+        /// </summary>
         public string NumberPolicy { get; set; }
-        //Страховая компания
+        /// <summary>
+        /// Получает или задает значение страховой компании пациента
+        /// </summary>
         public string InsuranceCompany { get; set; }
-        //Телефон
+        /// <summary>
+        /// Получает или задает значение номеру телефона пациента
+        /// </summary>
         public string Telephone { get; set; }
     }
 }
