@@ -38,8 +38,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
-            SelectedItem="{Binding Path=Type}" />
+            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}" />
 
         <ListView
             x:Name="LvSources"
@@ -68,6 +67,7 @@
             Width="100"
             Margin="2"
             Command="{Binding AddSourceCommand}"
+            CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}"
             Content="Добавить..." />
         <Button
             Grid.Row="2"
@@ -85,6 +85,16 @@
             Command="{Binding DeleteSourceCommand}"
             CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Удалить" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Width="100"
+            Height="25"
+            Margin="2"
+            Command="{Binding AddWorkspaceCommand}"
+            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
+            Content="Вместо DoubleClick"
+            FontSize="10" />
     </Grid>
 </Window>
 

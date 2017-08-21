@@ -25,7 +25,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             base.DisplayName = Resources.MainWindowViewModel_DisplayName;
 
             // Добавляем рабочую область для ручного ввода пациета (по умолчанию)
-            AddWorkspace(new ManualInputViewModel());
+            CreateWorkspace(new ManualInputViewModel());
         }
 
         // коллекция рабочих областей
@@ -35,7 +35,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 if (_workspaces == null)
                 {
-                    _workspaces = new ObservableCollection<ViewModelBase>();
+                    _workspaces = Workspace.Instance;
                     _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
                 return _workspaces;
@@ -63,10 +63,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         });
 
         // метод, добавляющий новую рабочую область
-        public void AddWorkspace(ViewModelBase vm)
+        public void CreateWorkspace(ViewModelBase vm)
         {
             Workspaces.Add(vm);
-            base.RaisePropertyChanged("Workspaces");
             SetActiveWorkspace(vm);
         }
 

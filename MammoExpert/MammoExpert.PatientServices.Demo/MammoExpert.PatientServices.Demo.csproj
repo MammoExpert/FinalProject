@@ -80,7 +80,6 @@
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\SourcesWindowViewModel.cs" />
-    <Compile Include="ViewModel\WorkplaceViewModel.cs" />
     <Compile Include="View\AboutProgrammWindow.xaml.cs">
       <DependentUpon>AboutProgrammWindow.xaml</DependentUpon>
     </Compile>

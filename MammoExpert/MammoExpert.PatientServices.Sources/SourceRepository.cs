@@ -26,7 +26,7 @@ namespace MammoExpert.PatientServices.Sources
         // метод, возвращающий полный список источников
         public List<Source> GetAllSources()
         {
-            return _fileManager.JsonToList();
+            return _fileManager.GetAllSources();
         }
 
         // метод для добавления нового источника в список

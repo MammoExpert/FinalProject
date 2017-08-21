@@ -70,35 +70,46 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        public ICommand AddWorkspaceCommand => new ActionCommand<Source>( s =>
-        {
-            Workspaces.Add(new PatientSearchViewModel(s));
-            CloseAction();
-        });
+        public ICommand AddWorkspaceCommand => new ActionCommand<Source>(AddWorkspace);
 
-        public ICommand AddSourceCommand => new ActionCommand(() =>
+        public ICommand AddSourceCommand => new ActionCommand<string>(OpenConfigurationWindow);
+
+        public ICommand EditSourceCommand => new ActionCommand<Source>(EditSource);
+
+        public ICommand DeleteSourceCommand => new ActionCommand<Source>(DeleteSource);
+
+        public void AddWorkspace(Source source)
         {
-            if (_type != string.Empty)
+            if (source != null)
             {
-                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
+                CreateWorkspace(new PatientSearchViewModel(source));
+                CloseAction();
+            }
+        }
+
+        public void EditSource(Source source)
+        {
+            if (source != null) WindowFacrtory.CreateConfigurationWindow(source);
+        }
+
+        public void DeleteSource(Source source)
+        {
+            if (source != null)
+            {
+                SourceRepository.DeleteSource(source);
+            }
+        }
+
+        public void OpenConfigurationWindow(string type)
+        {
+            if (type != string.Empty)
+            {
+                if (type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
                     WindowFacrtory.CreateConfigurationWindow(SourceType.DataBase);
-                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
+                if (type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
                     WindowFacrtory.CreateConfigurationWindow(SourceType.Worklist);
             }
-        });
-
-        public ICommand EditSourceCommand => new ActionCommand<Source>(s =>
-        {
-            if (s != null) WindowFacrtory.CreateConfigurationWindow(s);
-        });
-
-        public ICommand DeleteSourceCommand => new ActionCommand<Source>(s =>
-        {
-            if (s != null)
-            {
-
-            }
-        });
+        }
 
         // метод, загружающий источники всех типов
         private void LoadAllSources()

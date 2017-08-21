@@ -32,22 +32,23 @@ namespace MammoExpert.PatientServices.Sources
             return null;
         }
 
-        public List<Source> JsonToList()
+        public List<Source> GetAllSources()
         {
             return JsonConvert.DeserializeObject<List<Source>>(_json);    
         }
 
         public void AddSource(Source newSource)
         {
-            var list = JsonToList();
+            var list = GetAllSources();
             list.Add(newSource);
             _json = JsonConvert.SerializeObject(list);
         }
 
         public void DeleteSource(Source source)
         {
-            var obj = JsonConvert.SerializeObject(source);
-            _json = _json.Replace(obj, "");
+            var list = GetAllSources();
+            list.Remove(source);
+            _json = JsonConvert.SerializeObject(list);
         }
     }
 }
