@@ -23,7 +23,6 @@ namespace MammoExpert.PatientServices.Demo.View
         public AboutProgrammWindow()
         {
             InitializeComponent();
-            DataContext = new AboutProgrammWindowViewModel();
         }
     }
 }

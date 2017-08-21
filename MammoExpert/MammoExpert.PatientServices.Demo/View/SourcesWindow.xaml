@@ -3,9 +3,9 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-    xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
+    xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="clr-namespace:System.Windows.Behaviors;assembly=Wave.Extensions.Esri"
     Title="{Binding Path=DisplayName}"
     Width="500"
     Height="300"
@@ -39,7 +39,7 @@
             Grid.Column="0"
             Margin="2"
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
-            SelectedItem="{Binding Path=SourceType}" />
+            SelectedItem="{Binding Path=Type}" />
 
         <ListView
             x:Name="LvSources"
@@ -49,17 +49,11 @@
             Margin="2"
             ItemsSource="{Binding Path=Sources}"
             SelectedItem="{Binding SelectedSource}">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ListViewItem>
-                        <ListViewItem.InputBindings>
-                            <MouseBinding Command="{Binding AddWorkspaceCommand}" MouseAction="LeftDoubleClick" />
-                        </ListViewItem.InputBindings>
-                    </ListViewItem>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
+            <!--<ListViewItem>
+                <behaviors:CommandBehaviorCollection.Behaviors>
+                    <behaviors:BehaviorBinding Event="MouseDoubleClick" Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"/>
+                </behaviors:CommandBehaviorCollection.Behaviors>
+            </ListViewItem>-->
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="#" />
@@ -91,6 +85,6 @@
             Margin="2"
             Command="{Binding DeleteSourceCommand}"
             Content="Удалить" />
-
     </Grid>
 </Window>
+

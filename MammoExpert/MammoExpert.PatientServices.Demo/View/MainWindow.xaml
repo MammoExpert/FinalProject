@@ -33,8 +33,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Content="{Binding Path=Workspaces}"
-            ContentTemplate="{StaticResource WorkspacesTemplate}"
-            Style="{StaticResource WorkspaceStyle}" />
+            ContentTemplate="{StaticResource WorkspacesTemplate}" />
 
     </Grid>
 </Window>

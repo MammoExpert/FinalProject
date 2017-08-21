@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace MammoExpert.PatientServices.Sources
 {
@@ -18,8 +19,19 @@ namespace MammoExpert.PatientServices.Sources
 
         private string LoadJson(string path)
         {
-            return File.ReadAllText(path);
+            try
+            {
+                return File.ReadAllText(path);
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Файл '" + path + "' не найден", "Ошибка при загрузке файла",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(0);
+            }
+            return null;
         }
+
         public List<Source> JsonToList()
         {
             return JsonConvert.DeserializeObject<List<Source>>(_json);    

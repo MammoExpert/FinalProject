@@ -18,12 +18,6 @@ namespace MammoExpert.PatientServices.PresenterCore
             _action = action;
         }
 
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
-
         public ActionCommand(Action action, Predicate<object> canExecute)
         {
             if (action == null)
@@ -31,6 +25,12 @@ namespace MammoExpert.PatientServices.PresenterCore
 
             _action = action;
             _canExecute = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         [DebuggerStepThrough]

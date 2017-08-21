@@ -13,7 +13,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     {
         public AboutProgrammWindowViewModel()
         {
-            DisplayName = Resources.AboutProgrammWindowViewModel_DisplayName;
+            base.DisplayName = Resources.AboutProgrammWindowViewModel_DisplayName;
         }
 
         // версия программы
@@ -23,7 +23,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public string ApplicationName => Assembly.GetExecutingAssembly().GetName().Name;
 
         // список загруженных библиотек реализующих интерфейс источника данных пациента
-        public List<string> Moduls => new List<string>() {"Фейковый модуль 1", "Фейковый модуль 2"};
+        public List<string> Moduls => new List<string>() { "Фейковый модуль 1", "Фейковый модуль 2" };
 
     }
 }

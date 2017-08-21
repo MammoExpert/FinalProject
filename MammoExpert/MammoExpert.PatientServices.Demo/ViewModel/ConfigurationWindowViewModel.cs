@@ -42,6 +42,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             SetCurrentSearchViewModel(source);
         }
 
+        // метод устанавливает значение для текущего ViewModel в зависимости от переданного типа источника
         private void SetCurrentSearchViewModel(SourceType type)
         {
             switch (type)
@@ -56,6 +57,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        // метод устанавливает значение для текущего ViewModel в зависимости от переданного источника
         private void SetCurrentSearchViewModel(Source source)
         {
             switch (source.Type)

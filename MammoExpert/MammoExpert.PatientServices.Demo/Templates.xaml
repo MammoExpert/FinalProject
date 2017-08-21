@@ -14,8 +14,8 @@
         <view:UcPatientSearch />
     </DataTemplate>
 
-    <Style x:Key="WorkspaceStyle" TargetType="{x:Type ContentControl}">
-        <Setter Property="IsTabStop" Value="False" />
+    <!--<Style x:Key="WorkspaceStyle" TargetType="{x:Type ContentControl}">
+       <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContentControl}">
@@ -23,7 +23,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
     <DataTemplate x:Key="ClosableTabItemTemplate">
         <DockPanel Width="120">

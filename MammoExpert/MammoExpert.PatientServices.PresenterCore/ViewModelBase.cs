@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
@@ -27,5 +28,29 @@ namespace MammoExpert.PatientServices.PresenterCore
         }
 
         #endregion // INotifyPropertyChanged Members
+
+        #region CloseCommand
+
+        private ActionCommand _closeCommand;
+        public event EventHandler RequestClose;
+        
+        // команда, которая убирает рабочую область из UI
+        public ICommand CloseCommand
+        {
+            get
+            {
+                if (_closeCommand == null)
+                    _closeCommand = new ActionCommand(() =>
+                    {
+                        var handler = this.RequestClose;
+                        if (handler != null)
+                            handler(this, EventArgs.Empty);
+                    });
+
+                return _closeCommand;
+            }
+        }
+
+        #endregion
     }
 }

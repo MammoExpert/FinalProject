@@ -19,30 +19,7 @@ namespace MammoExpert.PatientServices.Demo
         {
             base.OnStartup(e);
 
-            MainWindow window = new MainWindow();
-
-            // Create the ViewModel to which 
-            // the main window binds.
-            string path = "all_sources.json";
-            var viewModel = new MainWindowViewModel(path);
-
-            // When the ViewModel asks to be closed, 
-            // close the window.
-            EventHandler handler = null;
-            handler = delegate
-            {
-                viewModel.RequestClose -= handler;
-                window.Close();
-            };
-            viewModel.RequestClose += handler;
-
-            // Allow all controls in the window to 
-            // bind to the ViewModel by setting the 
-            // DataContext, which propagates down 
-            // the element tree.
-            window.DataContext = viewModel;
-
-            window.Show();
+            WindowFacrtory.CreateMainWindow("all_sources.json");
         }
     }
 }

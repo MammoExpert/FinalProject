@@ -1,57 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Linq;
-using System.Windows;
+﻿using System.Collections.Generic;
 using System.Windows.Input;
 using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.PresenterCore;
-using MammoExpert.PatientServices.UI.Controls.View;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
+
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class SourcesWindowViewModel : MainWindowViewModel
     {
-        private readonly SourceRepository _sourceRepository;
-        private string _sourceType;
+        private string _type;
         private string[] _sourceTypeOptions;
         private Source _selectedSource;
+        private List<Source> _sources;
 
-        public SourcesWindowViewModel(SourceRepository sourceRepository)
+        public SourcesWindowViewModel()
         {
-            if (sourceRepository == null)
-                throw new ArgumentNullException("sourceRepository");
 
             base.DisplayName = Resources.SourcesWindowViewModel_DisplayName;
-
-            _sourceRepository = sourceRepository;
-            _sourceType = Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified;
+            _type = Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified;
 
             LoadAllSources();
         }
 
         // список отображаемых источников
-        public List<Source> Sources { get; private set; }
-
-        // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        public string SourceType
+        public List<Source> Sources
         {
-            get { return _sourceType; }
+            get { return _sources; }
             set
             {
-                if (value == _sourceType || string.IsNullOrEmpty(value))
+                if (_sources == value) return;
+                _sources = value;
+                RaisePropertyChanged("Sources");
+            }
+        }
+
+        // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
+        public string Type
+        {
+            get { return _type; }
+            set
+            {
+                if (value == _type || string.IsNullOrEmpty(value))
                     return;
 
-                _sourceType = value;
+                _type = value;
 
                 ChangeSourceListByType();
 
-                base.RaisePropertyChanged("SourceType");
+                RaisePropertyChanged("Type");
             }
         }
 
@@ -62,7 +60,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 if (_sourceTypeOptions == null)
                 {
-                    _sourceTypeOptions = new string[]
+                    _sourceTypeOptions = new[]
                     {
                         Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified,
                         Resources.SourcesWindowViewModel_SourceTypeOption_DataBase,
@@ -79,40 +77,37 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             get { return _selectedSource; }
             set
             {
-                if (_selectedSource != value)
-                {
-                    _selectedSource = value;
-                    RaisePropertyChanged("SelectedSource");
-                }
+                if (_selectedSource == value) return;
+                _selectedSource = value;
+                RaisePropertyChanged("SelectedSource");
             }
         }
-        
+
         public ICommand AddWorkspaceCommand => new ActionCommand(() =>
         {
-            base.AddWorkspace(new PatientSearchViewModel(SelectedSource));
+            Workspaces.Add(new PatientSearchViewModel(SelectedSource));
             CloseAction();
         });
 
         public ICommand AddSourceCommand => new ActionCommand(() =>
         {
-            if (_sourceType != string.Empty)
+            if (_type != string.Empty)
             {
-                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
-                    new ConfigurationWindow(PatientServices.Sources.SourceType.DataBase).Show();
-                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
-                    new ConfigurationWindow(PatientServices.Sources.SourceType.Worklist).Show();
+                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
+                    WindowFacrtory.CreateConfigurationWindow(SourceType.DataBase);
+                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
+                    WindowFacrtory.CreateConfigurationWindow(SourceType.Worklist);
             }
         });
 
         public ICommand EditSourceCommand => new ActionCommand(() =>
         {
-            var win = new ConfigurationWindow(SelectedSource);
-            win.Show();
+            if (SelectedSource != null) WindowFacrtory.CreateConfigurationWindow(SelectedSource);
         });
 
-        public ICommand DeleteSourcenewCommand => new ActionCommand(() =>
+        public ICommand DeleteSourceCommand => new ActionCommand(() =>
         {
-            if (_selectedSource != null)
+            if (SelectedSource != null)
             {
 
             }
@@ -121,22 +116,21 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // метод, загружающий источники всех типов
         private void LoadAllSources()
         {
-            var all = _sourceRepository.GetAllSources();
-            Sources = new List<Source>(all);
-            base.RaisePropertyChanged("Sources");
+            if (SourceRepository != null)
+            {
+                _sources = SourceRepository.GetAllSources();
+            }
         }
 
         // метод, обновляющий список источников согласно выбранному типу источника
         private void ChangeSourceListByType()
         {
-            if (_sourceType != string.Empty)
+            if (_type != string.Empty)
             {
-                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
-                    Sources = _sourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.DataBase);
-                if (_sourceType == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
-                    Sources = _sourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.Worklist);
-
-                base.RaisePropertyChanged("Sources");
+                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
+                    Sources = SourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.DataBase);
+                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
+                    Sources = SourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.Worklist);
             }
         }
     }

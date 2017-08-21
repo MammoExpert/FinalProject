@@ -10,13 +10,9 @@ namespace MammoExpert.PatientServices.Demo.View
     /// </summary>
     public partial class SourcesWindow : Window
     {
-        public SourcesWindow(SourceRepository rep)
+        public SourcesWindow()
         {
             InitializeComponent();
-            var vm = new SourcesWindowViewModel(rep);
-            DataContext = vm;
-            if (vm.CloseAction == null)
-                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }

@@ -5,7 +5,6 @@ using MammoExpert.PatientServices.PresenterCore;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
-using System.Linq;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
@@ -14,18 +13,15 @@ using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
-    public class MainWindowViewModel : WorkspaceViewModel
+    public class MainWindowViewModel : ViewModelBase
     {
-        private readonly SourceRepository _sourceRepository;
-        private ObservableCollection<WorkspaceViewModel> _workspaces;
+        internal static SourceRepository SourceRepository;
+        private ObservableCollection<ViewModelBase> _workspaces;
 
-        public MainWindowViewModel()
+        public MainWindowViewModel() { }
+        public MainWindowViewModel(string path)
         {
-        }
-
-        public MainWindowViewModel(string sourcesDataFile)
-        {
-            _sourceRepository = new SourceRepository(sourcesDataFile);
+            SourceRepository = new SourceRepository(path);
             base.DisplayName = Resources.MainWindowViewModel_DisplayName;
 
             // Добавляем рабочую область для ручного ввода пациета (по умолчанию)
@@ -33,33 +29,41 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // коллекция рабочих областей
-        public ObservableCollection<WorkspaceViewModel> Workspaces
+        public ObservableCollection<ViewModelBase> Workspaces
         {
             get
             {
                 if (_workspaces == null)
                 {
-                    _workspaces = new ObservableCollection<WorkspaceViewModel>();
+                    _workspaces = new ObservableCollection<ViewModelBase>();
                     _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
                 return _workspaces;
+            }
+            set
+            {
+                if (_workspaces != value)
+                {
+                    _workspaces = value;
+                    RaisePropertyChanged("Workspaces");
+                    _workspaces.CollectionChanged += OnWorkspacesChanged;
+                }
+
             }
         }
 
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
-            var win = new AboutProgrammWindow();
-            win.Show();
+            WindowFacrtory.CreateAboutProgrammWindow();
         });
 
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
-            var win = new SourcesWindow(_sourceRepository);
-            win.Show();
+            WindowFacrtory.CreateSourcesWindow();
         });
 
         // метод, добавляющий новую рабочую область
-        public void AddWorkspace(WorkspaceViewModel vm)
+        public void AddWorkspace(ViewModelBase vm)
         {
             Workspaces.Add(vm);
             base.RaisePropertyChanged("Workspaces");
@@ -67,7 +71,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // метод, который при создании новой рабочей области делает ее активной
-        private void SetActiveWorkspace(WorkspaceViewModel workspace)
+        private void SetActiveWorkspace(ViewModelBase workspace)
         {
             Debug.Assert(Workspaces.Contains(workspace));
 
@@ -80,18 +84,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
-                foreach (WorkspaceViewModel workspace in e.NewItems)
+                foreach (ViewModelBase workspace in e.NewItems)
                     workspace.RequestClose += OnWorkspaceRequestClose;
 
             if (e.OldItems != null && e.OldItems.Count != 0)
-                foreach (WorkspaceViewModel workspace in e.OldItems)
+                foreach (ViewModelBase workspace in e.OldItems)
                     workspace.RequestClose -= OnWorkspaceRequestClose;
         }
 
         // метод, вызываемый при событиии, которое требует закрытия рабочей области
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
-            var workspace = sender as WorkspaceViewModel;
+            var workspace = sender as ViewModelBase;
             Workspaces.Remove(workspace);
         }
     }
