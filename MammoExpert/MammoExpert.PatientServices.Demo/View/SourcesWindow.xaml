@@ -2,10 +2,10 @@
     x:Class="MammoExpert.PatientServices.Demo.View.SourcesWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behaviors="clr-namespace:System.Windows.Behaviors;assembly=Wave.Extensions.Esri"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:behaviors="clr-namespace:System.Windows.Behaviors;assembly=Wave.Extensions.Esri"
     Title="{Binding Path=DisplayName}"
     Width="500"
     Height="300"
@@ -47,8 +47,7 @@
             Grid.RowSpan="3"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding Path=Sources}"
-            SelectedItem="{Binding SelectedSource}">
+            ItemsSource="{Binding Path=Sources}">
             <!--<ListViewItem>
                 <behaviors:CommandBehaviorCollection.Behaviors>
                     <behaviors:BehaviorBinding Event="MouseDoubleClick" Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"/>
@@ -69,7 +68,6 @@
             Width="100"
             Margin="2"
             Command="{Binding AddSourceCommand}"
-            CommandParameter="{Binding SelectedSource}"
             Content="Добавить..." />
         <Button
             Grid.Row="2"
@@ -77,6 +75,7 @@
             Width="100"
             Margin="2"
             Command="{Binding EditSourceCommand}"
+            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Редактировать..." />
         <Button
             Grid.Row="3"
@@ -84,6 +83,7 @@
             Width="100"
             Margin="2"
             Command="{Binding DeleteSourceCommand}"
+            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Удалить" />
     </Grid>
 </Window>

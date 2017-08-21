@@ -12,7 +12,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     {
         private string _type;
         private string[] _sourceTypeOptions;
-        private Source _selectedSource;
         private List<Source> _sources;
 
         public SourcesWindowViewModel()
@@ -71,21 +70,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        // выбранный пользователем источник
-        public Source SelectedSource
+        public ICommand AddWorkspaceCommand => new ActionCommand<Source>( s =>
         {
-            get { return _selectedSource; }
-            set
-            {
-                if (_selectedSource == value) return;
-                _selectedSource = value;
-                RaisePropertyChanged("SelectedSource");
-            }
-        }
-
-        public ICommand AddWorkspaceCommand => new ActionCommand(() =>
-        {
-            Workspaces.Add(new PatientSearchViewModel(SelectedSource));
+            Workspaces.Add(new PatientSearchViewModel(s));
             CloseAction();
         });
 
@@ -100,14 +87,14 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         });
 
-        public ICommand EditSourceCommand => new ActionCommand(() =>
+        public ICommand EditSourceCommand => new ActionCommand<Source>(s =>
         {
-            if (SelectedSource != null) WindowFacrtory.CreateConfigurationWindow(SelectedSource);
+            if (s != null) WindowFacrtory.CreateConfigurationWindow(s);
         });
 
-        public ICommand DeleteSourceCommand => new ActionCommand(() =>
+        public ICommand DeleteSourceCommand => new ActionCommand<Source>(s =>
         {
-            if (SelectedSource != null)
+            if (s != null)
             {
 
             }
