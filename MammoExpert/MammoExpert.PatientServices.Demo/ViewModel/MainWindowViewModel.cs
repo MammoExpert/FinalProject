@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.PresenterCore;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -8,7 +7,6 @@ using System.Diagnostics;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.UI.Controls.View;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel

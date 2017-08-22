@@ -5,14 +5,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:view="clr-namespace:MammoExpert.PatientServices.UI.Controls.View;assembly=MammoExpert.PatientServices.UI.Controls"
-    xmlns:vm="clr-namespace:MammoExpert.PatientServices.UI.Controls.ViewModel;assembly=MammoExpert.PatientServices.UI.Controls"
     Title="{Binding Path=DisplayName}"
     ResizeMode="NoResize"
     SizeToContent="WidthAndHeight"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+
+    <Window.Resources>
+        <ResourceDictionary Source="../Templates.xaml" />
+    </Window.Resources>
 
     <Grid x:Name="grid">
         <Grid.ColumnDefinitions>
@@ -25,15 +27,6 @@
         <ContentControl
             Grid.Row="0"
             Grid.Column="0"
-            Content="{Binding CurrentSearchViewModel}">
-            <ContentControl.Resources>
-                <DataTemplate DataType="{x:Type vm:DBConnectionConfigurationModel}">
-                    <view:UcDBConnectionConfigurationViewmodel />
-                </DataTemplate>
-                <DataTemplate DataType="{x:Type vm:WorklistConnectionConfigurationModel}">
-                    <view:UcWorklistConnectionConfiguration />
-                </DataTemplate>
-            </ContentControl.Resources>
-        </ContentControl>
+            Content="{Binding CurrentSearchViewModel}" />
     </Grid>
 </Window>

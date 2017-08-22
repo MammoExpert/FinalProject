@@ -147,6 +147,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
+      <Project>{B9CCD920-4B2A-44C2-AC74-898535A900C9}</Project>
+      <Name>MammoExpert.PatientServices.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
       <Project>{C5604D0A-20EC-4E75-871C-14508A8C37E4}</Project>
       <Name>MammoExpert.PatientServices.PresenterCore</Name>

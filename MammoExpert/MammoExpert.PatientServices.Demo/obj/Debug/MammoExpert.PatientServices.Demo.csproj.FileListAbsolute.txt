@@ -144,3 +144,5 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.d
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
