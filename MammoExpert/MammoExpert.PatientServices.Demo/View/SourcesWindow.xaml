@@ -39,8 +39,9 @@
             Grid.Column="0"
             Margin="2"
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}" />
+      
 
-        <ListView
+            <ListView
             x:Name="LvSources"
             Grid.Row="2"
             Grid.RowSpan="3"
