@@ -130,6 +130,7 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.d
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
+<<<<<<< HEAD
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.cache
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.lref
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe
@@ -142,3 +143,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Templates
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.g.resources
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
+=======
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
+>>>>>>> 21113d354e0a23f7736825c34f53cfc633ce3699

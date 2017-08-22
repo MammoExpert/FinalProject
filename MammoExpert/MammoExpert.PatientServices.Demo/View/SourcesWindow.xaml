@@ -13,6 +13,19 @@
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
 
+    <Window.Resources>
+        <DataTemplate x:Key="DoubleClickable">
+            <ListViewItem>
+                <behaviors:CommandBehaviorCollection.Behaviors>
+                    <behaviors:BehaviorBinding
+                        Command="{Binding AddWorkspaceCommand}"
+                        CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
+                        Event="MouseDoubleClick" />
+                </behaviors:CommandBehaviorCollection.Behaviors>
+            </ListViewItem>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -38,8 +51,13 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
+<<<<<<< HEAD
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}" />
       
+=======
+            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
+            SelectedItem="{Binding Path=Type}" />
+>>>>>>> 21113d354e0a23f7736825c34f53cfc633ce3699
 
             <ListView
             x:Name="LvSources"
@@ -47,12 +65,9 @@
             Grid.RowSpan="3"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding Path=Sources}">
-            <!--<ListViewItem>
-                <behaviors:CommandBehaviorCollection.Behaviors>
-                    <behaviors:BehaviorBinding Event="MouseDoubleClick" Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"/>
-                </behaviors:CommandBehaviorCollection.Behaviors>
-            </ListViewItem>-->
+            ItemTemplate="{StaticResource ResourceKey=DoubleClickable}"
+            ItemsSource="{Binding Path=Sources}"
+            SelectionMode="Single">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="#" />

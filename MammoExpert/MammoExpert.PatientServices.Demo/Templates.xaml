@@ -4,14 +4,20 @@
     xmlns:view="clr-namespace:MammoExpert.PatientServices.UI.Controls.View;assembly=MammoExpert.PatientServices.UI.Controls"
     xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.UI.Controls.ViewModel;assembly=MammoExpert.PatientServices.UI.Controls">
 
-
+    <!--  Templates for workspaces of main window  -->
     <DataTemplate DataType="{x:Type viewModel:ManualInputViewModel}">
         <view:UcManualInput />
     </DataTemplate>
-
-
     <DataTemplate DataType="{x:Type viewModel:PatientSearchViewModel}">
         <view:UcPatientSearch />
+    </DataTemplate>
+
+    <!--  Templates for configuaration window  -->
+    <DataTemplate DataType="{x:Type viewModel:DBConnectionConfigurationModel}">
+        <view:UcDBConnectionConfigurationViewmodel />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewModel:WorklistConnectionConfigurationModel}">
+        <view:UcWorklistConnectionConfiguration />
     </DataTemplate>
 
     <!--<Style x:Key="WorkspaceStyle" TargetType="{x:Type ContentControl}">
@@ -26,7 +32,7 @@
     </Style>-->
 
     <DataTemplate x:Key="ClosableTabItemTemplate">
-        <DockPanel Width="120">
+        <DockPanel>
             <Button
                 Width="16"
                 Height="16"
@@ -41,7 +47,10 @@
                 FontFamily="Courier"
                 FontSize="9"
                 FontWeight="Bold" />
-            <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
+            <ContentPresenter
+                Margin="5,0"
+                VerticalAlignment="Center"
+                Content="{Binding Path=DisplayName}" />
         </DockPanel>
     </DataTemplate>
 

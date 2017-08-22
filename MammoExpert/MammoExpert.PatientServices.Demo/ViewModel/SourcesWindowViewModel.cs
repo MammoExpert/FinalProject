@@ -4,21 +4,21 @@ using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
-
+using System;
+using System.Linq;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class SourcesWindowViewModel : MainWindowViewModel
     {
-        private string _type;
-        private string[] _sourceTypeOptions;
+        private SourceType _type;
+        private List<SourceType> _sourceTypeOptions;
         private List<Source> _sources;
 
         public SourcesWindowViewModel()
         {
 
             base.DisplayName = Resources.SourcesWindowViewModel_DisplayName;
-            _type = Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified;
 
             LoadAllSources();
         }
@@ -36,13 +36,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        public string Type
+        public SourceType Type
         {
             get { return _type; }
             set
             {
-                if (value == _type || string.IsNullOrEmpty(value))
-                    return;
+                if (value == _type) return;
 
                 _type = value;
 
@@ -53,18 +52,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // здесь храним все типы источников для отображения в ComboBox
-        public string[] SourceTypeOptions
+        public List<SourceType> SourceTypeOptions
         {
             get
             {
                 if (_sourceTypeOptions == null)
                 {
-                    _sourceTypeOptions = new[]
-                    {
-                        Resources.SourcesWindowViewModel_SourceTypeOption_NotSpecified,
-                        Resources.SourcesWindowViewModel_SourceTypeOption_DataBase,
-                        Resources.SourcesWindowViewModel_SourceTypeOption_Worklist
-                    };
+                    _sourceTypeOptions = Enum.GetValues(typeof(SourceType)).Cast<SourceType>().Select(v => v).ToList();
                 }
                 return _sourceTypeOptions;
             }
@@ -72,7 +66,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand AddWorkspaceCommand => new ActionCommand<Source>(AddWorkspace);
 
-        public ICommand AddSourceCommand => new ActionCommand<string>(OpenConfigurationWindow);
+        public ICommand AddSourceCommand => new ActionCommand<SourceType>(OpenConfigurationWindow);
 
         public ICommand EditSourceCommand => new ActionCommand<Source>(EditSource);
 
@@ -100,15 +94,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        public void OpenConfigurationWindow(string type)
+        public void OpenConfigurationWindow(SourceType type)
         {
-            if (type != string.Empty)
-            {
-                if (type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
-                    WindowFacrtory.CreateConfigurationWindow(SourceType.DataBase);
-                if (type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
-                    WindowFacrtory.CreateConfigurationWindow(SourceType.Worklist);
-            }
+            WindowFacrtory.CreateConfigurationWindow(type);
         }
 
         // метод, загружающий источники всех типов
@@ -123,13 +111,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // метод, обновляющий список источников согласно выбранному типу источника
         private void ChangeSourceListByType()
         {
-            if (_type != string.Empty)
-            {
-                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_DataBase)
-                    Sources = SourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.DataBase);
-                if (_type == Resources.SourcesWindowViewModel_SourceTypeOption_Worklist)
-                    Sources = SourceRepository.GetSourcesByType(PatientServices.Sources.SourceType.Worklist);
-            }
+            Sources = SourceRepository.GetSourcesByType(Type);
         }
     }
 }

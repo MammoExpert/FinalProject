@@ -34,7 +34,11 @@
             Grid.Row="1"
             Grid.ColumnSpan="2"
             HorizontalScrollBarVisibility="Visible">
-            <ListView Margin="2" ItemsSource="{Binding Path=PatientsList}">
+            <ListView
+                x:Name="LvPatients"
+                Margin="2"
+                ItemsSource="{Binding Path=PatientsList}"
+                SelectionMode="Single">
 
                 <ListView.View>
                     <GridView>
@@ -76,11 +80,12 @@
                 Width="100"
                 Margin="2"
                 Command="{Binding Path=ChoosePatient}"
+                CommandParameter="{Binding ElementName=LvPatients, Path=SelectedItem}"
                 Content="Выбрать" />
             <Button
                 Width="100"
                 Margin="2"
-                Command="{Binding Path=Cancel}"
+                Command="{Binding Path=CloseCommand}"
                 Content="Отмена" />
         </StackPanel>
     </Grid>

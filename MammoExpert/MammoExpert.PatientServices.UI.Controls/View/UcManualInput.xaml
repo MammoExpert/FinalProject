@@ -346,7 +346,7 @@
                 <Button
                     Width="100"
                     Margin="2"
-                    Command="{Binding CancelPatientCreation}"
+                    Command="{Binding CloseCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>
