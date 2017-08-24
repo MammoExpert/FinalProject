@@ -19,7 +19,7 @@ namespace MammoExpert.PatientServices.Demo
         {
             base.OnStartup(e);
 
-            WindowFactory.CreateMainWindow("all_sources.json");
+            WindowFactory.CreateMainWindow("../../Data/all_sources.json");
         }
     }
 }

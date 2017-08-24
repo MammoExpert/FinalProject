@@ -42,9 +42,7 @@
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction 
-                        Command="{Binding ChangeSourceListByType}" 
-                        CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
+                    <i:InvokeCommandAction Command="{Binding ChangeSourceListByType}" CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ComboBox>
@@ -59,9 +57,7 @@
             SelectionMode="Single">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
-                    <i:InvokeCommandAction 
-                        Command="{Binding AddWorkspaceCommand}"
-                        CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}" />
+                    <i:InvokeCommandAction Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <ListView.View>

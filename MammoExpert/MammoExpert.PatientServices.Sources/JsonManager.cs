@@ -70,10 +70,11 @@ namespace MammoExpert.PatientServices.Sources
         private void RewriteFile(List<Source> coll)
         {
             _jsonString = JsonConvert.SerializeObject(coll);
-            using (FileStream fstream = new FileStream(_path, FileMode.Open))
+            if (File.Exists(_path))
             {
-                byte[] array = Encoding.Default.GetBytes(_jsonString);
-                fstream.Write(array, 0, array.Length);
+                StreamWriter writer = new StreamWriter(_path, false, Encoding.UTF8);
+                writer.WriteLine(_jsonString);
+                writer.Close();
             }
         }
 
