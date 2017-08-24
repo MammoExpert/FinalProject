@@ -51,15 +51,10 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
-<<<<<<< HEAD
-            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}" />
-      
-=======
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
             SelectedItem="{Binding Path=Type}" />
->>>>>>> 21113d354e0a23f7736825c34f53cfc633ce3699
 
-            <ListView
+        <ListView
             x:Name="LvSources"
             Grid.Row="2"
             Grid.RowSpan="3"

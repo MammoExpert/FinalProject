@@ -94,14 +94,46 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ko
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\System.Windows.Interactivity.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\de\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\en\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\es\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\it\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe.config
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\System.Windows.Interactivity.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Sources.pdb
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\EntityFramework.xml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Newtonsoft.Json.xml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\ru\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csprojResolveAssemblyReference.cache
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.g.cs
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.g.cs
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.g.cs
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.g.cs
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\App.g.cs
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.cache
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls_MarkupCompile.lref
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcDBConnectionConfiguration.baml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcManualInput.baml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcPatientSearch.baml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\View\UcWorklistConnectionConfiguration.baml
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.g.resources
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.Properties.Resources.resources
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.exe
+D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb
