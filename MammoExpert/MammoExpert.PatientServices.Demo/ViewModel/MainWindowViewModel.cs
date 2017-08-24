@@ -52,12 +52,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
-            WindowFacrtory.CreateAboutProgrammWindow();
+            WindowFactory.CreateAboutProgrammWindow();
         });
 
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
-            WindowFacrtory.CreateSourcesWindow();
+            WindowFactory.CreateSourcesWindow();
         });
 
         // метод, добавляющий новую рабочую область

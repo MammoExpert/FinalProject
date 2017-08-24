@@ -92,7 +92,7 @@
     <Compile Include="View\SourcesWindow.xaml.cs">
       <DependentUpon>SourcesWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowFacrtory.cs" />
+    <Compile Include="WindowFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

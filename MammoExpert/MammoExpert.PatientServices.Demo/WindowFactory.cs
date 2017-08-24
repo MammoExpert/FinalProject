@@ -10,9 +10,9 @@ using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo
 {
-    public class WindowFacrtory
+    public class WindowFactory
     {
-        public WindowFacrtory() { }
+        public WindowFactory() { }
 
         public static void CreateMainWindow(string sourcePath)
         {

@@ -83,7 +83,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public void EditSource(Source source)
         {
-            if (source != null) WindowFacrtory.CreateConfigurationWindow(source);
+            if (source != null) WindowFactory.CreateConfigurationWindow(source);
         }
 
         public void DeleteSource(Source source)
@@ -96,7 +96,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public void OpenConfigurationWindow(SourceType type)
         {
-            WindowFacrtory.CreateConfigurationWindow(type);
+            WindowFactory.CreateConfigurationWindow(type);
         }
 
         // метод, загружающий источники всех типов
