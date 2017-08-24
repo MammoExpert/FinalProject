@@ -1,12 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization.Json;
-using MammoExpert.PatientServices.Sources.Types;
-using Newtonsoft.Json;
 
 namespace MammoExpert.PatientServices.Sources
 {

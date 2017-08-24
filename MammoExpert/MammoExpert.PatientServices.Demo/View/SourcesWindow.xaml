@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:behaviors="clr-namespace:System.Windows.Behaviors;assembly=Wave.Extensions.Esri"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Path=DisplayName}"
@@ -51,8 +52,13 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
-            SelectedItem="{Binding Path=Type}" />
+            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding ChangeSourceListByType}" CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
 
         <ListView
             x:Name="LvSources"

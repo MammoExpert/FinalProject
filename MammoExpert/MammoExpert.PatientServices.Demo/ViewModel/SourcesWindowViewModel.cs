@@ -11,7 +11,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class SourcesWindowViewModel : MainWindowViewModel
     {
-        private SourceType _type;
         private List<SourceType> _sourceTypeOptions;
         private List<Source> _sources;
 
@@ -35,22 +34,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        // выбранный пользователем тип источника; от него будет зависеть список отображаемых источников
-        public SourceType Type
-        {
-            get { return _type; }
-            set
-            {
-                if (value == _type) return;
-
-                _type = value;
-
-                ChangeSourceListByType();
-
-                RaisePropertyChanged("Type");
-            }
-        }
-
         // здесь храним все типы источников для отображения в ComboBox
         public List<SourceType> SourceTypeOptions
         {
@@ -71,6 +54,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ICommand EditSourceCommand => new ActionCommand<Source>(EditSource);
 
         public ICommand DeleteSourceCommand => new ActionCommand<Source>(DeleteSource);
+
+        public ICommand ChangeSourceListByType => new ActionCommand<SourceType>(ChangeSourceList);
 
         public void AddWorkspace(Source source)
         {
@@ -109,9 +94,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // метод, обновляющий список источников согласно выбранному типу источника
-        private void ChangeSourceListByType()
+        private void ChangeSourceList(SourceType type)
         {
-            Sources = SourceRepository.GetSourcesByType(Type);
+            Sources = SourceRepository.GetSourcesByType(type);
         }
     }
 }

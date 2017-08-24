@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
 using MammoExpert.PatientServices.Demo.Properties;
-using MammoExpert.PatientServices.Sources.Types;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.UI.Controls.View;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
