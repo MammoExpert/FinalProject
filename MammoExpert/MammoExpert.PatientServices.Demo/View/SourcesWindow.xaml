@@ -14,19 +14,6 @@
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <DataTemplate x:Key="DoubleClickable">
-            <ListViewItem>
-                <behaviors:CommandBehaviorCollection.Behaviors>
-                    <behaviors:BehaviorBinding
-                        Command="{Binding AddWorkspaceCommand}"
-                        CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
-                        Event="MouseDoubleClick" />
-                </behaviors:CommandBehaviorCollection.Behaviors>
-            </ListViewItem>
-        </DataTemplate>
-    </Window.Resources>
-
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -55,7 +42,9 @@
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding ChangeSourceListByType}" CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
+                    <i:InvokeCommandAction 
+                        Command="{Binding ChangeSourceListByType}" 
+                        CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ComboBox>
@@ -66,9 +55,15 @@
             Grid.RowSpan="3"
             Grid.Column="0"
             Margin="2"
-            ItemTemplate="{StaticResource ResourceKey=DoubleClickable}"
             ItemsSource="{Binding Path=Sources}"
             SelectionMode="Single">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction 
+                        Command="{Binding AddWorkspaceCommand}"
+                        CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="#" />
@@ -102,16 +97,6 @@
             Command="{Binding DeleteSourceCommand}"
             CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Удалить" />
-        <Button
-            Grid.Row="4"
-            Grid.Column="1"
-            Width="100"
-            Height="25"
-            Margin="2"
-            Command="{Binding AddWorkspaceCommand}"
-            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
-            Content="Вместо DoubleClick"
-            FontSize="10" />
     </Grid>
 </Window>
 
