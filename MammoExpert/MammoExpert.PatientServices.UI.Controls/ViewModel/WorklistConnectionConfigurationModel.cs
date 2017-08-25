@@ -4,7 +4,7 @@ using MammoExpert.PatientServices.UI.Controls.Properties;
 
 namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
-    public class WorklistConnectionConfigurationModel : ViewModelBase, IViewModel
+    public class WorklistConnectionConfigurationModel : ViewModelBase
     {
         #region Fields
 

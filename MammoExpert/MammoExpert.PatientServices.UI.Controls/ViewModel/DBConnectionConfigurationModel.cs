@@ -1,10 +1,11 @@
-﻿using MammoExpert.PatientServices.Sources;
+﻿using System.Windows.Input;
+using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.Properties;
 
 namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
-    public class DBConnectionConfigurationModel: ViewModelBase, IViewModel
+    public class DBConnectionConfigurationModel: ViewModelBase
     {
         #region Fields
 

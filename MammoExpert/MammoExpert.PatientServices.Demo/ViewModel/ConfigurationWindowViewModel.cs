@@ -10,9 +10,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     {
         #region Fields and Properties
 
-        private IViewModel _currentViewModel;
+        private ViewModelBase _currentViewModel;
 
-        public IViewModel CurrentViewModel
+        public ViewModelBase CurrentViewModel
         {
             get { return _currentViewModel; }
             set
