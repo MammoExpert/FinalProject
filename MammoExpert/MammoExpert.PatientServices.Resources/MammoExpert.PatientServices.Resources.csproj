@@ -4,18 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{872AB75A-37FA-40D3-A906-A2D6A84C9602}</ProjectGuid>
+    <ProjectGuid>{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MammoExpert.PatientServices.Demo</RootNamespace>
-    <AssemblyName>MammoExpert PatientServices Demo</AssemblyName>
+    <RootNamespace>MammoExpert.PatientServices.Resources</RootNamespace>
+    <AssemblyName>MammoExpert.PatientServices.Resources</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,18 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,10 +45,6 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="Wave.Extensions.Esri, Version=1.0.4.0, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Wave.Extensions.Esri.1.0.4\lib\net45\Wave.Extensions.Esri.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -71,28 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\LogInfo.cs" />
-    <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
-    <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
-    <Compile Include="ViewModel\MainWindowViewModel.cs" />
-    <Compile Include="ViewModel\SourcesWindowViewModel.cs" />
-    <Compile Include="View\AboutProgrammWindow.xaml.cs">
-      <DependentUpon>AboutProgrammWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ConfigurationWindow.xaml.cs">
-      <DependentUpon>ConfigurationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\SourcesWindow.xaml.cs">
-      <DependentUpon>SourcesWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WindowFactory.cs" />
+    <Page Include="Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,7 +90,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,42 +100,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="View\AboutProgrammWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ConfigurationWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SourcesWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
-      <Project>{B9CCD920-4B2A-44C2-AC74-898535A900C9}</Project>
-      <Name>MammoExpert.PatientServices.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
-      <Project>{C5604D0A-20EC-4E75-871C-14508A8C37E4}</Project>
+      <Project>{c5604d0a-20ec-4e75-871c-14508a8c37e4}</Project>
       <Name>MammoExpert.PatientServices.PresenterCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MammoExpert.PatientServices.Resources\MammoExpert.PatientServices.Resources.csproj">
-      <Project>{18aa0e1d-63d6-4f3f-809d-94cea03b30d1}</Project>
-      <Name>MammoExpert.PatientServices.Resources</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MammoExpert.PatientServices.Sources\MammoExpert.PatientServices.Sources.csproj">
-      <Project>{80dada21-e29f-434a-adf0-a6659b631bf2}</Project>
-      <Name>MammoExpert.PatientServices.Sources</Name>
     </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj">
       <Project>{53ac4068-69bd-44d4-ac0a-132b991c189b}</Project>
@@ -166,13 +110,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Wave.Extensions.Esri.1.0.4\build\Wave.Extensions.Esri.targets" Condition="Exists('..\packages\Wave.Extensions.Esri.1.0.4\build\Wave.Extensions.Esri.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Wave.Extensions.Esri.1.0.4\build\Wave.Extensions.Esri.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Wave.Extensions.Esri.1.0.4\build\Wave.Extensions.Esri.targets'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

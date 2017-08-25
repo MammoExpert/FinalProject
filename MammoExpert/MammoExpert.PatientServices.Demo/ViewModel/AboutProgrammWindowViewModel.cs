@@ -15,7 +15,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public AboutProgrammWindowViewModel()
         {
-            base.DisplayName = Resources.AboutProgrammWindowViewModel_DisplayName;
+            base.DisplayName = Properties.Resources.AboutProgrammWindowViewModel_DisplayName;
         }
 
         #endregion // Constructor

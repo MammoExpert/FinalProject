@@ -24,7 +24,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public SourcesWindowViewModel()
         {
-            base.DisplayName = Resources.SourcesWindowViewModel_DisplayName;
+            base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
 
             _sources = new ObservableCollection<Source>(SourceRepository.GetAll());
         }

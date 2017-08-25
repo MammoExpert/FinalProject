@@ -12,7 +12,7 @@
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
     <Window.Resources>
-        <ResourceDictionary Source="../Templates.xaml" />
+        <ResourceDictionary Source="/MammoExpert.PatientServices.Resources;component/Templates.xaml" />
     </Window.Resources>
 
     <Grid>

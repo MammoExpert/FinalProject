@@ -1,5 +1,4 @@
 ﻿using System;
-using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
@@ -29,14 +28,14 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // конструктор при загрузке окна для создания нового источника
         public ConfigurationWindowViewModel(SourceType type)
         {
-            base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
+            base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
             SetCurrentViewModel(type);
         }
 
         // конструктор при загрузке окна для редактирования выбранного источника
         public ConfigurationWindowViewModel(Source source)
         {
-            base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
+            base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
             SetCurrentViewModel(source);
         }
 

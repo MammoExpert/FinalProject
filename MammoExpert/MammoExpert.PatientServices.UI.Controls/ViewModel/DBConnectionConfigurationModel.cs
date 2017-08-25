@@ -46,5 +46,21 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
         }
 
         #endregion // Properties
+
+        #region Commands
+
+        public ICommand CancelCreateConnectionDbCommand => new ActionCommand(Create);
+
+        #endregion // Commands
+
+        #region Private Methods
+
+        private void Create()
+        {
+            
+            CloseAction();
+        }
+
+        #endregion // Private Methods
     }
 }

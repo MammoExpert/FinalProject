@@ -5,7 +5,6 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Windows.Data;
-using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
@@ -27,7 +26,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public MainWindowViewModel(string path)
         {
             SourceRepository = new SourceRepository(path);
-            base.DisplayName = Resources.MainWindowViewModel_DisplayName;
+            base.DisplayName = Properties.Resources.MainWindowViewModel_DisplayName;
 
             // Добавляем рабочую область для ручного ввода пациета (по умолчанию)
             CreateWorkspace(new ManualInputViewModel());

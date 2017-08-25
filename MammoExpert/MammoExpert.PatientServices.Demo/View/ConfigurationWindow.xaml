@@ -1,32 +1,33 @@
-﻿<Window
+﻿<av:Window
     x:Class="MammoExpert.PatientServices.Demo.View.ConfigurationWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="{Binding Path=DisplayName}"
+    Title="{av:Binding Path=DisplayName}"
     ResizeMode="NoResize"
     SizeToContent="WidthAndHeight"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <ResourceDictionary Source="../Templates.xaml" />
-    </Window.Resources>
+    <av:Window.Resources>
+        <av:ResourceDictionary Source="/MammoExpert.PatientServices.Resources;component/Templates.xaml" />
+    </av:Window.Resources>
 
-    <Grid x:Name="grid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <av:Grid x:Name="grid">
+        <av:Grid.ColumnDefinitions>
+            <av:ColumnDefinition Width="*" />
+        </av:Grid.ColumnDefinitions>
+        <av:Grid.RowDefinitions>
+            <av:RowDefinition Height="*" />
+        </av:Grid.RowDefinitions>
 
-        <ContentControl
+        <av:ContentControl
             Grid.Row="0"
             Grid.Column="0"
             Content="{Binding CurrentViewModel}" />
-    </Grid>
-</Window>
+    </av:Grid>
+</av:Window>
