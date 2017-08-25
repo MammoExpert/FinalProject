@@ -17,6 +17,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
         public WorklistConnectionConfigurationModel()
         {
             base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
+            _source = new Source( type: SourceType.Worklist);
         }
 
         public WorklistConnectionConfigurationModel(Source source)
@@ -36,7 +37,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             {
                 if (_source != value)
                 {
-                    _source = new Source();
+                    _source = value;
                     RaisePropertyChanged("Source");
                 }
             }

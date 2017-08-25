@@ -17,6 +17,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
         public DBConnectionConfigurationModel()
         {
             base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
+            _source = new Source(type: SourceType.DataBase);
         }
 
         public DBConnectionConfigurationModel(Source source)
@@ -37,7 +38,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             {
                 if (_source != value)
                 {
-                    _source = new Source();
+                    _source = value;
                     RaisePropertyChanged("Source");
                 }
             }

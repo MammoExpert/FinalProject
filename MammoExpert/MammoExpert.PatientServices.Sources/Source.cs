@@ -30,6 +30,14 @@ namespace MammoExpert.PatientServices.Sources
             Parameters = new Parameters();
         }
 
+        public Source(SourceType type)
+        {
+            Name = string.Empty;
+            Type = type;
+            Description = string.Empty;
+            Parameters = new Parameters();
+        }
+
         public Source(string name, SourceType type, string description, Parameters parameters)
         {
             Name = name;
