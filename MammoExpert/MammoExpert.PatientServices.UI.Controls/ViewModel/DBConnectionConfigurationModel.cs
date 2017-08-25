@@ -1,18 +1,34 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Input;
-using MammoExpert.PatientServices.Sources;
+﻿using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.PresenterCore;
-using MammoExpert.PatientServices.DB;
-using MammoExpert.PatientServices.Core;
-using System;
 using MammoExpert.PatientServices.UI.Controls.Properties;
 
 namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
-    public class DBConnectionConfigurationModel: ViewModelBase, ISearchViewModel
+    public class DBConnectionConfigurationModel: ViewModelBase, IViewModel
     {
+        #region Fields
+
         private Source _source;
+
+        #endregion // Fields
+
+        #region Constructors
+
+        public DBConnectionConfigurationModel()
+        {
+            base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
+        }
+
+        public DBConnectionConfigurationModel(Source source)
+        {
+            base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
+            _source = source;
+
+        }
+
+        #endregion // Constructors
+
+        #region Properties
 
         public Source Source
         {
@@ -27,23 +43,6 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             }
         }
 
-
-        public DBConnectionConfigurationModel()
-        {
-            base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
-        }
-
-        public DBConnectionConfigurationModel(Source source)
-        {
-            base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
-            _source = source;
-
-        }
-
-
-        public void Search()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion // Properties
     }
 }

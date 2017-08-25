@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace MammoExpert.PatientServices.Sources
 {
+    // Описывает варианты типов источника
     public enum SourceType
     {
         [Description("База данных")]
@@ -11,7 +12,7 @@ namespace MammoExpert.PatientServices.Sources
         Worklist
     }
 
-    // Метод расширения для получения описаний enum SourceType
+    // Метод расширения для получения описаний идентификаторов перечисляемого типа SourceType
     public static class EnumExtensions
     {
         static public string Description(this SourceType value)

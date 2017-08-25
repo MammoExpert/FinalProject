@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.Sources;
@@ -12,8 +7,15 @@ namespace MammoExpert.PatientServices.Demo
 {
     public class WindowFactory
     {
+        #region Constructor
+
         public WindowFactory() { }
 
+        #endregion // Constructor
+
+        #region Public Methods
+
+        // создает главное окно
         public static void CreateMainWindow(string sourcePath)
         {
             var view = new MainWindow();
@@ -22,6 +24,7 @@ namespace MammoExpert.PatientServices.Demo
             view.Show();
         }
 
+        // создает окно управления источниками
         public static void CreateSourcesWindow()
         {
             var view = new SourcesWindow();
@@ -31,6 +34,7 @@ namespace MammoExpert.PatientServices.Demo
             view.ShowDialog();
         }
 
+        // создает окно с информацией о программе
         public static void CreateAboutProgrammWindow()
         {
             var view = new AboutProgrammWindow();
@@ -39,6 +43,7 @@ namespace MammoExpert.PatientServices.Demo
             view.ShowDialog();
         }
 
+        // создает окно для созданияя источниов согласно переданному типу источника
         public static void CreateConfigurationWindow(SourceType type)
         {
             var view = new ConfigurationWindow();
@@ -49,6 +54,7 @@ namespace MammoExpert.PatientServices.Demo
             view.ShowDialog();
         }
 
+        // создает окно для редактирования источниов
         public static void CreateConfigurationWindow(Source source)
         {
             var view = new ConfigurationWindow();
@@ -58,5 +64,7 @@ namespace MammoExpert.PatientServices.Demo
             view.DataContext = viewModel;
             view.ShowDialog();
         }
+
+        #endregion // Public Methods
     }
 }

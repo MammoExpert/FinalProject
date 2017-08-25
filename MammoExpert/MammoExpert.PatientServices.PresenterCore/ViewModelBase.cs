@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        #region Properties
+
+        // Свойство для отображения названия представления в заголовке окна
         public virtual string DisplayName { get; protected set; }
+
+        // отвечает за закрытие представления без использования команды CloseCommand
         public Action CloseAction { get; set; }
+
+        #endregion // Prtiesoper
 
         #region INotifyPropertyChanged Members
 
@@ -29,26 +32,28 @@ namespace MammoExpert.PatientServices.PresenterCore
 
         #endregion // INotifyPropertyChanged Members
 
-        #region CloseCommand
+        #region CloseCommand Members
 
         private ActionCommand _closeCommand;
         public event EventHandler RequestClose;
         
-        // команда, которая убирает рабочую область из UI
         public ICommand CloseCommand
         {
             get
             {
                 if (_closeCommand == null)
-                    _closeCommand = new ActionCommand(() =>
-                    {
-                        var handler = this.RequestClose;
-                        if (handler != null)
-                            handler(this, EventArgs.Empty);
-                    });
+                    _closeCommand = new ActionCommand(Close);
 
                 return _closeCommand;
             }
+        }
+
+        // вызывает событие закрыть представление
+        public void Close()
+        {
+            var handler = this.RequestClose;
+            if (handler != null)
+                handler(this, EventArgs.Empty);
         }
 
         #endregion

@@ -2,20 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    public class JsonManager
+    public class JsonManager<T>
     {
         #region Fields
 
-        private string _jsonString = string.Empty;
-        private string _path;
-        private List<Source> _jsonCollection;
+        private string _jsonString;
+        private readonly string _path;
+        private List<T> _jsonCollection;
 
         #endregion // Fields
 
@@ -31,28 +29,29 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Public methods
 
-        public List<Source> GetAllSources()
+        public List<T> GetAll()
         {
             return _jsonCollection;   
         }
 
-        public void AddSource(Source newSource)
+        public void Add(T newItem)
         {
-            _jsonCollection.Add(newSource);
-            RewriteFile(_jsonCollection);
+            _jsonCollection.Add(newItem);
+            RewriteFile();
         }
 
-        public void DeleteSource(Source source)
+        public void Delete(T item)
         {
-            _jsonCollection.Remove(source);
-            RewriteFile(_jsonCollection);
+            _jsonCollection.Remove(item);
+            RewriteFile();
         }
 
         #endregion // Public methods
 
         #region Private methods
 
-        private List<Source> LoadJson()
+        // возврвщает коллекцию объектов из json-файла в виде списка
+        private List<T> LoadJson()
         {
             try
             {
@@ -64,16 +63,17 @@ namespace MammoExpert.PatientServices.Sources
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(0);
             }
-            return JsonConvert.DeserializeObject<List<Source>>(_jsonString); ;
+            return JsonConvert.DeserializeObject<List<T>>(_jsonString); ;
         }
 
-        private void RewriteFile(List<Source> coll)
+        // записывает в json-файл новые значения
+        private void RewriteFile()
         {
-            _jsonString = JsonConvert.SerializeObject(coll);
+            var str = JsonConvert.SerializeObject(_jsonCollection);
             if (File.Exists(_path))
             {
-                StreamWriter writer = new StreamWriter(_path, false, Encoding.UTF8);
-                writer.WriteLine(_jsonString);
+                var writer = new StreamWriter(_path, false, Encoding.UTF8);
+                writer.WriteLine(str);
                 writer.Close();
             }
         }

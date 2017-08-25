@@ -13,10 +13,17 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
+        #region Fields
+
         internal static SourceRepository SourceRepository;
         private ObservableCollection<ViewModelBase> _workspaces;
 
+        #endregion // Fields
+
+        #region Constructors
+
         public MainWindowViewModel() { }
+
         public MainWindowViewModel(string path)
         {
             SourceRepository = new SourceRepository(path);
@@ -26,7 +33,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             CreateWorkspace(new ManualInputViewModel());
         }
 
-        // коллекция рабочих областей
+        #endregion // Constructors
+
+        #region Properties
+
+        // коллекция рабочих областей окна
         public ObservableCollection<ViewModelBase> Workspaces
         {
             get
@@ -50,22 +61,36 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        #endregion // Properties
+
+        #region Commands
+
+        // открывает окно с информацией о программе
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
             WindowFactory.CreateAboutProgrammWindow();
         });
 
+        // открывает окно управления источниками
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
             WindowFactory.CreateSourcesWindow();
         });
 
-        // метод, добавляющий новую рабочую область
+        #endregion // Commands
+
+        #region Public Methods
+
+        // добавляет новую рабочую область
         public void CreateWorkspace(ViewModelBase vm)
         {
             Workspaces.Add(vm);
             SetActiveWorkspace(vm);
         }
+
+        #endregion // Public Methods
+
+        #region Private Methods
 
         // метод, который при создании новой рабочей области делает ее активной
         private void SetActiveWorkspace(ViewModelBase workspace)
@@ -95,5 +120,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             var workspace = sender as ViewModelBase;
             Workspaces.Remove(workspace);
         }
+
+        #endregion // Private Methods
     }
 }

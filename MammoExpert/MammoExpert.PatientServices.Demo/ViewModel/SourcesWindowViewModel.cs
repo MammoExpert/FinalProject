@@ -6,7 +6,6 @@ using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 using System;
 using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 
@@ -27,7 +26,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             base.DisplayName = Resources.SourcesWindowViewModel_DisplayName;
 
-            _sources = new ObservableCollection<Source>(SourceRepository.GetAllSources());
+            _sources = new ObservableCollection<Source>(SourceRepository.GetAll());
         }
 
         #endregion // Constructor
@@ -65,7 +64,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand AddWorkspaceCommand => new ActionCommand<Source>(AddWorkspace);
 
-        public ICommand AddSourceCommand => new ActionCommand<SourceType>(OpenConfigurationWindow);
+        public ICommand AddSourceCommand => new ActionCommand<SourceType>(CreateSource);
 
         public ICommand EditSourceCommand => new ActionCommand<Source>(EditSource);
 
@@ -77,25 +76,29 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Private Methods
 
+        // создает рабочую область поиска пациента в заданном источнике
         private void AddWorkspace(Source source)
         {
             if (source != null)
             {
-                CreateWorkspace(new PatientSearchViewModel(source));
+                base.CreateWorkspace(new PatientSearchViewModel(source));
                 CloseAction();
             }
         }
 
-        private void OpenConfigurationWindow(SourceType type)
+        // создает окно для подключения к новому источнику, согласно выбранному типу источника
+        private void CreateSource(SourceType type)
         {
             WindowFactory.CreateConfigurationWindow(type);
         }
 
+        // создает окно для редактирования источника
         private void EditSource(Source source)
         {
             if (source != null) WindowFactory.CreateConfigurationWindow(source);
         }
 
+        // удаляет источник
         private void DeleteSource(Source source)
         {
             if (source != null)
@@ -107,16 +110,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    SourceRepository.DeleteSource(source);
+                    SourceRepository.Delete(source);
                     ChangeSourceList(source.Type);
                 }
             }
         }
         
-        // метод, обновляющий список источников согласно выбранному типу источника
+        // обновляет список источников согласно выбранному типу источника
         private void ChangeSourceList(SourceType type)
         {
-            var collection = SourceRepository.GetSourcesByType(type);
+            var collection = SourceRepository.GetByType(type);
             Sources = new ObservableCollection<Source>(collection);
         }
 

@@ -95,32 +95,5 @@ namespace MammoExpert.PatientServices.Demo.Properties {
                 return ResourceManager.GetString("SourcesWindowViewModel_DisplayName", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to База данных.
-        /// </summary>
-        internal static string SourcesWindowViewModel_SourceTypeOption_DataBase {
-            get {
-                return ResourceManager.GetString("SourcesWindowViewModel_SourceTypeOption_DataBase", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Не выбрано).
-        /// </summary>
-        internal static string SourcesWindowViewModel_SourceTypeOption_NotSpecified {
-            get {
-                return ResourceManager.GetString("SourcesWindowViewModel_SourceTypeOption_NotSpecified", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Рабочий список.
-        /// </summary>
-        internal static string SourcesWindowViewModel_SourceTypeOption_Worklist {
-            get {
-                return ResourceManager.GetString("SourcesWindowViewModel_SourceTypeOption_Worklist", resourceCulture);
-            }
-        }
     }
 }

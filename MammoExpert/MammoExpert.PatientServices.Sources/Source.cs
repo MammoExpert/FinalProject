@@ -5,6 +5,8 @@ namespace MammoExpert.PatientServices.Sources
     [DataContract]
     public class Source
     {
+        #region Properties
+
         [DataMember]
         public string Name { get; set; }
 
@@ -17,13 +19,9 @@ namespace MammoExpert.PatientServices.Sources
         [DataMember]
         public Parameters Parameters { get; set; }
 
-        public Source(string name, SourceType typeName, string description)
-        {
-            Name = name;
-            Type = typeName;
-            Description = description;
-            Parameters = new Parameters();
-        }
+        #endregion // Properties
+
+        #region Constructors
 
         public Source()
         {
@@ -31,5 +29,15 @@ namespace MammoExpert.PatientServices.Sources
             Description = string.Empty;
             Parameters = new Parameters();
         }
+
+        public Source(string name, SourceType type, string description, Parameters parameters)
+        {
+            Name = name;
+            Type = type;
+            Description = description;
+            Parameters = parameters;
+        }
+
+        #endregion // Constructors
     }
 }

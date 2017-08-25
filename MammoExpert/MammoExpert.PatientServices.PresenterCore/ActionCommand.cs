@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MammoExpert.PatientServices.PresenterCore
@@ -11,7 +7,7 @@ namespace MammoExpert.PatientServices.PresenterCore
     public class ActionCommand : ICommand
     {
         private readonly Action _action;
-        readonly Predicate<object> _canExecute;
+        private readonly Predicate<object> _canExecute;
 
         public ActionCommand(Action action)
         {
@@ -48,7 +44,7 @@ namespace MammoExpert.PatientServices.PresenterCore
     public class ActionCommand<T> : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private Action<T> _action;
+        private readonly Action<T> _action;
 
         public ActionCommand(Action<T> action)
         {

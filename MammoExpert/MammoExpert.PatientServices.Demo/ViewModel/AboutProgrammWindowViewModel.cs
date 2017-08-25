@@ -11,10 +11,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class AboutProgrammWindowViewModel : ViewModelBase
     {
+        #region Constructor
+
         public AboutProgrammWindowViewModel()
         {
             base.DisplayName = Resources.AboutProgrammWindowViewModel_DisplayName;
         }
+
+        #endregion // Constructor
+
+        #region Properties
 
         // версия программы
         public string Version => Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -25,5 +31,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // список загруженных библиотек реализующих интерфейс источника данных пациента
         public List<string> Moduls => new List<string>() { "Фейковый модуль 1", "Фейковый модуль 2" };
 
+        #endregion // Properties
     }
 }

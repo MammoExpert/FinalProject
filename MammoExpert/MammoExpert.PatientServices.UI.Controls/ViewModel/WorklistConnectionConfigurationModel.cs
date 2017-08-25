@@ -1,13 +1,18 @@
-﻿using System;
-using MammoExpert.PatientServices.PresenterCore;
+﻿using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.UI.Controls.Properties;
 
 namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 {
-    public class WorklistConnectionConfigurationModel : ViewModelBase, ISearchViewModel
+    public class WorklistConnectionConfigurationModel : ViewModelBase, IViewModel
     {
+        #region Fields
+
         private Source _source;
+
+        #endregion //Fields
+
+        #region Constructors
 
         public WorklistConnectionConfigurationModel()
         {
@@ -19,6 +24,10 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
             _source = source;
         }
+
+        #endregion // Constructors
+
+        #region Properties
 
         public Source Source
         {
@@ -33,9 +42,6 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             }
         }
 
-        public void Search()
-        {
-            throw new NotImplementedException();
-        }
+        #endregion // Properties
     }
 }

@@ -8,60 +8,72 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class ConfigurationWindowViewModel : ViewModelBase
     {
-        private ISearchViewModel _currentSearchViewModel;
+        #region Fields and Properties
 
-        public ISearchViewModel CurrentSearchViewModel
+        private IViewModel _currentViewModel;
+
+        public IViewModel CurrentViewModel
         {
-            get { return _currentSearchViewModel; }
+            get { return _currentViewModel; }
             set
             {
-                _currentSearchViewModel = value;
-                RaisePropertyChanged("CurrentSearchViewModel");
+                _currentViewModel = value;
+                RaisePropertyChanged("CurrentViewModel");
             }
         }
+
+        #endregion // Fields and Properties
+
+        #region Constructors
 
         // конструктор при загрузке окна для создания нового источника
         public ConfigurationWindowViewModel(SourceType type)
         {
             base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
-            SetCurrentSearchViewModel(type);
+            SetCurrentViewModel(type);
         }
 
         // конструктор при загрузке окна для редактирования выбранного источника
         public ConfigurationWindowViewModel(Source source)
         {
             base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
-            SetCurrentSearchViewModel(source);
+            SetCurrentViewModel(source);
         }
 
-        // метод устанавливает значение для текущего ViewModel в зависимости от переданного типа источника
-        private void SetCurrentSearchViewModel(SourceType type)
+        #endregion // Constructors
+
+        #region Private Methods
+
+        // устанавливает значение для текущей модели представления в зависимости от переданного типа источника
+        private void SetCurrentViewModel(SourceType type)
         {
             switch (type)
             {
                 case SourceType.DataBase:
-                    _currentSearchViewModel = new DBConnectionConfigurationModel();
+                    _currentViewModel = new DBConnectionConfigurationModel();
                     break;
                 case SourceType.Worklist:
-                    _currentSearchViewModel = new WorklistConnectionConfigurationModel();
+                    _currentViewModel = new WorklistConnectionConfigurationModel();
                     break;
                 default: throw new ArgumentNullException("type");
             }
         }
 
-        // метод устанавливает значение для текущего ViewModel в зависимости от переданного источника
-        private void SetCurrentSearchViewModel(Source source)
+        // устанавливает значение для текущей модели представления в зависимости от переданного источника
+        private void SetCurrentViewModel(Source source)
         {
             switch (source.Type)
             {
                 case SourceType.DataBase:
-                    _currentSearchViewModel = new DBConnectionConfigurationModel(source);
+                    _currentViewModel = new DBConnectionConfigurationModel(source);
                     break;
                 case SourceType.Worklist:
-                    _currentSearchViewModel = new WorklistConnectionConfigurationModel(source);
+                    _currentViewModel = new WorklistConnectionConfigurationModel(source);
                     break;
                 default: throw new ArgumentNullException("source");
             }
         }
+
+        #endregion // Private Methods
     }
 }

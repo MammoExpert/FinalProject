@@ -133,16 +133,4 @@
     <value>Источники данных</value>
     <comment>Заголовок окна настройки источников данных</comment>
   </data>
-  <data name="SourcesWindowViewModel_SourceTypeOption_DataBase" xml:space="preserve">
-    <value>База данных</value>
-    <comment>Отображаемый текст ComboBox-элемента со значением "База данных"</comment>
-  </data>
-  <data name="SourcesWindowViewModel_SourceTypeOption_NotSpecified" xml:space="preserve">
-    <value>(Не выбрано)</value>
-    <comment>Отображаемый текст ComboBox-элемента со значением "Не выбрано"</comment>
-  </data>
-  <data name="SourcesWindowViewModel_SourceTypeOption_Worklist" xml:space="preserve">
-    <value>Рабочий список</value>
-    <comment>Отображаемый текст ComboBox-элемента со значением "Рабочий список"</comment>
-  </data>
 </root>

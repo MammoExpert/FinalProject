@@ -10,8 +10,7 @@
         Margin="5"
         Padding="5"
         Header="{Binding Path=DisplayName}">
-        <Grid
-            DataContext="{Binding Path=Source}">
+        <Grid DataContext="{Binding Path=Source}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
@@ -37,8 +36,8 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Background="DarkGray"
-                ItemsSource="{Binding Path=ListProviders, Mode=OneTime}" 
-                SelectedItem="{Binding Path=Parameters.Driver, UpdateSourceTrigger=PropertyChanged}"/>
+                ItemsSource="{Binding Path=ListProviders, Mode=OneTime}"
+                SelectedItem="{Binding Path=Parameters.Driver, UpdateSourceTrigger=PropertyChanged}" />
             <Label
                 Grid.Row="2"
                 Grid.Column="0"
@@ -46,8 +45,8 @@
             <TextBox
                 Grid.Row="2"
                 Grid.Column="1"
-                Margin="2" 
-                Text="{Binding Path=Parameters.Ip, UpdateSourceTrigger=PropertyChanged}"/>
+                Margin="2"
+                Text="{Binding Path=Parameters.Ip, UpdateSourceTrigger=PropertyChanged}" />
             <Label
                 Grid.Row="3"
                 Grid.Column="0"
@@ -55,8 +54,8 @@
             <TextBox
                 Grid.Row="3"
                 Grid.Column="1"
-                Margin="2" 
-                Text="{Binding Path=Parameters.Port, UpdateSourceTrigger=PropertyChanged}"/>
+                Margin="2"
+                Text="{Binding Path=Parameters.Port, UpdateSourceTrigger=PropertyChanged}" />
             <Label
                 Grid.Row="4"
                 Grid.Column="0"
@@ -64,8 +63,8 @@
             <TextBox
                 Grid.Row="4"
                 Grid.Column="1"
-                Margin="2" 
-                Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"/>
+                Margin="2"
+                Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
             <Label
                 Grid.Row="5"
                 Grid.Column="0"
@@ -73,8 +72,8 @@
             <TextBox
                 Grid.Row="5"
                 Grid.Column="1"
-                Margin="2" 
-                Text="{Binding Path=Parameters.UserName, UpdateSourceTrigger=PropertyChanged}"/>
+                Margin="2"
+                Text="{Binding Path=Parameters.UserName, UpdateSourceTrigger=PropertyChanged}" />
             <Label
                 Grid.Row="6"
                 Grid.Column="0"
@@ -82,8 +81,8 @@
             <TextBox
                 Grid.Row="6"
                 Grid.Column="1"
-                Margin="2" 
-                Text="{Binding Path=Parameters.Password, UpdateSourceTrigger=PropertyChanged}"/>
+                Margin="2"
+                Text="{Binding Path=Parameters.Password, UpdateSourceTrigger=PropertyChanged}" />
             <StackPanel
                 Grid.Row="7"
                 Grid.Column="0"

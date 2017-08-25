@@ -8,8 +8,7 @@ namespace MammoExpert.PatientServices.Sources
         #region Fields
 
         private List<Source> _sourceList;
-        private string _jsonFilePath;
-        private JsonManager _fileManager;
+        private JsonManager<Source> _fileManager;
 
         #endregion // Fields
         
@@ -17,43 +16,42 @@ namespace MammoExpert.PatientServices.Sources
 
         public SourceRepository(string filePath)
         {
-            _fileManager = new JsonManager(filePath);
-            _jsonFilePath = filePath;
-            _sourceList = GetAllSources();
+            _fileManager = new JsonManager<Source>(filePath);
+            _sourceList = GetAll();
         }
 
         #endregion // Constructor
 
         #region Public methods
 
-        // метод, возвращающий полный список источников
-        public List<Source> GetAllSources()
+        // Возвращает список имеющихся источников
+        public List<Source> GetAll()
         {
-            return _fileManager.GetAllSources();
+            return _fileManager.GetAll();
         }
 
-        // метод для добавления нового источника в список
-        public void AddSource(Source newSource)
+        // добавляет новый источник
+        public void Add(Source newSource)
         {
             if (!_sourceList.Contains(newSource))
             {
                 _sourceList.Add(newSource);
-                _fileManager.AddSource(newSource);
+                _fileManager.Add(newSource);
             }
         }
 
-        // метод для удаления источника из списка
-        public void DeleteSource(Source source)
+        // удаляет источник
+        public void Delete(Source source)
         {
             if (_sourceList.Contains(source))
             {
                 _sourceList.Remove(source);
-                _fileManager.DeleteSource(source);
+                _fileManager.Delete(source);
             }
         }
 
-        // метод, возвращающий список источников, согласно переданному типу
-        public List<Source> GetSourcesByType(SourceType type)
+        // возвращает список источников согласно переданному типу
+        public List<Source> GetByType(SourceType type)
         {
             return _sourceList.Where(t => t.Type == type).ToList();
         }

@@ -27,6 +27,6 @@
         <ContentControl
             Grid.Row="0"
             Grid.Column="0"
-            Content="{Binding CurrentSearchViewModel}" />
+            Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>
