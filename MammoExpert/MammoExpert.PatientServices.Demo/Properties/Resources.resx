@@ -129,6 +129,10 @@
     <value>Выбор пациента</value>
     <comment>Заголовок главного окна</comment>
   </data>
+  <data name="PatientDitailsWindowViewModel_DisplayName" xml:space="preserve">
+    <value>Информация о пациенте</value>
+    <comment>Заголовок окна информации о пациенте</comment>
+  </data>
   <data name="SourcesWindowViewModel_DisplayName" xml:space="preserve">
     <value>Источники данных</value>
     <comment>Заголовок окна настройки источников данных</comment>

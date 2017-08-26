@@ -1,4 +1,5 @@
 ﻿using System;
+using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.Sources;
@@ -61,6 +62,16 @@ namespace MammoExpert.PatientServices.Demo
             var viewModel = new ConfigurationWindowViewModel(source);
             view.DataContext = viewModel;
             if (viewModel.CloseAction == null) viewModel.CloseAction = new Action(view.Close);
+            view.DataContext = viewModel;
+            view.ShowDialog();
+        }
+
+        // Создает окно для просмотри информации о пациенте
+        public static void CreatePatientDitailsWindow(Patient patient)
+        {
+            var view = new PatientDitailsWindow();
+            var viewModel = new PatientDitailsWindowViewModel(patient);
+            view.DataContext = viewModel;
             view.DataContext = viewModel;
             view.ShowDialog();
         }

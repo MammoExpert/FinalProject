@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Windows.Data;
+using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 

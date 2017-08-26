@@ -37,7 +37,7 @@
             <ListView
                 x:Name="LvPatients"
                 Margin="2"
-                ItemsSource="{Binding Path=PatientsList}"
+                ItemsSource="{Binding Path=Patients}"
                 SelectionMode="Single">
 
                 <ListView.View>
@@ -48,7 +48,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Path=MiddleName}" Header="Отчество" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Sex}" Header="Пол" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=BirthDate}" Header="Дата рождения" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=PatientAddress}" Header="Адрес" />
+                        <!--<GridViewColumn DisplayMemberBinding="{Binding Path=PatientAddress}" Header="Адрес" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=PatientComments}" Header="Дополнительная информация" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=AccessionNumber}" Header="Инвентарный номер" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=MedicalRecordLocator}" Header="Данные направления на исследование" />
@@ -58,7 +58,7 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Path=PatientWorkAddress}" Header="Место работы" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Job}" Header="Профессия" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=NumberPolicy}" Header="Номер мед. страховки" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=InsuranceCompany}" Header="Страховая кампания" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=InsuranceCompany}" Header="Страховая кампания" />-->
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Telephone}" Header="Телефон" />
 
                     </GridView>
@@ -68,7 +68,7 @@
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
             <Label Margin="2" Content="Количество" />
-            <TextBlock Text="{Binding Path=PatientList.Count}" />
+            <TextBlock Text="{Binding Path=Patients.Count}" />
         </StackPanel>
 
         <StackPanel

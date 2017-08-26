@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
-using MammoExpert.PatientServices.Demo.Properties;
+using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
@@ -8,6 +8,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
+using MammoExpert.PatientServices.Core;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -81,9 +82,33 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             if (source != null)
             {
-                base.CreateWorkspace(new PatientSearchViewModel(source));
-                CloseAction();
+                var data = GetData(source);
+                if (data != null)
+                {
+                    base.CreateWorkspace(new PatientSearchViewModel(source.Name, data));
+                    CloseAction();
+                }              
             }
+        }
+
+        // возвращает данные из источника
+        private List<Patient> GetData(Source source)
+        {
+            try
+            {
+                // стринг указан пока для тестирования
+                var rep = new PacientRepositoryEf(@"Data Source=(localdb)/v11.0;AttachDbFilename=../../Data/PatientServices.mdf;Integrated Security=True");
+                return rep.GetAllPatients().ToList();
+            }
+            catch (Exception)
+            {
+                MessageBoxResult result = MessageBox.Show(
+                    "Не возможно подключиться к " + source.Name + ". Вероятно данные об источнике не верны.",
+                    "Ошибка подключения",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            return null;
         }
 
         // создает окно для подключения к новому источнику, согласно выбранному типу источника

@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace MammoExpert.PatientServices.Sources
 {
@@ -6,6 +7,9 @@ namespace MammoExpert.PatientServices.Sources
     public class Source
     {
         #region Properties
+
+        [DataMember]
+        public string ConectionString { get; set; }
 
         [DataMember]
         public string Name { get; set; }
@@ -25,6 +29,7 @@ namespace MammoExpert.PatientServices.Sources
 
         public Source()
         {
+            ConectionString = string.Empty;
             Name = string.Empty;
             Description = string.Empty;
             Parameters = new Parameters();
@@ -32,18 +37,11 @@ namespace MammoExpert.PatientServices.Sources
 
         public Source(SourceType type)
         {
+            ConectionString = string.Empty;
             Name = string.Empty;
             Type = type;
             Description = string.Empty;
             Parameters = new Parameters();
-        }
-
-        public Source(string name, SourceType type, string description, Parameters parameters)
-        {
-            Name = name;
-            Type = type;
-            Description = description;
-            Parameters = parameters;
         }
 
         #endregion // Constructors

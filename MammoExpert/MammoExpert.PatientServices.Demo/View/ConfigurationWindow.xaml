@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding Path=DisplayName}"
     ResizeMode="NoResize"
-    SizeToContent="WidthAndHeight"
+    Width="300"
+    SizeToContent="Height"
     WindowStartupLocation="CenterScreen"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">

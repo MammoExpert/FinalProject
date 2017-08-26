@@ -193,3 +193,9 @@ D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientService
 D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Resources.exe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Resources.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.xml

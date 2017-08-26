@@ -88,6 +88,15 @@ namespace MammoExpert.PatientServices.Demo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Информация о пациенте.
+        /// </summary>
+        internal static string PatientDitailsWindowViewModel_DisplayName {
+            get {
+                return ResourceManager.GetString("PatientDitailsWindowViewModel_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Источники данных.
         /// </summary>
         internal static string SourcesWindowViewModel_DisplayName {

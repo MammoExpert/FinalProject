@@ -79,6 +79,7 @@
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\PatientDitailsWindowViewModel.cs" />
     <Compile Include="ViewModel\SourcesWindowViewModel.cs" />
     <Compile Include="View\AboutProgrammWindow.xaml.cs">
       <DependentUpon>AboutProgrammWindow.xaml</DependentUpon>
@@ -88,6 +89,9 @@
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PatientDitailsWindow.xaml.cs">
+      <DependentUpon>PatientDitailsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SourcesWindow.xaml.cs">
       <DependentUpon>SourcesWindow.xaml</DependentUpon>
@@ -138,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\PatientDitailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SourcesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +155,10 @@
     <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
       <Project>{B9CCD920-4B2A-44C2-AC74-898535A900C9}</Project>
       <Name>MammoExpert.PatientServices.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
+      <Project>{0754cf79-705a-4bbd-a843-e5e4e94358f9}</Project>
+      <Name>MammoExpert.PatientServices.DB</Name>
     </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
       <Project>{C5604D0A-20EC-4E75-871C-14508A8C37E4}</Project>
