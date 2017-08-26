@@ -20,7 +20,7 @@ namespace MammoExpert.PatientServices.Core
         /// <summary>
         /// Получает или задает значение пола пациента
         /// </summary>
-        public Enum Sex { get; set; }
+        public Sex Sex { get; set; }
         /// <summary>
         /// Получает или задает значение даты рождения пациента
         /// </summary>
@@ -60,7 +60,7 @@ namespace MammoExpert.PatientServices.Core
         /// <summary>
         /// Получает или задает значение месту работы пациента
         /// </summary>
-        public string PatientWorkAddres { get; set; }
+        public string PatientWorkAddress { get; set; }
         /// <summary>
         /// Получает или задает значение профессии пациента
         /// </summary>

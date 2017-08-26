@@ -48,7 +48,7 @@ namespace MammoExpert.PatientService.Worklist
             {
                 for (int i = 0; i < rp.Dataset.Count(); i++)
                 {
-                    _patient = ReceivingPatientData(rp);
+                    _patient = GetPatientInformation(rp);
                     _patients.Add(_patient);
                 }
             };
@@ -62,19 +62,19 @@ namespace MammoExpert.PatientService.Worklist
             var cfind = DicomCFindRequest.CreatePatientQuery(patientId);
             cfind.OnResponseReceived = (DicomCFindRequest rq, DicomCFindResponse rp) =>
             {
-                _patient = ReceivingPatientData(rp);
+                _patient = GetPatientInformation(rp);
             };
             _client.AddRequest(cfind);
             _client.Send(_host, _port, _useTls, _callingAe, _calledAe);
             return _patient;
         }
 
-        private Patient ReceivingPatientData(DicomCFindResponse rp)
+        private Patient GetPatientInformation(DicomCFindResponse rp)
         {
             Patient patient = new Patient
             {
                 FirstName = rp.Dataset.Get<string>(DicomTag.PatientName),
-                Sex = rp.Dataset.Get<Enum>(DicomTag.PatientSex),
+                Sex = rp.Dataset.Get<Sex>(DicomTag.PatientSex),
                 BirthDate = rp.Dataset.Get<DateTime>(DicomTag.PatientBirthDate),
                 PatientAddress = rp.Dataset.Get<string>(DicomTag.PatientAddress),
                 PatientComments = rp.Dataset.Get<string>(DicomTag.PatientComments),

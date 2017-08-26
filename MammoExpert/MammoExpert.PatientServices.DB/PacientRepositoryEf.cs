@@ -1,4 +1,5 @@
-﻿using MammoExpert.PatientServices.Core;
+﻿using System;
+using MammoExpert.PatientServices.Core;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -9,10 +10,10 @@ namespace MammoExpert.PatientServices.DB
     public class PacientRepositoryEf : IPatientRepository
     {
         private readonly PatientContext _patientContext;
-        //private readonly string _connectionString;
+        private bool _disposed = false;
+
         public PacientRepositoryEf(string dbNameOrConnection)
         {
-            //_connectionString = dbNameOrConnection;
             _patientContext = new PatientContext(dbNameOrConnection);
         }
 
@@ -22,10 +23,6 @@ namespace MammoExpert.PatientServices.DB
         /// <param name="patient"></param>
         public void AddNewPatient(Patient patient)
         {
-            //using (_patientContext = new PatientContext(_connectionString))
-            //{
-            //    _patientContext.Patients.Add(patient);
-            //}
             _patientContext.Patients.Add(patient);
             _patientContext.SaveChanges();
         }
@@ -37,19 +34,6 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> FindPatientsByValue(string searchString)
         {
-            //using (_patientContext = new PatientContext(_connectionString))
-            //{
-            //    var patients = _patientContext.Patients.Where(s => s.AccessionNumber.Contains(searchString) ||
-            //       s.BirthDate.ToString(CultureInfo.InvariantCulture).Contains(searchString) || s.Contingent.Contains(searchString) ||
-            //       s.FirstName.Contains(searchString) || s.InsuranceCompany.Contains(searchString) ||
-            //       s.Job.Contains(searchString) || s.LastName.Contains(searchString) || s.Sex.ToString().Contains(searchString)
-            //       || s.MedicalRecordLocator.Contains(searchString) || s.MiddleName.Contains(searchString) || 
-            //       s.NumberOfPassport.Contains(searchString) || s.NumberPolicy.Contains(searchString) || 
-            //       s.PatientAddress.Contains(searchString) || s.PatientCategory.Contains(searchString) || 
-            //       s.PatientComments.Contains(searchString) || s.PatientId.Contains(searchString) || 
-            //       s.PatientWorkAddres.Contains(searchString) || s.Telephone == searchString).ToList();
-            //    return patients;
-            //}
             var patients = _patientContext.Patients.Where(s => s.AccessionNumber.Contains(searchString) ||
                                                                s.FirstName.Contains(searchString) || 
                                                                s.InsuranceCompany.Contains(searchString) ||
@@ -68,11 +52,6 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> GetAllPatients()
         {
-            //using (_patientContext = new PatientContext(_connectionString))
-            //{
-            //    var patients = _patientContext.Patients.Select(s=>s).ToList();
-            //    return patients;
-            //}
             return _patientContext.Patients.Select(s => s).ToList();
         }
 
@@ -83,12 +62,25 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public Patient GetPatientData(string patientId)
         {
-            //using (_patientContext = new PatientContext(_connectionString))
-            //{
-            //    var patient = _patientContext.Patients.FirstOrDefault(s => s.PatientId == patientId);
-            //    return patient;
-            //}
             return _patientContext.Patients.FirstOrDefault(s => s.PatientId == patientId);
+        }
+
+        public virtual void Dispose(bool disposing)
+        {
+            if (!this._disposed)
+            {
+                if (disposing)
+                {
+                    _patientContext.Dispose();
+                }
+            }
+            this._disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

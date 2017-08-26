@@ -6,6 +6,7 @@ using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.UI.Controls.ViewModel;
 using System;
 using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
 using MammoExpert.PatientServices.Core;
@@ -97,13 +98,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             try
             {
                 // стринг указан пока для тестирования
-                var rep = new PacientRepositoryEf(@"Data Source=(localdb)/v11.0;AttachDbFilename=../../Data/PatientServices.mdf;Integrated Security=True");
-                return rep.GetAllPatients().ToList();
+                var rep = new PacientRepositoryEf(@"Data Source=(localDb)\v11.0;Initial Catalog=PatientServices;Integrated Security=True");
+                return (List<Patient>)rep.GetAllPatients();
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 MessageBoxResult result = MessageBox.Show(
-                    "Не возможно подключиться к " + source.Name + ". Вероятно данные об источнике не верны.",
+                    "Не возможно подключиться к " + source.Name + "\n" + e.Message,
                     "Ошибка подключения",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
