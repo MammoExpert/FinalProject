@@ -5,8 +5,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel"
     Title="{Binding Path=DisplayName}"
     Height="300"
+    d:DataContext="{d:DesignInstance Type=viewModel:AboutProgrammWindowViewModel}"
     ResizeMode="NoResize"
     SizeToContent="Width"
     WindowStartupLocation="CenterScreen"
@@ -29,18 +31,20 @@
             VerticalAlignment="Top"
             Header="Общее описание">
 
-            <StackPanel>
+            <StackPanel Margin="10">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Приложение" FontSize="14" />
+                    <TextBlock FontSize="14" Text="Приложение" />
                     <TextBlock
+                        Margin="5,0"
                         VerticalAlignment="Center"
                         FontSize="14"
                         Text="{Binding Path=ApplicationName}"
                         TextWrapping="Wrap" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Версия" FontSize="14" />
+                    <TextBlock FontSize="14" Text="Версия" />
                     <TextBlock
+                        Margin="5,0"
                         VerticalAlignment="Center"
                         FontSize="14"
                         Text="{Binding Path=Version}" />

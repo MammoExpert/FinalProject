@@ -46,3 +46,15 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFrame
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.dll
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.dll
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.xml
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.xml
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
+G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb

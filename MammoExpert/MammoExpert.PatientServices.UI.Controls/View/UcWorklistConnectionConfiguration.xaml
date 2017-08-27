@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.UI.Controls.ViewModel"
+    d:DataContext="{d:DesignInstance Type=viewModel:WorklistConnectionConfigurationModel}"
     mc:Ignorable="d">
     <GroupBox
         Margin="5"
@@ -25,46 +27,55 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Label
+            <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
-                Content="Отображаемое имя" />
+                VerticalAlignment="Center"
+                Text="Отображаемое имя" />
             <TextBox
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
-            <Label
+
+            <TextBlock
                 Grid.Row="1"
                 Grid.Column="0"
-                Content="АЕ заголовок" />
+                VerticalAlignment="Center"
+                Text="АЕ заголовок" />
             <TextBox
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Parameters.Header, UpdateSourceTrigger=PropertyChanged}" />
-            <Label
+
+            <TextBlock
                 Grid.Row="2"
                 Grid.Column="0"
-                Content="Имя хоста (IP адрес)" />
+                VerticalAlignment="Center"
+                Text="Имя хоста (IP адрес)" />
             <TextBox
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Parameters.Ip, UpdateSourceTrigger=PropertyChanged}" />
-            <Label
+
+            <TextBlock
                 Grid.Row="3"
                 Grid.Column="0"
-                Content="Порт" />
+                VerticalAlignment="Center"
+                Text="Порт" />
             <TextBox
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Parameters.Port, UpdateSourceTrigger=PropertyChanged}" />
-            <Label
+
+            <TextBlock
                 Grid.Row="4"
                 Grid.Column="0"
-                Content="Таймаут" />
+                VerticalAlignment="Center"
+                Text="Таймаут" />
             <TextBox
                 Grid.Row="4"
                 Grid.Column="1"
