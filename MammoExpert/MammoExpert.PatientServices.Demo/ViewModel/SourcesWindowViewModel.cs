@@ -97,9 +97,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             try
             {
+                List<Patient> patients;
                 // стринг указан пока для тестирования
-                var rep = new PacientRepositoryEf(@"Data Source=(localDb)\v11.0;Initial Catalog=PatientServices;Integrated Security=True");
-                return (List<Patient>)rep.GetAllPatients();
+                var rep = new PacientRepositoryEf();
+                patients = (List<Patient>)rep.GetAllPatients();
+                return patients;//(List<Patient>)rep.GetAllPatients();
             }
             catch (Exception e)
             {

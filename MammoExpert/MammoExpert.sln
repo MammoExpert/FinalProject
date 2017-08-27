@@ -17,9 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Infrastructure", "MammoExpert.PatientServices.Infrastructure\MammoExpert.PatientServices.Infrastructure.csproj", "{54467928-CBED-49B0-A45F-6AD96D67B156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientService.Worklist", "MammoExpert.PatientService.Worklist\MammoExpert.PatientService.Worklist.csproj", "{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Resources", "MammoExpert.PatientServices.Resources\MammoExpert.PatientServices.Resources.csproj", "{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Worklist", "MammoExpert.PatientServices.Worklist\MammoExpert.PatientServices.Worklist.csproj", "{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,14 +55,14 @@ Global
 		{54467928-CBED-49B0-A45F-6AD96D67B156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54467928-CBED-49B0-A45F-6AD96D67B156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54467928-CBED-49B0-A45F-6AD96D67B156}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

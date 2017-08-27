@@ -7,7 +7,7 @@ using Dicom;
 using Dicom.Network;
 using MammoExpert.PatientServices.Core;
 
-namespace MammoExpert.PatientService.Worklist
+namespace MammoExpert.PatientServices.Worklist
 {
     public class PatientRepositoryDicom : IPatientRepository
     {

@@ -12,9 +12,9 @@ namespace MammoExpert.PatientServices.DB
         private readonly PatientContext _patientContext;
         private bool _disposed = false;
 
-        public PacientRepositoryEf(string dbNameOrConnection)
+        public PacientRepositoryEf()
         {
-            _patientContext = new PatientContext(dbNameOrConnection);
+            _patientContext = new PatientContext();
         }
 
         /// <summary>
@@ -52,6 +52,8 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> GetAllPatients()
         {
+            List<Patient> patients = new List<Patient>();
+            patients = (List<Patient>)_patientContext.Patients.Select(s => s).ToList();
             return _patientContext.Patients.Select(s => s).ToList();
         }
 

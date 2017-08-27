@@ -7,8 +7,8 @@
     <ProjectGuid>{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MammoExpert.PatientService.Worklist</RootNamespace>
-    <AssemblyName>MammoExpert.PatientService.Worklist</AssemblyName>
+    <RootNamespace>MammoExpert.PatientServices.Worklist</RootNamespace>
+    <AssemblyName>MammoExpert.PatientServices.Worklist</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

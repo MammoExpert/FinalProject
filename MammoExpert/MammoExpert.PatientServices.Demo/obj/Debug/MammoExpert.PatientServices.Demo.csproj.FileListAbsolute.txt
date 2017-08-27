@@ -208,3 +208,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpe
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
