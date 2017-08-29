@@ -9,14 +9,22 @@ namespace MammoExpert.PatientServices.DB
 {
     public class PacientRepositoryEf : IPatientRepository
     {
+        #region Поля
         private readonly PatientContext _patientContext;
         private bool _disposed = false;
-
+        #endregion
+        #region Конструкторы
         public PacientRepositoryEf()
         {
             _patientContext = new PatientContext();
+            _patientContext.Database.Connection.Open();
         }
-
+        public PacientRepositoryEf(string connectionString)
+        {
+            _patientContext = new PatientContext(connectionString);
+        }
+        #endregion
+        #region Методы
         /// <summary>
         /// Добавляет нового пациента в базу данных
         /// </summary>
@@ -52,8 +60,6 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> GetAllPatients()
         {
-            List<Patient> patients = new List<Patient>();
-            patients = (List<Patient>)_patientContext.Patients.Select(s => s).ToList();
             return _patientContext.Patients.Select(s => s).ToList();
         }
 
@@ -84,5 +90,6 @@ namespace MammoExpert.PatientServices.DB
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+        #endregion
     }
 }

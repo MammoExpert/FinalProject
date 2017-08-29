@@ -32,11 +32,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public string ApplicationName => Assembly.GetExecutingAssembly().GetName().Name;
 
         // список загруженных библиотек реализующих интерфейс источника данных пациента
-        public List<Assembly> Moduls => GetModuls(); //=> new List<string>() { "Фейковый модуль 1", "Фейковый модуль 2" };
+        public List<string> Moduls => GetModuls(); 
         #endregion // Properties
 
         //метод получающий библиотеки реализующие интерфейс источника данных пациента
-        private static List<Assembly> GetModuls()
+        private static List<string> GetModuls()
         {
             var mammoExpertDb = typeof(MammoExpert.PatientServices.DB.PacientRepositoryEf);
             var mammoExpertWorkList = typeof(MammoExpert.PatientServices.Worklist.PatientRepositoryDicom);
@@ -44,7 +44,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
             var assebleTypes = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
-                .Where(p => p.GetInterfaces().Contains(typeInterface)).Select(a=>a.Assembly).ToList();
+                .Where(p => p.GetInterfaces().Contains(typeInterface))
+                .SelectMany(a=>new List<string>
+                {
+                    "Модуль " + a.Assembly.GetName().Name + " " +
+                    "Версия " + a.Assembly.GetName().Version.ToString()
+                }).ToList();
 
             return assebleTypes;
         }
