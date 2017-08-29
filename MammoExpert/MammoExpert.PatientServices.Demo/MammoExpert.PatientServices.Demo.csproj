@@ -49,9 +49,6 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MammoExpert.PatientServices.Worklist">
-      <HintPath>..\MammoExpert.PatientServices.Worklist\bin\Debug\MammoExpert.PatientServices.Worklist.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -176,10 +173,6 @@
       <Project>{C5604D0A-20EC-4E75-871C-14508A8C37E4}</Project>
       <Name>MammoExpert.PatientServices.PresenterCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MammoExpert.PatientServices.Resources\MammoExpert.PatientServices.Resources.csproj">
-      <Project>{18aa0e1d-63d6-4f3f-809d-94cea03b30d1}</Project>
-      <Name>MammoExpert.PatientServices.Resources</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.Sources\MammoExpert.PatientServices.Sources.csproj">
       <Project>{80dada21-e29f-434a-adf0-a6659b631bf2}</Project>
       <Name>MammoExpert.PatientServices.Sources</Name>
@@ -187,6 +180,10 @@
     <ProjectReference Include="..\MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj">
       <Project>{53ac4068-69bd-44d4-ac0a-132b991c189b}</Project>
       <Name>MammoExpert.PatientServices.UI.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Worklist\MammoExpert.PatientServices.Worklist.csproj">
+      <Project>{3bb28da7-72c5-413a-bdce-e27313a4d87f}</Project>
+      <Name>MammoExpert.PatientServices.Worklist</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

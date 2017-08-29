@@ -5,6 +5,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls.View"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.UI.Controls.ViewModel"
+    d:DataContext="{d:DesignInstance Type=viewModel:PatientSearchViewModel}"
     Background="DarkGray"
     mc:Ignorable="d">
     <Grid>
@@ -67,8 +69,11 @@
         </ScrollViewer>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Label Margin="2" Content="Количество" />
-            <TextBlock Text="{Binding Path=Patients.Count}" />
+            <TextBlock Margin="5" Text="Количество:" />
+            <TextBlock
+                Margin="5"
+                VerticalAlignment="Center"
+                Text="{Binding Path=Patients.Count}" />
         </StackPanel>
 
         <StackPanel
