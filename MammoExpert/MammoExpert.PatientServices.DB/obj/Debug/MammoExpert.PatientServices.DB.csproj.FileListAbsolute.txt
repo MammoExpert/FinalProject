@@ -1,4 +1,4 @@
-﻿D:\Vadim\final\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
+D:\Vadim\final\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
 D:\Vadim\final\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
 D:\Vadim\final\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
 D:\Vadim\final\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.dll
@@ -35,17 +35,6 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert
 D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
@@ -58,4 +47,15 @@ G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
 G:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb
-
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.xml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.xml
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb

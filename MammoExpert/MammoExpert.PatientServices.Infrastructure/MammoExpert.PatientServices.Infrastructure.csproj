@@ -43,9 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
       <Project>{0754cf79-705a-4bbd-a843-e5e4e94358f9}</Project>
       <Name>MammoExpert.PatientServices.DB</Name>

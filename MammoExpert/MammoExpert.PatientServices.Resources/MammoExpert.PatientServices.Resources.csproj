@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{18AA0E1D-63D6-4F3F-809D-94CEA03B30D1}</ProjectGuid>
+    <ProjectGuid>{81C81D47-1B2B-4AFE-953B-DA9CBDF14339}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MammoExpert.PatientServices.Resources</RootNamespace>

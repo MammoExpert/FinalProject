@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:MammoExpert.PatientServices.Resources"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
     </Application.Resources>
 </Application>
