@@ -14,7 +14,7 @@
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
     <Window.Resources>
-        <ResourceDictionary Source="/MammoExpert.PatientServices.Resources;component/Templates.xaml" />
+        <ResourceDictionary Source="../Themes/Templates.xaml" />
     </Window.Resources>
 
     <Grid>
@@ -35,7 +35,7 @@
             Grid.Row="1"
             Grid.Column="0"
             Content="{Binding Path=Workspaces}"
-            ContentTemplate= "{StaticResource WorkspacesTemplate}" />
+            ContentTemplate="{StaticResource WorkspacesTemplate}" />
 
     </Grid>
 </Window>

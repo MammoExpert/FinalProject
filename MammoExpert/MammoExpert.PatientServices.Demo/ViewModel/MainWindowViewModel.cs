@@ -68,13 +68,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // открывает окно с информацией о программе
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
-            WindowFactory.CreateAboutProgrammWindow();
+            ViewFactory.CreateAboutProgrammWindow();
         });
 
         // открывает окно управления источниками
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
-            WindowFactory.CreateSourcesWindow();
+            ViewFactory.CreateSourcesWindow();
         });
 
         #endregion // Commands
