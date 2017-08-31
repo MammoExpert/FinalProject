@@ -6,21 +6,15 @@ using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo
 {
-    public class WindowFactory
-    {
-        #region Constructor
-
-        public WindowFactory() { }
-
-        #endregion // Constructor
-
+    public class ViewFactory
+    { 
         #region Public Methods
 
         // создает главное окно
-        public static void CreateMainWindow(string sourcePath)
+        public static void CreateMainWindow()
         {
             var view = new MainWindow();
-            var viewModel = new MainWindowViewModel(sourcePath);
+            var viewModel = new MainWindowViewModel("../../Data/all_sources.json");
             view.DataContext = viewModel;
             view.Show();
         }

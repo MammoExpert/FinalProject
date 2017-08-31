@@ -314,7 +314,6 @@
                 <Button
                     Width="100"
                     Margin="2"
-                    Command="{Binding CloseCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>
