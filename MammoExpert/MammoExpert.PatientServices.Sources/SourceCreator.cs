@@ -8,8 +8,6 @@ namespace MammoExpert.PatientServices.Sources
 {
     public class SourceCreator
     {
-        private static int _counter;
-
         private static Dictionary<SourceType, Dictionary<string, string>> dic = new Dictionary<SourceType, Dictionary<string, string>>()
         {
             {SourceType.DataBase, new Dictionary<string, string>()
@@ -33,10 +31,7 @@ namespace MammoExpert.PatientServices.Sources
 
         public static Source Create(SourceType type)
         {
-            var result = new Source(type);
-            result.Id = System.Threading.Interlocked.Increment(ref _counter);
-            result.Parameters = dic[type];
-            return result;
+            return new Source(type) { Parameters = dic[type] };
         }
     }
 

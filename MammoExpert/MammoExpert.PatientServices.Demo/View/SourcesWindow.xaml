@@ -65,7 +65,7 @@
             </i:Interaction.Triggers>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="#" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="#" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Type}" Header="Тип" />
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Header="Описание" />
                 </GridView>

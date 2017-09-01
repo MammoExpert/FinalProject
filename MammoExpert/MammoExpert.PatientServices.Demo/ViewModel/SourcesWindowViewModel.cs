@@ -130,22 +130,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private static void CreateSource(SourceTypeOption option)
         {
             //var s1 = SourceCreator.Create(SourceType.DataBase);
-            //var s2 = SourceCreator.Create(SourceType.Worklist);
-            //s1.Description = "Описание базы данных";
-            //s1.Parameters["Name"] = "База данных 1";
+            //s1.Description = "Другое описание базы данных";
+            //s1.Parameters["Name"] = "База данных 2";
             //s1.Parameters["Ip"] = "127.168.0.1";
-            //s1.Parameters["Port"] = "8080";
-            //s1.Parameters["UserName"] = "Вася";
-            //s1.Parameters["Password"] = "123";
-
-            //s2.Description = "Описание рабочего списка";
-            //s2.Parameters["Name"] = "Рабочий список 1";
-            //s2.Parameters["Port"] = "8081";
-            //s2.Parameters["Ip"] = "127.168.1.1";
-            //s2.Parameters["Timeout"] = "123";
-
+            //s1.Parameters["Port"] = "8088";
+            //s1.Parameters["UserName"] = "Петя";
+            //s1.Parameters["Password"] = "88887";
             //SourceRepository.Add(s1);
-            //SourceRepository.Add(s2);
 
             ViewFactory.CreateConfigurationView(SourceCreator.Create(option.Type));
         }

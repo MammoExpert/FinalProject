@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -19,6 +20,7 @@ namespace MammoExpert.PatientServices.Sources
         public Source(SourceType type)
         {
             Type = type;
+            Id = new Random().Next(0, 999);
         }
     }
 
