@@ -14,6 +14,7 @@ namespace MammoExpert.PatientServices.Sources
         {
             {SourceType.DataBase, new Dictionary<string, string>()
             {
+                {"Driver", "" },
                 {"Ip", ""},
                 {"Port", ""},
                 {"Name", ""},

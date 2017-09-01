@@ -12,13 +12,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 
         #endregion //Fields
 
-        #region Constructors
-
-        public WorklistConnectionConfigurationModel()
-        {
-            base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
-            _source = new Source(SourceType.Worklist);
-        }
+        #region Constructor
 
         public WorklistConnectionConfigurationModel(Source source)
         {
@@ -26,7 +20,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
             _source = source;
         }
 
-        #endregion // Constructors
+        #endregion // Constructor
 
         #region Properties
 

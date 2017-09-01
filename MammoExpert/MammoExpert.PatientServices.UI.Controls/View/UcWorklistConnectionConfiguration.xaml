@@ -107,9 +107,11 @@
                     Command="{Binding CreateConnectionWorklist}"
                     Content="Создать" />
                 <Button
+                    Height="26"
                     Padding="25,3"
+                    VerticalAlignment="Top"
                     Background="DarkGray"
-                    Command="{Binding CancelCreateConnectionWorklist}"
+                    Command="{Binding CloseCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>

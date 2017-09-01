@@ -160,7 +160,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void DeleteSource()
         {
             if (SelectedSource == null) return;
-            Messager.ShowAskToDeleteMessage("", delegate ()
+            Messager.ShowAskToDeleteMessage(SelectedSource.Parameters["Name"], delegate ()
             {
                 SourceRepository.Delete(SelectedSource);
                 ChangeSourceList(SelectedSource.Type);

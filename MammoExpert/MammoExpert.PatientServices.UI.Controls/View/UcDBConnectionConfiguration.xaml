@@ -74,7 +74,7 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Parameters.Name, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="5"
@@ -125,7 +125,7 @@
                 <Button
                     Padding="25,3"
                     Background="DarkGray"
-                    Command="{Binding CancelCreateConnectionDbCommand}"
+                    Command="{Binding CloseCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>

@@ -13,22 +13,15 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
 
         #endregion // Fields
 
-        #region Constructors
-
-        public DBConnectionConfigurationModel()
-        {
-            base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
-            _source = new Source(type: SourceType.DataBase);
-        }
+        #region Constructor
 
         public DBConnectionConfigurationModel(Source source)
         {
             base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
             _source = source;
-
         }
 
-        #endregion // Constructors
+        #endregion // Constructor
 
         #region Properties
 
