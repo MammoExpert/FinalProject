@@ -105,6 +105,14 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             if (SelectedSource == null) return;
             var data = GetData(SelectedSource);
             if (data == null) return;
+
+            //var data = new List<Patient>()
+            //{
+            //    new Patient() {PatientId = "12", FirstName = "Иван", LastName = "Кудин", BirthDate = new DateTime(1988, 02, 12), MiddleName = "Сергеевич", NumberOfPassport = "МР1234589", Telephone = "+375296548596"},
+            //    new Patient() {PatientId = "23", FirstName = "Сергей", LastName = "Береза", BirthDate = new DateTime(1956, 01, 01).Date, MiddleName = "Олегович", NumberOfPassport = "МР1250006", Telephone = "+375295478122"},
+            //    new Patient() {PatientId = "581", FirstName = "Светлана", LastName = "Дмитрюкова", Sex = Sex.Female, BirthDate = new DateTime(2001, 12, 30).Date, MiddleName = "Васильевна", NumberOfPassport = "МР7774529", Telephone = "+375299652333"}
+            //};
+
             base.CreateWorkspace(new PatientSearchViewModel(SelectedSource.Parameters["Name"], data));
             CloseAction();
         }

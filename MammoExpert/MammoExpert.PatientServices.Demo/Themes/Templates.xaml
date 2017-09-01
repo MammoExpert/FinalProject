@@ -20,18 +20,7 @@
         <view:UcWorklistConnectionConfiguration />
     </DataTemplate>
 
-    <!--<Style x:Key="WorkspaceStyle" TargetType="{x:Type ContentControl}">
-       <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type ContentControl}">
-                    <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>-->
-
-    <DataTemplate x:Key="ClosableTabItemTemplate">
+    <DataTemplate x:Key="TitledTabItemTemplate">
         <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
     </DataTemplate>
 
@@ -39,7 +28,7 @@
         <TabControl
             Margin="4"
             IsSynchronizedWithCurrentItem="True"
-            ItemTemplate="{StaticResource ClosableTabItemTemplate}"
+            ItemTemplate="{StaticResource TitledTabItemTemplate}"
             ItemsSource="{Binding}" />
     </DataTemplate>
 

@@ -49,19 +49,19 @@
                         <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="Имя" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=MiddleName}" Header="Отчество" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Sex}" Header="Пол" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=BirthDate}" Header="Дата рождения" />
-                        <!--<GridViewColumn DisplayMemberBinding="{Binding Path=PatientAddress}" Header="Адрес" />
+                        <!--<GridViewColumn DisplayMemberBinding="{Binding Path=BirthDate}" Header="Дата рождения" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=PatientAddress}" Header="Адрес" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=PatientComments}" Header="Дополнительная информация" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=AccessionNumber}" Header="Инвентарный номер" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=MedicalRecordLocator}" Header="Данные направления на исследование" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Contingent}" Header="Контингенты" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=PatientCategory}" Header="Группы риска" />
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=NumberOfPassport}" Header="Номер паспорта" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=PatientWorkAddress}" Header="Место работы" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Job}" Header="Профессия" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=NumberPolicy}" Header="Номер мед. страховки" />
                         <GridViewColumn DisplayMemberBinding="{Binding Path=InsuranceCompany}" Header="Страховая кампания" />-->
                         <GridViewColumn DisplayMemberBinding="{Binding Path=Telephone}" Header="Телефон" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=NumberOfPassport}" Header="Номер паспорта" />
 
                     </GridView>
                 </ListView.View>
