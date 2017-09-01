@@ -32,9 +32,7 @@
     </Style>-->
 
     <DataTemplate x:Key="ClosableTabItemTemplate">
-        <ContentPresenter
-                VerticalAlignment="Center"
-                Content="{Binding Path=DisplayName}" />
+        <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
     </DataTemplate>
 
     <DataTemplate x:Key="WorkspacesTemplate">

@@ -16,7 +16,7 @@
     mc:Ignorable="d">
 
     <Window.Resources>
-        <ResourceDictionary Source="/MammoExpert.PatientServices.Resources;component/Templates.xaml" />
+        <ResourceDictionary Source="../Themes/Templates.xaml" />
     </Window.Resources>
 
     <Grid x:Name="grid">

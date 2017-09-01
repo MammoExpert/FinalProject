@@ -28,19 +28,20 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label
+        <TextBlock
             Grid.Row="0"
             Grid.Column="0"
             Margin="2"
-            Content="Тип источника данных:"
-            Target="{Binding ElementName=CmbSourceType}" />
+            Text="Тип источника данных:" />
 
         <ComboBox
             x:Name="CmbSourceType"
             Grid.Row="1"
             Grid.Column="0"
             Margin="2"
-            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}">
+            DisplayMemberPath="Description"
+            ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
+            SelectedValue="{Binding SelectedType}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding ChangeSourceListByType}" CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
@@ -55,6 +56,7 @@
             Grid.Column="0"
             Margin="2"
             ItemsSource="{Binding Path=Sources}"
+            SelectedItem="{Binding SelectedSource}"
             SelectionMode="Single">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
@@ -71,6 +73,7 @@
         </ListView>
 
         <Button
+            x:Name="BtnAdd"
             Grid.Row="1"
             Grid.Column="1"
             Width="100"
@@ -84,7 +87,6 @@
             Width="100"
             Margin="2"
             Command="{Binding EditSourceCommand}"
-            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Редактировать..." />
         <Button
             Grid.Row="3"
@@ -92,7 +94,6 @@
             Width="100"
             Margin="2"
             Command="{Binding DeleteSourceCommand}"
-            CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}"
             Content="Удалить" />
     </Grid>
 </Window>

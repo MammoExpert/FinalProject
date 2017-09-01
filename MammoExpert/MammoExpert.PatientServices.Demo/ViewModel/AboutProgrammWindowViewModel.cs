@@ -47,8 +47,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 .Where(p => p.GetInterfaces().Contains(typeInterface))
                 .SelectMany(a=>new List<string>
                 {
-                    "Модуль " + a.Assembly.GetName().Name + " " +
-                    "Версия " + a.Assembly.GetName().Version.ToString()
+                    a.Assembly.GetName().Name +
+                    " Версия " + a.Assembly.GetName().Version.ToString()
                 }).ToList();
 
             return assebleTypes;

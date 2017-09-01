@@ -17,7 +17,7 @@ namespace MammoExpert.PatientServices.UI.Controls.ViewModel
         public WorklistConnectionConfigurationModel()
         {
             base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
-            _source = new Source( type: SourceType.Worklist);
+            _source = new Source(SourceType.Worklist);
         }
 
         public WorklistConnectionConfigurationModel(Source source)

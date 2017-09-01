@@ -126,10 +126,6 @@
       <Project>{b9ccd920-4b2a-44c2-ac74-898535a900c9}</Project>
       <Name>MammoExpert.PatientServices.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
-      <Project>{0754cf79-705a-4bbd-a843-e5e4e94358f9}</Project>
-      <Name>MammoExpert.PatientServices.DB</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
       <Project>{c5604d0a-20ec-4e75-871c-14508a8c37e4}</Project>
       <Name>MammoExpert.PatientServices.PresenterCore</Name>

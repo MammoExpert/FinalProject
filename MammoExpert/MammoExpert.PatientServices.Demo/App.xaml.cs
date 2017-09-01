@@ -11,7 +11,7 @@ namespace MammoExpert.PatientServices.Demo
         {
             base.OnStartup(e);
 
-            ViewFactory.CreateMainWindow();
+            ViewFactory.CreateMainView();
         }
     }
 }

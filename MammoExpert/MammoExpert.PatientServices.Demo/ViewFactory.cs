@@ -11,7 +11,7 @@ namespace MammoExpert.PatientServices.Demo
         #region Public Methods
 
         // создает главное окно
-        public static void CreateMainWindow()
+        public static void CreateMainView()
         {
             var view = new MainWindow();
             var viewModel = new MainWindowViewModel("../../Data/all_sources.json");
@@ -20,7 +20,7 @@ namespace MammoExpert.PatientServices.Demo
         }
 
         // создает окно управления источниками
-        public static void CreateSourcesWindow()
+        public static void CreateSourcesView()
         {
             var view = new SourcesWindow();
             var viewModel = new SourcesWindowViewModel();
@@ -30,7 +30,7 @@ namespace MammoExpert.PatientServices.Demo
         }
 
         // создает окно с информацией о программе
-        public static void CreateAboutProgrammWindow()
+        public static void CreateAboutProgrammView()
         {
             var view = new AboutProgrammWindow();
             var viewModel = new AboutProgrammWindowViewModel();
@@ -38,19 +38,8 @@ namespace MammoExpert.PatientServices.Demo
             view.ShowDialog();
         }
 
-        // создает окно для созданияя источниов согласно переданному типу источника
-        public static void CreateConfigurationWindow(SourceType type)
-        {
-            var view = new ConfigurationWindow();
-            var viewModel = new ConfigurationWindowViewModel(type);
-            view.DataContext = viewModel;
-            if (viewModel.CloseAction == null) viewModel.CloseAction = new Action(view.Close);
-            view.DataContext = viewModel;
-            view.ShowDialog();
-        }
-
         // создает окно для редактирования источниов
-        public static void CreateConfigurationWindow(Source source)
+        public static void CreateConfigurationView(Source source)
         {
             var view = new ConfigurationWindow();
             var viewModel = new ConfigurationWindowViewModel(source);
@@ -61,7 +50,7 @@ namespace MammoExpert.PatientServices.Demo
         }
 
         // Создает окно для просмотри информации о пациенте
-        public static void CreatePatientDitailsWindow(Patient patient)
+        public static void CreatePatientDitailsView(Patient patient)
         {
             var view = new PatientDitailsWindow();
             var viewModel = new PatientDitailsWindowViewModel(patient);
