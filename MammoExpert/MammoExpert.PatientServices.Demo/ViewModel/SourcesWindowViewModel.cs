@@ -3,7 +3,6 @@ using System.Windows.Input;
 using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.PresenterCore;
-using MammoExpert.PatientServices.UI.Controls.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
@@ -113,7 +112,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             //    new Patient() {PatientId = "581", FirstName = "Светлана", LastName = "Дмитрюкова", Sex = Sex.Female, BirthDate = new DateTime(2001, 12, 30).Date, MiddleName = "Васильевна", NumberOfPassport = "МР7774529", Telephone = "+375299652333"}
             //};
 
-            base.CreateWorkspace(new PatientSearchViewModel(SelectedSource.Parameters["Name"], data));
+            base.CreateWorkspace(new PatientSearchViewModel(SelectedSource.Name, data));
             CloseAction();
         }
 
@@ -137,16 +136,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // создает окно для подключения к новому источнику, согласно выбранному типу источника
         private static void CreateSource(SourceTypeOption option)
         {
-            //var s1 = SourceCreator.Create(SourceType.DataBase);
-            //s1.Description = "Другое описание базы данных";
-            //s1.Parameters["Name"] = "База данных 2";
-            //s1.Parameters["Ip"] = "127.168.0.1";
-            //s1.Parameters["Port"] = "8088";
-            //s1.Parameters["UserName"] = "Петя";
-            //s1.Parameters["Password"] = "88887";
-            //SourceRepository.Add(s1);
-
-            ViewFactory.CreateConfigurationView(SourceCreator.Create(option.Type));
+            ViewFactory.CreateConfigurationView(new Source(option.Type));
         }
 
         // создает окно для редактирования источника
@@ -159,7 +149,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void DeleteSource()
         {
             if (SelectedSource == null) return;
-            Messager.ShowAskToDeleteMessage(SelectedSource.Parameters["Name"], delegate ()
+            Messager.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
             {
                 SourceRepository.Delete(SelectedSource);
                 ChangeSourceList(SelectedSource.Type);

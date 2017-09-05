@@ -4,10 +4,10 @@ using MammoExpert.PatientServices.PresenterCore;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Windows;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {

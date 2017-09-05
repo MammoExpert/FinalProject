@@ -1,7 +1,11 @@
-﻿using System;
-using MammoExpert.PatientServices.PresenterCore;
+﻿using MammoExpert.PatientServices.PresenterCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.UI.Controls.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -19,7 +23,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 _currentViewModel = value;
                 RaisePropertyChanged("CurrentViewModel");
             }
-        }
+        }  
 
         #endregion // Fields and Properties
 
@@ -29,7 +33,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ConfigurationWindowViewModel(Source source)
         {
             base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
-            SetCurrentViewModel(source);
+            SetCurrentViewModel(source); 
         }
 
         #endregion // Constructor

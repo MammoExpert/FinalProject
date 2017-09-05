@@ -1,23 +1,24 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:view="clr-namespace:MammoExpert.PatientServices.UI.Controls.View;assembly=MammoExpert.PatientServices.UI.Controls"
-    xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.UI.Controls.ViewModel;assembly=MammoExpert.PatientServices.UI.Controls">
+    xmlns:controls="clr-namespace:MammoExpert.PatientServices.UI.Controls;assembly=MammoExpert.PatientServices.UI.Controls"
+    xmlns:sources="clr-namespace:MammoExpert.PatientServices.Sources;assembly=MammoExpert.PatientServices.Sources"
+    xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel">
 
     <!--  Templates for workspaces of main window  -->
     <DataTemplate DataType="{x:Type viewModel:ManualInputViewModel}">
-        <view:UcManualInput />
+        <controls:UcManualInput />
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModel:PatientSearchViewModel}">
-        <view:UcPatientSearch />
+        <controls:UcPatientSearch />
     </DataTemplate>
 
     <!--  Templates for configuaration window  -->
     <DataTemplate DataType="{x:Type viewModel:DBConnectionConfigurationModel}">
-        <view:UcDBConnectionConfigurationViewmodel />
+        <controls:UcDBConnectionConfigurationViewmodel />
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModel:WorklistConnectionConfigurationModel}">
-        <view:UcWorklistConnectionConfiguration />
+        <controls:UcWorklistConnectionConfiguration Content="" />
     </DataTemplate>
 
     <DataTemplate x:Key="TitledTabItemTemplate">

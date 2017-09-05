@@ -8,7 +8,7 @@ namespace MammoExpert.PatientServices.Sources
         #region Fields
 
         private List<Source> _sourceList;
-        private JsonManager<Source> _fileManager;
+        private JsonManager _fileManager;
 
         #endregion // Fields
         
@@ -16,7 +16,7 @@ namespace MammoExpert.PatientServices.Sources
 
         public SourceRepository(string filePath)
         {
-            _fileManager = new JsonManager<Source>(filePath);
+            _fileManager = new JsonManager(filePath);
             _sourceList = GetAll();
         }
 
@@ -43,7 +43,7 @@ namespace MammoExpert.PatientServices.Sources
         // удаляет источник
         public void Delete(Source source)
         {
-            if (_sourceList.Contains(source))
+            if (_sourceList.Contains(source) && _sourceList != null)
             {
                 _sourceList.Remove(source);
                 _fileManager.Delete(source);
@@ -53,7 +53,7 @@ namespace MammoExpert.PatientServices.Sources
         // возвращает список источников согласно переданному типу
         public List<Source> GetByType(SourceType type)
         {
-            return _sourceList.Where(t => t.Type == type).ToList();
+            return _sourceList?.Where(t => t.Type == type).ToList();
         }
 
         #endregion // Public methods

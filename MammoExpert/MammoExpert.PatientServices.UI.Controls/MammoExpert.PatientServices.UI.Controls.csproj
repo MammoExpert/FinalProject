@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53AC4068-69BD-44D4-AC0A-132B991C189B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{53C0FBD0-B60C-4369-BD45-3EE44E543566}</ProjectGuid>
+    <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MammoExpert.PatientServices.UI.Controls</RootNamespace>
     <AssemblyName>MammoExpert.PatientServices.UI.Controls</AssemblyName>
@@ -13,10 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,32 +48,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViewModel\DBConnectionConfigurationModel.cs" />
-    <Compile Include="ViewModel\ManualInputViewModel.cs" />
-    <Compile Include="ViewModel\PatientSearchViewModel.cs" />
-    <Compile Include="ViewModel\WorklistConnectionConfigurationModel.cs" />
-    <Compile Include="View\UcDBConnectionConfiguration.xaml.cs">
-      <DependentUpon>UcDBConnectionConfiguration.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UcManualInput.xaml.cs">
-      <DependentUpon>UcManualInput.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UcPatientSearch.xaml.cs">
-      <DependentUpon>UcPatientSearch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UcWorklistConnectionConfiguration.xaml.cs">
-      <DependentUpon>UcWorklistConnectionConfiguration.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -90,6 +61,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UcDBConnectionConfiguration.xaml.cs">
+      <DependentUpon>UcDBConnectionConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcManualInput.xaml.cs">
+      <DependentUpon>UcManualInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcPatientSearch.xaml.cs">
+      <DependentUpon>UcPatientSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcWorklistConnectionConfiguration.xaml.cs">
+      <DependentUpon>UcWorklistConnectionConfiguration.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -101,35 +84,24 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="View\UcDBConnectionConfiguration.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UcDBConnectionConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UcManualInput.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UcManualInput.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UcPatientSearch.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UcPatientSearch.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UcWorklistConnectionConfiguration.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="UcWorklistConnectionConfiguration.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
-      <Project>{b9ccd920-4b2a-44c2-ac74-898535a900c9}</Project>
-      <Name>MammoExpert.PatientServices.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
-      <Project>{c5604d0a-20ec-4e75-871c-14508a8c37e4}</Project>
-      <Name>MammoExpert.PatientServices.PresenterCore</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.Sources\MammoExpert.PatientServices.Sources.csproj">
       <Project>{80DADA21-E29F-434A-ADF0-A6659B631BF2}</Project>
       <Name>MammoExpert.PatientServices.Sources</Name>

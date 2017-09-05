@@ -9,7 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace MammoExpert.PatientServices.UI.Controls.Properties {
-    using System;
     
     
     /// <summary>
@@ -38,7 +37,7 @@ namespace MammoExpert.PatientServices.UI.Controls.Properties {
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+                if ((resourceMan == null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MammoExpert.PatientServices.UI.Controls.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
@@ -57,33 +56,6 @@ namespace MammoExpert.PatientServices.UI.Controls.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to База данных.
-        /// </summary>
-        internal static string DBConnectionConfigurationModel_DisplayName {
-            get {
-                return ResourceManager.GetString("DBConnectionConfigurationModel_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ручной ввод.
-        /// </summary>
-        internal static string ManualInputViewModel_DisplayName {
-            get {
-                return ResourceManager.GetString("ManualInputViewModel_DisplayName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Рабочий список.
-        /// </summary>
-        internal static string WorklistConnectionConfigurationModel_DisplayName {
-            get {
-                return ResourceManager.GetString("WorklistConnectionConfigurationModel_DisplayName", resourceCulture);
             }
         }
     }

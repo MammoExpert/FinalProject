@@ -49,7 +49,6 @@
     <Compile Include="JsonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source.cs" />
-    <Compile Include="SourceCreator.cs" />
     <Compile Include="SourceRepository.cs" />
     <Compile Include="SourceType.cs" />
     <Compile Include="SourceTypeOption.cs" />

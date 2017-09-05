@@ -27,7 +27,6 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\Abou
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
@@ -274,3 +273,5 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpe
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.xml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Themes\Templates.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.dll

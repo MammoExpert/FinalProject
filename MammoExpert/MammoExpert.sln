@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.UI.Controls", "MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj", "{53AC4068-69BD-44D4-AC0A-132B991C189B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Core", "MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj", "{B9CCD920-4B2A-44C2-AC74-898535A900C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.DB", "MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj", "{0754CF79-705A-4BBD-A843-E5E4E94358F9}"
@@ -17,16 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.Worklist", "MammoExpert.PatientServices.Worklist\MammoExpert.PatientServices.Worklist.csproj", "{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MammoExpert.PatientServices.UI.Controls", "MammoExpert.PatientServices.UI.Controls\MammoExpert.PatientServices.UI.Controls.csproj", "{53C0FBD0-B60C-4369-BD45-3EE44E543566}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{53AC4068-69BD-44D4-AC0A-132B991C189B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{53AC4068-69BD-44D4-AC0A-132B991C189B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{53AC4068-69BD-44D4-AC0A-132B991C189B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{53AC4068-69BD-44D4-AC0A-132B991C189B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9CCD920-4B2A-44C2-AC74-898535A900C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9CCD920-4B2A-44C2-AC74-898535A900C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9CCD920-4B2A-44C2-AC74-898535A900C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53C0FBD0-B60C-4369-BD45-3EE44E543566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53C0FBD0-B60C-4369-BD45-3EE44E543566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53C0FBD0-B60C-4369-BD45-3EE44E543566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53C0FBD0-B60C-4369-BD45-3EE44E543566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

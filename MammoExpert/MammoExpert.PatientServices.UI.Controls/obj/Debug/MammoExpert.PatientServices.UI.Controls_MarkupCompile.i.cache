@@ -1,7 +1,7 @@
 ﻿MammoExpert.PatientServices.UI.Controls
 
 
-winexe
+library
 C#
 .cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\
@@ -9,12 +9,12 @@ MammoExpert.PatientServices.UI.Controls
 none
 false
 DEBUG;TRACE
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\App.xaml
-4-1123463978
 
-161325320812
-16762322611
-View\UcDBConnectionConfiguration.xaml;View\UcManualInput.xaml;View\UcPatientSearch.xaml;View\UcWorklistConnectionConfiguration.xaml;
+41046399693
 
-True
+11608760320
+141879806852
+UcDBConnectionConfiguration.xaml;UcManualInput.xaml;UcPatientSearch.xaml;UcWorklistConnectionConfiguration.xaml;
+
+False
 

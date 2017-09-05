@@ -7,13 +7,13 @@ using System.Windows;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    public class JsonManager<T>
+    public class JsonManager
     {
         #region Fields
 
         private string _jsonString;
         private readonly string _path;
-        private List<T> _jsonCollection;
+        private List<Source> _jsonCollection;
 
         #endregion // Fields
 
@@ -29,18 +29,18 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Public methods
 
-        public List<T> GetAll()
+        public List<Source> GetAll()
         {
             return _jsonCollection;   
         }
 
-        public void Add(T newItem)
+        public void Add(Source newItem)
         {
             _jsonCollection.Add(newItem);
             RewriteFile();
         }
 
-        public void Delete(T item)
+        public void Delete(Source item)
         {
             _jsonCollection.Remove(item);
             RewriteFile();
@@ -51,7 +51,7 @@ namespace MammoExpert.PatientServices.Sources
         #region Private methods
 
         // возврвщает коллекцию объектов из json-файла в виде списка
-        private List<T> LoadJson()
+        private List<Source> LoadJson()
         {
             try
             {
@@ -63,19 +63,18 @@ namespace MammoExpert.PatientServices.Sources
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Environment.Exit(0);
             }
-            return JsonConvert.DeserializeObject<List<T>>(_jsonString); ;
+            var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
+            return result ?? new List<Source>();
         }
 
         // записывает в json-файл новые значения
         private void RewriteFile()
         {
             var str = JsonConvert.SerializeObject(_jsonCollection);
-            if (File.Exists(_path))
-            {
-                var writer = new StreamWriter(_path, false, Encoding.UTF8);
-                writer.WriteLine(str);
-                writer.Close();
-            }
+            if (!File.Exists(_path)) return;
+            var writer = new StreamWriter(_path, false, Encoding.UTF8);
+            writer.WriteLine(str);
+            writer.Close();
         }
 
         #endregion // Private methods

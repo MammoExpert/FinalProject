@@ -79,11 +79,29 @@ namespace MammoExpert.PatientServices.Demo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to База данных.
+        /// </summary>
+        internal static string DBConnectionConfigurationModel_DisplayName {
+            get {
+                return ResourceManager.GetString("DBConnectionConfigurationModel_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Выбор пациента.
         /// </summary>
         internal static string MainWindowViewModel_DisplayName {
             get {
                 return ResourceManager.GetString("MainWindowViewModel_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ручной ввод.
+        /// </summary>
+        internal static string ManualInputViewModel_DisplayName {
+            get {
+                return ResourceManager.GetString("ManualInputViewModel_DisplayName", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace MammoExpert.PatientServices.Demo.Properties {
         internal static string SourcesWindowViewModel_DisplayName {
             get {
                 return ResourceManager.GetString("SourcesWindowViewModel_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Рабочий список.
+        /// </summary>
+        internal static string WorklistConnectionConfigurationModel_DisplayName {
+            get {
+                return ResourceManager.GetString("WorklistConnectionConfigurationModel_DisplayName", resourceCulture);
             }
         }
     }
