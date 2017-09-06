@@ -28,8 +28,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public SourcesWindowViewModel()
         {
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
-            var ctx = SourceRepository.GetAll();
-            if (ctx != null) _sources = new ObservableCollection<Source>(ctx);
+            var sourcesList = SourceRepository.GetAll();
+            if (sourcesList != null) _sources = new ObservableCollection<Source>(sourcesList);
         }
 
         #endregion // Constructor
@@ -102,9 +102,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void AddWorkspace()
         {
             if (SelectedSource == null) return;
-            var data = GetData(SelectedSource);
-            if (data == null) return;
 
+            // для теста
             //var data = new List<Patient>()
             //{
             //    new Patient() {PatientId = "12", FirstName = "Иван", LastName = "Кудин", BirthDate = new DateTime(1988, 02, 12), MiddleName = "Сергеевич", NumberOfPassport = "МР1234589", Telephone = "+375296548596"},
@@ -112,37 +111,20 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             //    new Patient() {PatientId = "581", FirstName = "Светлана", LastName = "Дмитрюкова", Sex = Sex.Female, BirthDate = new DateTime(2001, 12, 30).Date, MiddleName = "Васильевна", NumberOfPassport = "МР7774529", Telephone = "+375299652333"}
             //};
 
-            base.CreateWorkspace(new PatientSearchViewModel(SelectedSource.Name, data));
+            WorkspaceRepository.Add(new PatientSearchViewModel(SelectedSource));
             CloseAction();
         }
 
-        // возвращает данные из источника
-        private static List<Patient> GetData(Source source)
-        {
-            try
-            {
-                // стринг указан пока для тестирования
-                var rep = new PacientRepositoryEf(@"Data Source = (localDb)\v11.0; AttachDbFilename = D:\FinalProject\Data\PatientServices.mdf; Integrated Security = True");
-                var patients = rep.GetAllPatients().ToList();
-                return patients;
-            }
-            catch (Exception e)
-            {
-                Messager.ShowConnectionErrorMessage(e);
-                return null;
-            }
-        }
-
         // создает окно для подключения к новому источнику, согласно выбранному типу источника
-        private static void CreateSource(SourceTypeOption option)
+        private void CreateSource(SourceTypeOption option)
         {
-            ViewFactory.CreateConfigurationView(new Source(option.Type));
+            ViewFactory.CreateConfigurationView(this, new Source(option.Type));
         }
 
         // создает окно для редактирования источника
         private void EditSource()
         {
-            ViewFactory.CreateConfigurationView(SelectedSource);
+            ViewFactory.CreateConfigurationView(this, SelectedSource);
         }
 
         // удаляет источник
@@ -153,6 +135,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 SourceRepository.Delete(SelectedSource);
                 ChangeSourceList(SelectedSource.Type);
+                //WorkspaceRepository.Delete(???);
             });
         }
 
@@ -161,6 +144,19 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             var collection = SourceRepository.GetByType(type);
             if (collection != null) Sources = new ObservableCollection<Source>(collection);
+        }
+
+        public void AddOrCreateSource(Source source)
+        {
+            foreach (var s in Sources)
+            {
+                if (s.Id == source.Id)
+                {
+                    SourceRepository.Edit(source);
+                }
+            }
+            SourceRepository.Create(source);
+            ChangeSourceList(source.Type);
         }
 
         #endregion // Private Methods

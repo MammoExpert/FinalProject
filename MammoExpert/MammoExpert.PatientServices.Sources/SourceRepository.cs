@@ -17,7 +17,7 @@ namespace MammoExpert.PatientServices.Sources
         public SourceRepository(string filePath)
         {
             _fileManager = new JsonManager(filePath);
-            _sourceList = GetAll();
+            _sourceList = _fileManager.GetAll();
         }
 
         #endregion // Constructor
@@ -27,16 +27,17 @@ namespace MammoExpert.PatientServices.Sources
         // Возвращает список имеющихся источников
         public List<Source> GetAll()
         {
-            return _fileManager.GetAll();
+            return _sourceList;
         }
 
         // добавляет новый источник
-        public void Add(Source newSource)
+        public void Create(Source newSource)
         {
             if (!_sourceList.Contains(newSource))
             {
                 _sourceList.Add(newSource);
-                _fileManager.Add(newSource);
+                //_fileManager.Add(newSource);
+                _fileManager.RewriteFile();
             }
         }
 
@@ -46,7 +47,21 @@ namespace MammoExpert.PatientServices.Sources
             if (_sourceList.Contains(source) && _sourceList != null)
             {
                 _sourceList.Remove(source);
-                _fileManager.Delete(source);
+                //_fileManager.Delete(source);
+                _fileManager.RewriteFile();
+            }
+        }
+
+        public void Edit(Source source)
+        {
+            for (var i = 0; i < _sourceList.Count; i++)
+            {
+                if (_sourceList[i].Id == source.Id)
+                {
+                    _sourceList[i] = source;
+                    _fileManager.Edit(source);
+                    return;
+                }
             }
         }
 

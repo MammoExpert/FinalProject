@@ -27,5 +27,14 @@ namespace MammoExpert.PatientServices.Demo
                 MessageBoxImage.Question);
             if (result == MessageBoxResult.Yes) postConfirmAction();
         }
+
+        public static void ShowPatientCreationMessage()
+        {
+            MessageBox.Show(
+                "Пациент создан",
+                "Подтверждение",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
     }
 }

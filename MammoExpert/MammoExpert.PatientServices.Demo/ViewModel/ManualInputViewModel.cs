@@ -17,13 +17,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             base.DisplayName = Resources.ManualInputViewModel_DisplayName;
         }
 
-        public ICommand CreatePatientCommand => new ActionCommand(() =>
-        {
-            MessageBox.Show(
-                "Пациент создан",
-                "Подтверждение",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
-        });
+        public ICommand CreatePatientCommand => new ActionCommand(Messager.ShowPatientCreationMessage);
     }
 }

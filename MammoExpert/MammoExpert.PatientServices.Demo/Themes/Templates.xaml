@@ -18,7 +18,7 @@
         <controls:UcDBConnectionConfigurationViewmodel />
     </DataTemplate>
     <DataTemplate DataType="{x:Type viewModel:WorklistConnectionConfigurationModel}">
-        <controls:UcWorklistConnectionConfiguration Content="" />
+        <controls:UcWorklistConnectionConfiguration />
     </DataTemplate>
 
     <DataTemplate x:Key="TitledTabItemTemplate">

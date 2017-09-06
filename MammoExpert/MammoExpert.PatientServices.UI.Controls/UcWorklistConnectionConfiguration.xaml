@@ -45,7 +45,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Header, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Header], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="2"
@@ -56,7 +56,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Ip, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Ip], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="3"
@@ -67,7 +67,7 @@
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Port, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Port], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="4"
@@ -78,7 +78,7 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Timeout, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Timeout], UpdateSourceTrigger=PropertyChanged}" />
             <StackPanel
                 Grid.Row="5"
                 Grid.Column="0"

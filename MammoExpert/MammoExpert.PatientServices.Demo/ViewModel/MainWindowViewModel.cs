@@ -17,6 +17,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         internal static SourceRepository SourceRepository;
         private ObservableCollection<ViewModelBase> _workspaces;
+        internal static WorkspaceRepository WorkspaceRepository;
 
         #endregion // Fields
 
@@ -27,10 +28,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public MainWindowViewModel(string path)
         {
             SourceRepository = new SourceRepository(path);
+            WorkspaceRepository = new WorkspaceRepository();
             base.DisplayName = Properties.Resources.MainWindowViewModel_DisplayName;
-
-            // Добавляем рабочую область для ручного ввода пациета (по умолчанию)
-            CreateWorkspace(new ManualInputViewModel());
         }
 
         #endregion // Constructors
@@ -44,7 +43,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 if (_workspaces == null)
                 {
-                    _workspaces = Workspace.Instance;
+                    _workspaces = WorkspaceRepository.GetAll();
+                    RaisePropertyChanged("Workspaces");
                     _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
                 return _workspaces;
@@ -79,28 +79,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #endregion // Commands
 
-        #region Public Methods
-
-        // добавляет новую рабочую область
-        public void CreateWorkspace(ViewModelBase vm)
-        {
-            Workspaces.Add(vm);
-            SetActiveWorkspace(vm);
-        }
-
-        #endregion // Public Methods
-
         #region Private Methods
-
-        // метод, который при создании новой рабочей области делает ее активной
-        private void SetActiveWorkspace(ViewModelBase workspace)
-        {
-            Debug.Assert(Workspaces.Contains(workspace));
-
-            var collectionView = CollectionViewSource.GetDefaultView(Workspaces);
-            if (collectionView != null)
-                collectionView.MoveCurrentTo(workspace);
-        }
 
         // метод, вызываемый при изменении количества рабочих областей
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)

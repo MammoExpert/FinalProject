@@ -46,6 +46,19 @@ namespace MammoExpert.PatientServices.Sources
             RewriteFile();
         }
 
+        public void Edit(Source item)
+        {
+            for (int i = 0; i < _jsonCollection.Count; i++)
+            {
+                if (_jsonCollection[i].Id == item.Id)
+                {
+                    _jsonCollection[i] = item;
+                    RewriteFile();
+                    return;
+                }
+            }
+        }
+
         #endregion // Public methods
 
         #region Private methods
@@ -68,7 +81,7 @@ namespace MammoExpert.PatientServices.Sources
         }
 
         // записывает в json-файл новые значения
-        private void RewriteFile()
+        public void RewriteFile()
         {
             var str = JsonConvert.SerializeObject(_jsonCollection);
             if (!File.Exists(_path)) return;

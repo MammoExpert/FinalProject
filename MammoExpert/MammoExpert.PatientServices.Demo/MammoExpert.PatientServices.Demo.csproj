@@ -111,6 +111,7 @@
       <DependentUpon>SourcesWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFactory.cs" />
+    <Compile Include="WorkspaceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

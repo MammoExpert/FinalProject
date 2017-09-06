@@ -13,46 +13,39 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class WorklistConnectionConfigurationModel : ViewModelBase
     {
-        #region Fields
+
+        #region Fields and Properties
+
+        private delegate void AddSourceHandler(Source source);
+        private event AddSourceHandler OnAddSource;
 
         private Source _source;
-
-        #endregion //Fields
-
-        #region Constructor
-
-        public WorklistConnectionConfigurationModel(Source source)
-        {
-            base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
-            _source = source;
-        }
-
-        #endregion // Constructor
-
-        #region Properties
 
         public Source Source
         {
             get { return _source; }
             set
             {
-                if (_source != value)
-                {
-                    _source = value;
-                    RaisePropertyChanged("Source");
-                }
+                _source = value;
+                RaisePropertyChanged("Source");
             }
         }
 
-        #endregion // Properties
+        #endregion // Fields and Properties
+
+        public WorklistConnectionConfigurationModel(ViewModelBase vm, Source source)
+        {
+            Source = source;
+            base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
+            var p = vm as SourcesWindowViewModel;
+            if (source != null && p != null) OnAddSource += p.AddOrCreateSource;
+        }
 
         public ICommand CreateCommand => new ActionCommand(() =>
         {
-            MessageBox.Show(
-                "Источник создан",
-                "Подтверждение",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information);
+            Source.Description = Source.Name + " и прочее."; 
+            if (OnAddSource != null) OnAddSource(Source);
+            // как-то закрыть окно
         });
     }
 }

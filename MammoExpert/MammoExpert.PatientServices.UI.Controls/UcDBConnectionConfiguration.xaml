@@ -38,7 +38,7 @@
                 Grid.ColumnSpan="2"
                 Background="DarkGray"
                 ItemsSource="{Binding Path=ListProviders, Mode=OneTime}"
-                SelectedItem="{Binding Path=Source.Driver, UpdateSourceTrigger=PropertyChanged}" />
+                SelectedItem="{Binding Path=Source.Parameters[Driver], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="2"
@@ -50,7 +50,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Ip, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Ip], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="3"
@@ -61,7 +61,7 @@
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Port, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Port], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="4"
@@ -83,7 +83,7 @@
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.UserName, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[UserName], UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="6"
@@ -94,7 +94,7 @@
                 Grid.Row="6"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Password, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Password], UpdateSourceTrigger=PropertyChanged}" />
             <StackPanel
                 Grid.Row="7"
                 Grid.Column="0"
