@@ -13,7 +13,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class WorklistConnectionConfigurationModel : ViewModelBase
     {
-
+  
         #region Fields and Properties
 
         private delegate void AddSourceHandler(Source source);
@@ -38,12 +38,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             Source = source;
             base.DisplayName = Resources.WorklistConnectionConfigurationModel_DisplayName;
             var p = vm as SourcesWindowViewModel;
-            if (source != null && p != null) OnAddSource += p.AddOrCreateSource;
+            if (source != null && p != null) OnAddSource += p.EditOrCreateSource;
         }
 
         public ICommand CreateCommand => new ActionCommand(() =>
         {
-            Source.Description = Source.Name + " и прочее."; 
+            //Source.Description = Source.Name + " и прочее."; 
             if (OnAddSource != null) OnAddSource(Source);
             // как-то закрыть окно
         });

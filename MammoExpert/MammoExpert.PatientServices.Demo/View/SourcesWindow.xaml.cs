@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Forms;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.Sources;
 

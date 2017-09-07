@@ -33,4 +33,23 @@
             ItemsSource="{Binding}" />
     </DataTemplate>
 
+    <Style TargetType="{x:Type DataGridCell}">
+        <Style.Triggers>
+            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                <Setter Property="Background" Value="DarkGray" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="DarkGray" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    </Style>
+
+    <Style TargetType="{x:Type DataGrid}">
+        <Setter Property="SelectionMode" Value="Single" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="GridLinesVisibility" Value="None" />
+        <Setter Property="SelectionUnit" Value="FullRow" />
+    </Style>
+
 </ResourceDictionary>

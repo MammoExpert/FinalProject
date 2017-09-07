@@ -37,7 +37,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             Source = source;
             base.DisplayName = Resources.DBConnectionConfigurationModel_DisplayName;
             var p = vm as SourcesWindowViewModel;
-            if (source != null && p != null) OnAddSource += p.AddOrCreateSource;
+            if (source != null && p != null) OnAddSource += p.EditOrCreateSource;
         }
 
         public ICommand CreateCommand => new ActionCommand(() =>

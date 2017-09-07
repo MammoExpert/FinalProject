@@ -6,6 +6,7 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:local="clr-namespace:MammoExpert.PatientServices.Demo"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:presenterCore="clr-namespace:MammoExpert.PatientServices.PresenterCore;assembly=MammoExpert.PatientServices.PresenterCore"
     xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel"
     Title="{Binding Path=DisplayName}"
     Width="500"
@@ -14,6 +15,10 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="ToolWindow"
     mc:Ignorable="d">
+
+    <Window.Resources>
+        <ResourceDictionary Source="../Themes/Templates.xaml" />
+    </Window.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -49,28 +54,27 @@
             </i:Interaction.Triggers>
         </ComboBox>
 
-        <ListView
-            x:Name="LvSources"
+        <DataGrid
+            x:Name="DgSources"
             Grid.Row="2"
             Grid.RowSpan="3"
             Grid.Column="0"
-            Margin="2"
+            presenterCore:DataGridBehavior.DisplayRowNumber="True"
             ItemsSource="{Binding Path=Sources}"
-            SelectedItem="{Binding SelectedSource}"
-            SelectionMode="Single">
+            SelectedItem="{Binding SelectedSource}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
-                    <i:InvokeCommandAction Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=LvSources, Path=SelectedItem}" />
+                    <i:InvokeCommandAction Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=DgSources, Path=SelectedItem}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="#" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Type}" Header="Тип" />
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" Header="Описание" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Type}" Header="Тип" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Path=Name}"
+                    Header="Описание" />
+            </DataGrid.Columns>
+        </DataGrid>
 
         <Button
             x:Name="BtnAdd"
