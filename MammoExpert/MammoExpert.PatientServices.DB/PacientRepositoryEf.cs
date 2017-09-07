@@ -42,15 +42,16 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> FindPatientsByValue(string searchString)
         {
-            var patients = _patientContext.Patients.Where(s => s.AccessionNumber.Contains(searchString) ||
-                                                               s.FirstName.Contains(searchString) || 
-                                                               s.InsuranceCompany.Contains(searchString) ||
-                                                               s.LastName.Contains(searchString) || 
-                                                               s.MiddleName.Contains(searchString) ||
-                                                               s.NumberOfPassport.Contains(searchString) || 
-                                                               s.NumberPolicy.Contains(searchString) ||
-                                                               s.PatientAddress.Contains(searchString)||
-                                                               s.PatientId.Contains(searchString));
+            searchString = searchString.ToLower();
+            var patients = _patientContext.Patients.Where(s => s != null).Where(s => s.AccessionNumber.ToLower().Contains(searchString) ||
+                                                               s.FirstName.ToLower().Contains(searchString) || 
+                                                               s.InsuranceCompany.ToLower().Contains(searchString) ||
+                                                               s.LastName.ToLower().Contains(searchString) || 
+                                                               s.MiddleName.ToLower().Contains(searchString) ||
+                                                               s.NumberOfPassport.ToLower().Contains(searchString) || 
+                                                               s.NumberPolicy.ToLower().Contains(searchString) ||
+                                                               s.PatientAddress.ToLower().Contains(searchString)||
+                                                               s.PatientId.ToLower().Contains(searchString));
             return patients;
         }
 
