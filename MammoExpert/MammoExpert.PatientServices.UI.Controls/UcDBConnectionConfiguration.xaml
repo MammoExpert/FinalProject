@@ -123,7 +123,7 @@
                 <Button
                     Padding="25,3"
                     Background="DarkGray"
-                    Command="{Binding CloseCommand}"
+                    Command="{Binding CancelCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>

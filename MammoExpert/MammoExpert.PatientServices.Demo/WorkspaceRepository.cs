@@ -23,15 +23,8 @@ namespace MammoExpert.PatientServices.Demo
         public void Add(ViewModelBase workspace)
         {
             if (workspace == null) return;
-            if (Workspaces != null && Workspaces.Contains(workspace))
-            {
-                SetActiveWorkspace(workspace);
-            }
-            else
-            {
-                Workspaces.Add(workspace);
-                SetActiveWorkspace(workspace);
-            }
+            Workspaces.Add(workspace);
+            SetActiveWorkspace(workspace);
         }
 
         public ObservableCollection<ViewModelBase> GetAll()
@@ -49,13 +42,18 @@ namespace MammoExpert.PatientServices.Demo
 
 
         // метод, который при создании новой рабочей области делает ее активной
-        private void SetActiveWorkspace(ViewModelBase workspace)
+        public void SetActiveWorkspace(ViewModelBase workspace)
         {
-            Debug.Assert(Workspaces.Contains(workspace));
+            foreach (var item in Workspaces)
+            {
+                if (item.DisplayName != workspace.DisplayName) continue;
+                Debug.Assert(Workspaces.Contains(item));
 
-            var collectionView = CollectionViewSource.GetDefaultView(Workspaces);
-            if (collectionView != null)
-                collectionView.MoveCurrentTo(workspace);
+                var collectionView = CollectionViewSource.GetDefaultView(Workspaces);
+                if (collectionView != null)
+                    collectionView.MoveCurrentTo(item);
+            }
+            
         }
     }
 }

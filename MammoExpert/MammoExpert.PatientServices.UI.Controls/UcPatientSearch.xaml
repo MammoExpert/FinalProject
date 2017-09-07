@@ -23,12 +23,13 @@
         <TextBox
             Grid.Row="0"
             Grid.Column="0"
-            Margin="2" />
+            Margin="2"
+            Text="{Binding Path=SearchString}" />
         <Button
             Grid.Row="0"
             Grid.Column="1"
             Width="26"
-            Command="{Binding ClearSearchArea}"
+            Command="{Binding CrearSearchAreaCommand}"
             Content="X" />
 
         <DataGrid
@@ -71,13 +72,13 @@
                 Width="100"
                 Margin="2"
                 Command="{Binding Path=ChoosePatientCommand}"
+                CommandParameter="{Binding ElementName=DgPatients, Path=SelectedItem}"
                 Content="Выбрать" />
-            <!--  CommandParameter="{Binding ElementName=DgPatients, Path=SelectedItem}"  -->
 
             <Button
                 Width="100"
                 Margin="2"
-                Command="{Binding Path=CloseCommand}"
+                Command="{Binding Path=CancelCommand}"
                 Content="Отмена" />
         </StackPanel>
     </Grid>

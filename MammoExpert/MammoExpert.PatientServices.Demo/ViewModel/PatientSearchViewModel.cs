@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.PresenterCore;
@@ -42,9 +44,28 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        public ICommand ChoosePatientCommand => new ActionCommand(() =>
+        private string _searchString;
+        public string SearchString
         {
-            ViewFactory.CreatePatientDitailsView(new Patient());
+            get { return _searchString; }
+            set
+            {
+                if (_searchString == value) return;
+                _searchString = value;
+                RaisePropertyChanged("SearchString");
+            }
+        }
+
+        public ICommand ChoosePatientCommand => new ActionCommand<Patient>( ViewFactory.CreatePatientDitailsView, param => param != null);
+
+        public ICommand CancelCommand => new ActionCommand(() =>
+        {
+            MainWindowViewModel.WorkspaceRepository.Delete(this);
+        });
+
+        public ICommand CrearSearchAreaCommand => new ActionCommand(() =>
+        {
+            SearchString = string.Empty;
         });
 
         // возвращает данные из источника

@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows;
+using System.Windows.Forms;
 using MammoExpert.PatientServices.Core;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
@@ -102,8 +103,15 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void AddWorkspace()
         {
             if (SelectedSource == null) return;
-            WorkspaceRepository.Add(new PatientSearchViewModel(SelectedSource));
+            var ws = new PatientSearchViewModel(SelectedSource);
+            if (IsOpened(ws)) WorkspaceRepository.SetActiveWorkspace(ws);
+            else WorkspaceRepository.Add(ws);        
             CloseAction();
+        }
+
+        public bool IsOpened(ViewModelBase ws)
+        {
+            return Workspaces.Any(item => item.DisplayName == ws.DisplayName);
         }
 
         // создает окно для подключения к новому источнику, согласно выбранному типу источника
@@ -124,10 +132,26 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             if (SelectedSource == null) return;
             Messager.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
             {
+                var vm = FindWorkspace();
+                if (vm != null) WorkspaceRepository.Delete(vm);
                 SourceRepository.Delete(SelectedSource);
-                ChangeSourceList(SelectedSource.Type);
-                //WorkspaceRepository.Delete(???);
+                ChangeSourceList(SelectedSource.Type);              
             });
+        }
+
+        private ViewModelBase FindWorkspace()
+        {
+            foreach (var item in Workspaces)
+            {
+                if (item.GetType() == typeof(PatientSearchViewModel))
+                {
+                    if (item.DisplayName == SelectedSource.Name)
+                    {
+                        if (Workspaces.Contains(item)) return item;
+                    }
+                }
+            }
+            return null;
         }
 
         // обновляет список источников согласно выбранному типу источника

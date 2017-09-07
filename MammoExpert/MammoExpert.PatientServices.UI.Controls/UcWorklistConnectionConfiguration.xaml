@@ -109,7 +109,7 @@
                     Padding="25,3"
                     VerticalAlignment="Top"
                     Background="DarkGray"
-                    Command="{Binding CloseCommand}"
+                    Command="{Binding CancelCommand}"
                     Content="Отмена" />
             </StackPanel>
         </Grid>

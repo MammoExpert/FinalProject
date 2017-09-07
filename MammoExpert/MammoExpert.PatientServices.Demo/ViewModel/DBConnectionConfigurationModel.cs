@@ -40,11 +40,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             if (source != null && p != null) OnAddSource += p.EditOrCreateSource;
         }
 
+        public ICommand CancelCommand => new ActionCommand(() =>
+        {
+            ConfigurationWindowViewModel.Close();
+        });
+
         public ICommand CreateCommand => new ActionCommand(() =>
         {
             Source.Description = Source.Name + " и прочее.";
             if (OnAddSource != null) OnAddSource(Source);
-            // как-то закрыть окно
+            ConfigurationWindowViewModel.Close();
         });
     }
 }
