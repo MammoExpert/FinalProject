@@ -16,7 +16,7 @@
     mc:Ignorable="d">
 
     <Window.Resources>
-        <ResourceDictionary Source="../Themes/Templates.xaml" />
+        <local:ContentConverter x:Key="Converter" />
     </Window.Resources>
 
     <Grid x:Name="grid">
@@ -27,9 +27,12 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ContentControl
-            Grid.Row="0"
-            Grid.Column="0"
-            Content="{Binding CurrentViewModel}" />
+        <ContentControl Grid.Row="0" Grid.Column="0">
+            <ContentControl.Content>
+                <MultiBinding Converter="{StaticResource Converter}">
+                    <Binding Path="Type" />
+                </MultiBinding>
+            </ContentControl.Content>
+        </ContentControl>
     </Grid>
 </Window>

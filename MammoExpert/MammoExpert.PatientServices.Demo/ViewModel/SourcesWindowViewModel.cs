@@ -144,13 +144,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // создает окно для подключения к новому источнику, согласно выбранному типу источника
         private void CreateSource(SourceTypeOption option)
         {
-            ViewFactory.CreateConfigurationView(this, new Source(option.Type));
+            ViewFactory.CreateConfigurationView(new Source(option.Type));
         }
 
         // создает окно для редактирования источника
         private void EditSource()
         {
-            ViewFactory.CreateConfigurationView(this, SelectedSource);
+            ViewFactory.CreateConfigurationView(SelectedSource);
         }
 
         // удаляет источник

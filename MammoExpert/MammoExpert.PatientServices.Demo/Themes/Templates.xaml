@@ -13,14 +13,6 @@
         <controls:UcPatientSearch />
     </DataTemplate>
 
-    <!--  Templates for configuaration window  -->
-    <DataTemplate DataType="{x:Type viewModel:DBConnectionConfigurationModel}">
-        <controls:UcDBConnectionConfigurationViewmodel />
-    </DataTemplate>
-    <DataTemplate DataType="{x:Type viewModel:WorklistConnectionConfigurationModel}">
-        <controls:UcWorklistConnectionConfiguration />
-    </DataTemplate>
-
     <DataTemplate x:Key="TitledTabItemTemplate">
         <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
     </DataTemplate>

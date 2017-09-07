@@ -88,13 +88,11 @@
     <Compile Include="Properties\LogInfo.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
-    <Compile Include="ViewModel\DBConnectionConfigurationModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ManualInputViewModel.cs" />
     <Compile Include="ViewModel\PatientDitailsWindowViewModel.cs" />
     <Compile Include="ViewModel\PatientSearchViewModel.cs" />
     <Compile Include="ViewModel\SourcesWindowViewModel.cs" />
-    <Compile Include="ViewModel\WorklistConnectionConfigurationModel.cs" />
     <Compile Include="View\AboutProgrammWindow.xaml.cs">
       <DependentUpon>AboutProgrammWindow.xaml</DependentUpon>
     </Compile>
