@@ -5,9 +5,9 @@ namespace MammoExpert.PatientServices.UI.Controls
     /// <summary>
     /// Логика взаимодействия для UcDBConnectionConfiguration.xaml
     /// </summary>
-    public partial class UcDBConnectionConfigurationViewmodel : UserControl
+    public partial class UcDBConnectionConfiguration : UserControl
     {
-        public UcDBConnectionConfigurationViewmodel()
+        public UcDBConnectionConfiguration()
         {
             InitializeComponent();
         }

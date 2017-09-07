@@ -40,10 +40,10 @@ namespace MammoExpert.PatientServices.Demo
         }
 
         // создает окно для редактирования источниов
-        public static void CreateConfigurationView(ViewModelBase vm, Source source)
+        public static void CreateConfigurationView(Source source)
         {
             var view = new ConfigurationWindow();
-            var viewModel = new ConfigurationWindowViewModel(vm, source);
+            var viewModel = new ConfigurationWindowViewModel(source);
             if (viewModel.CloseAction == null) viewModel.CloseAction = new Action(view.Close);
             view.DataContext = viewModel;
             view.ShowDialog();

@@ -9,59 +9,67 @@ using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
-    public class ConfigurationWindowViewModel : ViewModelBase
+    public class ConfigurationWindowViewModel : SourcesWindowViewModel
     {
         #region Fields
 
-        private ViewModelBase _currentViewModel;
-        private readonly ViewModelBase _parent;
-        public new static Action Close;
+        private delegate void AddSourceHandler(Source source);
+        private event AddSourceHandler OnAddSource;
+        private Source _source;
+        private SourceType _type;
 
         #endregion // Fields
 
         #region Constructor
 
-        // конструктор при загрузке окна для редактирования выбранного источника
-        public ConfigurationWindowViewModel(ViewModelBase vm, Source source)
+        public ConfigurationWindowViewModel(Source source)
         {
-            Close = new Action(() => { CloseAction();});
             base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
-            _parent = vm;
-            SetCurrentViewModel(source);          
+            Type = source.Type;   
+            Source = source;
+            if (source != null) OnAddSource += EditOrCreateSource;
         }
 
-        #endregion // Constructor
-
+        #endregion // Constructor     
+       
         #region Properties
-        public ViewModelBase CurrentViewModel
+
+        public Source Source
         {
-            get { return _currentViewModel; }
+            get { return _source; }
             set
             {
-                _currentViewModel = value;
-                RaisePropertyChanged("CurrentViewModel");
+                _source = value;
+                RaisePropertyChanged("Source");
+            }
+        }
+
+        public SourceType Type
+        {
+            get { return _type; }
+            set
+            {
+                _type = value;
+                RaisePropertyChanged("Type");
             }
         }
 
         #endregion // Properties
 
-        #region Private Methods
+        #region Commands
 
-        // устанавливает значение для текущей модели представления в зависимости от переданного источника
-        private void SetCurrentViewModel(Source source)
+        public ICommand CancelCommand => new ActionCommand(() =>
         {
-            switch (source.Type)
-            {
-                case SourceType.DataBase:
-                    _currentViewModel = new DBConnectionConfigurationModel(_parent, source);
-                    break;
-                case SourceType.Worklist:
-                    _currentViewModel = new WorklistConnectionConfigurationModel(_parent, source);
-                    break;
-                default: throw new ArgumentNullException("source");
-            }
-        }
+            CloseAction();
+        });
 
-        #endregion // Private Methods
+        public ICommand CreateCommand => new ActionCommand(() =>
+        {
+            //Source.Description = Source.Name + " и прочее."; 
+            if (OnAddSource != null) OnAddSource(Source);
+            CloseAction();
+        });
+
+        #endregion // Commands
     }
 }
