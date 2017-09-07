@@ -85,7 +85,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Messager.cs" />
     <Compile Include="Properties\LogInfo.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
