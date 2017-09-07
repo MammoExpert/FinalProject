@@ -16,5 +16,5 @@ DEBUG;TRACE
 17134107449
 UcDBConnectionConfiguration.xaml;UcManualInput.xaml;UcPatientSearch.xaml;UcWorklistConnectionConfiguration.xaml;
 
-False
+True
 
