@@ -11,17 +11,23 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class PatientDitailsWindowViewModel : ViewModelBase
     {
-        private readonly Patient _patient;
+        private Patient _patient;
 
         public PatientDitailsWindowViewModel(Patient patient)
         {
             base.DisplayName = Properties.Resources.PatientDitailsWindowViewModel_DisplayName;
-            _patient = patient;
+            Patient = patient;
         }
 
         public Patient Patient
         {
             get { return _patient; }
+            set
+            {
+                if (_patient == value) return;
+                _patient = value;
+                RaisePropertyChanged("Patient");
+            }
         }
     }
 }

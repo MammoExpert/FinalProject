@@ -31,6 +31,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
             var sourcesList = SourceRepository.GetAll();
             if (sourcesList != null) _sources = new ObservableCollection<Source>(sourcesList);
+            SourceTypeOptions = _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
         }
 
         #endregion // Constructor
@@ -72,7 +73,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         // здесь храним все типы источников для отображения в ComboBox
-        public List<SourceTypeOption> SourceTypeOptions => _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
+        public List<SourceTypeOption> SourceTypeOptions
+        {
+            get { return _sourceTypeOptions; }
+            set
+            {
+                if (_sourceTypeOptions == value) return;
+                _sourceTypeOptions = value;
+                RaisePropertyChanged("SourceTypeOptions");
+            }
+        }
 
         #endregion // Properties
 
@@ -89,6 +99,23 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ICommand ChangeSourceListByType => new ActionCommand<SourceTypeOption>(param => ChangeSourceList(param.Type));
 
         #endregion // Commands
+
+        #region Public Methods
+
+        public void EditOrCreateSource(Source source)
+        {
+            foreach (var s in Sources)
+            {
+                if (s.Id == source.Id)
+                {
+                    SourceRepository.Edit(source);
+                }
+            }
+            SourceRepository.Create(source);
+            ChangeSourceList(source.Type);
+        }
+
+        #endregion // Public Methods
 
         #region Private Methods
 
@@ -109,7 +136,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             CloseAction();
         }
 
-        public bool IsOpened(ViewModelBase ws)
+        private bool IsOpened(ViewModelBase ws)
         {
             return Workspaces.Any(item => item.DisplayName == ws.DisplayName);
         }
@@ -159,19 +186,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             var collection = SourceRepository.GetByType(type);
             if (collection != null) Sources = new ObservableCollection<Source>(collection);
-        }
-
-        public void EditOrCreateSource(Source source)
-        {
-            foreach (var s in Sources)
-            {
-                if (s.Id == source.Id)
-                {
-                    SourceRepository.Edit(source);
-                }
-            }
-            SourceRepository.Create(source);
-            ChangeSourceList(source.Type);
         }
 
         #endregion // Private Methods

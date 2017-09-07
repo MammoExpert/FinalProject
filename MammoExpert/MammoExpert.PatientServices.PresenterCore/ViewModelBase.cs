@@ -8,7 +8,7 @@ namespace MammoExpert.PatientServices.PresenterCore
     {
         #region Properties
 
-        // Свойство для отображения названия представления в заголовке окна
+        // Свойство для отображения названия представления в заголовке
         public virtual string DisplayName { get; protected set; }
 
         // отвечает за закрытие представления без использования команды CloseCommand

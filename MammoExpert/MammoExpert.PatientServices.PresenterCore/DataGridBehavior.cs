@@ -10,6 +10,7 @@ using System.Windows.Media;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
+    // Этот класс был создан для нумерации строк в DataGrid
     public class DataGridBehavior
     {
         #region DisplayRowNumber

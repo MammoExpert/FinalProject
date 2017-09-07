@@ -11,9 +11,26 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     public class ConfigurationWindowViewModel : ViewModelBase
     {
+        #region Fields
+
         private ViewModelBase _currentViewModel;
         private readonly ViewModelBase _parent;
         public new static Action Close;
+
+        #endregion // Fields
+
+        #region Constructor
+
+        // конструктор при загрузке окна для редактирования выбранного источника
+        public ConfigurationWindowViewModel(ViewModelBase vm, Source source)
+        {
+            Close = new Action(() => { CloseAction();});
+            base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
+            _parent = vm;
+            SetCurrentViewModel(source);          
+        }
+
+        #endregion // Constructor
 
         #region Properties
         public ViewModelBase CurrentViewModel
@@ -27,21 +44,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         #endregion // Properties
-
-        #region Constructor
-
-        // конструктор при загрузке окна для редактирования выбранного источника
-        public ConfigurationWindowViewModel(ViewModelBase vm, Source source)
-        {
-            Close = new Action(() => { CloseAction();});
-            base.DisplayName = Properties.Resources.ConfigurationWindowViewModel_DisplayName;
-            _parent = vm;
-            SetCurrentViewModel(source);          
-        }
-
-        public ConfigurationWindowViewModel() {}
-
-        #endregion // Constructor
 
         #region Private Methods
 

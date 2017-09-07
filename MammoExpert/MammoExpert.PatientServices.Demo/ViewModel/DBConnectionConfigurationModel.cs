@@ -32,6 +32,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #endregion // Fields and Properties
 
+        #region Constructor
+
         public DBConnectionConfigurationModel(ViewModelBase vm, Source source)
         {
             Source = source;
@@ -39,6 +41,10 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             var p = vm as SourcesWindowViewModel;
             if (source != null && p != null) OnAddSource += p.EditOrCreateSource;
         }
+
+        #endregion // Constructor
+
+        #region Commands
 
         public ICommand CancelCommand => new ActionCommand(() =>
         {
@@ -51,5 +57,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             if (OnAddSource != null) OnAddSource(Source);
             ConfigurationWindowViewModel.Close();
         });
+
+        #endregion // Commands
     }
 }

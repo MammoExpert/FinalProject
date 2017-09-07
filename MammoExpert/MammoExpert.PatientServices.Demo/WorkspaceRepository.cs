@@ -40,7 +40,6 @@ namespace MammoExpert.PatientServices.Demo
             }
         }
 
-
         // метод, который при создании новой рабочей области делает ее активной
         public void SetActiveWorkspace(ViewModelBase workspace)
         {
