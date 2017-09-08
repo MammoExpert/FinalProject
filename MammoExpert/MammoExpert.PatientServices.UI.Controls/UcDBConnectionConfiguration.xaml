@@ -104,7 +104,7 @@
                     Margin="3"
                     Padding="15,3"
                     Background="DarkGray"
-                    Command="{Binding CheckConnectionDbCommand}"
+                    Command="{Binding CheckDbConnectionCommand}"
                     Content="Проверить" />
             </StackPanel>
             <StackPanel

@@ -38,7 +38,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         //метод получающий библиотеки реализующие интерфейс источника данных пациента
         private static List<string> GetModuls()
         {
-            var mammoExpertDb = typeof(PacientRepositoryEf);
+            var mammoExpertDb = typeof(PatientDbConnectionRepository);
             var mammoExpertWorkList = typeof(PatientRepositoryDicom);
             var typeInterface = typeof(IPatientRepository);
 

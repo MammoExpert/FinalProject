@@ -16,9 +16,9 @@ namespace MammoExpert.PatientServices.DB
         private readonly DbSource _dbSource;
         private readonly DbConnectionConfiguration _configuration;
         private readonly List<Patient> _patients;
-        public PatientDbConnectionRepository(DbSource dbSource, DbConnectionConfiguration configuration)
+        public PatientDbConnectionRepository(DbConnectionConfiguration configuration)
         {
-            _dbSource = dbSource;
+            _dbSource = configuration.DbSource;
             _configuration = configuration;
             _patients = new List<Patient>();
         }
@@ -57,7 +57,7 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> GetAllPatients()
         {
-            var descriptionProvider = _dbSource.DescriptionProvider;
+            var descriptionProvider = _dbSource.Provider;
             var provider = _configuration.GetProvider(descriptionProvider);
             DbProviderFactory dbf = DbProviderFactories.GetFactory(provider);
             using (DbConnection conn = dbf.CreateConnection())

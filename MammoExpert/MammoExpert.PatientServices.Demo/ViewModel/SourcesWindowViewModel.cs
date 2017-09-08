@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Forms;
 using MammoExpert.PatientServices.Core;
+using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {

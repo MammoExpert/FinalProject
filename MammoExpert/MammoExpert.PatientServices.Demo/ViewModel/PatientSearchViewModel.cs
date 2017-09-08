@@ -13,6 +13,7 @@ using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -21,7 +22,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         #region Fields
 
         private ObservableCollection<Patient> _patients;
-        private static PacientRepositoryEf _patientRepository;
+        private static PatientDbConnectionRepository _patientRepository;
         private string _searchString;
 
         #endregion // Fields
@@ -92,10 +93,10 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             try
             {
-                // стринг указан пока для тестирования
-                // в будущем должно быть:
-                // _patientRepository = new PacientRepositoryEf(Source.ConnectinString);
-                _patientRepository = new PacientRepositoryEf(@"Data Source = (localDb)\v11.0; AttachDbFilename = D:\FinalProject\Data\PatientServices.mdf; Integrated Security = True");
+                //DbSource dbSource = SourceSerializer.DbDeserialize(source);
+                //DbConnectionConfiguration configuration = new DbConnectionConfiguration(dbSource);
+                
+                _patientRepository = new PatientDbConnectionRepository(new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source)));
                 var patients = _patientRepository.GetAllPatients().ToList();
                 return new ObservableCollection<Patient>(patients);
             }

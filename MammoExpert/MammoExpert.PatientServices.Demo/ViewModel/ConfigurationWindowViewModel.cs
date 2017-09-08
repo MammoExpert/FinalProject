@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.DB;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -17,7 +18,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private event AddSourceHandler OnAddSource;
         private Source _source;
         private SourceType _type;
-
+        private List<string> _listProviders;
+        private DbConnectionConfiguration _configuration;
         #endregion // Fields
 
         #region Constructor
@@ -28,6 +30,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             Type = source.Type;   
             Source = source;
             if (source != null) OnAddSource += EditOrCreateSource;
+            _configuration = new DbConnectionConfiguration();
+            ListProviders = _configuration.GetListProviders();
+            
         }
 
         #endregion // Constructor     
@@ -54,6 +59,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        public List<string> ListProviders
+        {
+            get { return _listProviders; }
+            set
+            {
+                _listProviders = value;
+                RaisePropertyChanged("ListProviders");
+            }
+        }
+
         #endregion // Properties
 
         #region Commands
@@ -68,6 +83,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             //Source.Description = Source.Name + " и прочее."; 
             if (OnAddSource != null) OnAddSource(Source);
             CloseAction();
+        });
+
+        public ICommand CheckDbConnectionCommand => new ActionCommand(() =>
+        {
+            _configuration.DbSource = SourceSerializer.DbDeserialize(Source);
+            _configuration.GetStateConnection();
         });
 
         #endregion // Commands

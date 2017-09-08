@@ -86,6 +86,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Properties\LogInfo.cs" />
+    <Compile Include="SourceSerializer.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -175,6 +176,10 @@
     <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
       <Project>{0754cf79-705a-4bbd-a843-e5e4e94358f9}</Project>
       <Name>MammoExpert.PatientServices.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Infrastructure\MammoExpert.PatientServices.Infrastructure.csproj">
+      <Project>{0e29de80-e9ff-4bfd-827a-1715c0e7e05c}</Project>
+      <Name>MammoExpert.PatientServices.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.PresenterCore\MammoExpert.PatientServices.PresenterCore.csproj">
       <Project>{C5604D0A-20EC-4E75-871C-14508A8C37E4}</Project>

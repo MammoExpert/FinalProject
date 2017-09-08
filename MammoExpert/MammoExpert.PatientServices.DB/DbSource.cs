@@ -12,7 +12,7 @@ namespace MammoExpert.PatientServices.DB
     public class DbSource
     {
         //Получае или задает описание провайдера
-        public string DescriptionProvider { get; set; }
+        public string Provider { get; set; }
         /// <summary>
         /// Получает или задает значение имени хоста (IP адреса)
         /// </summary>

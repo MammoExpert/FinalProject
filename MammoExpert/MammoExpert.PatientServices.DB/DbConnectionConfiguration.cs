@@ -15,11 +15,14 @@ namespace MammoExpert.PatientServices.DB
     /// </summary>
     public class DbConnectionConfiguration
     {
-        private readonly DbSource _dbSource;
+        public DbConnectionConfiguration() { }
+       
         public DbConnectionConfiguration(DbSource dbSource)
         {
-            _dbSource = dbSource;
+            DbSource = dbSource;
         }
+
+        public DbSource DbSource { get; set; }
 
         /// <summary>
         /// Возвращает строку подключения
@@ -32,22 +35,22 @@ namespace MammoExpert.PatientServices.DB
             switch (descriptionProvider)
             {
                 case "Odbc Data Provider":
-                    connectionString = GetMySqlConnectionString(_dbSource);
+                    connectionString = GetMySqlConnectionString(DbSource);
                     break;
                 case "OleDb Data Provider":
-                    connectionString = GetAccessConnectionString(_dbSource);
+                    connectionString = GetAccessConnectionString(DbSource);
                     break;
                 case "OracleClient Data Provider":
-                    connectionString = GetOracleConnectionSring(_dbSource);
+                    connectionString = GetOracleConnectionSring(DbSource);
                     break;
                 case "SqlClient Data Provider":
-                    connectionString = GetSqlLocalTestConnectionString(_dbSource);//GetSqlConnectionString(_dbSource);
+                    connectionString = GetSqlLocalTestConnectionString(DbSource);//GetSqlConnectionString(_dbSource);
                     break;
                 case "Microsoft SQL Server Compact Data Provider 4.0":
-                    connectionString = GetSqlCeConnectionString(_dbSource);
+                    connectionString = GetSqlCeConnectionString(DbSource);
                     break;
                 default:
-                    connectionString = GetSqlLocalTestConnectionString(_dbSource);
+                    connectionString = GetSqlLocalTestConnectionString(DbSource);
                     break;
             }
             return connectionString;
@@ -85,14 +88,14 @@ namespace MammoExpert.PatientServices.DB
         /// Возвращает состояние соединения
         /// </summary>
         /// <param name="descriptionProvider"></param>
-        public void GetStateConnection(string descriptionProvider)
+        public void GetStateConnection()
         {
             try
             {
-                DbProviderFactory dbf = DbProviderFactories.GetFactory(GetProvider(descriptionProvider));
+                DbProviderFactory dbf = DbProviderFactories.GetFactory(GetProvider(DbSource.Provider));
                 using (DbConnection connection = dbf.CreateConnection())
                 {
-                    connection.ConnectionString = GetConnectionString(descriptionProvider);
+                    connection.ConnectionString = GetConnectionString(DbSource.Provider);
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
                         Messager.ShowConnectionSuccess("Соединение с базой данных установленно!");
@@ -170,7 +173,7 @@ namespace MammoExpert.PatientServices.DB
         private string GetSqlLocalTestConnectionString(DbSource dbSource)
         {
             string connectionString =
-                String.Format(@"Data Source=(localDb)\v11.0;AttachDbFilename=E:\FinalProject\Data\PatientServices.mdf;Integrated Security=True", dbSource.DataBase);
+                String.Format(@"Data Source=(localDb)\v11.0;AttachDbFilename=E:\FinalProject\Data\{0}.mdf;Integrated Security=True", dbSource.DataBase);
             return connectionString;
         }
 
