@@ -19,7 +19,7 @@
         <local:ContentConverter x:Key="Converter" />
     </Window.Resources>
 
-    <Grid x:Name="grid">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>

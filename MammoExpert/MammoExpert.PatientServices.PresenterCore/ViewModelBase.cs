@@ -4,11 +4,12 @@ using System.Windows.Input;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
+    // базовый класс для моделей представления
     public class ViewModelBase : INotifyPropertyChanged
     {
         #region Properties
 
-        // Свойство для отображения названия представления в заголовке
+        // Свойство для отображения названия представления в заголовке окна
         public virtual string DisplayName { get; protected set; }
 
         // отвечает за закрытие представления без использования команды CloseCommand
@@ -48,7 +49,6 @@ namespace MammoExpert.PatientServices.PresenterCore
             }
         }
 
-        // вызывает событие закрыть представление
         public void Close()
         {
             var handler = this.RequestClose;

@@ -25,10 +25,6 @@ E:\FinalProject\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB\ob
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll.config
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.xml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\EntityFramework.SqlServer.xml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\obj\Debug\MammoExpert.PatientServices.DB.csprojResolveAssemblyReference.cache
@@ -57,3 +53,5 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Core.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb

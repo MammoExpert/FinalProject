@@ -6,10 +6,11 @@
     xmlns:local="clr-namespace:MammoExpert.PatientServices.UI.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
     <GroupBox
         Margin="5"
         Padding="5"
-        Header="{Binding Path=DisplayName}">
+        Header="Рабочий список">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
@@ -25,6 +26,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
+
             <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
@@ -34,7 +36,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Name, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Name}" />
 
             <TextBlock
                 Grid.Row="1"
@@ -45,7 +47,7 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Parameters[Header], UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Header]}" />
 
             <TextBlock
                 Grid.Row="2"
@@ -56,7 +58,7 @@
                 Grid.Row="2"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Parameters[Ip], UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Ip]}" />
 
             <TextBlock
                 Grid.Row="3"
@@ -67,7 +69,7 @@
                 Grid.Row="3"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Parameters[Port], UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Port]}" />
 
             <TextBlock
                 Grid.Row="4"
@@ -78,7 +80,8 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Source.Parameters[Timeout], UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding Path=Source.Parameters[Timeout]}" />
+
             <StackPanel
                 Grid.Row="5"
                 Grid.Column="0"
@@ -88,9 +91,10 @@
                     Margin="3"
                     Padding="15,3"
                     Background="DarkGray"
-                    Command="{Binding CheckConnectionWorklist}"
+                    Command="{Binding CheckWorklistConnectionCommand}"
                     Content="Проверить" />
             </StackPanel>
+
             <StackPanel
                 Grid.Row="7"
                 Grid.Column="0"

@@ -18,7 +18,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public AboutProgrammWindowViewModel()
         {
-            base.DisplayName = Properties.Resources.AboutProgrammWindowViewModel_DisplayName;
+            base.DisplayName = Resources.AboutProgrammWindowViewModel_DisplayName;
         }
 
         #endregion // Constructor
@@ -32,8 +32,10 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public string ApplicationName => Assembly.GetExecutingAssembly().GetName().Name;
 
         // список загруженных библиотек реализующих интерфейс источника данных пациента
-        public List<string> Moduls => GetModuls(); 
+        public List<string> Moduls => GetModuls();
         #endregion // Properties
+
+        #region Private Methods
 
         //метод получающий библиотеки реализующие интерфейс источника данных пациента
         private static List<string> GetModuls()
@@ -45,7 +47,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             var assebleTypes = AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(s => s.GetTypes())
                 .Where(p => p.GetInterfaces().Contains(typeInterface))
-                .SelectMany(a=>new List<string>
+                .SelectMany(a => new List<string>
                 {
                     a.Assembly.GetName().Name +
                     " Версия " + a.Assembly.GetName().Version.ToString()
@@ -53,5 +55,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
             return assebleTypes;
         }
+
+        #endregion // Private Methods
     }
 }

@@ -70,7 +70,7 @@ namespace MammoExpert.PatientServices.Demo.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Конфигурация соединения.
+        ///   Looks up a localized string similar to Конфигурации соединения.
         /// </summary>
         internal static string ConfigurationWindowViewModel_DisplayName {
             get {

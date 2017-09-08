@@ -279,3 +279,5 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpe
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Themes\Templates.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb

@@ -13,6 +13,7 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="ThreeDBorderWindow"
     mc:Ignorable="d">
+
     <Window.Resources>
         <ResourceDictionary Source="../Themes/Templates.xaml" />
     </Window.Resources>

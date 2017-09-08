@@ -119,29 +119,24 @@
   </resheader>
   <data name="AboutProgrammWindowViewModel_DisplayName" xml:space="preserve">
     <value>О программе</value>
-    <comment>Заголовок окна о программе</comment>
   </data>
   <data name="ConfigurationWindowViewModel_DisplayName" xml:space="preserve">
-    <value>Конфигурация соединения</value>
-    <comment>Заголовок окна управления конфигурацией соединения</comment>
+    <value>Конфигурации соединения</value>
   </data>
   <data name="DBConnectionConfigurationModel_DisplayName" xml:space="preserve">
     <value>База данных</value>
   </data>
   <data name="MainWindowViewModel_DisplayName" xml:space="preserve">
     <value>Выбор пациента</value>
-    <comment>Заголовок главного окна</comment>
   </data>
   <data name="ManualInputViewModel_DisplayName" xml:space="preserve">
     <value>Ручной ввод</value>
   </data>
   <data name="PatientDitailsWindowViewModel_DisplayName" xml:space="preserve">
     <value>Информация о пациенте</value>
-    <comment>Заголовок окна информации о пациенте</comment>
   </data>
   <data name="SourcesWindowViewModel_DisplayName" xml:space="preserve">
     <value>Источники данных</value>
-    <comment>Заголовок окна настройки источников данных</comment>
   </data>
   <data name="WorklistConnectionConfigurationModel_DisplayName" xml:space="preserve">
     <value>Рабочий список</value>

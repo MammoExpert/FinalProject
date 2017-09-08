@@ -90,3 +90,10 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\Ma
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.csproj.GenerateResource.Cache
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb

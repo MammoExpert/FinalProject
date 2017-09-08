@@ -31,7 +31,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
             var sourcesList = SourceRepository.GetAll();
-            if (sourcesList != null) _sources = new ObservableCollection<Source>(sourcesList);
+            if (sourcesList != null) Sources = new ObservableCollection<Source>(sourcesList);
             SourceTypeOptions = _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
         }
 
@@ -39,6 +39,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Properties
 
+        // выбранный тип источника из ComboBox
         public SourceTypeOption SelectedType
         {
             get { return _selectedType; }
@@ -50,6 +51,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        // выбранный источник
         public Source SelectedSource
         {
             get { return _selectedSource; }
@@ -89,38 +91,50 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Commands
 
+        // открыть рабочую область в новой вкладке
         public ICommand AddWorkspaceCommand => new ActionCommand(AddWorkspace);
 
+        // открыть окно для содания нового источника
         public ICommand AddSourceCommand => new ActionCommand<SourceTypeOption>(CreateSource, param => SelectedType != null);
 
+        // открыть окно для редактирования источника
         public ICommand EditSourceCommand => new ActionCommand(EditSource, param => SelectedSource != null);
 
+        // удалить выбранный источник
         public ICommand DeleteSourceCommand => new ActionCommand(DeleteSource, param => SelectedSource != null);
 
+        // срабатывает при смене значения в ComboBox
         public ICommand ChangeSourceListByType => new ActionCommand<SourceTypeOption>(param => ChangeSourceList(param.Type));
 
         #endregion // Commands
 
         #region Public Methods
 
-        public void EditOrCreateSource(Source source)
+        // добавляет новый источник
+        public void Create(Source source)
+        {
+            SourceRepository.Create(source);
+            ChangeSourceList(source.Type);
+        }
+
+        // сохраняет в существующий источник новые данные
+        public void Update(Source source)
         {
             foreach (var s in Sources)
             {
                 if (s.Id == source.Id)
                 {
-                    SourceRepository.Edit(source);
+                    SourceRepository.Update(source);
+                    ChangeSourceList(source.Type);
                 }
             }
-            SourceRepository.Create(source);
-            ChangeSourceList(source.Type);
         }
 
         #endregion // Public Methods
 
         #region Private Methods
 
-        // получает коллекцию объектов, описывающих типы источников
+        // возвращает коллекцию объектов, описывающих типы источников
         private static List<SourceTypeOption> GetAllTypes()
         {
             var listOfTypes = Enum.GetValues(typeof(SourceType)).Cast<SourceType>().Select(value => value).ToList();
@@ -132,11 +146,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             if (SelectedSource == null) return;
             var ws = new PatientSearchViewModel(SelectedSource);
+            if(ws.Patients == null) return;
             if (IsOpened(ws)) WorkspaceRepository.SetActiveWorkspace(ws);
             else WorkspaceRepository.Add(ws);        
             CloseAction();
         }
 
+        // проверяет, открытали уже такая область/вкладка
         private bool IsOpened(ViewModelBase ws)
         {
             return Workspaces.Any(item => item.DisplayName == ws.DisplayName);
@@ -145,13 +161,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         // создает окно для подключения к новому источнику, согласно выбранному типу источника
         private void CreateSource(SourceTypeOption option)
         {
-            ViewFactory.CreateConfigurationView(new Source(option.Type));
+            ViewFactory.CreateConfigurationView(new Source(option.Type), true);
         }
 
         // создает окно для редактирования источника
         private void EditSource()
         {
-            ViewFactory.CreateConfigurationView(SelectedSource);
+            ViewFactory.CreateConfigurationView(SelectedSource, false);
         }
 
         // удаляет источник
@@ -167,6 +183,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             });
         }
 
+        // находит среди списка открытых рабочих областей ту, которая относитчя к выбранному источнику
         private ViewModelBase FindWorkspace()
         {
             foreach (var item in Workspaces)

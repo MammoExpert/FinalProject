@@ -5,7 +5,7 @@
     xmlns:sources="clr-namespace:MammoExpert.PatientServices.Sources;assembly=MammoExpert.PatientServices.Sources"
     xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel">
 
-    <!--  Templates for workspaces of main window  -->
+    <!--  Шаблоны для рабочих областей главного окна  -->
     <DataTemplate DataType="{x:Type viewModel:ManualInputViewModel}">
         <controls:UcManualInput />
     </DataTemplate>
@@ -25,6 +25,7 @@
             ItemsSource="{Binding}" />
     </DataTemplate>
 
+    <!--  Общие стили для DataGrid  -->
     <Style TargetType="{x:Type DataGridCell}">
         <Style.Triggers>
             <Trigger Property="DataGridCell.IsSelected" Value="True">

@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MammoExpert.PatientServices.Demo
+namespace MammoExpert.PatientServices.Sources
 {
     public static class SourceSerializer
     {
+        // преобразует тип DbSource в тип Source
         public static Source DbSerialize(DbSource dbSource)
         {
-            Source source = new Source(SourceType.DataBase);
+            var source = new Source(SourceType.DataBase);
             source.Parameters["Driver"] = dbSource.Provider;
             source.Parameters["Port"] = dbSource.Port;
             source.Parameters["Ip"] = dbSource.Host;
@@ -22,9 +23,10 @@ namespace MammoExpert.PatientServices.Demo
             return source;
         }
 
+        // преобразует тип Source в тип DbSource
         public static DbSource DbDeserialize(Source source)
         {
-            DbSource dbSource = new DbSource();
+            var dbSource = new DbSource();
             dbSource.Provider = source.Parameters["Driver"];
             dbSource.Port = source.Parameters["Port"];
             dbSource.Host = source.Parameters["Ip"];

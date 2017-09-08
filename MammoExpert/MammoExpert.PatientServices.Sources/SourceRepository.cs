@@ -7,8 +7,8 @@ namespace MammoExpert.PatientServices.Sources
     {
         #region Fields
 
-        private List<Source> _sourceList;
-        private JsonManager _fileManager;
+        private readonly List<Source> _sourceList;
+        private readonly JsonManager _fileManager;
 
         #endregion // Fields
         
@@ -36,7 +36,6 @@ namespace MammoExpert.PatientServices.Sources
             if (!_sourceList.Contains(newSource))
             {
                 _sourceList.Add(newSource);
-                //_fileManager.Add(newSource);
                 _fileManager.RewriteFile();
             }
         }
@@ -47,19 +46,19 @@ namespace MammoExpert.PatientServices.Sources
             if (_sourceList.Contains(source) && _sourceList != null)
             {
                 _sourceList.Remove(source);
-                //_fileManager.Delete(source);
                 _fileManager.RewriteFile();
             }
         }
 
-        public void Edit(Source source)
+        // обновляет данные источника
+        public void Update(Source source)
         {
             for (var i = 0; i < _sourceList.Count; i++)
             {
                 if (_sourceList[i].Id == source.Id)
                 {
                     _sourceList[i] = source;
-                    _fileManager.Edit(source);
+                    _fileManager.RewriteFile();
                     return;
                 }
             }

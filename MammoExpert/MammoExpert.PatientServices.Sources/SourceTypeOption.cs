@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    // класс, предназначенный для описания типа источника
+    // класс, предназначенный для описания типа источника (вместо перечислений)
     public class SourceTypeOption
     {
         public SourceType Type { get; set; }

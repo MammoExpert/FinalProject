@@ -40,21 +40,19 @@ namespace MammoExpert.PatientServices.Demo
         }
 
         // создает окно для редактирования источниов
-        public static void CreateConfigurationView(Source source)
+        public static void CreateConfigurationView(Source source, bool isNew)
         {
             var view = new ConfigurationWindow();
-            var viewModel = new ConfigurationWindowViewModel(source);
+            var viewModel = new ConfigurationWindowViewModel(source, isNew);
             if (viewModel.CloseAction == null) viewModel.CloseAction = new Action(view.Close);
             view.DataContext = viewModel;
             view.ShowDialog();
         }
 
         // Создает окно для просмотри информации о пациенте
-        public static void CreatePatientDitailsView(Patient patient)
+        public static void CreatePatientDitailsView(ViewModelBase viewModel)
         {
             var view = new PatientDitailsWindow();
-            var viewModel = new PatientDitailsWindowViewModel(patient);
-            view.DataContext = viewModel;
             view.DataContext = viewModel;
             view.ShowDialog();
         }

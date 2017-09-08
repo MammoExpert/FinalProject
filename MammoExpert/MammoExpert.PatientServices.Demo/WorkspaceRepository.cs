@@ -15,11 +15,13 @@ namespace MammoExpert.PatientServices.Demo
     public class WorkspaceRepository
     {
         public ObservableCollection<ViewModelBase> Workspaces = new ObservableCollection<ViewModelBase>();
+
         public WorkspaceRepository()
         {
             Workspaces.Add(new ManualInputViewModel());
         }
 
+        // добавляет рабочую область
         public void Add(ViewModelBase workspace)
         {
             if (workspace == null) return;
@@ -27,11 +29,13 @@ namespace MammoExpert.PatientServices.Demo
             SetActiveWorkspace(workspace);
         }
 
+        // возвращает список рабочих областей
         public ObservableCollection<ViewModelBase> GetAll()
         {
             return Workspaces;
         }
 
+        // убирает рабочую область
         public void Delete(ViewModelBase workspace)
         {
             if (Workspaces != null && Workspaces.Contains(workspace))

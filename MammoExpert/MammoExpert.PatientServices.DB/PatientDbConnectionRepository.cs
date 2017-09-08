@@ -59,19 +59,19 @@ namespace MammoExpert.PatientServices.DB
         {
             var descriptionProvider = _dbSource.Provider;
             var provider = _configuration.GetProvider(descriptionProvider);
-            DbProviderFactory dbf = DbProviderFactories.GetFactory(provider);
-            using (DbConnection conn = dbf.CreateConnection())
+            var dbf = DbProviderFactories.GetFactory(provider);
+            using (var conn = dbf.CreateConnection())
             {
                 conn.ConnectionString = _configuration.GetConnectionString(descriptionProvider);
                 conn.Open();
 
-                DbCommand dbcmd = conn.CreateCommand();
+                var dbcmd = conn.CreateCommand();
                 dbcmd.CommandType = System.Data.CommandType.Text;
                 dbcmd.CommandText = "SELECT * FROM Patients";
-                DbDataReader dbrdr = dbcmd.ExecuteReader();
+                var dbrdr = dbcmd.ExecuteReader();
                 while (dbrdr.Read() != false)
                 {
-                    Patient patient = new Patient();
+                    var patient = new Patient();
                     patient.LastName = dbrdr["LastName"].ToString();
                     patient.FirstName = dbrdr["FirstName"].ToString();
                     patient.MiddleName = dbrdr["MiddleName"].ToString();

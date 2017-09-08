@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MammoExpert.PatientServices.Infrastructure;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +14,7 @@ namespace MammoExpert.PatientServices.Sources
 
         private string _jsonString;
         private readonly string _path;
-        private List<Source> _jsonCollection;
+        private readonly List<Source> _jsonCollection;
 
         #endregion // Fields
 
@@ -46,9 +47,9 @@ namespace MammoExpert.PatientServices.Sources
             RewriteFile();
         }
 
-        public void Edit(Source item)
+        public void Update(Source item)
         {
-            for (int i = 0; i < _jsonCollection.Count; i++)
+            for (var i = 0; i < _jsonCollection.Count; i++)
             {
                 if (_jsonCollection[i].Id == item.Id)
                 {
@@ -72,9 +73,7 @@ namespace MammoExpert.PatientServices.Sources
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Файл '" + _path + "' не найден", "Ошибка при загрузке файла",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
-                Environment.Exit(0);
+                Messager.ShowNotFindFileMessage(_path);
             }
             var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
             return result ?? new List<Source>();

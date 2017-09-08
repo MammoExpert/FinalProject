@@ -57,5 +57,12 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
+
+        public static void ShowNotFindFileMessage(string filePath)
+        {
+            MessageBox.Show("Файл '" + filePath + "' не найден", "Ошибка при загрузке файла",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+            Environment.Exit(0);
+        }
     }
 }

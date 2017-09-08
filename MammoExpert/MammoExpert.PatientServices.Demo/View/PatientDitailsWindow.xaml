@@ -9,11 +9,12 @@
     Title="{Binding Path=DisplayName}"
     Width="600"
     Height="300"
-    d:DataContext="{d:DesignInstance Type=viewModel:PatientDitailsWindowViewModel}"
+    d:DataContext="{d:DesignInstance Type=viewModel:PatientSearchViewModel}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="10" DataContext="{Binding Path=Patient}">
+        <Grid Margin="10" DataContext="{Binding Path=SelectedPatient}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -39,13 +40,12 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label
+            <TextBlock
                 Grid.Row="0"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Фамилия"
-                Target="{Binding ElementName=TxtLastName}" />
+                Text="Фамилия" />
             <TextBlock
                 x:Name="TxtLastName"
                 Grid.Row="0"
@@ -53,13 +53,12 @@
                 Margin="2"
                 Text="{Binding Path=LastName}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="1"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Имя"
-                Target="{Binding ElementName=TxtFirstName}" />
+                Text="Имя" />
             <TextBlock
                 x:Name="TxtFirstName"
                 Grid.Row="1"
@@ -67,13 +66,12 @@
                 Margin="2"
                 Text="{Binding Path=FirstName}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="2"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Отчество"
-                Target="{Binding ElementName=TxtMiddleName}" />
+                Text="Отчество" />
             <TextBlock
                 x:Name="TxtMiddleName"
                 Grid.Row="2"
@@ -81,13 +79,12 @@
                 Margin="2"
                 Text="{Binding Path=MiddleName}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Пол"
-                Target="{Binding ElementName=TxtSex}" />
+                Text="Пол" />
             <TextBlock
                 x:Name="TxtSex"
                 Grid.Row="3"
@@ -95,13 +92,12 @@
                 Margin="2"
                 Text="{Binding Path=Sex}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="4"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Дата рождения"
-                Target="{Binding ElementName=TxtBirthday}" />
+                Text="Дата рождения" />
             <TextBlock
                 x:Name="TxtBirthday"
                 Grid.Row="4"
@@ -109,13 +105,12 @@
                 Margin="2"
                 Text="{Binding Path=Birthday}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="5"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Адрес"
-                Target="{Binding ElementName=TxtPatientAddress}" />
+                Text="Адрес" />
             <TextBlock
                 x:Name="TxtPatientAddress"
                 Grid.Row="5"
@@ -123,13 +118,12 @@
                 Margin="2"
                 Text="{Binding Path=PatientAddress}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="6"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Top"
-                Content="Дополнительная информация"
-                Target="{Binding ElementName=TxtPatientComments}" />
+                Text="Дополнительная информация" />
             <TextBlock
                 x:Name="TxtPatientComments"
                 Grid.Row="6"
@@ -139,13 +133,12 @@
                 TextWrapping="Wrap"
                 Validation.ErrorTemplate="{x:Null}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="7"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Инвентарный номер"
-                Target="{Binding ElementName=TxtAccessionNumber}" />
+                Text="Инвентарный номер" />
             <TextBlock
                 x:Name="TxtAccessionNumber"
                 Grid.Row="7"
@@ -153,13 +146,12 @@
                 Margin="2"
                 Text="{Binding Path=AccessionNumber}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="8"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Идентификатор пациента"
-                Target="{Binding ElementName=TxtPatientId}" />
+                Text="Идентификатор пациента" />
             <TextBlock
                 x:Name="TxtPatientId"
                 Grid.Row="8"
@@ -167,13 +159,12 @@
                 Margin="2"
                 Text="{Binding Path=PatientId}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="9"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Данные направления на исследование"
-                Target="{Binding ElementName=TxtMedicalRecordLocator}" />
+                Text="Данные направления на исследование" />
             <TextBlock
                 x:Name="TxtMedicalRecordLocator"
                 Grid.Row="9"
@@ -181,13 +172,12 @@
                 Margin="2"
                 Text="{Binding Path=MedicalRecordLocator}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="10"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Контингенты"
-                Target="{Binding ElementName=TxtContingent}" />
+                Text="Контингенты" />
             <TextBlock
                 x:Name="TxtContingent"
                 Grid.Row="10"
@@ -195,13 +185,12 @@
                 Margin="2"
                 Text="{Binding Path=Contingent}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="11"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Группы риска"
-                Target="{Binding ElementName=TxtPatientCategory}" />
+                Text="Группы риска" />
             <TextBlock
                 x:Name="TxtPatientCategory"
                 Grid.Row="11"
@@ -209,13 +198,12 @@
                 Margin="2"
                 Text="{Binding Path=PatientCategory}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="12"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Номер паспорта"
-                Target="{Binding ElementName=TxtNumberOfPassport}" />
+                Text="Номер паспорта" />
             <TextBlock
                 x:Name="TxtNumberOfPassport"
                 Grid.Row="12"
@@ -223,13 +211,12 @@
                 Margin="2"
                 Text="{Binding Path=NumberOfPassport}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="13"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Место работы"
-                Target="{Binding ElementName=TxtPatientWorkAddres}" />
+                Text="Место работы" />
             <TextBlock
                 x:Name="TxtPatientWorkAddres"
                 Grid.Row="13"
@@ -237,13 +224,12 @@
                 Margin="2"
                 Text="{Binding Path=PatientWorkAddres}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="14"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Профессия"
-                Target="{Binding ElementName=TxtJob}" />
+                Text="Профессия" />
             <TextBlock
                 x:Name="TxtJob"
                 Grid.Row="14"
@@ -251,13 +237,12 @@
                 Margin="2"
                 Text="{Binding Path=Job}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="15"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Номер мед. страховки"
-                Target="{Binding ElementName=TxtNumberPolicy}" />
+                Text="Номер мед. страховки" />
             <TextBlock
                 x:Name="TxtNumberPolicy"
                 Grid.Row="15"
@@ -265,13 +250,12 @@
                 Margin="2"
                 Text="{Binding Path=NumberPolicy}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="16"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Страховая компания"
-                Target="{Binding ElementName=TxtInsuranceCompany}" />
+                Text="Страховая компания" />
             <TextBlock
                 x:Name="TxtInsuranceCompany"
                 Grid.Row="16"
@@ -279,13 +263,12 @@
                 Margin="2"
                 Text="{Binding Path=InsuranceCompany}" />
 
-            <Label
+            <TextBlock
                 Grid.Row="17"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Content="Телефон"
-                Target="{Binding ElementName=TxtTelephone}" />
+                Text="Телефон" />
             <TextBlock
                 x:Name="TxtTelephone"
                 Grid.Row="17"

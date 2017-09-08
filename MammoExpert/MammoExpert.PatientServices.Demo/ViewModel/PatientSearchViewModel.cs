@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
+using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Infrastructure;
@@ -23,16 +24,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         private ObservableCollection<Patient> _patients;
         private static PatientDbConnectionRepository _patientRepository;
+        private Patient _selectedPatient;
         private string _searchString;
+        public string SourceName;
 
         #endregion // Fields
-
 
         #region Constructor
 
         public PatientSearchViewModel(Source source)
         {
             base.DisplayName = source.Name;
+            SourceName = source.Name;
             Patients = GetData(source);
         }
 
@@ -62,11 +65,22 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        public Patient SelectedPatient
+        {
+            get { return _selectedPatient; }
+            set
+            {
+                if (_selectedPatient == value) return;
+                _selectedPatient = value;
+                RaisePropertyChanged("SelectedPatient");
+            }
+        }
+
         #endregion // Properties
 
         #region Commands
 
-        public ICommand ChoosePatientCommand => new ActionCommand<Patient>( ViewFactory.CreatePatientDitailsView, param => param != null);
+        public ICommand ChoosePatientCommand => new ActionCommand( () => ViewFactory.CreatePatientDitailsView(this),  param => param != null);
 
         public ICommand CancelCommand => new ActionCommand(() =>
         {
@@ -93,10 +107,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             try
             {
-                //DbSource dbSource = SourceSerializer.DbDeserialize(source);
-                //DbConnectionConfiguration configuration = new DbConnectionConfiguration(dbSource);
-                
-                _patientRepository = new PatientDbConnectionRepository(new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source)));
+                var configuration = new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source));
+                _patientRepository = new PatientDbConnectionRepository(configuration);
                 var patients = _patientRepository.GetAllPatients().ToList();
                 return new ObservableCollection<Patient>(patients);
             }

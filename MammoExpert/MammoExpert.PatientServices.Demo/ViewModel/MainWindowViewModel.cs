@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Core;
+using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
@@ -27,9 +28,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public MainWindowViewModel(string path)
         {
+            base.DisplayName = Resources.MainWindowViewModel_DisplayName;
             SourceRepository = new SourceRepository(path);
             WorkspaceRepository = new WorkspaceRepository();
-            base.DisplayName = Properties.Resources.MainWindowViewModel_DisplayName;
         }
 
         #endregion // Constructors

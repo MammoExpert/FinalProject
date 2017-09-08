@@ -44,6 +44,12 @@
     <Compile Include="Messager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
+      <Project>{0754CF79-705A-4BBD-A843-E5E4E94358F9}</Project>
+      <Name>MammoExpert.PatientServices.DB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
