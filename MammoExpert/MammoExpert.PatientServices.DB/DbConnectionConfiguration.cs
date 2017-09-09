@@ -11,10 +11,12 @@ using MammoExpert.PatientServices.Infrastructure;
 namespace MammoExpert.PatientServices.DB
 {
     /// <summary>
-    /// Представляет методы возвращающие сторки подключения к базам данных в зависмости от поставщика данных
+    /// Представляет методы возвращающие сторки подключения к базам данных в зависмости от поставщика данных.
     /// </summary>
     public class DbConnectionConfiguration
     {
+        #region Constructors
+
         public DbConnectionConfiguration() { }
        
         public DbConnectionConfiguration(DbSource dbSource)
@@ -22,10 +24,18 @@ namespace MammoExpert.PatientServices.DB
             DbSource = dbSource;
         }
 
+        #endregion //Constructors
+
+        #region Property
+
         public DbSource DbSource { get; set; }
 
+        #endregion //Property
+
+        #region Public Metods
+
         /// <summary>
-        /// Возвращает строку подключения
+        /// Возвращает строку подключения к базе данных.
         /// </summary>
         /// <param name="descriptionProvider"></param>
         /// <returns></returns>
@@ -43,7 +53,7 @@ namespace MammoExpert.PatientServices.DB
         }
 
         /// <summary>
-        /// Возвращает список провайдеров зарегистрированных в системе
+        /// Возвращает список провайдеров зарегистрированных в системе.
         /// </summary>
         /// <returns></returns>
         public List<string> GetListProviders()
@@ -58,7 +68,7 @@ namespace MammoExpert.PatientServices.DB
         }
 
         /// <summary>
-        /// Возвращает значение провайдера
+        /// Возвращает значение провайдера.
         /// </summary>
         /// <param name="descriptionProvider"></param>
         /// <returns></returns>
@@ -71,7 +81,7 @@ namespace MammoExpert.PatientServices.DB
 
 
         /// <summary>
-        /// Возвращает состояние соединения
+        /// Возвращает состояние соединения.
         /// </summary>
         /// <param name="descriptionProvider"></param>
         public bool GetStateConnection()
@@ -98,7 +108,24 @@ namespace MammoExpert.PatientServices.DB
             return false;
         }
 
-        // Возвращает строку подключения к MySql базе данных
+        /// <summary>
+        /// Возвращает соединие с базаой данных.
+        /// </summary>
+        /// <returns></returns>
+        public DbConnection CreateConnection()
+        {
+            var provider = GetProvider(DbSource.Provider);
+            var dbf = DbProviderFactories.GetFactory(provider);
+            var conn = dbf.CreateConnection();
+            conn.ConnectionString = GetConnectionString(DbSource.Provider);
+            return conn;
+        }
+
+        #endregion // Public Metods
+
+        #region Privat Metods
+
+        // Возвращает строку подключения к MySql базе данных.
         private string GetMySqlConnectionString(DbSource dbSource)
         {
             var connectionString =
@@ -109,7 +136,7 @@ namespace MammoExpert.PatientServices.DB
             return connectionString;
         }
 
-        // Возвращает строку подключения к Access базе данных
+        // Возвращает строку подключения к Access базе данных.
         private string GetAccessConnectionString(DbSource dbSource)
         {
             var connectionString =
@@ -120,7 +147,7 @@ namespace MammoExpert.PatientServices.DB
             return connectionString;
         }
 
-        // Возвращает строку подключения к Oracle базе данных
+        // Возвращает строку подключения к Oracle базе данных.
         private string GetOracleConnectionSring(DbSource dbSource)
         {
             var connectionString =
@@ -131,7 +158,7 @@ namespace MammoExpert.PatientServices.DB
             return connectionString;
         }
 
-        // Возвращает строку подключения к Sql Compact базе данных  
+        // Возвращает строку подключения к Sql Compact базе данных.  
         private static string GetSqlCeConnectionString(DbSource dbSource)
         {
             var connectionString =
@@ -141,8 +168,7 @@ namespace MammoExpert.PatientServices.DB
             return connectionString;
         }
 
-
-        // Возвращает строку подключения к Sql Server базе данных
+        // Возвращает строку подключения к Sql Server базе данных.
         private string GetSqlConnectionString(DbSource dbSource)
         {
             var builder = new SqlConnectionStringBuilder();
@@ -155,8 +181,7 @@ namespace MammoExpert.PatientServices.DB
             return builder.ToString();
         }
 
-
-        // Возвращает строку подключения к локальной тестовой Sql Server базе данных
+        // Возвращает строку подключения к локальной тестовой Sql Server базе данных.
         private string GetSqlLocalTestConnectionString(DbSource dbSource)
         {
             var connectionString =
@@ -164,7 +189,7 @@ namespace MammoExpert.PatientServices.DB
             return connectionString;
         }
 
-        // Возвращает коллекцию провайдеров зарегистриванных в системе типа Dictionary 
+        // Возвращает коллекцию провайдеров зарегистриванных в системе типа Dictionary.
         // c их описанием и значением
         private Dictionary<string, string> GetDictionaryProviders()
         {
@@ -175,6 +200,8 @@ namespace MammoExpert.PatientServices.DB
                 providers.Add(row[0].ToString(), row[2].ToString());
 
             return providers;
-        }  
+        }
+
+        #endregion //Privat Metods
     }
 }

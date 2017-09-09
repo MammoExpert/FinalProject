@@ -9,6 +9,8 @@ namespace MammoExpert.PatientServices.Infrastructure
 {
     public static class Messager
     {
+        #region Public Metods
+
         /// <summary>
         /// Возвращает сообщение об ошибке подключения
         /// </summary>
@@ -16,7 +18,7 @@ namespace MammoExpert.PatientServices.Infrastructure
         public static void ShowConnectionErrorMessage(Exception exeption)
         {
             MessageBox.Show(
-                exeption.Message,
+                String.Format("{0}\n{1} в {2}", exeption.Message, exeption.Source, exeption.TargetSite),
                 "Ошибка подключения",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
@@ -64,5 +66,7 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxButton.OK, MessageBoxImage.Error);
             Environment.Exit(0);
         }
+
+        #endregion // Public Metods
     }
 }

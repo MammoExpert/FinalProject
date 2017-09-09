@@ -97,3 +97,10 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Ma
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.DB.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\GeneratedInternalTypeHelper.g.cs

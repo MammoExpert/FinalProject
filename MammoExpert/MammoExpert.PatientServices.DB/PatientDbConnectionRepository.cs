@@ -8,21 +8,30 @@ using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.DB
 {
+    
     /// <summary>
-    /// Предоставляет методы для взаимодействия с данными из базы данных. Наследуется от <see cref="IPatientRepository"/>
+    /// Предоставляет методы для взаимодействия с данными из базы данных. Реализует интерфейс <see cref="IPatientRepository"/>.
     /// </summary>
     public class PatientDbConnectionRepository : IPatientRepository
     {
-        private readonly DbSource _dbSource;
+        #region Fields
+
         private readonly DbConnectionConfiguration _configuration;
         private readonly List<Patient> _patients;
+
+        #endregion //Fields
+
+        #region Constructor
+
         public PatientDbConnectionRepository(DbConnectionConfiguration configuration)
         {
-            _dbSource = configuration.DbSource;
             _configuration = configuration;
             _patients = new List<Patient>();
         }
 
+        #endregion //Constructor
+
+        #region Public Metods
         /// <summary>
         /// Добавляет нового пациента в базу данных
         /// </summary>
@@ -57,12 +66,8 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> GetAllPatients()
         {
-            var descriptionProvider = _dbSource.Provider;
-            var provider = _configuration.GetProvider(descriptionProvider);
-            var dbf = DbProviderFactories.GetFactory(provider);
-            using (var conn = dbf.CreateConnection())
+            using (var conn = _configuration.CreateConnection())
             {
-                conn.ConnectionString = _configuration.GetConnectionString(descriptionProvider);
                 conn.Open();
 
                 var dbcmd = conn.CreateCommand();
@@ -105,5 +110,8 @@ namespace MammoExpert.PatientServices.DB
         {
             return _patients.FirstOrDefault(s => s.PatientId == patientId);
         }
+
+        #endregion //Publick Metods
     }
+
 }
