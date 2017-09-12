@@ -15,10 +15,10 @@ namespace MammoExpert.PatientServices.Infrastructure
         /// Возвращает сообщение об ошибке подключения
         /// </summary>
         /// <param name="exeption"></param>
-        public static void ShowConnectionErrorMessage(Exception exeption)
+        public static void ShowConnectionDbErrorMessage(Exception exeption)
         {
             MessageBox.Show(
-                String.Format("{0}\n{1} в {2}", exeption.Message, exeption.Source, exeption.TargetSite),
+                String.Format("{0}", exeption.Message),
                 "Ошибка подключения",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
@@ -51,7 +51,7 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxImage.Information);
         }
 
-        public static void ShowConnectionSuccess(string message)
+        public static void ShowConnectionDbSuccess(string message)
         {
             MessageBox.Show(
                 message,
@@ -65,6 +65,28 @@ namespace MammoExpert.PatientServices.Infrastructure
             MessageBox.Show("Файл '" + filePath + "' не найден", "Ошибка при загрузке файла",
                 MessageBoxButton.OK, MessageBoxImage.Error);
             Environment.Exit(0);
+        }
+
+        /// <summary>
+        /// Возвращает сообщение об ошибке подключения
+        /// </summary>
+        /// <param name="exeption"></param>
+        public static void ShowConnectionWorklistErrorMessage(Exception exeption)
+        {
+            MessageBox.Show(
+                String.Format("{0}", exeption.Message),
+                "Ошибка подключения",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
+
+        public static void ShowConnectionWorklistSuccess(string message)
+        {
+            MessageBox.Show(
+                message,
+                "Тест подключения",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
         }
 
         #endregion // Public Metods

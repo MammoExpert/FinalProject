@@ -11,7 +11,7 @@ using MammoExpert.PatientServices.Infrastructure;
 namespace MammoExpert.PatientServices.DB
 {
     /// <summary>
-    /// Представляет методы возвращающие сторки подключения к базам данных в зависмости от поставщика данных.
+    /// Представляет методы взаимодействия с подключением к базам данных.
     /// </summary>
     public class DbConnectionConfiguration
     {
@@ -95,14 +95,14 @@ namespace MammoExpert.PatientServices.DB
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
                     {
-                        Messager.ShowConnectionSuccess("Соединение с базой данных установленно!");
+                        Messager.ShowConnectionDbSuccess("Соединение с базой данных установленно!");
                         return true;
                     }
                 }
             }
             catch (Exception exc)
             {
-                Messager.ShowConnectionErrorMessage(exc);
+                Messager.ShowConnectionDbErrorMessage(exc);
                 return false;
             }
             return false;
@@ -128,11 +128,11 @@ namespace MammoExpert.PatientServices.DB
         // Возвращает строку подключения к MySql базе данных.
         private string GetMySqlConnectionString(DbSource dbSource)
         {
-            var connectionString =
-                string.Format("Driver={MySQL ODBC 5.3 ANSI Driver};Server={0};Port={1};" +
-                              "Database = {2}; User = {3}; Password = {4}; Option = 3;",
+            string connectionString = "Driver={MySQL ODBC 5.3 ANSI Driver};" +
+                string.Format("Server={0};Port={1};Database = {2}; User = {3}; Password = {4}; Option = 3;",
                               dbSource.Host, dbSource.Port, dbSource.DataBase, dbSource.UserId,
                               dbSource.Password);
+
             return connectionString;
         }
 

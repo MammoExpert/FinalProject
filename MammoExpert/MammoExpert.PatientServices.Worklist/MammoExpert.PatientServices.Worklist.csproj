@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="PatientRepositoryDicom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorklistConnectionHelper.cs" />
+    <Compile Include="WorklistSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
       <Project>{b9ccd920-4b2a-44c2-ac74-898535a900c9}</Project>
       <Name>MammoExpert.PatientServices.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Infrastructure\MammoExpert.PatientServices.Infrastructure.csproj">
+      <Project>{0e29de80-e9ff-4bfd-827a-1715c0e7e05c}</Project>
+      <Name>MammoExpert.PatientServices.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
