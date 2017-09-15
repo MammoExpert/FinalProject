@@ -4,15 +4,21 @@ using System.Windows.Input;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
-    // базовый класс для моделей представления
+    /// <summary>
+    /// Базовый класс для моделей представления
+    /// </summary>
     public class ViewModelBase : INotifyPropertyChanged
     {
         #region Properties
 
-        // Свойство для отображения названия представления в заголовке окна
+        /// <summary>
+        /// Свойство для отображения названия представления
+        /// </summary>
         public virtual string DisplayName { get; protected set; }
 
-        // отвечает за закрытие представления без использования команды CloseCommand
+        /// <summary>
+        /// Отвечает за закрытие представления
+        /// </summary>
         public Action CloseAction { get; set; }
 
         #endregion // Prtiesoper
@@ -23,7 +29,7 @@ namespace MammoExpert.PatientServices.PresenterCore
 
         protected void RaisePropertyChanged(string p)
         {
-            PropertyChangedEventHandler handler = this.PropertyChanged;
+            var handler = this.PropertyChanged;
             if (handler != null)
             {
                 var e = new PropertyChangedEventArgs(p);
@@ -37,7 +43,7 @@ namespace MammoExpert.PatientServices.PresenterCore
 
         private ActionCommand _closeCommand;
         public event EventHandler RequestClose;
-        
+
         public ICommand CloseCommand
         {
             get

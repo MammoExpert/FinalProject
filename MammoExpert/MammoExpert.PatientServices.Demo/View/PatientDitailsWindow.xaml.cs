@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace MammoExpert.PatientServices.Demo.View
 {
     /// <summary>
-    /// Interaction logic for PatientDitails.xaml
+    /// Interaction logic for PatientDitailsWindow.xaml
     /// </summary>
     public partial class PatientDitailsWindow : Window
     {

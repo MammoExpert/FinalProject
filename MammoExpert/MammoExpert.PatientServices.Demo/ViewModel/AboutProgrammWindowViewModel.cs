@@ -1,17 +1,20 @@
-﻿using MammoExpert.PatientServices.PresenterCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
+using MammoExpert.PatientServices.Demo.Properties;
+using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Worklist;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
+    /// <summary>
+    /// Модель представления окна с информацией о программе
+    /// </summary>
     public class AboutProgrammWindowViewModel : ViewModelBase
     {
         #region Constructor
@@ -25,19 +28,28 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Properties
 
-        // версия программы
+        /// <summary>
+        /// Версия программы
+        /// </summary>
         public string Version => Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-        // название программы
+        /// <summary>
+        /// Название программы
+        /// </summary>
         public string ApplicationName => Assembly.GetExecutingAssembly().GetName().Name;
 
-        // список загруженных библиотек реализующих интерфейс источника данных пациента
+        /// <summary>
+        /// Содержит список загруженных библиотек реализующих интерфейс источника данных пациента
+        /// </summary>
         public List<string> Moduls => GetModuls();
+
         #endregion // Properties
 
         #region Private Methods
 
-        //метод получающий библиотеки реализующие интерфейс источника данных пациента
+        /// <summary>
+        /// Возвращает список библиотек, реализующих интерфейс источника данных пациента
+        /// </summary>
         private static List<string> GetModuls()
         {
             var mammoExpertDb = typeof(PatientDbConnectionRepository);

@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using System.Windows.Input;
-using MammoExpert.PatientServices.DB;
-using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.PresenterCore;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Windows;
-using System.Windows.Forms;
-using MammoExpert.PatientServices.Core;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using MammoExpert.PatientServices.Infrastructure;
+using MammoExpert.PatientServices.PresenterCore;
+using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
+    /// <summary>
+    /// Модель представления для окна настройки источников данных пациента
+    /// </summary>
     public class SourcesWindowViewModel : MainWindowViewModel
     {
         #region Fields
@@ -30,8 +30,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public SourcesWindowViewModel()
         {
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
-            var sourcesList = SourceRepository.GetAll();
-            if (sourcesList != null) Sources = new ObservableCollection<Source>(sourcesList);
+            Sources = new ObservableCollection<Source>(SourceRepository.GetAll());
             SourceTypeOptions = _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
         }
 
@@ -39,7 +38,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Properties
 
-        // выбранный тип источника из ComboBox
+        /// <summary>
+        /// Выбранный пользователем тип источника
+        /// </summary>
         public SourceTypeOption SelectedType
         {
             get { return _selectedType; }
@@ -51,7 +52,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        // выбранный источник
+        /// <summary>
+        /// Выбранные пользователем источник
+        /// </summary>
         public Source SelectedSource
         {
             get { return _selectedSource; }
@@ -63,7 +66,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        // список отображаемых источников
+        /// <summary>
+        /// Список отображаемых источников
+        /// </summary>
         public ObservableCollection<Source> Sources
         {
             get { return _sources; }
@@ -75,7 +80,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
-        // здесь храним все типы источников для отображения в ComboBox
+        /// <summary>
+        /// Имеющиеся типы источников
+        /// </summary>
         public List<SourceTypeOption> SourceTypeOptions
         {
             get { return _sourceTypeOptions; }
@@ -110,14 +117,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Public Methods
 
-        // добавляет новый источник
+        /// <summary>
+        /// Добавляет новый источник
+        /// </summary>
         public void Create(Source source)
         {
             SourceRepository.Create(source);
             ChangeSourceList(source.Type);
         }
 
-        // сохраняет в существующий источник новые данные
+        /// <summary>
+        /// Сохраняет в существующий источник новые данные
+        /// </summary>
         public void Update(Source source)
         {
             foreach (var s in Sources)
@@ -134,43 +145,55 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Private Methods
 
-        // возвращает коллекцию объектов, описывающих типы источников
+        /// <summary>
+        /// Возвращает коллекцию объектов, описывающих типы источников
+        /// </summary>
         private static List<SourceTypeOption> GetAllTypes()
         {
             var listOfTypes = Enum.GetValues(typeof(SourceType)).Cast<SourceType>().Select(value => value).ToList();
             return listOfTypes.Select(type => new SourceTypeOption(type)).ToList();
         }
 
-        // создает рабочую область поиска пациента в заданном источнике
+        /// <summary>
+        /// Создает рабочую область поиска пациента в заданном источнике
+        /// </summary>
         private void AddWorkspace()
         {
             if (SelectedSource == null) return;
             var ws = new PatientSearchViewModel(SelectedSource);
-            if(ws.Patients == null) return;
+            if (ws.Patients == null) return;
             if (IsOpened(ws)) WorkspaceRepository.SetActiveWorkspace(ws);
-            else WorkspaceRepository.Add(ws);        
+            else WorkspaceRepository.Add(ws);
             CloseAction();
         }
 
-        // проверяет, открытали уже такая область/вкладка
+        /// <summary>
+        /// Возвращает true, если такая рабочая область уже открыта
+        /// </summary>
         private bool IsOpened(ViewModelBase ws)
         {
             return Workspaces.Any(item => item.DisplayName == ws.DisplayName);
         }
 
-        // создает окно для подключения к новому источнику, согласно выбранному типу источника
+        /// <summary>
+        /// Создает окно для подключения к новому источнику, согласно выбранному типу источника
+        /// </summary>
         private void CreateSource(SourceTypeOption option)
         {
-            ViewFactory.CreateConfigurationView(new Source(option.Type), true);
+            ViewFactory.CreateConfigurationView(this, new Source(option.Type), true);
         }
 
-        // создает окно для редактирования источника
+        /// <summary>
+        /// Создает окно для редактирования источника
+        /// </summary>
         private void EditSource()
         {
-            ViewFactory.CreateConfigurationView(SelectedSource, false);
+            ViewFactory.CreateConfigurationView(this, SelectedSource, false);
         }
 
-        // удаляет источник
+        /// <summary>
+        /// Удаляет источник
+        /// </summary>
         private void DeleteSource()
         {
             if (SelectedSource == null) return;
@@ -179,11 +202,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 var vm = FindWorkspace();
                 if (vm != null) WorkspaceRepository.Delete(vm);
                 SourceRepository.Delete(SelectedSource);
-                ChangeSourceList(SelectedSource.Type);              
+                ChangeSourceList(SelectedSource.Type);
             });
         }
 
-        // находит среди списка открытых рабочих областей ту, которая относитчя к выбранному источнику
+        /// <summary>
+        /// Находит среди списка открытых рабочих областей ту, которая относитчя к выбранному источнику
+        /// </summary>
         private ViewModelBase FindWorkspace()
         {
             foreach (var item in Workspaces)
@@ -199,11 +224,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             return null;
         }
 
-        // обновляет список источников согласно выбранному типу источника
+        /// <summary>
+        /// Обновляет список источников согласно выбранному типу источника
+        /// </summary>
         private void ChangeSourceList(SourceType type)
         {
             var collection = SourceRepository.GetByType(type);
-            if (collection != null) Sources = new ObservableCollection<Source>(collection);
+            Sources = new ObservableCollection<Source>(collection);
         }
 
         #endregion // Private Methods

@@ -1,17 +1,20 @@
 ﻿using System;
-using System.Windows.Input;
-using MammoExpert.PatientServices.PresenterCore;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Data;
-using MammoExpert.PatientServices.Core;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using MammoExpert.PatientServices.Demo.Properties;
+using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
+    /// <summary>
+    /// Модель представления главного окна
+    /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
         #region Fields
@@ -37,7 +40,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Properties
 
-        // коллекция рабочих областей окна
+        /// <summary>
+        /// Содержит коллекцию рабочих обсластей окна
+        /// </summary>
         public ObservableCollection<ViewModelBase> Workspaces
         {
             get
@@ -66,13 +71,17 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Commands
 
-        // открывает окно с информацией о программе
+        /// <summary>
+        /// Открывает окно с информацией о программе
+        /// </summary>
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
             ViewFactory.CreateAboutProgrammView();
         });
 
-        // открывает окно управления источниками
+        /// <summary>
+        /// Открывает окно управления источниками
+        /// </summary>
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
             ViewFactory.CreateSourcesView();
@@ -82,7 +91,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Private Methods
 
-        // метод, вызываемый при изменении количества рабочих областей
+        /// <summary>
+        /// При изменении количества рабочих областей подписывается (отписывается) на событие RequestClose
+        /// </summary>
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
@@ -94,7 +105,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                     workspace.RequestClose -= OnWorkspaceRequestClose;
         }
 
-        // метод, вызываемый при событиии, которое требует закрытия рабочей области
+        /// <summary>
+        /// Закрывает рабочую область
+        /// </summary>
         private void OnWorkspaceRequestClose(object sender, EventArgs e)
         {
             var workspace = sender as ViewModelBase;

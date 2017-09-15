@@ -7,6 +7,9 @@ using System.Windows;
 
 namespace MammoExpert.PatientServices.Infrastructure
 {
+    /// <summary>
+    /// Статический класс для отображения сообщений и диалоговых окон
+    /// </summary>
     public static class Messager
     {
         #region Public Metods

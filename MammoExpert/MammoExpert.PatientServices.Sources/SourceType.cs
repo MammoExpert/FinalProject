@@ -4,7 +4,9 @@ using System.Linq;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    // Описывает варианты типов источника
+    /// <summary>
+    /// Описывает варианты типов источника
+    /// </summary>
     public enum SourceType
     {
         DataBase,

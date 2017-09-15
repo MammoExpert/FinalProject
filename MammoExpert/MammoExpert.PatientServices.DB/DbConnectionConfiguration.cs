@@ -128,7 +128,7 @@ namespace MammoExpert.PatientServices.DB
         // Возвращает строку подключения к MySql базе данных.
         private string GetMySqlConnectionString(DbSource dbSource)
         {
-            string connectionString = "Driver={MySQL ODBC 5.3 ANSI Driver};" +
+            var connectionString = "Driver={MySQL ODBC 5.3 ANSI Driver};" +
                 string.Format("Server={0};Port={1};Database = {2}; User = {3}; Password = {4}; Option = 3;",
                               dbSource.Host, dbSource.Port, dbSource.DataBase, dbSource.UserId,
                               dbSource.Password);

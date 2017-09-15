@@ -8,6 +8,9 @@ using System.Windows;
 
 namespace MammoExpert.PatientServices.Sources
 {
+    /// <summary>
+    /// Вспомогательный класс для работы с Json-файлами
+    /// </summary>
     public class JsonManager
     {
         #region Fields
@@ -30,23 +33,35 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Public methods
 
+        /// <summary>
+        /// Возвращает список объектов
+        /// </summary>
         public List<Source> GetAll()
         {
-            return _jsonCollection;   
+            return _jsonCollection;
         }
 
+        /// <summary>
+        /// Добавляет объект
+        /// </summary>
         public void Add(Source newItem)
         {
             _jsonCollection.Add(newItem);
             RewriteFile();
         }
 
+        /// <summary>
+        /// Удаляет объект
+        /// </summary>
         public void Delete(Source item)
         {
             _jsonCollection.Remove(item);
             RewriteFile();
         }
 
+        /// <summary>
+        /// Обновляет объект
+        /// </summary>
         public void Update(Source item)
         {
             for (var i = 0; i < _jsonCollection.Count; i++)
@@ -64,7 +79,9 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Private methods
 
-        // возврвщает коллекцию объектов из json-файла в виде списка
+        /// <summary>
+        /// Возврвщает коллекцию объектов из json-файла в виде списка
+        /// </summary>
         private List<Source> LoadJson()
         {
             try
@@ -79,7 +96,9 @@ namespace MammoExpert.PatientServices.Sources
             return result ?? new List<Source>();
         }
 
-        // записывает в json-файл новые значения
+        /// <summary>
+        /// Записывает в json-файл новые значения
+        /// </summary>
         public void RewriteFile()
         {
             var str = JsonConvert.SerializeObject(_jsonCollection);

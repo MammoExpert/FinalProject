@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.Sources
 {
+    /// <summary>
+    /// Вспомогательный класс для преобразования типа Source в специальные типы DbSource и WlSource
+    /// </summary>
     public static class SourceSerializer
     {
-        // преобразует тип DbSource в тип Source
+        /// <summary>
+        /// Преобразует тип <see cref="DbSource"/> в тип <see cref="Source"/>
+        /// </summary>
         public static Source DbSerialize(DbSource dbSource)
         {
             var source = new Source(SourceType.DataBase);
@@ -23,7 +28,9 @@ namespace MammoExpert.PatientServices.Sources
             return source;
         }
 
-        // преобразует тип Source в тип DbSource
+        /// <summary>
+        /// Преобразует тип <see cref="Source"/> в тип <see cref="DbSource"/>
+        /// </summary>
         public static DbSource DbDeserialize(Source source)
         {
             var dbSource = new DbSource();

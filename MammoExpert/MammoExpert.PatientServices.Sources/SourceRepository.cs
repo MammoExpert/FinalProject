@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace MammoExpert.PatientServices.Sources
 {
+    /// <summary>
+    /// Класс для создания репозитория источников
+    /// </summary>
     public class SourceRepository
     {
         #region Fields
@@ -11,7 +14,7 @@ namespace MammoExpert.PatientServices.Sources
         private readonly JsonManager _fileManager;
 
         #endregion // Fields
-        
+
         #region Constructor
 
         public SourceRepository(string filePath)
@@ -24,13 +27,17 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Public methods
 
-        // Возвращает список имеющихся источников
+        /// <summary>
+        /// Возвращает список имеющихся источников
+        /// </summary>
         public List<Source> GetAll()
         {
             return _sourceList;
         }
 
-        // добавляет новый источник
+        /// <summary>
+        /// Добавляет новый источник
+        /// </summary>       
         public void Create(Source newSource)
         {
             if (!_sourceList.Contains(newSource))
@@ -40,7 +47,9 @@ namespace MammoExpert.PatientServices.Sources
             }
         }
 
-        // удаляет источник
+        /// <summary>
+        /// Удаляет источник
+        /// </summary>
         public void Delete(Source source)
         {
             if (_sourceList.Contains(source) && _sourceList != null)
@@ -50,7 +59,9 @@ namespace MammoExpert.PatientServices.Sources
             }
         }
 
-        // обновляет данные источника
+        /// <summary>
+        /// Обновляет данные источника
+        /// </summary>
         public void Update(Source source)
         {
             for (var i = 0; i < _sourceList.Count; i++)
@@ -64,7 +75,9 @@ namespace MammoExpert.PatientServices.Sources
             }
         }
 
-        // возвращает список источников согласно переданному типу
+        /// <summary>
+        /// Возвращает список источников согласно переданному типу
+        /// </summary>
         public List<Source> GetByType(SourceType type)
         {
             return _sourceList?.Where(t => t.Type == type).ToList();

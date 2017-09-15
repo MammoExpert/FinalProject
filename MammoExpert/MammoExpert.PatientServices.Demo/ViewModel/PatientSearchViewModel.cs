@@ -4,20 +4,18 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
-using System.Windows.Media;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
-using MammoExpert.PatientServices.Demo.Properties;
+using MammoExpert.PatientServices.Infrastructure;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
-using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
+    /// <summary>
+    /// Модель представления элемента управления для поиска пациента
+    /// </summary>
     public class PatientSearchViewModel : ViewModelBase
     {
         #region Fields
@@ -43,6 +41,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Properties
 
+        /// <summary>
+        /// Содержит список всех пациентов текущего источника
+        /// </summary>
         public ObservableCollection<Patient> Patients
         {
             get { return _patients; }
@@ -54,6 +55,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        /// <summary>
+        /// Текст, вводимый при поиске пациента
+        /// </summary>
         public string SearchString
         {
             get { return _searchString; }
@@ -65,6 +69,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             }
         }
 
+        /// <summary>
+        /// Выбранный пользователем пациент
+        /// </summary>
         public Patient SelectedPatient
         {
             get { return _selectedPatient; }
@@ -80,43 +87,73 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Commands
 
-        public ICommand ChoosePatientCommand => new ActionCommand( () => ViewFactory.CreatePatientDitailsView(this),  param => param != null);
+        public ICommand ChoosePatientCommand => new ActionCommand(OpenPatientDitailsView, param => param != null);
 
-        public ICommand CancelCommand => new ActionCommand(() =>
-        {
-            MainWindowViewModel.WorkspaceRepository.Delete(this);
-        });
+        public ICommand CancelCommand => new ActionCommand(CloseCurrentWorkspace);
 
-        public ICommand ClearSearchAreaCommand => new ActionCommand(() =>
-        {
-            SearchString = string.Empty;
-        });
+        public ICommand ClearSearchAreaCommand => new ActionCommand(() => SearchString = string.Empty);
 
-        public ICommand FindPatientCammand => new ActionCommand(() =>
-        {
-            var p = _patientRepository.FindPatientsByValue(SearchString);
-            Patients = new ObservableCollection<Patient>(p);
-        });
+        public ICommand FindPatientCammand => new ActionCommand(FindPatient);
 
         #endregion // Commands
 
         #region Private Methods
 
-        // возвращает данные из источника
+        /// <summary>
+        /// Закрывает текущую рабочую область
+        /// </summary>
+        private void CloseCurrentWorkspace()
+        {
+            MainWindowViewModel.WorkspaceRepository.Delete(this);
+        }
+
+        /// <summary>
+        /// Открывает окно с данными выбранного пациента
+        /// </summary>
+        private void OpenPatientDitailsView()
+        {
+            ViewFactory.CreatePatientDitailsView(this);
+        }
+
+        /// <summary>
+        /// Осуществляет поиск поциентов согласно строке поиска
+        /// </summary>
+        private void FindPatient()
+        {
+            var p = _patientRepository.FindPatientsByValue(SearchString);
+            Patients = new ObservableCollection<Patient>(p);
+        }
+
+        /// <summary>
+        /// Возвращает коллекцию поциентов из текущего источника
+        /// </summary>
         private static ObservableCollection<Patient> GetData(Source source)
         {
-            try
+            switch (source.Type)
             {
-                var configuration = new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source));
-                _patientRepository = new PatientDbConnectionRepository(configuration);
-                var patients = _patientRepository.GetAllPatients().ToList();
-                return new ObservableCollection<Patient>(patients);
-            }
-            catch (Exception e)
-            {
-                Messager.ShowConnectionErrorMessage(e);
-                return null;
-            }
+                case SourceType.DataBase:
+                {
+                    try
+                    {
+                        var configuration = new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source));
+                        _patientRepository = new PatientDbConnectionRepository(configuration);
+                        var patients = _patientRepository.GetAllPatients().ToList();
+                        return new ObservableCollection<Patient>(patients);
+                    }
+                    catch (Exception e)
+                    {
+                        Messager.ShowConnectionDbErrorMessage(e);
+                        return null;
+                    }
+                }
+                case SourceType.Worklist:
+                {
+                    return null;
+                }
+
+                default: return null;
+
+            }    
         }
 
         #endregion // Private Methods

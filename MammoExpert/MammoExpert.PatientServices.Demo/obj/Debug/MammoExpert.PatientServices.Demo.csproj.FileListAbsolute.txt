@@ -1,39 +1,43 @@
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe.config
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.pdb
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.cache
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.lref
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.g.resources
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.exe
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.pdb
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-D:\MammoExpert.PatientServices.Demo\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
-C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe.config
-C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.exe
-C:\Users\park3\Desktop\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.lref
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe.config
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Themes\Templates.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.baml
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.exe
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.xml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\de\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\en\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\es\System.Windows.Interactivity.resources.dll
@@ -41,243 +45,9 @@ D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\fr\System
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\it\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ja\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe.config
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.exe
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.pdb
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.exe
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Demo.pdb
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.cache
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo_MarkupCompile.lref
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.g.resources
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-D:\Новая папка\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
 D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe.config
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.cache
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.lref
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.g.resources
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe.config
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\de\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\en\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\es\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\it\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Templates.baml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.cache
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.lref
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.g.resources
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-D:\FinalProject - копия - копия\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe.config
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.cache
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.lref
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Resources.exe
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.exe
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Resources.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\de\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\en\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\es\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\it\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.baml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.g.resources
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-G:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csprojResolveAssemblyReference.cache
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\App.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.cache
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo_MarkupCompile.lref
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe.config
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.exe
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert PatientServices Demo.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\System.Windows.Interactivity.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Core.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.DB.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.PresenterCore.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Sources.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\log4net.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Newtonsoft.Json.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Wave.Extensions.Esri.xml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\de\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\en\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\es\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\it\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\AboutProgrammWindow.baml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\ConfigurationWindow.baml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\MainWindow.baml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\PatientDitailsWindow.baml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\View\SourcesWindow.baml
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.g.resources
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.exe
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert PatientServices Demo.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\EntityFramework.SqlServer.xml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\Dicom.Core.pdb
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Themes\Templates.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\GeneratedInternalTypeHelper.g.cs
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.UI.Controls.dll
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
-E:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\Themes\Templates.baml
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.dll
-D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.g.resources
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.Properties.Resources.resources
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.Demo\obj\Debug\MammoExpert.PatientServices.Demo.csproj.GenerateResource.Cache

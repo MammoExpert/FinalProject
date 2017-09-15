@@ -15,6 +15,10 @@ namespace MammoExpert.PatientServices.UI.Controls
     }
 
     #region PasswordHelper
+
+    /// <summary>
+    /// Вспомогательный класс ...
+    /// </summary>
     public static class PasswordHelper
     {
         public static readonly DependencyProperty PasswordProperty =
@@ -24,11 +28,12 @@ namespace MammoExpert.PatientServices.UI.Controls
 
         public static readonly DependencyProperty AttachProperty =
             DependencyProperty.RegisterAttached("Attach",
-                typeof(bool), typeof(PasswordHelper), new PropertyMetadata(false, Attach));
+                typeof(bool), typeof(PasswordHelper),
+                new PropertyMetadata(false, Attach));
 
         private static readonly DependencyProperty IsUpdatingProperty =
-            DependencyProperty.RegisterAttached("IsUpdating", typeof(bool),
-                typeof(PasswordHelper));
+            DependencyProperty.RegisterAttached("IsUpdating",
+                typeof(bool), typeof(PasswordHelper));
 
 
         public static void SetAttach(DependencyObject dp, bool value)
@@ -64,7 +69,7 @@ namespace MammoExpert.PatientServices.UI.Controls
         private static void OnPasswordPropertyChanged(DependencyObject sender,
             DependencyPropertyChangedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
+            var passwordBox = sender as PasswordBox;
             passwordBox.PasswordChanged -= PasswordChanged;
 
             if (!(bool)GetIsUpdating(passwordBox))
@@ -77,7 +82,7 @@ namespace MammoExpert.PatientServices.UI.Controls
         private static void Attach(DependencyObject sender,
             DependencyPropertyChangedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
+            var passwordBox = sender as PasswordBox;
 
             if (passwordBox == null)
                 return;
@@ -95,7 +100,7 @@ namespace MammoExpert.PatientServices.UI.Controls
 
         private static void PasswordChanged(object sender, RoutedEventArgs e)
         {
-            PasswordBox passwordBox = sender as PasswordBox;
+            var passwordBox = sender as PasswordBox;
             SetIsUpdating(passwordBox, true);
             SetPassword(passwordBox, passwordBox.Password);
             SetIsUpdating(passwordBox, false);

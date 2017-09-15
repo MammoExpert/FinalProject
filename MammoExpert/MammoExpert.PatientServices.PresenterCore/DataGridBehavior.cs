@@ -10,20 +10,24 @@ using System.Windows.Media;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
-    // Этот класс был создан для нумерации строк в DataGrid
+    /// <summary>
+    /// Предоставляет нумерацию строк в  DataGrid
+    /// </summary>
     public class DataGridBehavior
     {
-        #region DisplayRowNumber
+        #region DisplayRowNumber Property
 
         public static DependencyProperty DisplayRowNumberProperty =
             DependencyProperty.RegisterAttached("DisplayRowNumber",
                 typeof(bool),
                 typeof(DataGridBehavior),
                 new FrameworkPropertyMetadata(false, OnDisplayRowNumberChanged));
+
         public static bool GetDisplayRowNumber(DependencyObject target)
         {
             return (bool)target.GetValue(DisplayRowNumberProperty);
         }
+
         public static void SetDisplayRowNumber(DependencyObject target, bool value)
         {
             target.SetValue(DisplayRowNumberProperty, value);
@@ -31,7 +35,7 @@ namespace MammoExpert.PatientServices.PresenterCore
 
         private static void OnDisplayRowNumberChanged(DependencyObject target, DependencyPropertyChangedEventArgs e)
         {
-            DataGrid dataGrid = target as DataGrid;
+            var dataGrid = target as DataGrid;
             if ((bool)e.NewValue == true)
             {
                 EventHandler<DataGridRowEventArgs> loadedRowHandler = null;
@@ -61,23 +65,23 @@ namespace MammoExpert.PatientServices.PresenterCore
             }
         }
 
-        #endregion // DisplayRowNumber
+        #endregion // DisplayRowNumber Property
 
-        #region Get Visuals
+        #region Get Visuals Methods
 
         private static List<T> GetVisualChildCollection<T>(object parent) where T : Visual
         {
-            List<T> visualCollection = new List<T>();
+            var visualCollection = new List<T>();
             GetVisualChildCollection(parent as DependencyObject, visualCollection);
             return visualCollection;
         }
 
         private static void GetVisualChildCollection<T>(DependencyObject parent, List<T> visualCollection) where T : Visual
         {
-            int count = VisualTreeHelper.GetChildrenCount(parent);
-            for (int i = 0; i < count; i++)
+            var count = VisualTreeHelper.GetChildrenCount(parent);
+            for (var i = 0; i < count; i++)
             {
-                DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                var child = VisualTreeHelper.GetChild(parent, i);
                 if (child is T)
                 {
                     visualCollection.Add(child as T);
@@ -89,6 +93,6 @@ namespace MammoExpert.PatientServices.PresenterCore
             }
         }
 
-        #endregion // Get Visuals
+        #endregion // Get Visuals Methods
     }
 }

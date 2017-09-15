@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MammoExpert.PatientServices.Infrastructure">
-      <HintPath>..\MammoExpert.PatientServices.Infrastructure\obj\Debug\MammoExpert.PatientServices.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -57,6 +54,10 @@
     <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
       <Project>{b9ccd920-4b2a-44c2-ac74-898535a900c9}</Project>
       <Name>MammoExpert.PatientServices.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Infrastructure\MammoExpert.PatientServices.Infrastructure.csproj">
+      <Project>{0e29de80-e9ff-4bfd-827a-1715c0e7e05c}</Project>
+      <Name>MammoExpert.PatientServices.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

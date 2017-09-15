@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    // класс, предназначенный для описания типа источника (вместо перечислений)
+    /// <summary>
+    /// Описывает Enum-значение типа источника в виде строки
+    /// </summary>
     public class SourceTypeOption
     {
         public SourceType Type { get; set; }

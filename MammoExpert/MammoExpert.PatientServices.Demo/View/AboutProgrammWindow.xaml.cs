@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MammoExpert.PatientServices.Demo.ViewModel;
 
 namespace MammoExpert.PatientServices.Demo.View
 {

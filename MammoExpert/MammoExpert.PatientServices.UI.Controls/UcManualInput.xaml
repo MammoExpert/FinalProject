@@ -7,6 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Background="DarkGray"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <local:EnumBooleanConverter x:Key="enumBooleanConverter" />
+    </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid Margin="10">
             <Grid.ColumnDefinitions>
@@ -42,13 +45,15 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 Text="Фамилия" />
-            <TextBox
-                Grid.Row="0"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64"
-                Text="{Binding Path=LastName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <TextBlock FontStyle="Italic" Text="{Binding ElementName=TxtLastName, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                <TextBox
+                    x:Name="TxtLastName"
+                    Margin="2"
+                    MaxLength="64"
+                    Text="{Binding Path=Patient.LastName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                    Validation.ErrorTemplate="{x:Null}" />
+            </StackPanel>
 
             <TextBlock
                 Grid.Row="1"
@@ -56,13 +61,15 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 Text="Имя" />
-            <TextBox
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64"
-                Text="{Binding Path=FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock FontStyle="Italic" Text="{Binding ElementName=TxtFirstName, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                <TextBox
+                    x:Name="TxtFirstName"
+                    Margin="2"
+                    MaxLength="64"
+                    Text="{Binding Path=Patient.FirstName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                    Validation.ErrorTemplate="{x:Null}" />
+            </StackPanel>
 
             <TextBlock
                 Grid.Row="2"
@@ -70,32 +77,31 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 Text="Отчество" />
-            <TextBox
-                Grid.Row="2"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64"
-                Text="{Binding Path=MiddleName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+            <StackPanel Grid.Row="2" Grid.Column="1">
+                <TextBlock FontStyle="Italic" Text="{Binding ElementName=TxtMiddleName, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                <TextBox
+                    x:Name="TxtMiddleName"
+                    Margin="2"
+                    MaxLength="64"
+                    Text="{Binding Path=Patient.MiddleName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                    Validation.ErrorTemplate="{x:Null}" />
+            </StackPanel>
 
             <TextBlock
                 Grid.Row="3"
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Пол" />
-            <StackPanel
-                Grid.Row="3"
-                Grid.Column="1"
-                Orientation="Horizontal">
-                <RadioButton
+                Text="Дата рождения" />
+            <StackPanel Grid.Row="3" Grid.Column="1">
+                <TextBlock FontStyle="Italic" Text="{Binding ElementName=DatePickerBirthday, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                <DatePicker
+                    x:Name="DatePickerBirthday"
+                    Width="160"
                     Margin="2"
-                    Content="Мужской"
-                    GroupName="Sex" />
-                <RadioButton
-                    Margin="20,2,2,2"
-                    Content="Женский"
-                    GroupName="Sex" />
+                    HorizontalAlignment="Left"
+                    SelectedDate="{Binding Path=Patient.BirthDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                    Validation.ErrorTemplate="{x:Null}" />
             </StackPanel>
 
             <TextBlock
@@ -103,13 +109,24 @@
                 Grid.Column="0"
                 Margin="10,0"
                 VerticalAlignment="Center"
-                Text="Дата рождения" />
-            <DatePicker
+                Text="Пол" />
+            <StackPanel
                 Grid.Row="4"
                 Grid.Column="1"
-                Width="160"
-                Margin="2"
-                HorizontalAlignment="Left" />
+                Orientation="Horizontal">
+                <RadioButton
+                    x:Name="MaleSelection"
+                    Margin="2"
+                    Content="Мужской"
+                    GroupName="Sex"
+                    IsChecked="{Binding Path=Patient.Sex, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Male}" />
+                <RadioButton
+                    x:Name="FemaleSelection"
+                    Margin="20,2,2,2"
+                    Content="Женский"
+                    GroupName="Sex"
+                    IsChecked="{Binding Path=Patient.Sex, Converter={StaticResource enumBooleanConverter}, ConverterParameter=Female}" />
+            </StackPanel>
 
             <TextBlock
                 Grid.Row="5"
@@ -122,8 +139,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="255"
-                Text="{Binding Path=PatientAddress, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.PatientAddress, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="6"
@@ -139,11 +155,9 @@
                 MaxLength="2000"
                 MaxLines="3"
                 MinLines="3"
-                Text="{Binding Path=PatientComments, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                Text="{Binding Path=Patient.PatientComments, UpdateSourceTrigger=PropertyChanged}"
                 TextWrapping="Wrap"
-                Validation.ErrorTemplate="{x:Null}"
                 VerticalScrollBarVisibility="Auto" />
-
 
             <TextBlock
                 Grid.Row="7"
@@ -156,8 +170,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=AccessionNumber, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.AccessionNumber, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="8"
@@ -170,8 +183,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=PatientId, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.PatientId, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="9"
@@ -184,8 +196,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=MedicalRecordLocator, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.MedicalRecordLocator, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="10"
@@ -198,8 +209,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=Contingent, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.Contingent, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="11"
@@ -212,8 +222,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=PatientCategory, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.PatientCategory, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="12"
@@ -226,8 +235,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=NumberOfPassport, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.NumberOfPassport, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="13"
@@ -240,8 +248,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="255"
-                Text="{Binding Path=PatientWorkAddres, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.PatientWorkAddres, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="14"
@@ -254,8 +261,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=Job, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.Job, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="15"
@@ -268,8 +274,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="64"
-                Text="{Binding Path=NumberPolicy, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.NumberPolicy, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="16"
@@ -282,8 +287,7 @@
                 Grid.Column="1"
                 Margin="2"
                 MaxLength="255"
-                Text="{Binding Path=InsuranceCompany, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+                Text="{Binding Path=Patient.InsuranceCompany, UpdateSourceTrigger=PropertyChanged}" />
 
             <TextBlock
                 Grid.Row="17"
@@ -291,13 +295,15 @@
                 Margin="10,0"
                 VerticalAlignment="Center"
                 Text="Телефон" />
-            <TextBox
-                Grid.Row="17"
-                Grid.Column="1"
-                Margin="2"
-                MaxLength="64"
-                Text="{Binding Path=Telephone, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
-                Validation.ErrorTemplate="{x:Null}" />
+            <StackPanel Grid.Row="17" Grid.Column="1">
+                <TextBlock FontStyle="Italic" Text="{Binding ElementName=TxtTelephone, Path=(Validation.Errors).CurrentItem.ErrorContent}" />
+                <TextBox
+                    x:Name="TxtTelephone"
+                    Margin="2"
+                    MaxLength="64"
+                    Text="{Binding Path=Patient.Telephone, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                    Validation.ErrorTemplate="{x:Null}" />
+            </StackPanel>
 
             <StackPanel
                 Grid.Row="19"
@@ -310,8 +316,10 @@
                     Command="{Binding CreatePatientCommand}"
                     Content="Создать" />
                 <Button
+                    x:Name="BtnClearAll"
                     Width="100"
                     Margin="2"
+                    Click="BtnClearAll_Click"
                     Content="Отмена" />
             </StackPanel>
         </Grid>

@@ -5,7 +5,7 @@
     xmlns:sources="clr-namespace:MammoExpert.PatientServices.Sources;assembly=MammoExpert.PatientServices.Sources"
     xmlns:viewModel="clr-namespace:MammoExpert.PatientServices.Demo.ViewModel">
 
-    <!--  Шаблоны для рабочих областей главного окна  -->
+    <!--  Шаблоны для отображения соответствующей рабочей области  -->
     <DataTemplate DataType="{x:Type viewModel:ManualInputViewModel}">
         <controls:UcManualInput />
     </DataTemplate>
@@ -13,10 +13,12 @@
         <controls:UcPatientSearch />
     </DataTemplate>
 
+    <!--  Шаблон для отображения названия рабочей области в заголовке вкладки  -->
     <DataTemplate x:Key="TitledTabItemTemplate">
         <ContentPresenter VerticalAlignment="Center" Content="{Binding Path=DisplayName}" />
     </DataTemplate>
 
+    <!--  Шаблон для рабочих областей в виде TabControl-а  -->
     <DataTemplate x:Key="WorkspacesTemplate">
         <TabControl
             Margin="4"

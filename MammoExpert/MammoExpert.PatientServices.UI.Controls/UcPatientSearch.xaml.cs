@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MammoExpert.PatientServices.UI.Controls
 {
     /// <summary>
-    /// Interaction logic for UcPatientSearch.xaml
+    /// Логика взаимодействия для UcPatientSearch.xaml
     /// </summary>
     public partial class UcPatientSearch : UserControl
     {

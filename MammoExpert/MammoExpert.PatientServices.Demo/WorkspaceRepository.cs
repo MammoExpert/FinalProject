@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.PresenterCore;
-using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo
 {
+    /// <summary>
+    /// Класс для создания репозитория рабочих областей
+    /// </summary>
     public class WorkspaceRepository
     {
         public ObservableCollection<ViewModelBase> Workspaces = new ObservableCollection<ViewModelBase>();
@@ -21,7 +23,9 @@ namespace MammoExpert.PatientServices.Demo
             Workspaces.Add(new ManualInputViewModel());
         }
 
-        // добавляет рабочую область
+        /// <summary>
+        /// Добавляет рабочую область в репозиторий
+        /// </summary>
         public void Add(ViewModelBase workspace)
         {
             if (workspace == null) return;
@@ -29,13 +33,17 @@ namespace MammoExpert.PatientServices.Demo
             SetActiveWorkspace(workspace);
         }
 
-        // возвращает список рабочих областей
+        /// <summary>
+        /// Возвращает список имеющихся рабочих областей
+        /// </summary>
         public ObservableCollection<ViewModelBase> GetAll()
         {
             return Workspaces;
         }
 
-        // убирает рабочую область
+        /// <summary>
+        /// Убрает рабочую область из репозитория
+        /// </summary>
         public void Delete(ViewModelBase workspace)
         {
             if (Workspaces != null && Workspaces.Contains(workspace))
@@ -44,7 +52,9 @@ namespace MammoExpert.PatientServices.Demo
             }
         }
 
-        // метод, который при создании новой рабочей области делает ее активной
+        /// <summary>
+        /// При создании новой рабочей области делает ее активной
+        /// </summary>
         public void SetActiveWorkspace(ViewModelBase workspace)
         {
             foreach (var item in Workspaces)
@@ -56,7 +66,7 @@ namespace MammoExpert.PatientServices.Demo
                 if (collectionView != null)
                     collectionView.MoveCurrentTo(item);
             }
-            
+
         }
     }
 }
