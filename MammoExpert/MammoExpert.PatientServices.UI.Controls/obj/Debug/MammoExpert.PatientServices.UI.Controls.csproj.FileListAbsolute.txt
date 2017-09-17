@@ -104,3 +104,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Ma
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Infrastructure.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Core.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Worklist.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.dll
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
+E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.pdb

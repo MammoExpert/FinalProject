@@ -28,6 +28,7 @@ namespace MammoExpert.PatientServices.Sources
             {SourceTypeEnum.Worklist, new Dictionary<string, string>()
             {
                 {"Header", ""},
+                {"AEHeader", ""},
                 {"Ip", ""},
                 {"Port", ""},
                 {"Timeout", ""}

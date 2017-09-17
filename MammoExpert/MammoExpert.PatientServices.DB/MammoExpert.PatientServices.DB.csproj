@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbConnectionConfiguration.cs" />
+    <Compile Include="DbConnectionHelper.cs" />
     <Compile Include="DbSource.cs" />
     <Compile Include="PatientDbConnectionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

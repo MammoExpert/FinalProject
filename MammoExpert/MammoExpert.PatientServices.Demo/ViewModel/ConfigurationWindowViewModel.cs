@@ -8,6 +8,7 @@ using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.Worklist;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -21,7 +22,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private Source _source;
         private SourceTypeEnum _typeEnum;
         private List<string> _listProviders;
-        private readonly DbConnectionConfiguration _configuration;
+        private readonly DbConnectionHelper _configuration;
         private bool _isConnected;
         private readonly bool _isNew;
         private readonly SourcesWindowViewModel _parent;
@@ -37,7 +38,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             _isNew = isNew;
             TypeEnum = source.TypeEnum;
             Source = source;
-            _configuration = new DbConnectionConfiguration();
+            _configuration = new DbConnectionHelper();
             ListProviders = _configuration.GetListProviders();
         }
 
@@ -156,7 +157,10 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// <summary>
         /// Вызывает проверку подключения к рабочему списку DICOM
         /// </summary>
-        private void CheckWorklistConnection() { }
+        private void CheckWorklistConnection()
+        {
+            if (WorklistConnectionHelper.CheckConnection(SourceSerializer.WorklistDeserialize(Source))) IsConnected = true;
+        }
 
         #endregion // Private Methods
     }

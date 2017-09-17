@@ -16,14 +16,14 @@ namespace MammoExpert.PatientServices.DB
     {
         #region Fields
 
-        private readonly DbConnectionConfiguration _configuration;
+        private readonly DbConnectionHelper _configuration;
         private readonly List<Patient> _patients;
 
         #endregion //Fields
 
         #region Constructor
 
-        public PatientDbConnectionRepository(DbConnectionConfiguration configuration)
+        public PatientDbConnectionRepository(DbConnectionHelper configuration)
         {
             _configuration = configuration;
             _patients = new List<Patient>();

@@ -10,6 +10,7 @@ using MammoExpert.PatientServices.DB;
 using MammoExpert.PatientServices.Infrastructure;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
+using MammoExpert.PatientServices.Worklist;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -21,7 +22,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         #region Fields
 
         private ObservableCollection<Patient> _patients;
-        private static PatientDbConnectionRepository _patientRepository;
+        private static IPatientRepository _patientRepository;
         private Patient _selectedPatient;
         private string _searchString;
         public string SourceName;
@@ -135,7 +136,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 {
                     try
                     {
-                        var configuration = new DbConnectionConfiguration(SourceSerializer.DbDeserialize(source));
+                        var configuration = new DbConnectionHelper(SourceSerializer.DbDeserialize(source));
                         _patientRepository = new PatientDbConnectionRepository(configuration);
                         var patients = _patientRepository.GetAllPatients().ToList();
                         return new ObservableCollection<Patient>(patients);
@@ -148,7 +149,17 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 }
                 case SourceTypeEnum.Worklist:
                 {
-                    throw new NotImplementedException();
+                    try
+                    {
+                        _patientRepository = new PatientRepositoryDicom(SourceSerializer.WorklistDeserialize(source));
+                        var patients = _patientRepository.GetAllPatients().ToList();
+                        return new ObservableCollection<Patient>(patients);
+                    }
+                    catch (Exception e)
+                    {
+                        Messenger.ShowConnectionWorklistErrorMessage(e);
+                        return null;
+                    }
                 }
 
                 default: return null;

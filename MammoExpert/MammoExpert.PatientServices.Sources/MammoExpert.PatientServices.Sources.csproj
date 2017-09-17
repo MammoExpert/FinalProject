@@ -65,6 +65,10 @@
       <Project>{0E29DE80-E9FF-4BFD-827A-1715C0E7E05C}</Project>
       <Name>MammoExpert.PatientServices.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Worklist\MammoExpert.PatientServices.Worklist.csproj">
+      <Project>{3BB28DA7-72C5-413A-BDCE-E27313A4D87F}</Project>
+      <Name>MammoExpert.PatientServices.Worklist</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
