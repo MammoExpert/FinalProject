@@ -68,7 +68,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=Type}" Header="Тип" />
+                <DataGridTextColumn Binding="{Binding Path=TypeEnum}" Header="Тип" />
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding Path=Name}"

@@ -6,7 +6,7 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Класс для создания репозитория источников
     /// </summary>
-    public class SourceRepository
+    public class SourceRepository : IRepository<Source>
     {
         #region Fields
 
@@ -20,7 +20,7 @@ namespace MammoExpert.PatientServices.Sources
         public SourceRepository(string filePath)
         {
             _fileManager = new JsonManager(filePath);
-            _sourceList = _fileManager.GetAll();
+            _sourceList = (List<Source>) _fileManager.GetAll();
         }
 
         #endregion // Constructor
@@ -30,7 +30,7 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Возвращает список имеющихся источников
         /// </summary>
-        public List<Source> GetAll()
+        public IEnumerable<Source> GetAll()
         {
             return _sourceList;
         }
@@ -38,7 +38,7 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Добавляет новый источник
         /// </summary>       
-        public void Create(Source newSource)
+        public void Add(Source newSource)
         {
             if (!_sourceList.Contains(newSource))
             {
@@ -78,9 +78,9 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Возвращает список источников согласно переданному типу
         /// </summary>
-        public List<Source> GetByType(SourceType type)
+        public IEnumerable<Source> GetByType(SourceTypeEnum typeEnum)
         {
-            return _sourceList?.Where(t => t.Type == type).ToList();
+            return _sourceList?.Where(t => t.TypeEnum == typeEnum);
         }
 
         #endregion // Public methods

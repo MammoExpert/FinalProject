@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows;
 
@@ -11,8 +12,10 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Вспомогательный класс для работы с Json-файлами
     /// </summary>
-    public class JsonManager
+    public class JsonManager : IRepository<Source>, IManager<Source>
     {
+        private const string DefaultPath = "../../Data/all_sources.json";
+
         #region Fields
 
         private string _jsonString;
@@ -23,10 +26,12 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Constructor
 
-        public JsonManager(string path)
+        public JsonManager(string path = null)
         {
-            _path = path;
-            _jsonCollection = LoadJson();
+
+            _path = path ?? DefaultPath;
+            
+            _jsonCollection = Load() as List<Source>;
         }
 
         #endregion // Constructor
@@ -36,7 +41,7 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Возвращает список объектов
         /// </summary>
-        public List<Source> GetAll()
+        public IEnumerable<Source> GetAll()
         {
             return _jsonCollection;
         }
@@ -75,6 +80,11 @@ namespace MammoExpert.PatientServices.Sources
             }
         }
 
+        public IEnumerable<Source> GetByType(SourceTypeEnum typeEnum)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion // Public methods
 
         #region Private methods
@@ -82,18 +92,18 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Возврвщает коллекцию объектов из json-файла в виде списка
         /// </summary>
-        private List<Source> LoadJson()
+        public IEnumerable<Source> Load()
         {
             try
             {
                 _jsonString = File.ReadAllText(_path);
             }
-            catch (FileNotFoundException)
+            catch (Exception ex)
             {
-                Messager.ShowNotFindFileMessage(_path);
+                //Messenger.ShowNotFindFileMessage(ex, _path);
             }
             var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
-            return result ?? new List<Source>();
+            return result ?? new List<Source>().AsEnumerable();
         }
 
         /// <summary>

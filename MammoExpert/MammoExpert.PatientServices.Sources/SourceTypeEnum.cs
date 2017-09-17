@@ -7,7 +7,7 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Описывает варианты типов источника
     /// </summary>
-    public enum SourceType
+    public enum SourceTypeEnum
     {
         DataBase,
         Worklist

@@ -19,7 +19,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     {
         #region Fields
 
-        internal static SourceRepository SourceRepository;
+        internal static IRepository<Source> SourceRepository;
         private ObservableCollection<ViewModelBase> _workspaces;
         internal static WorkspaceRepository WorkspaceRepository;
 
@@ -27,7 +27,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         #region Constructors
 
-        public MainWindowViewModel() { }
+        public MainWindowViewModel() : this(null) { }
 
         public MainWindowViewModel(string path)
         {
@@ -49,8 +49,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 if (_workspaces == null)
                 {
-                    _workspaces = WorkspaceRepository.GetAll();
-                    RaisePropertyChanged("Workspaces");
+                    _workspaces = WorkspaceRepository.GetAll() as ObservableCollection<ViewModelBase>;
+                    RaisePropertyChanged(nameof(Workspaces));
                     _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
                 return _workspaces;

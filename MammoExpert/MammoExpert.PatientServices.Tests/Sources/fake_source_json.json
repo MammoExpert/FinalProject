@@ -1,0 +1,27 @@
+﻿[
+  {
+    "Id": 620,
+    "Type": 0,
+    "Description": "",
+    "Name": "PatientServices",
+    "Parameters": {
+      "Driver": "SqlClient Data Provider",
+      "Ip": "",
+      "Port": "",
+      "UserName": "",
+      "Password": ""
+    }
+  },
+  {
+    "Id": 696,
+    "Type": 1,
+    "Description": "",
+    "Name": "не существует",
+    "Parameters": {
+      "Header": "",
+      "Ip": "",
+      "Port": "",
+      "Timeout": ""
+    }
+  }
+]

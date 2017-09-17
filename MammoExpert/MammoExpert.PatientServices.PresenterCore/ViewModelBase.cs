@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using System.Windows.Threading;
+using MammoExpert.PatientServices.PresenterCore.Annotations;
 
 namespace MammoExpert.PatientServices.PresenterCore
 {
@@ -37,6 +40,14 @@ namespace MammoExpert.PatientServices.PresenterCore
             }
         }
 
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //[NotifyPropertyChangedInvocator]
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
         #endregion // INotifyPropertyChanged Members
 
         #region CloseCommand Members
@@ -63,5 +74,7 @@ namespace MammoExpert.PatientServices.PresenterCore
         }
 
         #endregion
+
+      
     }
 }

@@ -18,7 +18,7 @@ namespace MammoExpert.PatientServices.Sources
         /// </summary>
         public static Source DbSerialize(DbSource dbSource)
         {
-            var source = new Source(SourceType.DataBase);
+            var source = new Source(SourceTypeEnum.DataBase);
             source.Parameters["Driver"] = dbSource.Provider;
             source.Parameters["Port"] = dbSource.Port;
             source.Parameters["Ip"] = dbSource.Host;

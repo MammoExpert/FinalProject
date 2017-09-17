@@ -22,6 +22,9 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("b9ccd920-4b2a-44c2-ac74-898535a900c9")]
 
+
+[assembly: InternalsVisibleTo("MammoExpert.PatientServices.Tests")]
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version

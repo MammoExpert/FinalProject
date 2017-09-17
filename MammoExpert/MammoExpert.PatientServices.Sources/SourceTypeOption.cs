@@ -11,18 +11,18 @@ namespace MammoExpert.PatientServices.Sources
     /// </summary>
     public class SourceTypeOption
     {
-        public SourceType Type { get; set; }
+        public SourceTypeEnum TypeEnum { get; set; }
         public string Description { get; protected set; }
-        internal Dictionary<SourceType, string> DescriptionDictionary = new Dictionary<SourceType, string>()
+        internal Dictionary<SourceTypeEnum, string> DescriptionDictionary = new Dictionary<SourceTypeEnum, string>()
         {
-            {SourceType.DataBase, "База данных"},
-            {SourceType.Worklist, "Рабочий список" }
+            {SourceTypeEnum.DataBase, "База данных"},
+            {SourceTypeEnum.Worklist, "Рабочий список" }
         };
 
-        public SourceTypeOption(SourceType type)
+        public SourceTypeOption(SourceTypeEnum typeEnum)
         {
-            Type = type;
-            Description = DescriptionDictionary[type];
+            TypeEnum = typeEnum;
+            Description = DescriptionDictionary[typeEnum];
         }
     }
 }

@@ -48,7 +48,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void CreatePatient()
         {
-            Messager.ShowPatientCreationMessage();
+            Messenger.ShowPatientCreationMessage();
         }
     }
 }

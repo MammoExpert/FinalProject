@@ -19,7 +19,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         #region Fields
 
         private Source _source;
-        private SourceType _type;
+        private SourceTypeEnum _typeEnum;
         private List<string> _listProviders;
         private readonly DbConnectionConfiguration _configuration;
         private bool _isConnected;
@@ -35,7 +35,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
             _parent = vm as SourcesWindowViewModel;
             _isNew = isNew;
-            Type = source.Type;
+            TypeEnum = source.TypeEnum;
             Source = source;
             _configuration = new DbConnectionConfiguration();
             ListProviders = _configuration.GetListProviders();
@@ -77,13 +77,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// <remarks>
         /// По этому свойству определяется необходимый UserControl
         /// </remarks>
-        public SourceType Type
+        public SourceTypeEnum TypeEnum
         {
-            get { return _type; }
+            get { return _typeEnum; }
             set
             {
-                _type = value;
-                RaisePropertyChanged("Type");
+                _typeEnum = value;
+                RaisePropertyChanged("TypeEnum");
             }
         }
 

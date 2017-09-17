@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
+using MammoExpert.PatientServices.Core.Exceptions;
 
 namespace MammoExpert.PatientServices.Core
 {
@@ -118,7 +121,7 @@ namespace MammoExpert.PatientServices.Core
         {
             get
             {
-                foreach (string property in ValidatedProperties)
+                foreach (var property in ValidatedProperties)
                     if (GetValidationError(property) != null)
                         return false;
 
@@ -129,116 +132,93 @@ namespace MammoExpert.PatientServices.Core
         /// <summary>
         /// Возвращает строку с текстом ошибки или null/>, если ошибок нет
         /// </summary>
-        private string GetValidationError(string propertyName)
+        internal string GetValidationError(string propertyName)
         {
             if (Array.IndexOf(ValidatedProperties, propertyName) < 0)
                 return null;
 
             string error = null;
-
-            switch (propertyName)
+            try
             {
-                case "FirstName":
-                    error = ValidateFirstName();
-                    break;
-                case "LastName":
-                    error = ValidateLastName();
-                    break;
-                case "MiddleName":
-                    error = ValidateMiddleName();
-                    break;
-                case "BirthDate":
-                    error = ValidateBirthDate();
-                    break;
-                case "Telephone":
-                    error = ValidateTelephone();
-                    break;
-                default:
-                    Debug.Fail("Неожиданное имя для свойства объекта типа Patient: " + propertyName);
-                    break;
+                var value = this.GetType().GetProperty(propertyName)?.GetValue(this, null).ToString();
+
+                switch (propertyName)
+                {
+                    case nameof(FirstName):
+                    case nameof(LastName):
+                    case nameof(MiddleName):
+                        ValidateFieldValue(value);
+                        break;
+                    case "BirthDate":
+                        ValidateBirthDate();
+                        break;
+                    case "Telephone":
+                        ValidateTelephone();
+                        break;
+                }
+            }
+            catch (RequiredException)
+            {
+                error = "Обязательно для заполнения!";
+            }
+            catch (IncorrectSymbolException ex)
+            {
+                error = $"Поле не должно содержать цифр, знаков пунктуации или символов: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
             }
 
             return error;
         }
 
         /// <summary>
-        /// Проверяет на ошибки валидации свойство <see cref="FirstName"/>
+        /// Проверяет на ошибки валидации свойство <see cref="fieldValue"/>
         /// </summary>
-        private string ValidateFirstName()
+        internal void ValidateFieldValue(string fieldValue)
         {
-            if (string.IsNullOrWhiteSpace(FirstName) || string.IsNullOrEmpty(FirstName))
-                return "Обязательно для заполнения:";
-            foreach (var c in FirstName)
+            if (string.IsNullOrWhiteSpace(fieldValue) || string.IsNullOrEmpty(fieldValue))
+                throw new RequiredException($"Field value: {fieldValue}!");
+            foreach (var c in fieldValue)
                 if (char.IsNumber(c) || char.IsPunctuation(c) || char.IsSymbol(c))
-                    return "Поле не должно содержать цифр, знаков пунктуации или символов:";
-
-            return null;
+                    throw  new IncorrectSymbolException(c.ToString());
         }
 
-        /// <summary>
-        /// Проверяет на ошибки валидации свойство <see cref="LastName"/>
-        /// </summary>
-        private string ValidateLastName()
-        {
-            if (string.IsNullOrWhiteSpace(LastName) || string.IsNullOrEmpty(LastName))
-                return "Обязательно для заполнения:";
-            foreach (var c in LastName)
-                if (char.IsNumber(c) || char.IsPunctuation(c) || char.IsSymbol(c))
-                    return "Поле не должно содержать цифр, знаков пунктуации или символов:";
 
-            return null;
-        }
-
-        /// <summary>
-        /// Проверяет на ошибки валидации свойство <see cref="MiddleName"/>
-        /// </summary>
-        private string ValidateMiddleName()
-        {
-            if (string.IsNullOrWhiteSpace(MiddleName) || string.IsNullOrEmpty(MiddleName))
-                return "Обязательно для заполнения:";
-            foreach (var c in MiddleName)
-                if (char.IsNumber(c) || char.IsPunctuation(c) || char.IsSymbol(c))
-                    return "Поле не должно содержать цифр, знаков пунктуации или символов:";
-
-
-            return null;
-        }
 
         /// <summary>
         /// Проверяет на ошибки валидации свойство <see cref="BirthDate"/>
         /// </summary>
-        private string ValidateBirthDate()
+        internal void ValidateBirthDate()
         {
             if (BirthDate == default(DateTime))
-                return "Выберите дату:";
-
-            return null;
+                throw new Exception("Выберите дату:");
         }
 
         /// <summary>
         /// Проверяет на ошибки валидации свойство <see cref="Telephone"/>
         /// </summary>
-        private string ValidateTelephone()
+        internal void ValidateTelephone()
         {
             if (!string.IsNullOrWhiteSpace(Telephone) || !string.IsNullOrEmpty(Telephone))
             {
                 foreach (var c in Telephone)
                 {
                     if (char.IsLetter(c))
-                        return "Поле не должно содержать букв:";
+                        throw new Exception("Поле не должно содержать букв:");
                     if (char.IsPunctuation(c))
                     {
                         if (c != '-' && c != '(' && c != ')')
-                            return "Поле не должно содержать знаков препинания, кроме '-' и скобок:";
+                            throw new Exception("Поле не должно содержать знаков препинания, кроме '-' и скобок:");
                     }
                     if (char.IsSymbol(c))
                     {
                         if (c != '+')
-                            return "Поле не должно содержать символы, кроме '+':";
+                            throw new Exception("Поле не должно содержать символы, кроме '+':");
                     }
                 }
             }
-            return null;
         }
 
         #endregion // Validation

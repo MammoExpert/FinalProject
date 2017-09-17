@@ -95,14 +95,14 @@ namespace MammoExpert.PatientServices.DB
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
                     {
-                        Messager.ShowConnectionDbSuccess("Соединение с базой данных установленно!");
+                        Messenger.ShowConnectionDbSuccess("Соединение с базой данных установленно!");
                         return true;
                     }
                 }
             }
             catch (Exception exc)
             {
-                Messager.ShowConnectionDbErrorMessage(exc);
+                Messenger.ShowConnectionDbErrorMessage(exc);
                 return false;
             }
             return false;

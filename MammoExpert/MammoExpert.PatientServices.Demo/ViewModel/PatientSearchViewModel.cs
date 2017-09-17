@@ -129,9 +129,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private static ObservableCollection<Patient> GetData(Source source)
         {
-            switch (source.Type)
+            switch (source.TypeEnum)
             {
-                case SourceType.DataBase:
+                case SourceTypeEnum.DataBase:
                 {
                     try
                     {
@@ -142,13 +142,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                     }
                     catch (Exception e)
                     {
-                        Messager.ShowConnectionDbErrorMessage(e);
+                        Messenger.ShowConnectionDbErrorMessage(e);
                         return null;
                     }
                 }
-                case SourceType.Worklist:
+                case SourceTypeEnum.Worklist:
                 {
-                    return null;
+                    throw new NotImplementedException();
                 }
 
                 default: return null;

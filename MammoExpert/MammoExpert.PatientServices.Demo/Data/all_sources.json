@@ -1,1 +1,1 @@
-﻿[{"Id":620,"Type":0,"Description":"","Name":"PatientServices","Parameters":{"Driver":"SqlClient Data Provider","Ip":"","Port":"","UserName":"","Password":""}},{"Id":696,"Type":1,"Description":"","Name":"не существует","Parameters":{"Header":"","Ip":"","Port":"","Timeout":""}}]
+﻿[{"Id":620,"TypeEnum":0,"Description":"","Name":"PatientServices","Parameters":{"Driver":"SqlClient Data Provider","Ip":"","Port":"","UserName":"","Password":""}},{"Id":538,"TypeEnum":1,"Description":"","Name":"новый","Parameters":{"Header":"","Ip":"","Port":"","Timeout":""}}]

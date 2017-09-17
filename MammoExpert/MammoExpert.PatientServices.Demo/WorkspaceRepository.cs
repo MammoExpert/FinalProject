@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.PresenterCore;
+using MammoExpert.PatientServices.Sources;
 
 namespace MammoExpert.PatientServices.Demo
 {
     /// <summary>
     /// Класс для создания репозитория рабочих областей
     /// </summary>
-    public class WorkspaceRepository
+    public class WorkspaceRepository : IRepository<ViewModelBase>
     {
         public ObservableCollection<ViewModelBase> Workspaces = new ObservableCollection<ViewModelBase>();
 
@@ -36,9 +37,19 @@ namespace MammoExpert.PatientServices.Demo
         /// <summary>
         /// Возвращает список имеющихся рабочих областей
         /// </summary>
-        public ObservableCollection<ViewModelBase> GetAll()
+        public IEnumerable<ViewModelBase> GetAll()
         {
             return Workspaces;
+        }
+
+        public void Update(ViewModelBase item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ViewModelBase> GetByType(SourceTypeEnum typeEnum)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -50,6 +61,11 @@ namespace MammoExpert.PatientServices.Demo
             {
                 Workspaces.Remove(workspace);
             }
+        }
+
+        IEnumerable<ViewModelBase> IRepository<ViewModelBase>.GetAll()
+        {
+            return GetAll();
         }
 
         /// <summary>

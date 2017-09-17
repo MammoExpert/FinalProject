@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\IncorrectSymbolException.cs" />
+    <Compile Include="Exceptions\RequiredException.cs" />
     <Compile Include="IPatientRepository.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

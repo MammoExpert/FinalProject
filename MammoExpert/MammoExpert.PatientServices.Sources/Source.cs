@@ -15,9 +15,9 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Хранит перечень параметров для определенного типа источника
         /// </summary>
-        private static readonly Dictionary<SourceType, Dictionary<string, string>> ParametersDictionary = new Dictionary<SourceType, Dictionary<string, string>>()
+        private static readonly Dictionary<SourceTypeEnum, Dictionary<string, string>> ParametersDictionary = new Dictionary<SourceTypeEnum, Dictionary<string, string>>()
         {
-            {SourceType.DataBase, new Dictionary<string, string>()
+            {SourceTypeEnum.DataBase, new Dictionary<string, string>()
             {
                 {"Driver", "" },
                 {"Ip", ""},
@@ -25,7 +25,7 @@ namespace MammoExpert.PatientServices.Sources
                 {"UserName", ""},
                 {"Password", ""}
             } },
-            {SourceType.Worklist, new Dictionary<string, string>()
+            {SourceTypeEnum.Worklist, new Dictionary<string, string>()
             {
                 {"Header", ""},
                 {"Ip", ""},
@@ -38,13 +38,13 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Constructor
 
-        public Source(SourceType type)
+        public Source(SourceTypeEnum typeEnum)
         {
-            Type = type;
+            TypeEnum = typeEnum;
             Id = new Random().Next(0, 999);
             Description = string.Empty;
             Name = string.Empty;
-            Parameters = ParametersDictionary[type];
+            Parameters = ParametersDictionary[typeEnum];
         }
 
         #endregion // Constructor
@@ -58,7 +58,7 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Получает или задает значение типа источника
         /// </summary>
-        public SourceType Type { get; set; }
+        public SourceTypeEnum TypeEnum { get; set; }
         /// <summary>
         /// Получает или задает значение описания источника
         /// </summary>

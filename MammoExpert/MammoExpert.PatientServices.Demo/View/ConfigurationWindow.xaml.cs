@@ -28,7 +28,7 @@ namespace MammoExpert.PatientServices.Demo.View
     }
 
     /// <summary>
-    /// Преобразует объект типа <see cref="SourceType"/> в соответствующее ему представление
+    /// Преобразует объект типа <see cref="SourceTypeEnum"/> в соответствующее ему представление
     /// </summary>
     public class ContentConverter : IMultiValueConverter
     {
@@ -37,13 +37,13 @@ namespace MammoExpert.PatientServices.Demo.View
         public object Convert(object[] values, Type targetType, object parameter,
             System.Globalization.CultureInfo culture)
         {
-            SourceType option;
+            SourceTypeEnum option;
             Enum.TryParse(values[0].ToString(), out option);
             switch (option)
             {
-                case SourceType.DataBase:
+                case SourceTypeEnum.DataBase:
                     return new UcDBConnectionConfiguration();
-                case SourceType.Worklist:
+                case SourceTypeEnum.Worklist:
                     return new UcWorklistConnectionConfiguration();
             }
             return null;

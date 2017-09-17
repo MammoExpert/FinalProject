@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IManager.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="JsonManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source.cs" />
     <Compile Include="SourceRepository.cs" />
     <Compile Include="SourceSerializer.cs" />
-    <Compile Include="SourceType.cs" />
+    <Compile Include="SourceTypeEnum.cs" />
     <Compile Include="SourceTypeOption.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using MammoExpert.PatientServices.Demo.View;
 using MammoExpert.PatientServices.Demo.ViewModel;
 using MammoExpert.PatientServices.PresenterCore;
@@ -23,7 +24,7 @@ namespace MammoExpert.PatientServices.Demo
         public static void CreateMainView()
         {
             var view = new MainWindow();
-            var viewModel = new MainWindowViewModel("../../Data/all_sources.json");
+            var viewModel = new MainWindowViewModel();
             view.DataContext = viewModel;
             view.Show();
         }
@@ -72,6 +73,16 @@ namespace MammoExpert.PatientServices.Demo
             view.DataContext = viewModel;
             view.ShowDialog();
         }
+
+
+        //private void ShowDialog(FrameworkElement body, ViewModelBase vm)
+        //{
+        //    if(body == null || vm == null)
+        //        throw new NullReferenceException();
+        //    body.DataContext = vm;
+        //    (body as Window)?.ShowDialog();
+        //}
+
 
         #endregion // Public Methods
     }

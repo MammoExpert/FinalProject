@@ -30,7 +30,7 @@
         <ContentControl Grid.Row="0" Grid.Column="0">
             <ContentControl.Content>
                 <MultiBinding Converter="{StaticResource Converter}">
-                    <Binding Path="Type" />
+                    <Binding Path="TypeEnum" />
                 </MultiBinding>
             </ContentControl.Content>
         </ContentControl>

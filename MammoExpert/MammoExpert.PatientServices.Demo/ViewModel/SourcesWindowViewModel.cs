@@ -111,7 +111,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ICommand DeleteSourceCommand => new ActionCommand(DeleteSource, param => SelectedSource != null);
 
         // срабатывает при смене значения в ComboBox
-        public ICommand ChangeSourceListByType => new ActionCommand<SourceTypeOption>(param => ChangeSourceList(param.Type));
+        public ICommand ChangeSourceListByType => new ActionCommand<SourceTypeOption>(param => ChangeSourceList(param.TypeEnum));
 
         #endregion // Commands
 
@@ -122,8 +122,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public void Create(Source source)
         {
-            SourceRepository.Create(source);
-            ChangeSourceList(source.Type);
+            SourceRepository.Add(source);
+            ChangeSourceList(source.TypeEnum);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 if (s.Id == source.Id)
                 {
                     SourceRepository.Update(source);
-                    ChangeSourceList(source.Type);
+                    ChangeSourceList(source.TypeEnum);
                 }
             }
         }
@@ -150,7 +150,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private static List<SourceTypeOption> GetAllTypes()
         {
-            var listOfTypes = Enum.GetValues(typeof(SourceType)).Cast<SourceType>().Select(value => value).ToList();
+            var listOfTypes = Enum.GetValues(typeof(SourceTypeEnum)).Cast<SourceTypeEnum>().Select(value => value).ToList();
             return listOfTypes.Select(type => new SourceTypeOption(type)).ToList();
         }
 
@@ -180,7 +180,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void CreateSource(SourceTypeOption option)
         {
-            ViewFactory.CreateConfigurationView(this, new Source(option.Type), true);
+            ViewFactory.CreateConfigurationView(this, new Source(option.TypeEnum), true);
         }
 
         /// <summary>
@@ -197,12 +197,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void DeleteSource()
         {
             if (SelectedSource == null) return;
-            Messager.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
+            Messenger.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
             {
                 var vm = FindWorkspace();
                 if (vm != null) WorkspaceRepository.Delete(vm);
                 SourceRepository.Delete(SelectedSource);
-                ChangeSourceList(SelectedSource.Type);
+                ChangeSourceList(SelectedSource.TypeEnum);
             });
         }
 
@@ -227,9 +227,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// <summary>
         /// Обновляет список источников согласно выбранному типу источника
         /// </summary>
-        private void ChangeSourceList(SourceType type)
+        private void ChangeSourceList(SourceTypeEnum typeEnum)
         {
-            var collection = SourceRepository.GetByType(type);
+            var collection = SourceRepository.GetByType(typeEnum);
             Sources = new ObservableCollection<Source>(collection);
         }
 

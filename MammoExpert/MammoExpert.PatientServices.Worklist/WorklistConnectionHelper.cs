@@ -26,12 +26,12 @@ namespace MammoExpert.PatientServices.Worklist
                 client.AddRequest(new DicomCEchoRequest());
                 client.Send(worklistSource.Host, Int32.Parse(worklistSource.Port), 
                             false, worklistSource.DisplayName, worklistSource.AETitle);
-                Messager.ShowConnectionWorklistSuccess("Соединение с Dicom сервером установленно!");
+                Messenger.ShowConnectionWorklistSuccess("Соединение с Dicom сервером установленно!");
                 return true;
             }
             catch(Exception exc)
             {
-                Messager.ShowConnectionWorklistErrorMessage(exc);
+                Messenger.ShowConnectionWorklistErrorMessage(exc);
                 return false;
             }
         }

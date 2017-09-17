@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace MammoExpert.PatientServices.Infrastructure
     /// <summary>
     /// Статический класс для отображения сообщений и диалоговых окон
     /// </summary>
-    public static class Messager
+    public static class Messenger
     {
         #region Public Metods
 
@@ -21,7 +22,7 @@ namespace MammoExpert.PatientServices.Infrastructure
         public static void ShowConnectionDbErrorMessage(Exception exeption)
         {
             MessageBox.Show(
-                String.Format("{0}", exeption.Message),
+                $"{exeption.Message}",
                 "Ошибка подключения",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
@@ -63,11 +64,36 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxImage.Information);
         }
 
-        public static void ShowNotFindFileMessage(string filePath)
+        public const string DefaultErrorMsg = "Произошла внутренняя ошибка";
+        public const  string DefaultErrorHeader = "Ошибка";
+
+        public const string FilenotfoundExErrMsg = "Файл '(0)' не найден)";
+
+        public static void ShowNotFindFileMessage(Exception ex, string filePath)
         {
-            MessageBox.Show("Файл '" + filePath + "' не найден", "Ошибка при загрузке файла",
+            var errorMsg = DefaultErrorMsg;
+            var errorHeader = DefaultErrorHeader;
+
+            if (ex.InnerException is FileNotFoundException)
+            {
+                errorMsg = string.Format(FilenotfoundExErrMsg, filePath);              
+                errorHeader = "Ошибка при загрузке файла";
+            }
+
+            if (ex.InnerException is UnauthorizedAccessException)
+            {
+                
+            }
+
+            if (ex.InnerException is FileLoadException)
+            {
+                
+            }
+
+            MessageBox.Show(errorMsg,errorHeader,
                 MessageBoxButton.OK, MessageBoxImage.Error);
-            Environment.Exit(0);
+
+            Application.Current.Shutdown();
         }
 
         /// <summary>
@@ -77,7 +103,7 @@ namespace MammoExpert.PatientServices.Infrastructure
         public static void ShowConnectionWorklistErrorMessage(Exception exeption)
         {
             MessageBox.Show(
-                String.Format("{0}", exeption.Message),
+                $"{exeption.Message}",
                 "Ошибка подключения",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
