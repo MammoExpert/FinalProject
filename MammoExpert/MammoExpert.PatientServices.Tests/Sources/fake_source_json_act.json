@@ -30,10 +30,11 @@
     "Description": "test",
     "Name": "test",
     "Parameters": {
-      "Header": "",
+      "Driver": "",
       "Ip": "",
       "Port": "",
-      "Timeout": ""
+      "UserName": "",
+      "Password": ""
     }
   }
 ]

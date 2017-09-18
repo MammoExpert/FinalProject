@@ -140,14 +140,14 @@ namespace MammoExpert.PatientServices.Core
             string error = null;
             try
             {
-                var value = this.GetType().GetProperty(propertyName)?.GetValue(this, null).ToString();
+                var value = this.GetType().GetProperty(propertyName)?.GetValue(this, null) ?? "";
 
                 switch (propertyName)
                 {
                     case nameof(FirstName):
                     case nameof(LastName):
                     case nameof(MiddleName):
-                        ValidateFieldValue(value);
+                        ValidateNameValue(value.ToString());
                         break;
                     case "BirthDate":
                         ValidateBirthDate();
@@ -157,15 +157,7 @@ namespace MammoExpert.PatientServices.Core
                         break;
                 }
             }
-            catch (RequiredException)
-            {
-                error = "Обязательно для заполнения!";
-            }
-            catch (IncorrectSymbolException ex)
-            {
-                error = $"Поле не должно содержать цифр, знаков пунктуации или символов: {ex.Message}";
-            }
-            catch (Exception ex)
+            catch (ApplicationException ex)
             {
                 error = ex.Message;
             }
@@ -174,18 +166,16 @@ namespace MammoExpert.PatientServices.Core
         }
 
         /// <summary>
-        /// Проверяет на ошибки валидации свойство <see cref="fieldValue"/>
+        /// Проверяет на ошибки валидации свойство <see cref="FirstName"/>, <see cref="LastName"/> и  <see cref="MiddleName"/>
         /// </summary>
-        internal void ValidateFieldValue(string fieldValue)
+        internal void ValidateNameValue(string fieldValue)
         {
             if (string.IsNullOrWhiteSpace(fieldValue) || string.IsNullOrEmpty(fieldValue))
-                throw new RequiredException($"Field value: {fieldValue}!");
+                throw new RequiredException("Обязательно для заполнения:");
             foreach (var c in fieldValue)
                 if (char.IsNumber(c) || char.IsPunctuation(c) || char.IsSymbol(c))
-                    throw  new IncorrectSymbolException(c.ToString());
+                    throw new IncorrectSymbolException("Поле не должно содержать цифр, знаков пунктуации или символов:");
         }
-
-
 
         /// <summary>
         /// Проверяет на ошибки валидации свойство <see cref="BirthDate"/>
@@ -193,7 +183,7 @@ namespace MammoExpert.PatientServices.Core
         internal void ValidateBirthDate()
         {
             if (BirthDate == default(DateTime))
-                throw new Exception("Выберите дату:");
+                throw new DateAbsentException("Выберите дату:");
         }
 
         /// <summary>
@@ -206,16 +196,16 @@ namespace MammoExpert.PatientServices.Core
                 foreach (var c in Telephone)
                 {
                     if (char.IsLetter(c))
-                        throw new Exception("Поле не должно содержать букв:");
+                        throw new HasLetterException("Поле не должно содержать букв:");
                     if (char.IsPunctuation(c))
                     {
                         if (c != '-' && c != '(' && c != ')')
-                            throw new Exception("Поле не должно содержать знаков препинания, кроме '-' и скобок:");
+                            throw new ForbiddenPunctuationException("Поле не должно содержать знаков препинания, кроме '-' и скобок:");
                     }
                     if (char.IsSymbol(c))
                     {
                         if (c != '+')
-                            throw new Exception("Поле не должно содержать символы, кроме '+':");
+                            throw new ForbiddenSymbolException("Поле не должно содержать символы, кроме '+':");
                     }
                 }
             }

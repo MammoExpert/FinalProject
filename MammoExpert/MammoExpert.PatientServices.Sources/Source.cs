@@ -8,7 +8,7 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Модель источника данных
     /// </summary>
-    public class Source
+    public class Source : IEquatable<Source>
     {
         #region Dictionaries
 
@@ -28,7 +28,6 @@ namespace MammoExpert.PatientServices.Sources
             {SourceTypeEnum.Worklist, new Dictionary<string, string>()
             {
                 {"Header", ""},
-                {"AEHeader", ""},
                 {"Ip", ""},
                 {"Port", ""},
                 {"Timeout", ""}
@@ -75,5 +74,32 @@ namespace MammoExpert.PatientServices.Sources
 
         #endregion // Constructor
 
+        public bool Equals(Source other)
+        {
+            if (TypeEnum == SourceTypeEnum.DataBase && other.TypeEnum == SourceTypeEnum.DataBase)
+            {
+                return Id == other.Id
+                       && Description == other.Description
+                       && Name == other.Name
+                       && Parameters["Driver"] == other.Parameters["Driver"]
+                       && Parameters["Port"] == other.Parameters["Port"]
+                       && Parameters["Ip"] == other.Parameters["Ip"]
+                       && Parameters["UserName"] == other.Parameters["UserName"]
+                       && Parameters["Password"] == other.Parameters["Password"];
+            }
+
+            if (TypeEnum == SourceTypeEnum.Worklist && other.TypeEnum == SourceTypeEnum.Worklist)
+            {
+                return Id == other.Id
+                       && Description == other.Description
+                       && Name == other.Name
+                       && Parameters["Header"] == other.Parameters["Header"]
+                       && Parameters["Port"] == other.Parameters["Port"]
+                       && Parameters["Ip"] == other.Parameters["Ip"]
+                       && Parameters["Timeout"] == other.Parameters["Timeout"];
+            }
+
+            return false;
+        }
     }
 }

@@ -39,10 +39,6 @@
       <HintPath>..\packages\Castle.Core.4.1.1\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MammoExpert.PatientServices.DB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MammoExpert.PatientServices.DB\bin\Debug\MammoExpert.PatientServices.DB.dll</HintPath>
-    </Reference>
     <Reference Include="Moq, Version=4.7.99.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.7.99\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -62,7 +58,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -72,6 +70,8 @@
     <Compile Include="DbRepository\PatientDbConnectionRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\JsonManagerTests.cs" />
+    <Compile Include="Sources\SourceRepositoryTests.cs" />
+    <Compile Include="Sources\SourceSerializerTests.cs" />
     <Compile Include="WorklistRepository\PatientRepositoryDicomTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -87,9 +87,17 @@
       <Project>{B9CCD920-4B2A-44C2-AC74-898535A900C9}</Project>
       <Name>MammoExpert.PatientServices.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.DB\MammoExpert.PatientServices.DB.csproj">
+      <Project>{0754cf79-705a-4bbd-a843-e5e4e94358f9}</Project>
+      <Name>MammoExpert.PatientServices.DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MammoExpert.PatientServices.Sources\MammoExpert.PatientServices.Sources.csproj">
       <Project>{80dada21-e29f-434a-adf0-a6659b631bf2}</Project>
       <Name>MammoExpert.PatientServices.Sources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Worklist\MammoExpert.PatientServices.Worklist.csproj">
+      <Project>{3bb28da7-72c5-413a-bdce-e27313a4d87f}</Project>
+      <Name>MammoExpert.PatientServices.Worklist</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

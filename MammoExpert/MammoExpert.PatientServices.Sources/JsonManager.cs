@@ -30,7 +30,7 @@ namespace MammoExpert.PatientServices.Sources
         {
 
             _path = path ?? DefaultPath;
-            
+
             _jsonCollection = Load() as List<Source>;
         }
 
@@ -100,7 +100,7 @@ namespace MammoExpert.PatientServices.Sources
             }
             catch (Exception ex)
             {
-                //Messenger.ShowNotFindFileMessage(ex, _path);
+                Messenger.ShowNotFindFileMessage(ex, _path);
             }
             var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
             return result ?? new List<Source>().AsEnumerable();

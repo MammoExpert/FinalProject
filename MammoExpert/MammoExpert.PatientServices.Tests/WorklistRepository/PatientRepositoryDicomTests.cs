@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using MammoExpert.PatientServices.Core;
 using Moq;
 
-namespace MammoExpert.PatientServices.Worklist.Tests
+namespace MammoExpert.PatientServices.Tests.WorklistRepository
 {
     [TestClass()]
     public class PatientRepositoryDicomTests

@@ -108,3 +108,7 @@ E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Ma
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.dll
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
 E:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Worklist.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.dll
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\MammoExpert.PatientServices.Worklist.pdb
+D:\FinalProject\MammoExpert\MammoExpert.PatientServices.UI.Controls\bin\Debug\Dicom.Core.pdb

@@ -23,7 +23,8 @@ namespace MammoExpert.PatientServices.Sources
             source.Parameters["Driver"] = dbSource.Provider;
             source.Parameters["Port"] = dbSource.Port;
             source.Parameters["Ip"] = dbSource.Host;
-            source.Parameters["Name"] = dbSource.DataBase;
+            source.Name = dbSource.DataBase;
+            source.Id = dbSource.Id;
             source.Parameters["UserName"] = dbSource.UserId;
             source.Parameters["Password"] = dbSource.Password;
             return source;
@@ -39,6 +40,7 @@ namespace MammoExpert.PatientServices.Sources
             dbSource.Port = source.Parameters["Port"];
             dbSource.Host = source.Parameters["Ip"];
             dbSource.DataBase = source.Name;
+            dbSource.Id = source.Id;
             dbSource.UserId = source.Parameters["UserName"];
             dbSource.Password = source.Parameters["Password"];
             return dbSource;
@@ -50,8 +52,9 @@ namespace MammoExpert.PatientServices.Sources
         public static WorklistSource WorklistDeserialize(Source source)
         {
             var worklistSource = new WorklistSource();
-            worklistSource.DisplayName = source.Parameters["Header"];
-            worklistSource.AETitle = source.Parameters["AEHeader"];
+            worklistSource.DisplayName = source.Name;
+            worklistSource.Id = source.Id;
+            worklistSource.AETitle = source.Parameters["Header"];
             worklistSource.Host = source.Parameters["Ip"];
             worklistSource.Port = source.Parameters["Port"];
             worklistSource.Timeout = Int32.Parse(source.Parameters["Timeout"]);
@@ -64,8 +67,9 @@ namespace MammoExpert.PatientServices.Sources
         public static Source WorklistSerialize(WorklistSource worklistSource)
         {
             var source = new Source(SourceTypeEnum.Worklist);
-            source.Parameters["Header"] = worklistSource.DisplayName;
-            source.Parameters["AE Header"] = worklistSource.AETitle;
+            source.Id = worklistSource.Id;
+            source.Name = worklistSource.DisplayName;
+            source.Parameters["Header"] = worklistSource.AETitle;
             source.Parameters["Ip"] = worklistSource.Host;
             source.Parameters["Port"] = worklistSource.Port;
             source.Parameters["Timeout"] = worklistSource.Timeout.ToString();

@@ -18,13 +18,9 @@ namespace MammoExpert.PatientServices.Tests.Core
         )
         {
             var patient = new Patient();
-
             patient.GetType().GetProperty(fieldName)?.SetValue(patient, value);
-
-            Assert.Throws(typeof(RequiredException), () => patient.ValidateFieldValue(value));
+            Assert.Throws(typeof(RequiredException), () => patient.ValidateNameValue(value));
         }
-
-
 
         [Test]
         public void Patient_Field_ValidateIncorrectSymbol_Incorrect(
@@ -33,13 +29,65 @@ namespace MammoExpert.PatientServices.Tests.Core
         )
         {
             var patient = new Patient();
-
             patient.GetType().GetProperty(fieldName)?.SetValue(patient, value);
+            Assert.Throws(typeof(IncorrectSymbolException), () => patient.ValidateNameValue(value));
+        }
 
-            Assert.Throws(typeof(IncorrectSymbolException), () => patient.ValidateFieldValue(value));
+        [Test]
+        public void Patient_Field_ValidateCorrectValue_Correct(
+            [Values(nameof(Patient.FirstName), nameof(Patient.LastName), nameof(Patient.MiddleName))] string fieldName
+        )
+        {
+            var patient = new Patient();
+            var prop = patient.GetType().GetProperty(fieldName);
+            prop?.SetValue(patient, "Имя");
+            Assert.DoesNotThrow(() => patient.ValidateNameValue(prop?.Name));
+        }
+
+        [Test]
+        public void Patient_Birthdate_ValidateDefaultDate_Incorrect()
+        {
+            var patient = new Patient();
+            patient.BirthDate = Convert.ToDateTime(default(DateTime));
+            Assert.Throws(typeof(DateAbsentException), () => patient.ValidateBirthDate());
+        }
+
+        [Test]
+        public void Patient_Birthdate_ValidateCorrectValue_Correct()
+        {
+            var patient = new Patient();
+            patient.BirthDate = Convert.ToDateTime("01/09/1988");
+            Assert.DoesNotThrow(() => patient.ValidateBirthDate());
+        }
+
+        [Test]
+        public void Patient_Telephone_ValidateForbiddenSymbol_Incorrect(
+            [Values("123~", "123=", "№123", "1$23", "^123", "<123", "123>", @"23|1")] string value
+        )
+        {
+            var patient = new Patient();
+            patient.Telephone = value;
+            Assert.Throws(typeof(ForbiddenSymbolException), () => patient.ValidateTelephone());
+        }
+
+        [Test]
+        public void Patient_Telephone_ValidateForbiddenPunctuation_Incorrect(
+            [Values("123.", "123#", "@123", "1_23", "*123", "%123", "123:", @"23]")] string value
+        )
+        {
+            var patient = new Patient();
+            patient.Telephone = value;
+            Assert.Throws(typeof(ForbiddenPunctuationException), () => patient.ValidateTelephone());
+        }
+
+        [Test]
+        public void Patient_Telephone_ValidateCorrectValue_Correct(
+            [Values("123-", "123)", "(123", "123+", "123 2134")] string value
+        )
+        {
+            var patient = new Patient();
+            patient.Telephone = value;
+            Assert.DoesNotThrow(() => patient.ValidateTelephone());
         }
     }
 }
-
-//var prop = patient.GetType()?.GetProperty(fieldName);
-//Assert.IsTrue(prop.GetValue(patient) == value);

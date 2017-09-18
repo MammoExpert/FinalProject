@@ -41,6 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\DateAbsentException.cs" />
+    <Compile Include="Exceptions\ForbiddenPunctuationException.cs" />
+    <Compile Include="Exceptions\ForbiddenSymbolException.cs" />
+    <Compile Include="Exceptions\HasLetterException.cs" />
     <Compile Include="Exceptions\IncorrectSymbolException.cs" />
     <Compile Include="Exceptions\RequiredException.cs" />
     <Compile Include="IPatientRepository.cs" />

@@ -64,33 +64,31 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxImage.Information);
         }
 
-        public const string DefaultErrorMsg = "Произошла внутренняя ошибка";
-        public const  string DefaultErrorHeader = "Ошибка";
-
-        public const string FilenotfoundExErrMsg = "Файл '(0)' не найден)";
-
         public static void ShowNotFindFileMessage(Exception ex, string filePath)
         {
-            var errorMsg = DefaultErrorMsg;
-            var errorHeader = DefaultErrorHeader;
+            // текст по умолчанию
+            var errorMsg = "Произошла внутренняя ошибка";
+            var errorHeader = "Ошибка";
 
             if (ex.InnerException is FileNotFoundException)
             {
-                errorMsg = string.Format(FilenotfoundExErrMsg, filePath);              
+                errorMsg = "Файл '" + filePath + "' не найден";
                 errorHeader = "Ошибка при загрузке файла";
             }
 
             if (ex.InnerException is UnauthorizedAccessException)
             {
-                
+                errorMsg = "Доступ к файлу '" + filePath + "' запрещен";
+                errorHeader = "Нет доступа";
             }
 
             if (ex.InnerException is FileLoadException)
             {
-                
+                errorMsg = "Не удалось загрузить файл '" + filePath;
+                errorHeader = "Ошибка загрузки файла";
             }
 
-            MessageBox.Show(errorMsg,errorHeader,
+            MessageBox.Show(errorMsg, errorHeader,
                 MessageBoxButton.OK, MessageBoxImage.Error);
 
             Application.Current.Shutdown();
