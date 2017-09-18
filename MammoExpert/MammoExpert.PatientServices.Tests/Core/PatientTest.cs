@@ -61,23 +61,29 @@ namespace MammoExpert.PatientServices.Tests.Core
         }
 
         [Test]
-        public void Patient_Telephone_ValidateForbiddenSymbol_Incorrect(
-            [Values("123~", "123=", "№123", "1$23", "^123", "<123", "123>", @"23|1")] string value
-        )
+        public void Patient_Telephone_ValidateForbiddenSymbol_Incorrect()
         {
             var patient = new Patient();
-            patient.Telephone = value;
+            patient.Telephone = "123~";
             Assert.Throws(typeof(ForbiddenSymbolException), () => patient.ValidateTelephone());
         }
 
         [Test]
-        public void Patient_Telephone_ValidateForbiddenPunctuation_Incorrect(
-            [Values("123.", "123#", "@123", "1_23", "*123", "%123", "123:", @"23]")] string value
-        )
+        public void Patient_Telephone_ValidateForbiddenPunctuation_Incorrect()
+        {
+            var patient = new Patient();
+            patient.Telephone = "123#";
+            Assert.Throws(typeof(ForbiddenPunctuationException), () => patient.ValidateTelephone());
+        }
+
+        [Test]
+        public void Patient_Telephone_ValidateHasLetter_Incorrect(
+            [Values("123j", "123й")] string value
+            )
         {
             var patient = new Patient();
             patient.Telephone = value;
-            Assert.Throws(typeof(ForbiddenPunctuationException), () => patient.ValidateTelephone());
+            Assert.Throws(typeof(HasLetterException), () => patient.ValidateTelephone());
         }
 
         [Test]
