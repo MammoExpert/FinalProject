@@ -140,6 +140,7 @@ namespace MammoExpert.PatientServices.Core
             string error = null;
             try
             {
+                // получаем имя тестируемого свойства
                 var value = this.GetType().GetProperty(propertyName)?.GetValue(this, null) ?? "";
 
                 switch (propertyName)

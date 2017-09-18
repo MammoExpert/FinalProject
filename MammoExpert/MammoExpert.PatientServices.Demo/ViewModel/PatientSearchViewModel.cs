@@ -26,14 +26,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private Patient _selectedPatient;
         private string _searchString;
         public string SourceName;
+        private readonly MainWindowViewModel _parent;
 
         #endregion // Fields
 
         #region Constructor
 
-        public PatientSearchViewModel(Source source)
+        public PatientSearchViewModel(ViewModelBase parent, Source source)
         {
             base.DisplayName = source.Name;
+            _parent = parent as MainWindowViewModel;
             SourceName = source.Name;
             Patients = GetData(source);
         }
@@ -105,7 +107,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void CloseCurrentWorkspace()
         {
-            MainWindowViewModel.WorkspaceRepository.Delete(this);
+            _parent.WorkspaceRepository.Delete(this);
         }
 
         /// <summary>
@@ -163,7 +165,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 }
 
                 default: return null;
-
             }    
         }
 

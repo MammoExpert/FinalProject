@@ -64,7 +64,7 @@ namespace MammoExpert.PatientServices.Infrastructure
                 MessageBoxImage.Information);
         }
 
-        public static void ShowNotFindFileMessage(Exception ex, string filePath)
+        public static void ShowFileMessage(Exception ex, string filePath)
         {
             // текст по умолчанию
             var errorMsg = "Произошла внутренняя ошибка";

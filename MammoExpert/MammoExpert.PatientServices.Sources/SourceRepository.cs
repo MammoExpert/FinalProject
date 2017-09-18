@@ -20,7 +20,7 @@ namespace MammoExpert.PatientServices.Sources
         public SourceRepository(string filePath)
         {
             _fileManager = new JsonManager(filePath);
-            _sourceList = (List<Source>) _fileManager.GetAll();
+            _sourceList = (List<Source>) _fileManager.Load();
         }
 
         #endregion // Constructor

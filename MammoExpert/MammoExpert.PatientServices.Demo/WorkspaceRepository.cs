@@ -15,7 +15,7 @@ namespace MammoExpert.PatientServices.Demo
     /// <summary>
     /// Класс для создания репозитория рабочих областей
     /// </summary>
-    public class WorkspaceRepository : IRepository<ViewModelBase>
+    public class WorkspaceRepository
     {
         public ObservableCollection<ViewModelBase> Workspaces = new ObservableCollection<ViewModelBase>();
 
@@ -27,7 +27,7 @@ namespace MammoExpert.PatientServices.Demo
         /// <summary>
         /// Добавляет рабочую область в репозиторий
         /// </summary>
-        public void Add(ViewModelBase workspace)
+        public void Create(ViewModelBase workspace)
         {
             if (workspace == null) return;
             Workspaces.Add(workspace);
@@ -42,16 +42,6 @@ namespace MammoExpert.PatientServices.Demo
             return Workspaces;
         }
 
-        public void Update(ViewModelBase item)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<ViewModelBase> GetByType(SourceTypeEnum typeEnum)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Убрает рабочую область из репозитория
         /// </summary>
@@ -61,11 +51,6 @@ namespace MammoExpert.PatientServices.Demo
             {
                 Workspaces.Remove(workspace);
             }
-        }
-
-        IEnumerable<ViewModelBase> IRepository<ViewModelBase>.GetAll()
-        {
-            return GetAll();
         }
 
         /// <summary>

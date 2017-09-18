@@ -74,7 +74,6 @@ namespace MammoExpert.PatientServices.PresenterCore
         }
 
         #endregion
-
       
     }
 }

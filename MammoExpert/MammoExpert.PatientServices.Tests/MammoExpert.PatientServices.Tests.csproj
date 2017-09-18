@@ -69,6 +69,7 @@
     <Compile Include="DbHelper\DbConnectionHelperTests.cs" />
     <Compile Include="DbRepository\PatientDbConnectionRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\FakeData\FakeJsonCollection.cs" />
     <Compile Include="Sources\JsonManagerTests.cs" />
     <Compile Include="Sources\SourceRepositoryTests.cs" />
     <Compile Include="Sources\SourceSerializerTests.cs" />
@@ -76,8 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Resource Include="Sources\fake_source_json_act.json" />
-    <Resource Include="Sources\fake_source_json.json" />
+    <Resource Include="Sources\FakeData\fake_source_json_act.json" />
+    <Resource Include="Sources\FakeData\fake_source_json.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Demo\" />

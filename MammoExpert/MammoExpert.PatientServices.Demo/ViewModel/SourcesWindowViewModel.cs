@@ -14,7 +14,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     /// <summary>
     /// Модель представления для окна настройки источников данных пациента
     /// </summary>
-    public class SourcesWindowViewModel : MainWindowViewModel
+    public class SourcesWindowViewModel : ViewModelBase
     {
         #region Fields
 
@@ -22,15 +22,17 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private ObservableCollection<Source> _sources;
         private Source _selectedSource;
         private SourceTypeOption _selectedType;
+        private MainWindowViewModel _parent;
 
         #endregion // Fields
 
         #region Constructor
 
-        public SourcesWindowViewModel()
+        public SourcesWindowViewModel(ViewModelBase vm)
         {
+            _parent = vm as MainWindowViewModel;
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
-            Sources = new ObservableCollection<Source>(SourceRepository.GetAll());
+            if (_parent != null) Sources = new ObservableCollection<Source>(_parent.SourceRepository.GetAll());
             SourceTypeOptions = _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
         }
 
@@ -122,7 +124,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public void Create(Source source)
         {
-            SourceRepository.Add(source);
+            _parent.SourceRepository.Add(source);
             ChangeSourceList(source.TypeEnum);
         }
 
@@ -135,7 +137,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 if (s.Id == source.Id)
                 {
-                    SourceRepository.Update(source);
+                    _parent.SourceRepository.Update(source);
                     ChangeSourceList(source.TypeEnum);
                 }
             }
@@ -160,10 +162,10 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void AddWorkspace()
         {
             if (SelectedSource == null) return;
-            var ws = new PatientSearchViewModel(SelectedSource);
+            var ws = new PatientSearchViewModel(_parent, SelectedSource);
             if (ws.Patients == null) return;
-            if (IsOpened(ws)) WorkspaceRepository.SetActiveWorkspace(ws);
-            else WorkspaceRepository.Add(ws);
+            if (IsOpened(ws)) _parent.WorkspaceRepository.SetActiveWorkspace(ws);
+            else _parent.WorkspaceRepository.Create(ws);
             CloseAction();
         }
 
@@ -172,7 +174,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private bool IsOpened(ViewModelBase ws)
         {
-            return Workspaces.Any(item => item.DisplayName == ws.DisplayName);
+            return _parent.Workspaces.Any(item => item.DisplayName == ws.DisplayName);
         }
 
         /// <summary>
@@ -200,8 +202,8 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             Messenger.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
             {
                 var vm = FindWorkspace();
-                if (vm != null) WorkspaceRepository.Delete(vm);
-                SourceRepository.Delete(SelectedSource);
+                if (vm != null) _parent.WorkspaceRepository.Delete(vm);
+                _parent.SourceRepository.Delete(SelectedSource);
                 ChangeSourceList(SelectedSource.TypeEnum);
             });
         }
@@ -211,13 +213,13 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private ViewModelBase FindWorkspace()
         {
-            foreach (var item in Workspaces)
+            foreach (var item in _parent.Workspaces)
             {
                 if (item.GetType() == typeof(PatientSearchViewModel))
                 {
                     if (item.DisplayName == SelectedSource.Name)
                     {
-                        if (Workspaces.Contains(item)) return item;
+                        if (_parent.Workspaces.Contains(item)) return item;
                     }
                 }
             }
@@ -229,7 +231,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void ChangeSourceList(SourceTypeEnum typeEnum)
         {
-            var collection = SourceRepository.GetByType(typeEnum);
+            var collection = _parent.SourceRepository.GetByType(typeEnum);
             Sources = new ObservableCollection<Source>(collection);
         }
 
