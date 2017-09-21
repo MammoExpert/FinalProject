@@ -1,0 +1,27 @@
+﻿[
+  {
+    "Id": 20,
+    "TypeEnum": 0,
+    "Description": "Desc",
+    "Name": "Name",
+    "Parameters": {
+      "Driver": "Driver",
+      "Ip": "127",
+      "Port": "8080",
+      "UserName": "Ivan",
+      "Password": "123"
+    }
+  },
+  {
+    "Id": 12,
+    "TypeEnum": 1,
+    "Description": "Desc",
+    "Name": "Name",
+    "Parameters": {
+      "Header": "Header",
+      "Ip": "127",
+      "Port": "8080",
+      "Timeout": "2000"
+    }
+  }
+]

@@ -49,6 +49,7 @@
             ColumnWidth="*"
             GridLinesVisibility="None"
             IsReadOnly="True"
+            SelectedItem="{Binding Path=SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Path=Patients}"
             SelectionMode="Single"
             SelectionUnit="FullRow">

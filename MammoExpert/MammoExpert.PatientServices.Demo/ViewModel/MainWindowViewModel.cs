@@ -19,9 +19,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     {
         #region Fields
 
-        internal static IRepository<Source> SourceRepository;
-        private ObservableCollection<ViewModelBase> _workspaces;
-        internal static WorkspaceRepository WorkspaceRepository;
+        internal IRepository<Source> SourceRepository;
+        private static ObservableCollection<ViewModelBase> _workspaces;
+        internal WorkspaceRepository WorkspaceRepository;
 
         #endregion // Fields
 
@@ -50,7 +50,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                 if (_workspaces == null)
                 {
                     _workspaces = WorkspaceRepository.GetAll() as ObservableCollection<ViewModelBase>;
-                    RaisePropertyChanged(nameof(Workspaces));
+                    RaisePropertyChanged("Workspaces");
                     _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
                 return _workspaces;
@@ -84,7 +84,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
-            ViewFactory.CreateSourcesView();
+            ViewFactory.CreateSourcesView(this);
         });
 
         #endregion // Commands

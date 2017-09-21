@@ -12,7 +12,7 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Вспомогательный класс для работы с Json-файлами
     /// </summary>
-    public class JsonManager : IRepository<Source>, IManager<Source>
+    public class JsonManager : IManager<Source>
     {
         private const string DefaultPath = "../../Data/all_sources.json";
 
@@ -28,9 +28,7 @@ namespace MammoExpert.PatientServices.Sources
 
         public JsonManager(string path = null)
         {
-
             _path = path ?? DefaultPath;
-            
             _jsonCollection = Load() as List<Source>;
         }
 
@@ -38,52 +36,52 @@ namespace MammoExpert.PatientServices.Sources
 
         #region Public methods
 
-        /// <summary>
-        /// Возвращает список объектов
-        /// </summary>
-        public IEnumerable<Source> GetAll()
-        {
-            return _jsonCollection;
-        }
+        ///// <summary>
+        ///// Возвращает список объектов
+        ///// </summary>
+        //public IEnumerable<Source> GetAll()
+        //{
+        //    return _jsonCollection;
+        //}
 
-        /// <summary>
-        /// Добавляет объект
-        /// </summary>
-        public void Add(Source newItem)
-        {
-            _jsonCollection.Add(newItem);
-            RewriteFile();
-        }
+        ///// <summary>
+        ///// Добавляет объект
+        ///// </summary>
+        //public void Add(Source newItem)
+        //{
+        //    _jsonCollection.Add(newItem);
+        //    RewriteFile();
+        //}
 
-        /// <summary>
-        /// Удаляет объект
-        /// </summary>
-        public void Delete(Source item)
-        {
-            _jsonCollection.Remove(item);
-            RewriteFile();
-        }
+        ///// <summary>
+        ///// Удаляет объект
+        ///// </summary>
+        //public void Delete(Source item)
+        //{
+        //    _jsonCollection.Remove(item);
+        //    RewriteFile();
+        //}
 
-        /// <summary>
-        /// Обновляет объект
-        /// </summary>
-        public void Update(Source item)
-        {
-            for (var i = 0; i < _jsonCollection.Count; i++)
-            {
-                if (_jsonCollection[i].Id == item.Id)
-                {
-                    _jsonCollection[i] = item;
-                    RewriteFile();
-                    return;
-                }
-            }
-        }
+        ///// <summary>
+        ///// Обновляет объект
+        ///// </summary>
+        //public void Update(Source item)
+        //{
+        //    for (var i = 0; i < _jsonCollection.Count; i++)
+        //    {
+        //        if (_jsonCollection[i].Id == item.Id)
+        //        {
+        //            _jsonCollection[i] = item;
+        //            RewriteFile();
+        //            return;
+        //        }
+        //    }
+        //}
 
-        public IEnumerable<Source> GetByType(SourceTypeEnum typeEnum)
-        {
-            throw new NotImplementedException();
-        }
+        //public IEnumerable<Source> GetByType(SourceTypeEnum typeEnum)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         #endregion // Public methods
 
@@ -100,7 +98,7 @@ namespace MammoExpert.PatientServices.Sources
             }
             catch (Exception ex)
             {
-                //Messenger.ShowNotFindFileMessage(ex, _path);
+                Messenger.ShowFileMessage(ex, _path);
             }
             var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
             return result ?? new List<Source>().AsEnumerable();

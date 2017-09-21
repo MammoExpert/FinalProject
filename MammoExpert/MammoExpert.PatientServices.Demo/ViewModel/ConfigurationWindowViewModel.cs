@@ -113,7 +113,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ICommand CancelCommand => new ActionCommand(Cancel);
 
         // команда подтверждения на создание или редактирования источника
-        public ICommand CreateCommand => new ActionCommand(CallCreateOrUpdateEvent);
+        public ICommand CreateCommand => new ActionCommand(CallCreateOrUpdateEvent, param => IsConnected == true);
 
         // команда проверки соедиения с базой данных
         public ICommand CheckDbConnectionCommand => new ActionCommand(CheckDbConnection);

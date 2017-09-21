@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Moq;
 using System.Data.Common;
 
-namespace MammoExpert.PatientServices.DB.Tests
+namespace MammoExpert.PatientServices.Tests.DbHelper
 {
     [TestClass()]
     public class DbConnectionHelperTests

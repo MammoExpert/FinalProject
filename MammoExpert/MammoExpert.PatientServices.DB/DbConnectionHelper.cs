@@ -170,7 +170,7 @@ namespace MammoExpert.PatientServices.DB
         private string GetSqlLocalTestConnectionString(DbSource dbSource)
         {
             var connectionString =
-                string.Format(@"Data Source=(localDb)\v11.0;AttachDbFilename=E:\FinalProject\Data\{0}.mdf;Integrated Security=True", dbSource.DataBase);
+                string.Format(@"Data Source=(localDb)\v11.0;AttachDbFilename=D:\FinalProject\Data\{0}.mdf;Integrated Security=True", dbSource.DataBase);
             return connectionString;
         }
 

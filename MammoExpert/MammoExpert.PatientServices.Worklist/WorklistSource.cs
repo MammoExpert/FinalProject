@@ -9,8 +9,12 @@ namespace MammoExpert.PatientServices.Worklist
     /// <summary>
     /// Предоставляет и задает значения для подключения к Dicom Worklist.
     /// </summary>
-    public class WorklistSource
+    public class WorklistSource : IEquatable<WorklistSource>
     {
+        /// <summary>
+        /// Получает или задает Id источника
+        /// </summary>
+        public int Id { get; set; }
         /// <summary>
         /// Получает или задает значение отображаемому имени
         /// </summary>
@@ -31,5 +35,15 @@ namespace MammoExpert.PatientServices.Worklist
         /// Получает или задает значение таймаута подключения
         /// </summary>
         public int Timeout { get; set; }
+
+        public bool Equals(WorklistSource other)
+        {
+            return Id == other.Id
+                   && Port == other.Port
+                   && Host == other.Host
+                   && DisplayName == other.DisplayName
+                   && Timeout == other.Timeout
+                   && AETitle == other.AETitle;
+        }
     }
 }

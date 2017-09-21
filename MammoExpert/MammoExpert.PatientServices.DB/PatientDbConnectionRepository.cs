@@ -48,15 +48,15 @@ namespace MammoExpert.PatientServices.DB
         /// <returns></returns>
         public IEnumerable<Patient> FindPatientsByValue(string searchString)
         {
-            var patients = _patients.Where(s => s.AccessionNumber.Contains(searchString) ||
-                           s.FirstName.Contains(searchString) ||
-                           s.InsuranceCompany.Contains(searchString) ||
-                           s.LastName.Contains(searchString) ||
-                           s.MiddleName.Contains(searchString) ||
-                           s.NumberOfPassport.Contains(searchString) ||
-                           s.NumberPolicy.Contains(searchString) ||
-                           s.PatientAddress.Contains(searchString) ||
-                           s.PatientId.Contains(searchString));
+            var patients = _patients.Where(s => s.AccessionNumber.ToLower().Contains(searchString.ToLower()) ||
+                           s.FirstName.ToLower().Contains(searchString.ToLower()) ||
+                           s.InsuranceCompany.ToLower().Contains(searchString.ToLower()) ||
+                           s.LastName.ToLower().Contains(searchString.ToLower()) ||
+                           s.MiddleName.ToLower().Contains(searchString.ToLower()) ||
+                           s.NumberOfPassport.ToLower().Contains(searchString.ToLower()) ||
+                           s.NumberPolicy.ToLower().Contains(searchString.ToLower()) ||
+                           s.PatientAddress.ToLower().Contains(searchString.ToLower()) ||
+                           s.PatientId.ToLower().Contains(searchString.ToLower()));
             return patients;
         }
 

@@ -9,11 +9,16 @@ namespace MammoExpert.PatientServices.DB
     /// <summary>
     /// Предоставляет и задает значения для подключения к базе данных.
     /// </summary>
-    public class DbSource
+    public class DbSource : IEquatable<DbSource>
     {
         #region Proreties
         /// <summary>
-        /// Получае или задает описание провайдера.
+        /// Получает или задает Id источника.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Получает или задает описание провайдера.
         /// </summary>
         public string Provider { get; set; }
 
@@ -43,5 +48,16 @@ namespace MammoExpert.PatientServices.DB
         public string Password { get; set; }
 
         #endregion // Properties
+
+        public bool Equals(DbSource other)
+        {
+            return Id == other.Id
+                   && Provider == other.Provider
+                   && Password == other.Password
+                   && Port == other.Port
+                   && Host == other.Host
+                   && DataBase == other.DataBase
+                   && UserId == other.UserId;
+        }
     }
 }

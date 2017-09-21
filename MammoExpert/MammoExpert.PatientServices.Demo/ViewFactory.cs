@@ -32,10 +32,10 @@ namespace MammoExpert.PatientServices.Demo
         /// <summary>
         /// Создает окно управления источниками
         /// </summary>
-        public static void CreateSourcesView()
+        public static void CreateSourcesView(ViewModelBase parent)
         {
             var view = new SourcesWindow();
-            var viewModel = new SourcesWindowViewModel();
+            var viewModel = new SourcesWindowViewModel(parent);
             if (viewModel.CloseAction == null) viewModel.CloseAction = new Action(view.Close);
             view.DataContext = viewModel;
             view.ShowDialog();

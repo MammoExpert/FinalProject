@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Moq;
 using MammoExpert.PatientServices.Core;
 
-namespace MammoExpert.PatientServices.DB.Tests
+namespace MammoExpert.PatientServices.Tests.DbRepository
 {
     [TestClass()]
     public class PatientDbConnectionRepositoryTest
