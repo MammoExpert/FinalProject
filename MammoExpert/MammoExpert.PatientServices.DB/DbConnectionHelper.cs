@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.DB
 {
@@ -86,30 +81,20 @@ namespace MammoExpert.PatientServices.DB
         /// <param name="descriptionProvider"></param>
         public bool GetStateConnection()
         {
-            try
+            var dbf = DbProviderFactories.GetFactory(GetProvider(DbSource.Provider));
+            using (var connection = dbf.CreateConnection())
             {
-                var dbf = DbProviderFactories.GetFactory(GetProvider(DbSource.Provider));
-                using (var connection = dbf.CreateConnection())
-                {
-                    connection.ConnectionString = GetConnectionString(DbSource.Provider);
-                    connection.Open();
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        Messenger.ShowConnectionDbSuccess("Соединение с базой данных установленно!");
-                        return true;
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                Messenger.ShowConnectionDbErrorMessage(exc);
+                connection.ConnectionString = GetConnectionString(DbSource.Provider);
+                connection.Open();
+
+                if (connection.State == ConnectionState.Open) return true;
+
                 return false;
             }
-            return false;
         }
 
         /// <summary>
-        /// Возвращает соединие с базаой данных.
+        /// Возвращает соединие с базой данных.
         /// </summary>
         /// <returns></returns>
         public DbConnection CreateConnection()

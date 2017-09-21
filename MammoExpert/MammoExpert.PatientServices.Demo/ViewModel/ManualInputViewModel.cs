@@ -17,10 +17,12 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     public class ManualInputViewModel : ViewModelBase
     {
         private Patient _patient;
+        private readonly INotificationActionMessenger _actionMessenger;
 
         public ManualInputViewModel()
         {
             base.DisplayName = Resources.ManualInputViewModel_DisplayName;
+            _actionMessenger = new NotificationActionMessenger();
             Patient = new Patient();
         }
 
@@ -48,7 +50,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void CreatePatient()
         {
-            Messenger.ShowPatientCreationMessage();
+            _actionMessenger.ShowPatientCreationMessage();
         }
     }
 }

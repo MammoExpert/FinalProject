@@ -18,22 +18,16 @@ namespace MammoExpert.PatientServices.Worklist
         /// </summary>
         /// <param name="worklistSource"></param>
         /// <returns></returns>
-        public static bool CheckConnection(WorklistSource worklistSource)
+        public bool CheckConnection(WorklistSource worklistSource)
         {
-            try
-            {
-                DicomClient client = new DicomClient();
-                client.AddRequest(new DicomCEchoRequest());
-                client.Send(worklistSource.Host, Int32.Parse(worklistSource.Port), 
-                            false, worklistSource.DisplayName, worklistSource.AETitle);
-                Messenger.ShowConnectionWorklistSuccess("Соединение с Dicom сервером установленно!");
-                return true;
-            }
-            catch(Exception exc)
-            {
-                Messenger.ShowConnectionWorklistErrorMessage(exc);
-                return false;
-            }
+            DicomClient client = new DicomClient();
+            client.AddRequest(new DicomCEchoRequest());
+            client.Send(worklistSource.Host, Int32.Parse(worklistSource.Port),
+                        false, worklistSource.DisplayName, worklistSource.AETitle);
+
+            if (client.IsSendRequired) return true;
+
+            return false;
         }
     }
 }

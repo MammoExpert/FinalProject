@@ -23,7 +23,7 @@ namespace MammoExpert.PatientServices.Sources
             source.Parameters["Driver"] = dbSource.Provider;
             source.Parameters["Port"] = dbSource.Port;
             source.Parameters["Ip"] = dbSource.Host;
-            source.Parameters["Name"] = dbSource.DataBase;
+            source.Name = dbSource.DataBase;
             source.Parameters["UserName"] = dbSource.UserId;
             source.Parameters["Password"] = dbSource.Password;
             return source;
@@ -50,8 +50,8 @@ namespace MammoExpert.PatientServices.Sources
         public static WorklistSource WorklistDeserialize(Source source)
         {
             var worklistSource = new WorklistSource();
-            worklistSource.DisplayName = source.Parameters["Header"];
-            worklistSource.AETitle = source.Parameters["AEHeader"];
+            worklistSource.DisplayName = source.Name;
+            worklistSource.AETitle = source.Parameters["Header"];
             worklistSource.Host = source.Parameters["Ip"];
             worklistSource.Port = source.Parameters["Port"];
             worklistSource.Timeout = Int32.Parse(source.Parameters["Timeout"]);
@@ -64,7 +64,7 @@ namespace MammoExpert.PatientServices.Sources
         public static Source WorklistSerialize(WorklistSource worklistSource)
         {
             var source = new Source(SourceTypeEnum.Worklist);
-            source.Parameters["Header"] = worklistSource.DisplayName;
+            source.Name = worklistSource.DisplayName;
             source.Parameters["AE Header"] = worklistSource.AETitle;
             source.Parameters["Ip"] = worklistSource.Host;
             source.Parameters["Port"] = worklistSource.Port;

@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,6 +44,8 @@
   <ItemGroup>
     <Compile Include="Exceptions\IncorrectSymbolException.cs" />
     <Compile Include="Exceptions\RequiredException.cs" />
+    <Compile Include="INotificationConnectionMessenger.cs" />
+    <Compile Include="INotificationActionMessenger.cs" />
     <Compile Include="IPatientRepository.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

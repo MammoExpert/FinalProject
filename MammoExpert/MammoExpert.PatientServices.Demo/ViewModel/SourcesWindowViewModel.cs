@@ -8,6 +8,8 @@ using System.Windows.Input;
 using MammoExpert.PatientServices.Infrastructure;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
+using System.Windows;
+using MammoExpert.PatientServices.Core;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -22,6 +24,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private ObservableCollection<Source> _sources;
         private Source _selectedSource;
         private SourceTypeOption _selectedType;
+        private readonly INotificationActionMessenger _actionMessenger;
 
         #endregion // Fields
 
@@ -30,6 +33,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public SourcesWindowViewModel()
         {
             base.DisplayName = Properties.Resources.SourcesWindowViewModel_DisplayName;
+            _actionMessenger = new NotificationActionMessenger();
             Sources = new ObservableCollection<Source>(SourceRepository.GetAll());
             SourceTypeOptions = _sourceTypeOptions ?? (_sourceTypeOptions = GetAllTypes());
         }
@@ -196,14 +200,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void DeleteSource()
         {
+            
             if (SelectedSource == null) return;
-            Messenger.ShowAskToDeleteMessage(SelectedSource.Name, delegate ()
+
+            MessageBoxResult result = 
+                _actionMessenger.ShowAskToDeleteMessage(SelectedSource.Name);
+            if (result == MessageBoxResult.Yes)
             {
                 var vm = FindWorkspace();
                 if (vm != null) WorkspaceRepository.Delete(vm);
                 SourceRepository.Delete(SelectedSource);
                 ChangeSourceList(SelectedSource.TypeEnum);
-            });
+            }
         }
 
         /// <summary>

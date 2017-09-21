@@ -33,14 +33,15 @@ namespace MammoExpert.PatientServices.Infrastructure
         /// </summary>
         /// <param name="itemName"></param>
         /// <param name="postConfirmAction"></param>
-        public static void ShowAskToDeleteMessage(string itemName, Action postConfirmAction)
+        public static MessageBoxResult ShowAskToDeleteMessage(string itemName)//, Action postConfirmAction)
         {
             var result = MessageBox.Show(
                 "Вы уверены, что хотите удалить " + itemName + "?",
                 "ВНИМАНИЕ!",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes) postConfirmAction();
+            return result;
+            //if (result == MessageBoxResult.Yes) postConfirmAction();
         }
 
         /// <summary>

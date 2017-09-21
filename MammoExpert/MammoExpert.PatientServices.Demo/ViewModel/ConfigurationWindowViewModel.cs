@@ -9,6 +9,8 @@ using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Worklist;
+using MammoExpert.PatientServices.Infrastructure;
+using MammoExpert.PatientServices.Core;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -22,6 +24,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private Source _source;
         private SourceTypeEnum _typeEnum;
         private List<string> _listProviders;
+        private readonly INotificationConnectionMessenger _connectionMessenger;
         private readonly DbConnectionHelper _configuration;
         private bool _isConnected;
         private readonly bool _isNew;
@@ -40,6 +43,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             Source = source;
             _configuration = new DbConnectionHelper();
             ListProviders = _configuration.GetListProviders();
+            _connectionMessenger = new NotificationConnectionMessenger();
         }
 
         #endregion // Constructor     
@@ -151,7 +155,20 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private void CheckDbConnection()
         {
             _configuration.DbSource = SourceSerializer.DbDeserialize(Source);
-            if (_configuration.GetStateConnection()) IsConnected = true;
+            try
+            {
+                if (_configuration.GetStateConnection())
+                {
+                    IsConnected = true;
+                    _connectionMessenger.ShowConnectionSuccess("Соединение с базой данных установленно!");
+                }
+            }
+            catch(Exception e)
+            {
+                IsConnected = false;
+                _connectionMessenger.ShowConnectionErrorMessage(e);
+            }
+            
         }
 
         /// <summary>
@@ -159,7 +176,21 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void CheckWorklistConnection()
         {
-            if (WorklistConnectionHelper.CheckConnection(SourceSerializer.WorklistDeserialize(Source))) IsConnected = true;
+            try
+            {
+                WorklistConnectionHelper connectionHelper = new WorklistConnectionHelper();
+                if (connectionHelper.CheckConnection(SourceSerializer.WorklistDeserialize(Source)))
+                {
+                    IsConnected = true;
+                    _connectionMessenger.ShowConnectionSuccess("Соединение с Dicom Worklist установленно!");
+                }
+            }
+            catch(Exception e)
+            {
+                IsConnected = false;
+                _connectionMessenger.ShowConnectionErrorMessage(e);
+            }
+            
         }
 
         #endregion // Private Methods

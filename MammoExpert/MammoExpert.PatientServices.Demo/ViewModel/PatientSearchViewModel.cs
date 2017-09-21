@@ -23,6 +23,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         private ObservableCollection<Patient> _patients;
         private static IPatientRepository _patientRepository;
+        private static INotificationConnectionMessenger _connectionMessenger;
         private Patient _selectedPatient;
         private string _searchString;
         public string SourceName;
@@ -36,6 +37,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             base.DisplayName = source.Name;
             SourceName = source.Name;
             Patients = GetData(source);
+            _connectionMessenger = new NotificationConnectionMessenger();
         }
 
         #endregion // Constructor
@@ -143,7 +145,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                     }
                     catch (Exception e)
                     {
-                        Messenger.ShowConnectionDbErrorMessage(e);
+                        _connectionMessenger.ShowConnectionErrorMessage(e);
                         return null;
                     }
                 }
@@ -157,7 +159,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
                     }
                     catch (Exception e)
                     {
-                        Messenger.ShowConnectionWorklistErrorMessage(e);
+                        _connectionMessenger.ShowConnectionErrorMessage(e);
                         return null;
                     }
                 }

@@ -8,7 +8,6 @@ namespace MammoExpert.PatientServices.PresenterCore
     {
         private readonly Action _action;
         private readonly Predicate<object> _canExecute;
-
         public ActionCommand(Action action)
             : this(action, null)
         {

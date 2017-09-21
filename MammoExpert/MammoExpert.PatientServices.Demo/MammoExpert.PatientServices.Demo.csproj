@@ -60,6 +60,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="NotificationActionMessenger.cs" />
+    <Compile Include="NotificationConnectionMessenger.cs" />
     <Compile Include="ViewFactory.cs" />
     <Compile Include="ViewModel\AboutProgrammWindowViewModel.cs" />
     <Compile Include="ViewModel\ConfigurationWindowViewModel.cs" />

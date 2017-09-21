@@ -52,8 +52,6 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private static List<string> GetModuls()
         {
-            var mammoExpertDb = typeof(PatientDbConnectionRepository);
-            var mammoExpertWorkList = typeof(PatientRepositoryDicom);
             var typeInterface = typeof(IPatientRepository);
 
             var assebleTypes = AppDomain.CurrentDomain.GetAssemblies()
