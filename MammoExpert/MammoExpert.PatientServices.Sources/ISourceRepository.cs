@@ -5,6 +5,7 @@ namespace MammoExpert.PatientServices.Sources
 {
     public interface ISourceRepository
     {
+        ObservableCollection<Source> SourceList { get; set; }
         void Add(Source newItem);
         void Delete(Source item);
         ObservableCollection<Source> GetAll();

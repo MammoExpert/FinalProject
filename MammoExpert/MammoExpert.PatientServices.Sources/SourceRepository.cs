@@ -11,7 +11,6 @@ namespace MammoExpert.PatientServices.Sources
     {
         #region Fields
 
-        public readonly ObservableCollection<Source> SourceList;
         private readonly JsonManager _fileManager;
 
         #endregion // Fields
@@ -25,6 +24,12 @@ namespace MammoExpert.PatientServices.Sources
         }
 
         #endregion // Constructor
+
+        #region Properties
+
+        public ObservableCollection<Source> SourceList { get; set; }
+
+        #endregion // Properties
 
         #region Public methods
 

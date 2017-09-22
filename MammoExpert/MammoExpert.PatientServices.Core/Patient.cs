@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using MammoExpert.PatientServices.Core.Exceptions;
 
 namespace MammoExpert.PatientServices.Core
 {
@@ -158,7 +157,7 @@ namespace MammoExpert.PatientServices.Core
                         break;
                 }
             }
-            catch (ApplicationException ex)
+            catch (Exception ex)
             {
                 error = ex.Message;
             }
@@ -172,10 +171,10 @@ namespace MammoExpert.PatientServices.Core
         internal void ValidateNameValue(string fieldValue)
         {
             if (string.IsNullOrWhiteSpace(fieldValue) || string.IsNullOrEmpty(fieldValue))
-                throw new RequiredException("Обязательно для заполнения:");
+                throw new Exception("Обязательно для заполнения:");
             foreach (var c in fieldValue)
                 if (char.IsNumber(c) || char.IsPunctuation(c) || char.IsSymbol(c))
-                    throw new IncorrectSymbolException("Поле не должно содержать цифр, знаков пунктуации или символов:");
+                    throw new Exception("Поле не должно содержать цифр, знаков пунктуации или символов:");
         }
 
         /// <summary>
@@ -184,7 +183,7 @@ namespace MammoExpert.PatientServices.Core
         internal void ValidateBirthDate()
         {
             if (BirthDate == default(DateTime))
-                throw new DateAbsentException("Выберите дату:");
+                throw new Exception("Выберите дату:");
         }
 
         /// <summary>
@@ -197,16 +196,16 @@ namespace MammoExpert.PatientServices.Core
                 foreach (var c in Telephone)
                 {
                     if (char.IsLetter(c))
-                        throw new HasLetterException("Поле не должно содержать букв:");
+                        throw new Exception("Поле не должно содержать букв:");
                     if (char.IsPunctuation(c))
                     {
                         if (c != '-' && c != '(' && c != ')')
-                            throw new ForbiddenPunctuationException("Поле не должно содержать знаков препинания, кроме '-' и скобок:");
+                            throw new Exception("Поле не должно содержать знаков препинания, кроме '-' и скобок:");
                     }
                     if (char.IsSymbol(c))
                     {
                         if (c != '+')
-                            throw new ForbiddenSymbolException("Поле не должно содержать символы, кроме '+':");
+                            throw new Exception("Поле не должно содержать символы, кроме '+':");
                     }
                 }
             }
