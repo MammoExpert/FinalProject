@@ -15,7 +15,7 @@ namespace MammoExpert.PatientServices.Demo
     /// <summary>
     /// Статический класс, создает представления с их моделями представления
     /// </summary>
-    public class ViewFactory
+    public class ViewFactory : IViewFactory
     {
         #region Public Methods
 
@@ -88,16 +88,6 @@ namespace MammoExpert.PatientServices.Demo
             view.DataContext = patient;
             view.ShowDialog();
         }
-
-
-        //private void ShowDialog(FrameworkElement body, ViewModelBase vm)
-        //{
-        //    if(body == null || vm == null)
-        //        throw new NullReferenceException();
-        //    body.DataContext = vm;
-        //    (body as Window)?.ShowDialog();
-        //}
-
 
         #endregion // Public Methods
     }
