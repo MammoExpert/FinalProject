@@ -17,7 +17,7 @@ namespace MammoExpert.PatientServices.DB
         #region Fields
 
         private readonly DbConnectionHelper _configuration;
-        private readonly List<Patient> _patients;
+        private readonly List<Patient> _patients = new List<Patient>();
 
         #endregion //Fields
 
@@ -26,7 +26,7 @@ namespace MammoExpert.PatientServices.DB
         public PatientDbConnectionRepository(DbConnectionHelper configuration)
         {
             _configuration = configuration;
-            _patients = new List<Patient>();
+            _patients = GetAllPatients().ToList();
         }
 
         #endregion //Constructor

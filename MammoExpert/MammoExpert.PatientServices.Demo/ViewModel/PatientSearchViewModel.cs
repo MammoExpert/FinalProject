@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MammoExpert.PatientServices.Core;
 using MammoExpert.PatientServices.DB;
-using MammoExpert.PatientServices.Infrastructure;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Worklist;
+using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
@@ -26,19 +26,16 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private static INotificationConnectionMessenger _connectionMessenger;
         private Patient _selectedPatient;
         private string _searchString;
-        public string SourceName;
-        private readonly MainWindowViewModel _parent;
+        private Source _source;
 
         #endregion // Fields
 
         #region Constructor
 
-        public PatientSearchViewModel(ViewModelBase parent, Source source)
+        public PatientSearchViewModel(Source source)
         {
             base.DisplayName = source.Name;
-            _parent = parent as MainWindowViewModel;
-            SourceName = source.Name;
-            Patients = GetData(source);
+            _source = source;
             _connectionMessenger = new NotificationConnectionMessenger();
         }
 
@@ -51,7 +48,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public ObservableCollection<Patient> Patients
         {
-            get { return _patients; }
+            get
+            {
+                if(_patients == null) return new ObservableCollection<Patient>();
+                return _patients;
+            }
             set
             {
                 if (_patients == value) return;
@@ -94,9 +95,9 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
 
         public ICommand ChoosePatientCommand => new ActionCommand(OpenPatientDitailsView, param => param != null);
 
-        public ICommand CancelCommand => new ActionCommand(CloseCurrentWorkspace);
+        //public ICommand CancelCommand => new ActionCommand(CloseCurrentWorkspace);
 
-        public ICommand ClearSearchAreaCommand => new ActionCommand(() => SearchString = string.Empty);
+        public ICommand ClearSearchAreaCommand => new ActionCommand(ClearSearchArea);
 
         public ICommand FindPatientCammand => new ActionCommand(FindPatient);
 
@@ -105,11 +106,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         #region Private Methods
 
         /// <summary>
-        /// Закрывает текущую рабочую область
+        /// Очищает строку поиска
         /// </summary>
-        private void CloseCurrentWorkspace()
+        private void ClearSearchArea()
         {
-            _parent.WorkspaceRepository.Delete(this);
+            SearchString = string.Empty;
         }
 
         /// <summary>
@@ -117,57 +118,53 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         private void OpenPatientDitailsView()
         {
-            ViewFactory.CreatePatientDitailsView(this);
-        }
-
-        /// <summary>
-        /// Осуществляет поиск поциентов согласно строке поиска
-        /// </summary>
-        private void FindPatient()
-        {
-            var p = _patientRepository.FindPatientsByValue(SearchString);
-            Patients = new ObservableCollection<Patient>(p);
+            App.Factory.CreatePatientDitailsView(SelectedPatient);
         }
 
         /// <summary>
         /// Возвращает коллекцию поциентов из текущего источника
         /// </summary>
-        private static ObservableCollection<Patient> GetData(Source source)
+        private void FindPatient()
         {
-            switch (source.TypeEnum)
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                case SourceTypeEnum.DataBase:
+                switch (_source.TypeEnum)
                 {
-                    try
+                    case SourceTypeEnum.DataBase:
                     {
-                        var configuration = new DbConnectionHelper(SourceSerializer.DbDeserialize(source));
-                        _patientRepository = new PatientDbConnectionRepository(configuration);
-                        var patients = _patientRepository.GetAllPatients().ToList();
-                        return new ObservableCollection<Patient>(patients);
+                        try
+                        {
+                            var configuration = new DbConnectionHelper(SourceSerializer.DbDeserialize(_source));
+                            _patientRepository = new PatientDbConnectionRepository(configuration);
+                            var patients = _patientRepository.FindPatientsByValue(SearchString);
+                            Patients = new ObservableCollection<Patient>(patients);
+                        }
+                        catch (Exception e)
+                        {
+                            _connectionMessenger.ShowConnectionErrorMessage(e);
+                            ClearSearchArea();
+                        }
                     }
-                    catch (Exception e)
+                        return;
+                    case SourceTypeEnum.Worklist:
                     {
-                        _connectionMessenger.ShowConnectionErrorMessage(e);
-                        return null;
+                        try
+                        {
+                            _patientRepository = new PatientRepositoryDicom(SourceSerializer.WorklistDeserialize(_source));
+                            var patients = _patientRepository.FindPatientsByValue(SearchString);
+                            Patients = new ObservableCollection<Patient>(patients);
+                        }
+                        catch (Exception e)
+                        {
+                            _connectionMessenger.ShowConnectionErrorMessage(e);
+                            ClearSearchArea();
+                        }
                     }
+                        return;
                 }
-                case SourceTypeEnum.Worklist:
-                {
-                    try
-                    {
-                        _patientRepository = new PatientRepositoryDicom(SourceSerializer.WorklistDeserialize(source));
-                        var patients = _patientRepository.GetAllPatients().ToList();
-                        return new ObservableCollection<Patient>(patients);
-                    }
-                    catch (Exception e)
-                    {
-                        _connectionMessenger.ShowConnectionErrorMessage(e);
-                        return null;
-                    }
-                }
+            }
 
-                default: return null;
-            }    
+            Patients.Clear();
         }
 
         #endregion // Private Methods

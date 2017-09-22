@@ -9,8 +9,7 @@ namespace MammoExpert.PatientServices.Core
 {
     public interface INotificationActionMessenger
     {
-        MessageBoxResult ShowAskToDeleteMessage(string itemName);
-        void ShowPatientCreationMessage();
-        void ShowNotFindFileMessage(Exception ex, string filePath);
+        void ShowAskToDeleteMessage(string itemName, Action postConfirmAction);
+        void ShowFileErrorMessage(Exception ex, string filePath);
     }
 }

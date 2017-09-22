@@ -9,43 +9,49 @@ using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
 using MammoExpert.PatientServices.Sources;
 using MammoExpert.PatientServices.Worklist;
-using MammoExpert.PatientServices.Infrastructure;
 using MammoExpert.PatientServices.Core;
+using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Demo.ViewModel
 {
     /// <summary>
-    /// Модель представления окна и элементов управления конфигурацией соединения
+    /// Модель представления окна для создания элементов управления конфигурацией соединения
     /// </summary>
     public class ConfigurationWindowViewModel : ViewModelBase
     {
         #region Fields
 
         private Source _source;
-        private SourceTypeEnum _typeEnum;
         private List<string> _listProviders;
         private readonly INotificationConnectionMessenger _connectionMessenger;
         private readonly DbConnectionHelper _configuration;
         private bool _isConnected;
-        private readonly bool _isNew;
-        private readonly SourcesWindowViewModel _parent;
+        private Source _previousSourceData;
 
         #endregion // Fields
 
         #region Constructor
 
-        public ConfigurationWindowViewModel(ViewModelBase vm, Source source, bool isNew)
+        public ConfigurationWindowViewModel(SourceTypeEnum type)
         {
             base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
-            _parent = vm as SourcesWindowViewModel;
-            _isNew = isNew;
-            TypeEnum = source.TypeEnum;
-            Source = source;
+            _source = new Source(type);
             _configuration = new DbConnectionHelper();
             ListProviders = _configuration.GetListProviders();
             _connectionMessenger = new NotificationConnectionMessenger();
+            CreateCommand = new ActionCommand(Create);
         }
 
+        public ConfigurationWindowViewModel(Source source)
+        {
+            base.DisplayName = Resources.ConfigurationWindowViewModel_DisplayName;
+            _previousSourceData = source;
+            _source = new Source(source.TypeEnum) {Description = source.Description, Name = source.Name, Parameters = source.Parameters};
+            _configuration = new DbConnectionHelper();
+            ListProviders = _configuration.GetListProviders();
+            _connectionMessenger = new NotificationConnectionMessenger();
+            CreateCommand = new ActionCommand(Update);
+        }
         #endregion // Constructor     
 
         #region Properties
@@ -58,8 +64,11 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             get { return _source; }
             set
             {
-                _source = value;
+                if (_source != value)
+                {
+                 _source = value;
                 RaisePropertyChanged("Source");
+                }
             }
         }
 
@@ -82,15 +91,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// <remarks>
         /// По этому свойству определяется необходимый UserControl
         /// </remarks>
-        public SourceTypeEnum TypeEnum
-        {
-            get { return _typeEnum; }
-            set
-            {
-                _typeEnum = value;
-                RaisePropertyChanged("TypeEnum");
-            }
-        }
+        public SourceTypeEnum TypeEnum => Source.TypeEnum;
 
         /// <summary>
         /// Содержит список провайдеров
@@ -113,7 +114,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         public ICommand CancelCommand => new ActionCommand(Cancel);
 
         // команда подтверждения на создание или редактирования источника
-        public ICommand CreateCommand => new ActionCommand(CallCreateOrUpdateEvent, param => IsConnected == true);
+        public ICommand CreateCommand { get; protected set; }
 
         // команда проверки соедиения с базой данных
         public ICommand CheckDbConnectionCommand => new ActionCommand(CheckDbConnection);
@@ -134,18 +135,20 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         }
 
         /// <summary>
-        /// Вызывает событие на редактирование или создание источника
+        /// Cоздает новый источник
         /// </summary>
-        private void CallCreateOrUpdateEvent()
+        private void Create()
         {
-            if (_isNew)
-            {
-                _parent.Create(Source);
-            }
-            else
-            {
-                _parent.Update(Source);
-            }
+            App.SourceRepository.Add(Source);
+            CloseAction();
+        }
+
+        /// <summary>
+        /// Вносит изменения в выбранный источник
+        /// </summary>
+        private void Update()
+        {
+            App.SourceRepository.Update(Source, _previousSourceData);
             CloseAction();
         }
 
@@ -167,8 +170,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
             {
                 IsConnected = false;
                 _connectionMessenger.ShowConnectionErrorMessage(e);
-            }
-            
+            }          
         }
 
         /// <summary>
@@ -178,19 +180,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         {
             try
             {
-                WorklistConnectionHelper connectionHelper = new WorklistConnectionHelper();
+                var connectionHelper = new WorklistConnectionHelper();
                 if (connectionHelper.CheckConnection(SourceSerializer.WorklistDeserialize(Source)))
                 {
                     IsConnected = true;
                     _connectionMessenger.ShowConnectionSuccess("Соединение с Dicom Worklist установленно!");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 IsConnected = false;
                 _connectionMessenger.ShowConnectionErrorMessage(e);
             }
-            
         }
 
         #endregion // Private Methods

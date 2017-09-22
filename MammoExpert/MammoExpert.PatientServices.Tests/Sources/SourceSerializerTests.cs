@@ -43,7 +43,6 @@ namespace MammoExpert.PatientServices.Tests.Sources
             };
 
              s_db = new Source(SourceTypeEnum.DataBase);
-            s_db.Id = 12;
             s_db.Name = _name;
             s_db.Parameters["Ip"] = _host;
             s_db.Parameters["Port"] = _port;
@@ -62,7 +61,6 @@ namespace MammoExpert.PatientServices.Tests.Sources
             };
 
             s_wl = new Source(SourceTypeEnum.Worklist);
-            s_wl.Id = 12;
             s_wl.Name = _name;
             s_wl.Parameters["Ip"] = _host;
             s_wl.Parameters["Port"] = _port;

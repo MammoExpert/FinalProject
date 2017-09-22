@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace MammoExpert.PatientServices.Sources
 {
-    public interface IRepository<T> where T : class
+    public interface ISourceRepository
     {
-        void Add(T newItem);
-        void Delete(T item);
-        IEnumerable<T> GetAll();
-        void Update(T item);
-        IEnumerable<T> GetByType(SourceTypeEnum typeEnum);
+        void Add(Source newItem);
+        void Delete(Source item);
+        ObservableCollection<Source> GetAll();
+        void Update(Source newSource, Source oldSource);
     }
 }

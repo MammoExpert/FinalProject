@@ -14,7 +14,7 @@
     mc:Ignorable="d">
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
-        <Grid Margin="10" DataContext="{Binding Path=SelectedPatient}">
+        <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -103,7 +103,7 @@
                 Grid.Row="4"
                 Grid.Column="1"
                 Margin="2"
-                Text="{Binding Path=Birthday}" />
+                Text="{Binding Path=BirthDate}" />
 
             <TextBlock
                 Grid.Row="5"

@@ -42,7 +42,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotificationActionMessenger.cs" />
+    <Compile Include="NotificationConnectionMessenger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MammoExpert.PatientServices.Core\MammoExpert.PatientServices.Core.csproj">
+      <Project>{b9ccd920-4b2a-44c2-ac74-898535a900c9}</Project>
+      <Name>MammoExpert.PatientServices.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

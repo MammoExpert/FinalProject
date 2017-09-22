@@ -1,5 +1,4 @@
 ﻿using Dicom.Network;
-using MammoExpert.PatientServices.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -49,8 +49,8 @@
             ColumnWidth="*"
             GridLinesVisibility="None"
             IsReadOnly="True"
-            SelectedItem="{Binding Path=SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
             ItemsSource="{Binding Path=Patients}"
+            SelectedItem="{Binding Path=SelectedPatient, UpdateSourceTrigger=PropertyChanged}"
             SelectionMode="Single"
             SelectionUnit="FullRow">
             <DataGrid.Columns>

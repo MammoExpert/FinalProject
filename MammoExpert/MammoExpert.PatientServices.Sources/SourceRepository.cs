@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace MammoExpert.PatientServices.Sources
@@ -6,11 +7,11 @@ namespace MammoExpert.PatientServices.Sources
     /// <summary>
     /// Класс для создания репозитория источников
     /// </summary>
-    public class SourceRepository : IRepository<Source>
+    public class SourceRepository : ISourceRepository
     {
         #region Fields
 
-        private readonly List<Source> _sourceList;
+        public readonly ObservableCollection<Source> SourceList;
         private readonly JsonManager _fileManager;
 
         #endregion // Fields
@@ -20,7 +21,7 @@ namespace MammoExpert.PatientServices.Sources
         public SourceRepository(string filePath)
         {
             _fileManager = new JsonManager(filePath);
-            _sourceList = (List<Source>) _fileManager.Load();
+            SourceList = new ObservableCollection<Source>(_fileManager.Load());
         }
 
         #endregion // Constructor
@@ -30,9 +31,9 @@ namespace MammoExpert.PatientServices.Sources
         /// <summary>
         /// Возвращает список имеющихся источников
         /// </summary>
-        public IEnumerable<Source> GetAll()
+        public ObservableCollection<Source> GetAll()
         {
-            return _sourceList;
+            return SourceList;
         }
 
         /// <summary>
@@ -40,10 +41,10 @@ namespace MammoExpert.PatientServices.Sources
         /// </summary>       
         public void Add(Source newSource)
         {
-            if (!_sourceList.Contains(newSource))
+            if (!SourceList.Contains(newSource))
             {
-                _sourceList.Add(newSource);
-                _fileManager.RewriteFile();
+                SourceList.Add(newSource);
+                _fileManager.RewriteFile(SourceList);
             }
         }
 
@@ -52,35 +53,27 @@ namespace MammoExpert.PatientServices.Sources
         /// </summary>
         public void Delete(Source source)
         {
-            if (_sourceList.Contains(source) && _sourceList != null)
+            if (SourceList.Contains(source) && SourceList != null)
             {
-                _sourceList.Remove(source);
-                _fileManager.RewriteFile();
+                SourceList.Remove(source);
+                _fileManager.RewriteFile(SourceList);
             }
         }
 
         /// <summary>
         /// Обновляет данные источника
         /// </summary>
-        public void Update(Source source)
+        public void Update(Source newSource, Source oldSource)
         {
-            for (var i = 0; i < _sourceList.Count; i++)
+            for (var i = 0; i < SourceList.Count; i++)
             {
-                if (_sourceList[i].Id == source.Id)
+                if (SourceList[i] == oldSource)
                 {
-                    _sourceList[i] = source;
-                    _fileManager.RewriteFile();
+                    SourceList[i] = newSource;
+                    _fileManager.RewriteFile(SourceList);
                     return;
                 }
             }
-        }
-
-        /// <summary>
-        /// Возвращает список источников согласно переданному типу
-        /// </summary>
-        public IEnumerable<Source> GetByType(SourceTypeEnum typeEnum)
-        {
-            return _sourceList?.Where(t => t.TypeEnum == typeEnum);
         }
 
         #endregion // Public methods

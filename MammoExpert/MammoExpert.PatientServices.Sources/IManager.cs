@@ -2,9 +2,9 @@
 
 namespace MammoExpert.PatientServices.Sources
 {
-    public interface IManager<T> where T: class
+    public interface IManager
     {
-        void RewriteFile();
-        IEnumerable<T> Load();
+        void RewriteFile(IEnumerable<Source> collection);
+        IEnumerable<Source> Load();
     }
 }

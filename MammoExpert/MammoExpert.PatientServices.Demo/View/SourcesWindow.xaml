@@ -46,13 +46,7 @@
             Margin="2"
             DisplayMemberPath="Description"
             ItemsSource="{Binding Path=SourceTypeOptions, Mode=OneTime}"
-            SelectedValue="{Binding SelectedType}">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectionChanged">
-                    <i:InvokeCommandAction Command="{Binding ChangeSourceListByType}" CommandParameter="{Binding ElementName=CmbSourceType, Path=SelectedItem}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </ComboBox>
+            SelectedValue="{Binding SelectedType}" />
 
         <DataGrid
             x:Name="DgSources"
@@ -62,11 +56,11 @@
             presenterCore:DataGridBehavior.DisplayRowNumber="True"
             ItemsSource="{Binding Path=Sources}"
             SelectedItem="{Binding SelectedSource}">
-            <i:Interaction.Triggers>
+            <!--<i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <i:InvokeCommandAction Command="{Binding AddWorkspaceCommand}" CommandParameter="{Binding ElementName=DgSources, Path=SelectedItem}" />
                 </i:EventTrigger>
-            </i:Interaction.Triggers>
+            </i:Interaction.Triggers>-->
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=TypeEnum}" Header="Тип" />
                 <DataGridTextColumn

@@ -41,7 +41,6 @@ namespace MammoExpert.PatientServices.Sources
         public Source(SourceTypeEnum typeEnum)
         {
             TypeEnum = typeEnum;
-            Id = new Random().Next(0, 999);
             Description = string.Empty;
             Name = string.Empty;
             Parameters = ParametersDictionary[typeEnum];
@@ -50,11 +49,6 @@ namespace MammoExpert.PatientServices.Sources
         #endregion // Constructor
 
         #region Properties
-
-        /// <summary>
-        /// Получает или задает значение Id источника
-        /// </summary>
-        public int Id { get; set; }
         /// <summary>
         /// Получает или задает значение типа источника
         /// </summary>
@@ -78,8 +72,7 @@ namespace MammoExpert.PatientServices.Sources
         {
             if (TypeEnum == SourceTypeEnum.DataBase && other.TypeEnum == SourceTypeEnum.DataBase)
             {
-                return Id == other.Id
-                       && Description == other.Description
+                return Description == other.Description
                        && Name == other.Name
                        && Parameters["Driver"] == other.Parameters["Driver"]
                        && Parameters["Port"] == other.Parameters["Port"]
@@ -90,8 +83,7 @@ namespace MammoExpert.PatientServices.Sources
 
             if (TypeEnum == SourceTypeEnum.Worklist && other.TypeEnum == SourceTypeEnum.Worklist)
             {
-                return Id == other.Id
-                       && Description == other.Description
+                return Description == other.Description
                        && Name == other.Name
                        && Parameters["Header"] == other.Parameters["Header"]
                        && Parameters["Port"] == other.Parameters["Port"]

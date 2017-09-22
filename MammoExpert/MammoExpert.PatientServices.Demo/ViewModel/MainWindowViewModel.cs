@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Input;
 using MammoExpert.PatientServices.Demo.Properties;
 using MammoExpert.PatientServices.PresenterCore;
@@ -18,22 +20,18 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
     public class MainWindowViewModel : ViewModelBase
     {
         #region Fields
-
-        internal IRepository<Source> SourceRepository;
+        
         private static ObservableCollection<ViewModelBase> _workspaces;
-        internal WorkspaceRepository WorkspaceRepository;
 
         #endregion // Fields
 
         #region Constructors
 
-        public MainWindowViewModel() : this(null) { }
-
-        public MainWindowViewModel(string path)
+        public MainWindowViewModel()
         {
             base.DisplayName = Resources.MainWindowViewModel_DisplayName;
-            SourceRepository = new SourceRepository(path);
-            WorkspaceRepository = new WorkspaceRepository();
+            _workspaces = ConvertSourcesToViewModel(App.SourceRepository.GetAll());
+            App.SourceRepository.SourceList.CollectionChanged += OnWorkspacesChanged;
         }
 
         #endregion // Constructors
@@ -45,25 +43,14 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public ObservableCollection<ViewModelBase> Workspaces
         {
-            get
-            {
-                if (_workspaces == null)
-                {
-                    _workspaces = WorkspaceRepository.GetAll() as ObservableCollection<ViewModelBase>;
-                    RaisePropertyChanged("Workspaces");
-                    _workspaces.CollectionChanged += OnWorkspacesChanged;
-                }
-                return _workspaces;
-            }
+            get { return _workspaces; }
             set
             {
                 if (_workspaces != value)
                 {
                     _workspaces = value;
                     RaisePropertyChanged("Workspaces");
-                    _workspaces.CollectionChanged += OnWorkspacesChanged;
                 }
-
             }
         }
 
@@ -76,7 +63,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public ICommand OpenAboutProgrammWindowCommand => new ActionCommand(() =>
         {
-            ViewFactory.CreateAboutProgrammView();
+            App.Factory.CreateAboutProgrammView();
         });
 
         /// <summary>
@@ -84,7 +71,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         /// </summary>
         public ICommand OpenSourcesWindowCommand => new ActionCommand(() =>
         {
-            ViewFactory.CreateSourcesView(this);
+            App.Factory.CreateSourcesView();
         });
 
         #endregion // Commands
@@ -92,26 +79,68 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         #region Private Methods
 
         /// <summary>
-        /// При изменении количества рабочих областей подписывается (отписывается) на событие RequestClose
+        /// Обновляет список рабочих областей
         /// </summary>
         private void OnWorkspacesChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null && e.NewItems.Count != 0)
-                foreach (ViewModelBase workspace in e.NewItems)
-                    workspace.RequestClose += OnWorkspaceRequestClose;
+                foreach (Source source in e.NewItems)
+                {
+                    var vs = new PatientSearchViewModel(source);
+                    Workspaces.Add(vs);
+                    SetActiveWorkspace(vs);
+                }
 
             if (e.OldItems != null && e.OldItems.Count != 0)
-                foreach (ViewModelBase workspace in e.OldItems)
-                    workspace.RequestClose -= OnWorkspaceRequestClose;
+                foreach (Source source in e.OldItems)
+                    Workspaces.Remove(FindWorkspace(source));
         }
 
         /// <summary>
-        /// Закрывает рабочую область
+        /// При создании новой рабочей области делает ее активной
         /// </summary>
-        private void OnWorkspaceRequestClose(object sender, EventArgs e)
+        private void SetActiveWorkspace(ViewModelBase workspace)
         {
-            var workspace = sender as ViewModelBase;
-            Workspaces.Remove(workspace);
+            foreach (var item in Workspaces)
+            {
+                if (item.DisplayName != workspace.DisplayName) continue;
+
+                var collectionView = CollectionViewSource.GetDefaultView(Workspaces);
+                if (collectionView != null)
+                    collectionView.MoveCurrentTo(item);
+            }
+        }
+
+        /// <summary>
+        /// Находит среди списка открытых рабочих областей ту, которая относитчя к выбранному источнику
+        /// </summary>
+        private ViewModelBase FindWorkspace(Source source)
+        {
+            foreach (var item in Workspaces)
+            {
+                if (item.GetType() == typeof(PatientSearchViewModel))
+                {
+                    if (item.DisplayName == source.Name)
+                    {
+                        if (Workspaces.Contains(item)) return item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Создает коллелкцию рабочих областей по списку источников
+        /// </summary>
+        private ObservableCollection<ViewModelBase> ConvertSourcesToViewModel(IEnumerable<Source> collection)
+        {
+            var result = new ObservableCollection<ViewModelBase>();
+            result.Add(new ManualInputViewModel());
+            foreach (var source in collection)
+            {
+                result.Add(new PatientSearchViewModel(source));
+            }
+            return result;
         }
 
         #endregion // Private Methods

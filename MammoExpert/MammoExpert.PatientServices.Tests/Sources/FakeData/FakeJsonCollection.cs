@@ -15,7 +15,6 @@ namespace MammoExpert.PatientServices.Tests.Sources.FakeData
             Collection.Add(new Source(SourceTypeEnum.DataBase)
             {
                 Description = "Desc",
-                Id = 20,
                 Name = "Name",
                 Parameters = new Dictionary<string, string>()
                 {
@@ -30,7 +29,6 @@ namespace MammoExpert.PatientServices.Tests.Sources.FakeData
             Collection.Add(new Source(SourceTypeEnum.Worklist)
             {
                 Description = "Desc",
-                Id = 12,
                 Name = "Name",
                 Parameters = new Dictionary<string, string>()
                 {
