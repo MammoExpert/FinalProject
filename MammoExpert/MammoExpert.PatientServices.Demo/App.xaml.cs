@@ -21,7 +21,7 @@ namespace MammoExpert.PatientServices.Demo
     {
         private const string SourceFilePath = "../../Data/all_sources.json";
 
-        public static SourceRepository SourceRepository = new SourceRepository(SourceFilePath);
+        public static ISourceRepository SourceRepository = new SourceRepository(SourceFilePath);
         public static ViewFactory Factory = new ViewFactory();
 
         protected override void OnStartup(StartupEventArgs e)
