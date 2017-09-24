@@ -26,7 +26,7 @@ namespace MammoExpert.PatientServices.Demo.ViewModel
         private readonly INotificationConnectionMessenger _connectionMessenger;
         private readonly DbConnectionHelper _configuration;
         private bool _isConnected;
-        private Source _previousSourceData;
+        private readonly Source _previousSourceData;
 
         #endregion // Fields
 

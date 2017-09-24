@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,15 +31,15 @@ namespace MammoExpert.PatientServices.Demo.View
     /// <summary>
     /// Преобразует объект типа <see cref="SourceTypeEnum"/> в соответствующее ему представление
     /// </summary>
-    public class ContentConverter : IMultiValueConverter
+    public class ContentConverter : IValueConverter
     {
         #region IMultiValueConverter Members
 
-        public object Convert(object[] values, Type targetType, object parameter,
+        public object Convert(object values, Type targetType, object parameter,
             System.Globalization.CultureInfo culture)
         {
             SourceTypeEnum option;
-            Enum.TryParse(values[0].ToString(), out option);
+            Enum.TryParse(values.ToString(), out option);
             switch (option)
             {
                 case SourceTypeEnum.DataBase:
@@ -49,7 +50,7 @@ namespace MammoExpert.PatientServices.Demo.View
             return null;
         }
 
-        public object[] ConvertBack(object value, Type[] targetTypes, object parameter,
+        public object ConvertBack(object value, Type targetTypes, object parameter,
             System.Globalization.CultureInfo culture)
         {
             throw new NotImplementedException();

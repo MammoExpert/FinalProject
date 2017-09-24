@@ -21,7 +21,6 @@ namespace MammoExpert.PatientServices.Tests.Sources
         private string _name = "Name";
         private string _host = "127.192.104.1";
         private string _port = "8080";
-        private int _id = 12;
         private string _password = "123";
         private string _provider = "Provider";
         private string _userId = "User";
@@ -33,7 +32,6 @@ namespace MammoExpert.PatientServices.Tests.Sources
         {
             db = new DbSource()
             {
-                Id = 12,
                 DataBase = _name,
                 Host = _host,
                 Password = _password,
@@ -52,7 +50,6 @@ namespace MammoExpert.PatientServices.Tests.Sources
 
              wl = new WorklistSource()
             {
-                Id = _id,
                 Host = _host,
                 Port = _port,
                 AETitle = _title,

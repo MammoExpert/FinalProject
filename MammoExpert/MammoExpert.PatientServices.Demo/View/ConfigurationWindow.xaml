@@ -27,12 +27,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ContentControl Grid.Row="0" Grid.Column="0">
-            <ContentControl.Content>
-                <MultiBinding Converter="{StaticResource Converter}">
-                    <Binding Path="TypeEnum" />
-                </MultiBinding>
-            </ContentControl.Content>
-        </ContentControl>
+        <ContentControl
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="{Binding Path=TypeEnum, Converter={StaticResource Converter}}" />
     </Grid>
 </Window>

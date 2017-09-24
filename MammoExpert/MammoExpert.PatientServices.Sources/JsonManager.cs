@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using MammoExpert.PatientServices.Infrastructure;
 
 namespace MammoExpert.PatientServices.Sources
 {
@@ -18,6 +19,7 @@ namespace MammoExpert.PatientServices.Sources
 
         private string _jsonString;
         private readonly string _path;
+        private NotificationActionMessenger _messenger;
 
         #endregion // Fields
 
@@ -26,6 +28,7 @@ namespace MammoExpert.PatientServices.Sources
         public JsonManager(string path)
         {
             _path = path;
+            _messenger = new NotificationActionMessenger();
         }
 
         #endregion // Constructor
@@ -43,7 +46,7 @@ namespace MammoExpert.PatientServices.Sources
             }
             catch (Exception ex)
             {
-                //Messenger.ShowFileMessage(ex, _path);
+                _messenger.ShowFileErrorMessage(ex, _path);
             }
             var result = JsonConvert.DeserializeObject<List<Source>>(_jsonString);
             return result ?? new List<Source>().AsEnumerable();

@@ -37,7 +37,7 @@ namespace MammoExpert.PatientServices.Tests.Core
         {
             var patient = new Patient();
             patient.BirthDate = Convert.ToDateTime(default(DateTime));
-            Assert.Throws(typeof(DateAbsentException), () => patient.ValidateBirthDate());
+            Assert.Throws(typeof(Exception), () => patient.ValidateBirthDate());
         }
 
         [Test]
@@ -49,29 +49,13 @@ namespace MammoExpert.PatientServices.Tests.Core
         }
 
         [Test]
-        public void Patient_Telephone_ValidateForbiddenSymbol_Incorrect()
-        {
-            var patient = new Patient();
-            patient.Telephone = "123~";
-            Assert.Throws(typeof(ForbiddenSymbolException), () => patient.ValidateTelephone());
-        }
-
-        [Test]
-        public void Patient_Telephone_ValidateForbiddenPunctuation_Incorrect()
-        {
-            var patient = new Patient();
-            patient.Telephone = "123#";
-            Assert.Throws(typeof(ForbiddenPunctuationException), () => patient.ValidateTelephone());
-        }
-
-        [Test]
-        public void Patient_Telephone_ValidateHasLetter_Incorrect(
-            [Values("123j", "123й")] string value
-            )
+        public void Patient_Telephone_ValidateIncorrectValue_Incorrect(
+            [Values("123~", "123#", "123j", "123й")] string value
+        )
         {
             var patient = new Patient();
             patient.Telephone = value;
-            Assert.Throws(typeof(HasLetterException), () => patient.ValidateTelephone());
+            Assert.Throws(typeof(Exception), () => patient.ValidateTelephone());
         }
 
         [Test]

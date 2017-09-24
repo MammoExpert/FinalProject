@@ -12,10 +12,6 @@ namespace MammoExpert.PatientServices.Worklist
     public class WorklistSource : IEquatable<WorklistSource>
     {
         /// <summary>
-        /// Получает или задает Id источника
-        /// </summary>
-        public int Id { get; set; }
-        /// <summary>
         /// Получает или задает значение отображаемому имени
         /// </summary>
         public string DisplayName { get; set; }
@@ -42,8 +38,7 @@ namespace MammoExpert.PatientServices.Worklist
 
         public bool Equals(WorklistSource other)
         {
-            return Id == other.Id
-                   && Port == other.Port
+            return Port == other.Port
                    && Host == other.Host
                    && DisplayName == other.DisplayName
                    && Timeout == other.Timeout

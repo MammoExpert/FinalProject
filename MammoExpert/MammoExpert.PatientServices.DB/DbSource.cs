@@ -13,11 +13,6 @@ namespace MammoExpert.PatientServices.DB
     {
         #region Proreties
         /// <summary>
-        /// Получает или задает Id источника.
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
         /// Получает или задает описание провайдера.
         /// </summary>
         public string Provider { get; set; }
@@ -51,8 +46,7 @@ namespace MammoExpert.PatientServices.DB
 
         public bool Equals(DbSource other)
         {
-            return Id == other.Id
-                   && Provider == other.Provider
+            return Provider == other.Provider
                    && Password == other.Password
                    && Port == other.Port
                    && Host == other.Host
