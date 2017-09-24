@@ -24,6 +24,10 @@ namespace MammoExpert.PatientServices.Worklist
         /// </summary>
         public string AETitle { get; set; }
         /// <summary>
+        /// Получает или задает значение Идентификационному номеру
+        /// </summary>
+        public string IdNumber { get; set; }
+        /// <summary>
         /// Получает или задает значение имени хоста (IP адреса).
         /// </summary>
         public string Host { get; set; }

@@ -52,6 +52,7 @@ namespace MammoExpert.PatientServices.Sources
             var worklistSource = new WorklistSource();
             worklistSource.DisplayName = source.Name;
             worklistSource.AETitle = source.Parameters["Header"];
+            worklistSource.IdNumber = source.Parameters["IdNumber"];
             worklistSource.Host = source.Parameters["Ip"];
             worklistSource.Port = source.Parameters["Port"];
             worklistSource.Timeout = Int32.Parse(source.Parameters["Timeout"]);
@@ -66,6 +67,7 @@ namespace MammoExpert.PatientServices.Sources
             var source = new Source(SourceTypeEnum.Worklist);
             source.Name = worklistSource.DisplayName;
             source.Parameters["Header"] = worklistSource.AETitle;
+            source.Parameters["IdNumber"] = worklistSource.IdNumber;
             source.Parameters["Ip"] = worklistSource.Host;
             source.Parameters["Port"] = worklistSource.Port;
             source.Parameters["Timeout"] = worklistSource.Timeout.ToString();

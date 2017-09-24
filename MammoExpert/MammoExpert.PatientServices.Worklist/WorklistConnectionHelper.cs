@@ -23,7 +23,7 @@ namespace MammoExpert.PatientServices.Worklist
             client.AddRequest(new DicomCEchoRequest());
             client.Send(worklistSource.Host, Int32.Parse(worklistSource.Port),
                         false, worklistSource.DisplayName, worklistSource.AETitle);
-
+             
             if (client.IsSendRequired) return true;
 
             return false;

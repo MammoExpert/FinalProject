@@ -23,6 +23,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
@@ -48,42 +49,53 @@
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Source.Parameters[Header]}" />
-
+            
             <TextBlock
                 Grid.Row="2"
                 Grid.Column="0"
                 VerticalAlignment="Center"
-                Text="Имя хоста (IP адрес)" />
+                Text="Идентификационный номер" />
             <TextBox
                 Grid.Row="2"
+                Grid.Column="1"
+                Margin="2"
+                Text="{Binding Path=Source.Parameters[IdNumber]}" />
+
+            <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                Text="Имя хоста (IP адрес)" />
+            <TextBox
+                Grid.Row="3"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Source.Parameters[Ip]}" />
 
             <TextBlock
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="0"
                 VerticalAlignment="Center"
                 Text="Порт" />
             <TextBox
-                Grid.Row="3"
+                Grid.Row="4"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Source.Parameters[Port]}" />
 
             <TextBlock
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="0"
                 VerticalAlignment="Center"
                 Text="Таймаут" />
             <TextBox
-                Grid.Row="4"
+                Grid.Row="5"
                 Grid.Column="1"
                 Margin="2"
                 Text="{Binding Path=Source.Parameters[Timeout]}" />
 
             <StackPanel
-                Grid.Row="5"
+                Grid.Row="6"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 HorizontalAlignment="Right">
